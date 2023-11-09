@@ -6,9 +6,9 @@
   
   <img src="./assets/images/vehigologo.png" />
 
-  <h2 align="center">Ridex - Car rent website</h2>
+  <h2 align="center">VehiGo - Car rent website</h2>
 
-  Ridex is fully responsive car rental website, <br />Responsive for all devices, built using HTML, CSS, and JavaScript.
+  VehiGo is fully responsive car rental website, <br />Responsive for all devices, built using HTML, CSS, and JavaScript.
 
   <a href="https://github.com/aryansoni13/VehiGo"><strong>➥ Live Demo</strong></a>
 

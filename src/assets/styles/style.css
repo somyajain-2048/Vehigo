@@ -137,11 +137,15 @@ html {
   font-size: 1rem;
   line-height: 1.5;
   scroll-behavior: smooth;
+  overflow-x: hidden;
+  overflow-y:auto;
 }
 
 body {
   background: var(--alice-blue-1);
   overflow-x: hidden;
+  overflow-y:auto;
+  padding-top: 100px;
 }
 
 ::-webkit-scrollbar {

@@ -296,7 +296,7 @@ button, a { transition: var(--transition); }
   background: var(--carolina-blue);
 }
 
-.navbar {
+ .navbar {
   background: var(--alice-blue-1);
   position: fixed;
   top: 70px;
@@ -323,9 +323,25 @@ button, a { transition: var(--transition); }
   font-size: var(--fs-6);
   padding-block: 5px;
   margin-bottom: 15px;
+  transition: 0.3s ease;
+  text-decoration: none;
+  display: block;
+  border-radius: 5px;
 }
 
-.navbar-link:is(:hover, :focus) { color: var(--carolina-blue); }
+.navbar-link:is(:hover, :focus) {
+  color: white;
+  background-color: var(--carolina-blue);
+  padding-left: 10px;
+}
+
+.navbar-link.active {
+  color: white;
+  background-color: var(--carolina-blue);
+  font-weight: bold;
+  padding-left: 10px;
+}
+
 
 .overlay {
   position: fixed;

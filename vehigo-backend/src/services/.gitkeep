@@ -1,0 +1,3 @@
+# Services directory
+# This folder contains business logic and external service integrations
+# Email service, payment service, notification service, etc.

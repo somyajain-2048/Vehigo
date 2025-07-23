@@ -332,16 +332,16 @@ button, a { transition: var(--transition); }
 .navbar-link:is(:hover, :focus) {
   color: white;
   background-color: var(--carolina-blue);
-  padding-left: 10px;
+  padding-left: 8px;
+  padding-right: 8px;
+  font-weight: bolder;
 }
 
 .navbar-link.active {
   color: white;
   background-color: var(--carolina-blue);
   font-weight: bold;
-  padding-left: 8px;
-  padding-right: 8px;
-  font-weight: bolder;
+  padding-left: 10px;
 }
 
 

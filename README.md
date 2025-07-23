@@ -1,91 +1,67 @@
+<img src="https://github.com/aryansoni13/VehiGo/blob/ffae3814d864fe195d3d8b27402dcacf4cf1210e/VehiGo%20Home/vehigo.png" width="100%" />
 
-<img src="https://github.com/aryansoni13/VehiGo/blob/ffae3814d864fe195d3d8b27402dcacf4cf1210e/VehiGo%20Home/vehigo.png" />
+# 🚗 VehiGo – Car Rental Website
 
- # VehiGo - Car Rental Website
- 
-## Deployment Demo Link-
+[![Deployment](https://img.shields.io/badge/Live-Demo-green)](https://vehigo-orpin.vercel.app/)
+[![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![Made with HTML/CSS/JS](https://img.shields.io/badge/Built%20with-HTML%2C%20CSS%2C%20JS-orange)](https://github.com/aryansoni13/VehiGo)
 
-(https://vehigo-orpin.vercel.app/)
+> **VehiGo** is a fully responsive and intuitive car rental platform built using HTML, CSS, and JavaScript. Whether you're on a desktop or mobile device, VehiGo provides a seamless and modern car rental experience.
 
-Welcome to VehiGo, a fully responsive car rental website. VehiGo is designed to be user-friendly and accessible on all devices. Built using HTML, CSS, and JavaScript, VehiGo offers a seamless experience for renting cars online.
+---
 
-## Table of Contents
+## 🌐 Live Demo
 
-- [Introduction](#introduction)
-- [Features](#features)
-- [Technologies Used](#technologies-used)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Contributing](#contributing)
+👉 [Click here to explore VehiGo](https://vehigo-orpin.vercel.app/)
 
-## Introduction
+---
 
-VehiGo is a car rental website that allows users to easily browse, select, and rent cars from the comfort of their devices. The site is fully responsive, ensuring a great experience whether you're using a desktop, tablet, or smartphone.
+## 📑 Table of Contents
 
-## Features
+- [✨ Features](#-features)
+- [🛠️ Technologies Used](#-technologies-used)
+- [🚀 Getting Started](#-getting-started)
+- [💡 Usage](#-usage)
+- [🤝 Contributing](#-contributing)
+- [📄 License](#-license)
 
-- **Responsive Design**: Optimized for all devices, including desktops, tablets, and smartphones.
-- **Car Listings**: Browse through a variety of cars available for rent.
-- **Detailed Car Information**: View detailed information about each car, including specifications and pricing.
-- **Booking System**: Easily book a car with a straightforward booking process.
-- **User-Friendly Interface**: Intuitive and easy-to-navigate design.
+---
 
-## Technologies Used
+## 📌 Introduction
 
-- **HTML5**: Provides the structure of the website.
-- **CSS3**: Used for styling the website, including layout, colors, and responsiveness.
-- **JavaScript**: Adds interactivity and dynamic features to the website.
+**VehiGo** is a modern web-based car rental application that enables users to:
 
-## Installation
+- View a catalog of rental vehicles
+- Get detailed information on each car
+- Seamlessly book a vehicle online
 
-To get started with VehiGo, follow these steps:
+With a sleek, mobile-first design, VehiGo ensures a delightful experience across all screen sizes.
 
-1. **Clone the repository:**
+---
 
-    ```sh
-    git clone https://github.com/aryansoni13/vehigo.git
-    ```
+## ✨ Features
 
-2. **Navigate to the project directory:**
+- ✅ **Fully Responsive** – Looks great on phones, tablets, and desktops.
+- 🚘 **Car Listings** – Browse a variety of vehicles available for rent.
+- 🔍 **Detailed Car View** – See specs, features, and pricing.
+- 🧾 **Booking Functionality** – Book your ride in a few clicks.
+- 🧭 **User-Friendly Interface** – Simple navigation for all users.
 
-    ```sh
-    cd vehigo
-    ```
+---
 
-3. **Open the index.html file in your browser:**
+## 🛠️ Technologies Used
 
-    ```sh
-    open index.html
-    ```
+- **HTML5** – Markup language for structuring web content.
+- **CSS3** – Styles the UI with responsive layouts and custom designs.
+- **JavaScript** – Adds interactivity and dynamic behavior.
 
-    Or you can use a live server extension in your code editor for a better development experience.
+---
 
-## Usage
+## 🚀 Getting Started
 
-- **Browse Cars**: Navigate through the car listings to find the car that suits your needs.
-- **View Details**: Click on a car to view more details, including specifications and pricing.
-- **Book a Car**: Follow the booking process to rent a car. Enter your details and confirm your booking.
+Follow these steps to run VehiGo locally:
 
-## Contributing
+### 1. Clone the repository
 
-We welcome contributions to improve VehiGo! If you have any suggestions, bug reports, or want to add new features, feel free to create an issue or submit a pull request.
-
-To contribute:
-
-1. **Fork the repository:**
-
-    Click the "Fork" button on the top right corner of this repository's GitHub page.
-
-2. **Clone your forked repository:**
-
-    ```sh
-    git clone https://github.com/aryansoni13/vehigo.git
-    ```
-
-
-3. **Create a pull request:**
-
-    Go to the original repository on GitHub, and you should see an option to create a pull request from your new branch.
-
-Enjoy using VehiGo! If you encounter any issues or have any feedback, feel free to reach out.
-
+```bash
+git clone https://github.com/aryansoni13/vehigo.git

@@ -1,4 +1,8 @@
 /* ! Registration Page */
+html,body{
+    height: 100%; 
+    overflow-y: auto; 
+}
 
 main {
     padding-top: 75px;
@@ -23,7 +27,7 @@ p {
 }
 
 form {
-    width: 60vw;
+    width: 90vw;
     max-width: 500px;
     min-width: 300px;
     margin: 0 auto;
@@ -96,12 +100,17 @@ input file-upload-button{
     background-color: white;
     margin: 0% 27.5% ;
     box-shadow:3px 3px 20px hsla(240, 14%, 69%, 0.2);
+    min-height: 100vh; 
+    display: flex; 
+    flex-direction: column; 
+    justify-content: flex-start;
+    padding: 20px; 
+    box-sizing: border-box;
 }
 
 .field{
     background: white;
     border-radius: 10px;
-    /* box-shadow: 5px 5px 10px black; */
     outline: none;
     size: 10px;
 }
@@ -112,7 +121,6 @@ input file-upload-button{
     padding: 20px;
     border: none;
     border-radius: 10px;
-    /* box-shadow: 1px 0 1px 1px #45486b; */
 }
 
 ::-webkit-file-upload-button:hover{

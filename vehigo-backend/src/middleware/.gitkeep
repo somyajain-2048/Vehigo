@@ -1,0 +1,3 @@
+# Middleware directory
+# This folder contains custom middleware functions
+# Middleware handles authentication, validation, logging, error handling, etc.

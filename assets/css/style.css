@@ -339,7 +339,9 @@ button, a { transition: var(--transition); }
   color: white;
   background-color: var(--carolina-blue);
   font-weight: bold;
-  padding-left: 10px;
+  padding-left: 8px;
+  padding-right: 8px;
+  font-weight: bolder;
 }
 
 

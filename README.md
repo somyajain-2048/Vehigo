@@ -57,6 +57,13 @@ With a sleek, mobile-first design, VehiGo ensures a delightful experience across
 
 ---
 
+## 📄 License
+
+This project is licensed under the [MIT License](LICENSE).  
+You’re free to use, modify, and share this software under the license terms.
+
+---
+
 ## 🚀 Getting Started
 
 Follow these steps to run VehiGo locally:

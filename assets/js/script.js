@@ -54,3 +54,41 @@ document.addEventListener("DOMContentLoaded", function () {
       blogList.scrollBy({ left: -scrollAmount, behavior: "smooth" });
     });
   });
+
+  // Back to Top Button
+document.addEventListener('DOMContentLoaded', function() {
+  const backToTopButton = document.querySelector('.back-to-top');
+  let isScrolling;
+  
+  window.addEventListener('scroll', function() {
+    window.clearTimeout(isScrolling);
+    
+    if (window.pageYOffset > 300) {
+      backToTopButton.classList.add('show');
+    } else {
+      backToTopButton.classList.remove('show');
+    }
+    
+    isScrolling = setTimeout(function() {
+      if (window.pageYOffset > 300) {
+        backToTopButton.classList.add('pulse-effect');
+        setTimeout(() => {
+          backToTopButton.classList.remove('pulse-effect');
+        }, 1000);
+      }
+    }, 100);
+  });
+  
+  backToTopButton.addEventListener('click', function(e) {
+    e.preventDefault();
+    this.classList.add('clicked');
+    setTimeout(() => {
+      this.classList.remove('clicked');
+    }, 300);
+    
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  });
+});

@@ -473,11 +473,19 @@ button, a { transition: var(--transition); }
 }
 
 .featured-car-card {
-  background: var(--gradient);
-  border: 1px solid var(--white);
-  border-radius: var(--radius-18);
-  padding: 10px;
-  box-shadow: var(--shadow-1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+  cursor: pointer !important;
+  will-change: transform !important;
+}
+
+.featured-car-card:hover {
+  transform: perspective(1000px) translateY(-10px) scale(1.02) !important;
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2) !important;
+}
+
+.featured-car-card:active {
+  transform: perspective(1000px) translateY(-4px) scale(1.01) !important;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15) !important;
 }
 
 .featured-car-card .card-banner {

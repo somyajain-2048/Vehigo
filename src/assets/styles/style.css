@@ -213,6 +213,8 @@ button, a { transition: var(--transition); }
 
 .section { padding-block: var(--section-padding); }
 
+
+
 .h1,
 .h2,
 .h3 {
@@ -272,7 +274,7 @@ button, a { transition: var(--transition); }
 
 .header-actions .btn span { display: none; }
 
-.user-btn {
+.user-btn ion-icon{
   --color: var(--independence);
   --background: var(--white);
   --shadow-2: var(--shadow-1);
@@ -1507,4 +1509,18 @@ button, a { transition: var(--transition); }
 
   .footer-list:last-of-type { width: 33.33%; }
 
+}
+.user-btn {
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem;
+}
+
+.user-btn ion-icon {
+  display: inline-block !important;
+  font-size: 1.8rem;
+  color: white; /* change to #fff if your header is dark */
+  opacity: 1 !important;
+  visibility: visible !important;
 }

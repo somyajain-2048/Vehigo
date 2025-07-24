@@ -5,7 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
-  <title>Vehigo - Login</title>
+  <title>Vehigo - Signup</title>
 
   <!-- CSS -->
   <link rel="stylesheet" href="./assets/css/loginstyle.css" />
@@ -21,33 +21,45 @@
   </header>
 
   <section class="container forms">
-    <div class="form login">
+    <div class="form Signup">
       <div class="form-content">
-        <header>Login</header>
+        <header>Signup</header>
         <form>
           <div class="field input-field">
-            <input id="email" type="email" placeholder="Email" class="input" />
+            <input id="name" type="text" placeholder="Your Name" class="name" />
           </div>
 
           <div class="field input-field">
-            <input id="password" type="password" placeholder="Password" class="password" />
+            <input id="signupEmail" type="email" placeholder="Email" class="email" />
+          </div>
+
+          <div class="field input-field">
+            <input id="signupPassword" type="password" placeholder="Create password" class="password" />
+          </div>
+
+          <div class="field input-field">
+            <input id="phone_number" type="number" placeholder="Your Phone Number" class="ph-number" />
+          </div>
+
+          <div class="field input-field">
+            <input id="address" type="text" placeholder="Your Address" class="address" />
           </div>
 
           <div id="errorMessage" class="error"></div>
           <div id="successMessage" class="success"></div>
 
           <div class="field button-field">
-            <button type="submit">Login</button>
+            <button type="submit">Signup</button>
           </div>
         </form>
 
         <div class="form-link">
-          <span>Don't have an account? <a href="signup.html" class="link signup-link">Signup</a></span>
+          <span>Already have an account? <a href="login.html" class="link login-link">Login</a></span>
         </div>
       </div>
     </div>
   </section>
 
-  <script src="scripts/loginscript.js"></script>
+  <script src="scripts/signupscript.js"></script>
 </body>
 </html>

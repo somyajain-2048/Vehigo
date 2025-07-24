@@ -223,3 +223,8 @@ a.google span {
     }
 
 }
+/* Force show signup form when on signup.html */
+body .form.signup {
+    opacity: 1 !important;
+    pointer-events: auto !important;
+}

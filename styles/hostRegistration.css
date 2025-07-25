@@ -1,124 +1,160 @@
-/* ! Registration Page */
+/* Reset & base */
+body {
+    font-family: 'Open Sans', sans-serif;
+    background-color: #FAFAFA;
+    color: #2E2E2E;
+    margin: 0;
+    padding: 0;
+}
 
+/* Layout */
 main {
-    padding-top: 75px;
+    padding-top: 90px;
+    padding-bottom: 50px;
+}
+main.form h1 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    text-align: center;
+    background: linear-gradient(90deg, #0382f2, #8400ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 200%;
+    transition: background-position 0.5s ease-in-out;
 }
 
-h1 {
-    font-size: 28px;
-    font-weight: 600;
-    color: #232836;
-    text-align: center;
-}
-
-header {
-    font-size: 28px;
-    font-weight: 600;
-    color: #232836;
-    text-align: center;
+main.form h1:hover {
+    background-position: right;
 }
 
 p {
-    margin: 1em auto;
     text-align: center;
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 2em;
 }
 
-form {
-    width: 60vw;
-    max-width: 500px;
-    min-width: 300px;
-    margin: 0 auto;
-    padding-bottom: 2em;
+/* Form container */
+.regform {
+    background-color: #ffffff;
+    width: 90%;
+    max-width: 600px;
+    margin: 2% auto;
+    padding: 3em;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(76, 110, 245, 0.1);
+    transition: all 0.3s ease-in-out;
 }
 
+/* Labels and fieldsets */
 fieldset {
     border: none;
-    padding: 2rem 0;
-    border-bottom: 3px solid #3b3b4f;
-}
-
-fieldset:last-of-type {
-    border-bottom: none;
+    margin-bottom: 1.5em;
+    padding: 0;
 }
 
 label {
     display: block;
-    margin: 0.5rem 0;
+    margin: 1rem 0 0.3rem;
+    font-weight: 600;
+    color: #2E2E2E;
+    font-size: 15px;
 }
 
-input,
+/* Inputs */
+input[type="text"],
+input[type="file"],
 textarea,
 select {
-    margin: 10px 0 0 0;
     width: 100%;
-    min-height: 2em;
-
+    padding: 12px 14px;
+    font-size: 15px;
+    border: 1px solid #D0D3E2;
+    border-radius: 8px;
+    background-color: #F5F6FA;
+    transition: border-color 0.3s ease, background-color 0.3s ease;
 }
 
-input,
-textarea {
-    background-color: white;
-    border: 1px solid#CACACA;
-    border-radius: 6px;
-    padding-left: 10px;
-    padding-right: 10px;
-}
-
-.inline {
-    width: unset;
-    margin: 0 0.5em 0 0;
-    vertical-align: middle;
-}
-
-input[type="submit"] {
-    display: block;
-    width: 20%;
-    margin: 1em auto;
-    height: 3em;
-    font-size: 1.1rem;
-    border-color: white;
-    min-width: 300px;
-    cursor: pointer;
-    color: white;
-    background-color: #0171d3;
-    transition: all 0.3s ease;
-    cursor: pointer;
-}
-
-input[type="file"] {
-    padding: 1px 2px;
-    cursor: pointer;
-    padding: 10px 12px;
-}
-
-input file-upload-button {
-    background-color: #0171d3;
-}
-
-.regform {
-    background-color: white;
-    margin: 0% 27.5%;
-    box-shadow: 3px 3px 20px hsla(240, 14%, 69%, 0.2);
-    ;
-}
-
-.field {
-    background: white;
-    border-radius: 10px;
-    /* box-shadow: 5px 5px 10px black; */
+input[type="text"]:focus,
+input[type="file"]:focus,
+textarea:focus,
+select:focus {
     outline: none;
-    size: 10px;
+    border-color: #4C6EF5;
+    background-color: #ffffff;
 }
 
+/* Submit button */
+input[type="submit"] {
+  display: block;
+  width: 100%;
+  max-width: 300px;
+  margin: 2rem auto 0;
+  height: 3.2em;
+  font-size: 1.1rem;
+  font-weight: 700;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  color: white;
+  background: linear-gradient(
+    270deg,
+    #0171d3,
+    #00d5ff,
+    #0171d3
+  );
+  background-size: 400% 400%;
+  box-shadow: 0 4px 15px rgba(1, 113, 211, 0.4);
+  transition: transform 0.3s ease;
+}
+
+input[type="submit"]:hover {
+  animation: gradientFlow 2.5s ease infinite;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(1, 113, 211, 0.6);
+}
+
+/* Gradient animation */
+@keyframes gradientFlow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+
+
+/* File Upload Button Styling */
 ::-webkit-file-upload-button {
     color: white;
-    background: #0171d3;
-    padding: 20px;
+    background: #4C6EF5;
+    padding: 10px 20px;
     border: none;
-    border-radius: 10px;
-    /* box-shadow: 1px 0 1px 1px #45486b; */
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
 ::-webkit-file-upload-button:hover {
-    background: #2b8de3;
+    background: #3B57C5;
+}
+
+/* Responsive tweaks */
+@media (max-width: 600px) {
+    .regform {
+        padding: 2em;
+    }
+
+    h1 {
+        font-size: 26px;
+    }
+
+    input[type="submit"] {
+        width: 100%;
+    }
 }

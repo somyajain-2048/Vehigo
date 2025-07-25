@@ -1,225 +1,186 @@
-/* Google Fonts - Poppins */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
 }
 
-.container {
-    height: 100vh;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: hsl(216, 38%, 95%);;
-    column-gap: 30px;
+body {
+  min-height: 100vh;
+  width: 100%;
+  background: url('../images/car-bg.jpg') no-repeat center center fixed;
+  background-size: cover;
+  background-blend-mode: lighten;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(7px); /* Adjust the pixel value for more or less blur */
+  -webkit-backdrop-filter: blur(8px); /* For Safari support */
+  padding: 2rem;
 }
+
+.form-wrapper {
+  width: 100%;
+  max-width: 420px;
+  position: relative;
+}
+
+.forms {
+  width: 100%;
+  position: relative;
+}
+body::after {
+  content: "";
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(18, 18, 18, 0.1); /* very light white overlay */
+  pointer-events: none;
+  z-index: -1;
+}
+
 
 .form {
-    position: absolute;
-    max-width: 430px;
-    width: 100%;
-    padding: 30px;
-    
-    border-radius: 6px;
-    background: #ffffff;
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-    margin: 50px;
+  width: 100%;
+  padding: 30px 30px 60px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(15px);
+  color: #fff;
+  transition: 0.3s ease;
+  animation: fadeIn 0.6s ease-in-out;
+  display: none;
 }
 
-.form.signup {
-    opacity: 0;
-    pointer-events: none;
-    padding-bottom: 60px;
+.forms.show-login .form.login {
+  display: block;
 }
 
 .forms.show-signup .form.signup {
-    opacity: 1;
-    pointer-events: auto;
+  display: block;
 }
 
 .forms.show-signup .form.login {
-    opacity: 0;
-    pointer-events: none;
+  display: none;
 }
 
-header {
-    font-size: 28px;
-    font-weight: 600;
-    color: #232836;
-    text-align: center;
+.field {
+  width: 100%;
+  margin-top: 20px;
+  position: relative;
 }
 
-form {
-    margin-top: 30px;
+.input-field input {
+  width: 100%;
+  height: 50px;
+  background: rgba(31, 30, 30, 0.15);
+  border: 1px solid rgba(17, 16, 16, 0.3);
+  border-radius: 6px;
+  padding: 0 15px;
+  color: #fff;
+  font-size: 15px;
+  outline: none;
+  transition: 0.3s ease;
 }
 
-.form .field {
-    position: relative;
-    height: 50px;
-    width: 100%;
-    margin-top: 20px;
-    border-radius: 6px;
+.input-field input:focus {
+  border: 1px solid #fff;
+  background-color: rgba(255, 255, 255, 0.25);
+}
+.form {
+  opacity: 0;
+  transform: scale(0.98);
+  pointer-events: none;
+  transition: all 0.3s ease;
 }
 
-.field input,
-.field button {
-    height: 100%;
-    width: 100%;
-    border: none;
-    font-size: 16px;
-    font-weight: 400;
-    border-radius: 6px;
+.forms.show-login .form.login,
+.forms.show-signup .form.signup {
+  opacity: 1;
+  transform: scale(1);
+  pointer-events: auto;
 }
 
-.field input {
-    outline: none;
-    padding: 0 15px;
-    border: 1px solid#CACACA;
-}
-
-.field input:focus {
-    border-bottom-width: 2px;
-}
 
 .eye-icon {
-    position: absolute;
-    top: 50%;
-    right: 10px;
-    transform: translateY(-50%);
-    font-size: 18px;
-    color: #8b8b8b;
-    cursor: pointer;
-    padding: 5px;
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #f2f2f2;
+  font-size: 18px;
+  cursor: pointer;
 }
 
-.field button {
-    color: #fff;
-    background-color: #0171d3;
-    transition: all 0.3s ease;
-    cursor: pointer;
+.button-field button {
+  width: 100%;
+  height: 50px;
+  background-color: #4dd5ff;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.3s;
 }
 
-.field button:hover {
-    background-color: #016dcb;
+.button-field button:hover {
+  background-color: #3bafe1;
 }
 
 .form-link {
-    text-align: center;
-    margin-top: 10px;
+  text-align: center;
+  margin-top: 15px;
+  font-size: 14px;
+  color: #fff;
 }
 
-.form-link span,
 .form-link a {
-    font-size: 14px;
-    font-weight: 400;
-    color: #232836;
+  color: #4dbbff;
+  text-decoration: none;
 }
 
-.form a {
-    color: #0171d3;
-    text-decoration: none;
+.form-link a:hover {
+  text-decoration: underline;
 }
 
-.form-content a:hover {
-    text-decoration: underline;
+.error-msg,
+.success-msg {
+  font-size: 14px;
+  text-align: center;
+  margin-top: 10px;
 }
 
-.line {
-    position: relative;
-    height: 1px;
-    width: 100%;
-    margin: 36px 0;
-    background-color: #d4d4d4;
+.error-msg {
+  color: #ffbaba;
 }
 
-.line::before {
-    content: 'Or';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: #FFF;
-    color: #8b8b8b;
-    padding: 0 15px;
+.success-msg {
+  color: #b4ffb4;
 }
 
-.media-options a {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width:100%;
-    height:50px;
-    background: transparent;
-    border:2px solid #3232f8;
-    margin: 10px 0;
-    box-shadow: 0 2px 5px rgba(0,0,0, .2);
-    border-radius: 40px;
-    color:#000000;
-    text-decoration: none;
-    transition: 0.5s;
-    
-}
-.media-options a i {
-    font-size: 22px;
-    margin: 0 8px 1.5px 0;
+@keyframes fadeIn {
+  0% {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
 }
 
-/* .media-options a:hover {
-    background : rgba(255,255,255,.1);
-    color: #000000;
-} */
- a.facebook {
-    color: #ffffff;
-    background-color: #4267b2;
-}
-a.google {
-    color: #ffffff;
-    background-color:transparent;
-}
-/*
-a.facebook .facebook-icon {
-    height: 28px;
-    width: 28px;
-    color: #0171d3;
-    font-size: 20px;
-    border-radius: 50%;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #fff;
-} */ 
+@media screen and (max-width: 500px) {
+  body {
+    padding: 1rem;
+  }
 
-.facebook-icon,
-img.google-icon {
-    position: absolute;
-    top: 50%;
-    left: 15px;
-    transform: translateY(-50%);
-}
-
-img.google-icon {
-    height: 20px;
-    width: 20px;
-    object-fit: cover;
-}
-
-a.google {
-    border: 1px solid #090707;
-}
-
-a.google span {
-    font-weight: 500;
-    opacity: 0.6;
-    color: #090a0d;
-}
-
-@media screen and (max-width: 400px) {
-    .form {
-        padding: 20px 10px;
-    }
-
+  .form {
+    padding: 20px 20px 50px;
+  }
 }

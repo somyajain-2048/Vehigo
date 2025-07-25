@@ -2,52 +2,114 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
-  <title>Vehigo - Login</title>
+  <title>Vehigo - Login & Signup</title>
 
-  <!-- CSS -->
+  <!-- Favicon -->
+  <link rel="icon" href="./assets/images/favicon.svg" type="image/svg+xml" />
+
+  <!-- Boxicons -->
+  <link href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css" rel="stylesheet" />
+
+  <!-- Custom CSS -->
   <link rel="stylesheet" href="./assets/css/loginstyle.css" />
-  <link rel="stylesheet" href="./assets/css/style.css" />
 </head>
 <body>
-  <header class="header" data-header>
-    <div class="container">
-      <a href="index.html" class="logo">
-        <img src="./assets/images/vehigologo.png" alt="VehiGo logo" loading="eager" width="120" />
-      </a>
-    </div>
-  </header>
-
-  <section class="container forms">
-    <div class="form login">
-      <div class="form-content">
-        <header>Login</header>
-        <form>
-          <div class="field input-field">
-            <input id="email" type="email" placeholder="Email" class="input" />
+  <div class="form-wrapper">
+    <section class="forms show-login" id="formSection">
+      
+      <!-- Login Form -->
+      <div class="form login" id="loginForm">
+        <div class="form-content">
+          <header>Login</header>
+          <form>
+            <div class="field input-field">
+              <input id="email" type="email" placeholder="Email" class="input" required />
+            </div>
+            <div class="field input-field">
+              <input id="password" type="password" placeholder="Password" class="password" required />
+              <i class='bx bx-hide eye-icon'></i>
+            </div>
+            <div id="loginErrorMessage" class="error-msg"></div>
+            <div class="field button-field">
+              <button type="submit">Login</button>
+            </div>
+          </form>
+          <div class="form-link">
+            <span>Don't have an account? <a href="#" class="link signup-link">Signup</a></span>
           </div>
-
-          <div class="field input-field">
-            <input id="password" type="password" placeholder="Password" class="password" />
-          </div>
-
-          <div id="errorMessage" class="error"></div>
-          <div id="successMessage" class="success"></div>
-
-          <div class="field button-field">
-            <button type="submit">Login</button>
-          </div>
-        </form>
-
-        <div class="form-link">
-          <span>Don't have an account? <a href="signup.html" class="link signup-link">Signup</a></span>
         </div>
       </div>
-    </div>
-  </section>
 
-  <script src="scripts/loginscript.js"></script>
+      <!-- Signup Form -->
+      <div class="form signup" id="signupForm">
+        <div class="form-content">
+          <header>Signup</header>
+          <form>
+            <div class="field input-field">
+              <input id="name" type="text" placeholder="Your Name" required />
+            </div>
+            <div class="field input-field">
+              <input id="signupEmail" type="email" placeholder="Email" required />
+            </div>
+            <div class="field input-field">
+              <input id="signupPassword" type="password" class="password" placeholder="Create Password" required />
+              <i class='bx bx-hide eye-icon'></i>
+            </div>
+            <div class="field input-field">
+              <input id="phone_number" type="tel" placeholder="Phone Number" required />
+            </div>
+            <div class="field input-field">
+              <input id="address" type="text" placeholder="Address" required />
+            </div>
+            <div id="signupErrorMessage" class="error-msg"></div>
+            <div id="signupSuccessMessage" class="success-msg"></div>
+            <div class="field button-field">
+              <button type="submit">Signup</button>
+            </div>
+          </form>
+          <div class="form-link">
+            <span>Already have an account? <a href="#" class="link login-link">Login</a></span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Toggle between Login and Signup -->
+  <script>
+    const wrapper = document.querySelector(".forms");
+    const signupLink = document.querySelector(".signup-link");
+    const loginLink = document.querySelector(".login-link");
+
+    signupLink.addEventListener("click", () => {
+      wrapper.classList.remove("show-login");
+      wrapper.classList.add("show-signup");
+    });
+
+    loginLink.addEventListener("click", () => {
+      wrapper.classList.remove("show-signup");
+      wrapper.classList.add("show-login");
+    });
+  </script>
+
+  <!-- Password eye toggle script -->
+  <script>
+    document.querySelectorAll(".eye-icon").forEach(icon => {
+      icon.addEventListener("click", () => {
+        const passwordInput = icon.previousElementSibling;
+        if (passwordInput.type === "password") {
+          passwordInput.type = "text";
+          icon.classList.replace("bx-hide", "bx-show");
+        } else {
+          passwordInput.type = "password";
+          icon.classList.replace("bx-show", "bx-hide");
+        }
+      });
+    });
+  </script>
+
+  <!-- Your main JavaScript -->
+  <script src="./assets/js/script.js"></script>
 </body>
 </html>

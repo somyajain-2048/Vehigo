@@ -221,6 +221,7 @@ a {
 }
 
 .h1 {
+    font-weight: 700;
     font-size: var(--fs-1);
     text-transform: uppercase;
 }
@@ -484,6 +485,7 @@ a {
 }
 
 .hero-title {
+    font-weight: 00;
     max-width: 25ch;
     margin-bottom: 15px; 
 }
@@ -491,7 +493,7 @@ a {
 .hero-text {
     color: var(--independence);
     line-height: 1.8;
-    margin-bottom: 30px;
+    margin-bottom: 10px;
 }
 
 .hero-banner {

@@ -387,8 +387,44 @@ button, a { transition: var(--transition); }
   color: #e3ff00;
 }
 
+/* Dark Mode Styling */
+body.dark-mode {
+  background-color: #121212;
+  color: #ffffff;
+}
+body.dark-mode p,
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3,
+body.dark-mode a {
+  color: #f5f5f5;
+}
+
+body.dark-mode a,
+body.dark-mode .navbar-link {
+  color: #ffffff;
+}
+body.dark-mode .footer-bottom,
+body.dark-mode .footer-bottom p,
+body.dark-mode .footer-bottom a,
+body.dark-mode .footer-bottom ion-icon {
+  color: #121212;
+}
+body.dark-mode .user-btn ion-icon {
+  color: #200f0f; /* Light color for dark mode */
+}
 
 
+
+body.dark-mode .navbar {
+  background-color: #1a1a1a;
+}
+
+body.dark-mode header,
+body.dark-mode footer {
+  background-color: #1e1e1e;
+  color: #ffffff;
+}
 
 
 

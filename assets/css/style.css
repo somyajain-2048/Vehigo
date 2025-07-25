@@ -24,6 +24,7 @@
   --medium-sea-green: hsl(152, 63%, 43%);
   --lavender-blush: hsl(336, 35%, 92%);
   --carolina-blue: hsl(204, 91%, 53%);
+  --carolina-blue-1: hsl(204, 78%, 36%);
   --columbia-blue: hsl(204, 92%, 90%);
   --alice-blue-1: hsl(216, 38%, 95%);
   --alice-blue-2: hsl(216, 75%, 97%);
@@ -275,6 +276,25 @@ button, a { transition: var(--transition); }
   box-shadow: var(--shadow-1);
 }
 
+/* animation in logo */
+.logo{
+  margin-top: 0.5rem;
+  transition: transform 0.5s ease-in-out;
+  animation: zoom 3s ease-in-out infinite;
+}
+
+@keyframes zoom{
+  0%{
+    transform: scale(1) translateY(0px);
+  }
+  50%{
+    transform: scale(1.1) translateY(-10px);
+  }
+  100%{
+    transform: scale(1) translateY(0px);
+  }
+}
+
 .nav-toggle-btn span {
   background: var(--independence);
   width: 22px;
@@ -380,15 +400,60 @@ button, a { transition: var(--transition); }
 
 .hero { padding-top: 120px; }
 
-.hero-title {
-  max-width: 20ch;
-  margin-bottom: 15px;
+.hero-content{
+  display: flex;
+  flex-direction: column;
+  min-width: 20ch; 
+  overflow: hidden;
+  /* add margin from bottom */
+  margin-bottom: 3rem;
+} 
+.hero-title{
+  max-width: 22ch;
+  margin-bottom: 10px;   
+  cursor: pointer;   
+  -webkit-text-fill-color: transparent;
+  /* add linear gradient background in hero text */
+  background: linear-gradient(50deg , var(--independence),var(--carolina-blue));
+  -webkit-background-clip: text;
+  overflow: hidden;  
+  white-space: nowrap; 
+  width: 0;
+  border-right: .3rem solid  var(--carolina-blue-1);
+  /* add animation in txt */
+  animation: hideRevel 4s steps(14) 1s infinite , blink .6s infinite step-end alternate;
+} 
+.first{
+  /* for smooth animation */
+  max-width: 17ch;
+} 
+
+@keyframes hideRevel{
+  0% {
+    width: 0;
+  } 
+  50%{
+    width: 20ch;
+  }
+  70%{
+    width: 20ch;
+  }
+  100%{
+    width: 0;
+  }
+}
+@keyframes blink{
+  50%{
+    border-color: transparent;
+  }
 }
 
 .hero-text {
   color: var(--independence);
   line-height: 1.8;
   margin-bottom: 30px;
+  /* add margin from top */
+  margin-top: 10px;
 }
 
 .hero-banner { display: none; }

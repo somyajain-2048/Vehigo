@@ -1213,6 +1213,36 @@ body.dark-mode footer {
 
 .copyright > a:is(:hover, :focus) { color: var(--carolina-blue); }
 
+/* back to top */
+/*make box interactive and animation added  */
+.mybtn{
+  margin-top: 1rem;
+  border: none;
+  position: relative;
+  background: var(--background, var(--carolina-blue));
+  color: var(--color, var(--white));
+  min-width: var(--width, 40px);
+  min-height: var(--height, 40px);
+  padding: 5px;
+  display: grid;
+  place-items: center; 
+  font-family: var(--ff-nunito);
+  font-size: var(--fs-6);
+  font-weight: var(--fw-600);
+  overflow: hidden; 
+  animation: pulse 2s infinite;
+} 
+@keyframes pulse{
+  0%{
+    transform: scale(1);
+  }
+  50%{
+    transform: scale(1.05);
+  }100%{
+    transform: scale(1);
+  }
+  
+}
 
 
 

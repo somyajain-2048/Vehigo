@@ -1184,6 +1184,10 @@ body.dark-mode footer {
   border: 1px solid var(--white);
   border-radius: var(--radius-18) var(--radius-18) 0 0;
   padding: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }
  
 
@@ -1412,10 +1416,10 @@ body.dark-mode footer {
   .footer-text { max-width: 100%; }
 
   .footer-bottom {
-    display: flex;
+    /* display: flex;
     flex-direction: row-reverse;
     justify-content: space-between;
-    align-items: center;
+    align-items: center; */
     padding-block: 30px;
     box-shadow: var(--shadow-1);
   }

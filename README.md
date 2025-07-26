@@ -71,4 +71,4 @@ Follow these steps to run VehiGo locally:
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/aryansoni13/vehigo.git
+git clone https://github.com/InnoWebLabs/Vehigo.git

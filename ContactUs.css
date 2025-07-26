@@ -1,0 +1,164 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f9fafb;
+  color: #333;
+}
+
+.navbar {
+  background: white;
+  padding: 1rem 2rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.hero {
+  background: linear-gradient(to right, #2563eb, #1e40af, #1e3a8a);
+  color: white;
+  padding: 5rem 1rem;
+  text-align: center;
+  height: 5px;
+}
+
+.no-inherit{
+    all:unset;
+}
+.highlight {
+  color: #facc15;
+}
+
+.main {
+  padding: 4rem 1rem;
+  margin-top: 0.25rem;
+  position: relative;
+  z-index: 1;
+}
+
+.contact-container {
+  max-width: 1200px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.contact-info,
+.contact-form {
+  background: white;
+  border-radius: 1rem;
+  padding: 2rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.contact-info h3,
+.contact-form h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.card {
+  display: flex;
+  padding: 1rem;
+  border-radius: 1rem;
+  margin-bottom: 1rem;
+  align-items: center;
+  transition: 0.3s ease;
+}
+
+.card .icon {
+  width: 3rem;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  border-radius: 0.75rem;
+  font-size: 1.5rem;
+  margin-right: 1rem;
+}
+
+.card-blue {
+  background: #eff6ff;
+}
+
+.card-green {
+  background: #ecfdf5;
+}
+
+.card-purple {
+  background: #f5f3ff;
+}
+
+.icon-blue {
+  background: linear-gradient(to right, #3b82f6, #1e3a8a);
+}
+
+.icon-green {
+  background: linear-gradient(to right, #10b981, #047857);
+}
+
+.icon-purple {
+  background: linear-gradient(to right, #8b5cf6, #6b21a8);
+}
+
+.form label {
+  display: block;
+  margin: 1rem 0 0.5rem;
+  font-weight: 600;
+}
+
+.form input,
+.form textarea {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 2px solid #3b789e;
+  border-radius: 0.75rem;
+  outline: none;
+  background: white;
+  transition: 0.3s;
+}
+
+.form input:focus,
+.form textarea:focus {
+  border-color: #5d86ac;
+  box-shadow: 0 0 0 4px #fce7f3;
+}
+
+button[type="submit"] {
+  margin-top: 1.5rem;
+  width: 100%;
+  padding: 1rem;
+  background: linear-gradient(to right, #5d7295, #6eaff4);
+  color: rgb(253, 254, 255);
+  font-weight: bold;
+  border: none;
+  border-radius: 0.75rem;
+  transition: 0.3s;
+}
+
+button[type="submit"]:hover {
+  transform: scale(1.03);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+#successMessage {
+  text-align: center;
+  padding: 2rem 1rem;
+}
+
+.success-icon {
+  width: 5rem;
+  height: 5rem;
+  background: linear-gradient(to right, #10b981, #047857);
+  border-radius: 9999px;
+  margin: auto;
+  color: white;
+  font-size: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.hidden {
+  display: none;
+}

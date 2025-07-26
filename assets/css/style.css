@@ -161,6 +161,20 @@ body {
 
 
 
+body.dark-mode {
+  --bg-color: #121212;
+  --text-color: #ffffff;
+}
+
+#theme-toggle {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
 
 
 /*-----------------------------------*\
@@ -488,7 +502,7 @@ body.dark-mode footer {
   color: var(--independence);
   line-height: 1.8;
   margin-bottom: 30px;
-  /* add margin from top */
+  
   margin-top: 10px;
 }
 

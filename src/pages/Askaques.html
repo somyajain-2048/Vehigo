@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ask a Question - Car Rental</title>
+  <style>
+    body { 
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      line-height: 1.6;
+      background-color: #f0f4f8;
+      color: #333;
+    }
+    .heading {
+      margin-top: 80px;
+      background-color: hsl(204, 91%, 53%);
+      border-radius: 20px;
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+    }
+    h1 {
+      font-size: 2em;
+      margin: 0;
+    }
+    h2 {
+      font-size: 1.5em;
+      margin-bottom: 20px;
+      color: hsl(204, 91%, 53%);
+    }
+    section {
+      margin: 20px 0;
+    }
+    main {
+      width: 60%;
+      margin-left: 20%;
+      background-color: #fff;
+      padding: 20px 50px;
+      margin-top: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    form label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: bold;
+      color: hsl(204, 91%, 40%);
+    }
+    form input[type="text"],
+    form input[type="email"],
+    form textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 20px;
+      border: 1px solid hsl(204, 91%, 80%);
+      border-radius: 6px;
+      font-size: 1em;
+      resize: vertical;
+      font-family: Arial, sans-serif;
+    }
+    form textarea {
+      min-height: 100px;
+    }
+    form button {
+      background-color: hsl(204, 91%, 53%);
+      color: #fff;
+      padding: 12px 25px;
+      border: none;
+      border-radius: 8px;
+      font-size: 1em;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    form button:hover {
+      background-color: hsl(204, 91%, 43%);
+    }
+    footer {
+      margin-top: 40px;
+      text-align: center;
+      font-size: 0.8em;
+      color: #666;
+    }
+    @media screen and (max-width: 768px) {
+      main {
+        width: 90%;
+        margin-left: 5%;
+        padding: 20px 25px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="heading">
+    <h1>Ask a Question</h1>
+  </header>
+
+  <main>
+    <section>
+      <h2>Have a question about our car rental services?</h2>
+      <form id="questionForm">
+        <label for="name">Your Name</label>
+        <input type="text" id="name" name="name" placeholder="Enter your full name" required />
+
+        <label for="email">Email Address</label>
+        <input type="email" id="email" name="email" placeholder="Enter your email" required />
+
+        <label for="subject">Subject</label>
+        <input type="text" id="subject" name="subject" placeholder="Subject of your question" required />
+
+        <label for="message">Your Question</label>
+        <textarea id="message" name="message" placeholder="Write your question here..." required></textarea>
+
+        <button type="submit">Submit Question</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2025 Vehigo Car Rentals. All rights reserved.
+  </footer>
+</body>
+</html>

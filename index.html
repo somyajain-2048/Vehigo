@@ -14,13 +14,7 @@
     <!-- 
     - favicon
   -->
-    <link rel="stylesheet" href="assets/css/dark.css" />
-
-    <link
-      rel="shortcut icon"
-      href="./public/favicon.svg"
-      type="image/svg+xml"
-    />
+    <link rel="shortcut icon" href="./public/favicon.svg" type="image/svg+xml" />
 
     <!-- 
     - custom css link
@@ -36,7 +30,6 @@
       href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600&family=Open+Sans&display=swap"
       rel="stylesheet"
     />
-    <!-- <script src="./assets/js/dark.js"></script> -->
   </head>
 
   <body>
@@ -78,16 +71,12 @@
               >
             </li>
 
-            <li>
-              <a href="rentcar.html" class="navbar-link" data-nav-link
-                >Rent Your Car</a
-              >
+             <li>
+              <a href="rentcar.html" class="navbar-link" data-nav-link>Rent Your Car</a>
             </li>
 
             <!-- 🌙 Dark Mode Toggle Button -->
-            <li>
-              <button id="dark-mode-toggle" class="dark-toggle">🌙</button>
-            </li>
+            <!-- Removed dark mode toggle button -->
           </ul>
         </nav>
 
@@ -96,8 +85,28 @@
             <a href="tel:1800100100" class="contact-link">1800-100-100</a>
 
             <span class="contact-time">Mon - Sat: 9:00 am - 6:00 pm</span>
-          </div> 
+          </div>
+          <!-- Theme Toggle Switch with SVG icons -->
+          <label class="theme-switch" for="theme-toggle">
+            <input type="checkbox" id="theme-toggle" />
+            <span class="slider">
+              <span class="icon sun" aria-label="Light mode">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="orange" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+              </span>
+              <span class="icon moon" aria-label="Dark mode">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#f5f5f5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z"/></svg>
+              </span>
+            </span>
+          </label>
+          <li>
+            <a href="./src/pages/about.html" class="navbar-link" data-nav-link
+              >About us</a
+            >
+          </li>
 
+          <li>
+            <a href="#blog" class="navbar-link" data-nav-link>Blog</a>
+          </li>
           <!-- home.html -->
           <button id="logoutBtn" style="display: none">Logout</button>
 
@@ -141,32 +150,7 @@
               <p class="hero-text">Live in Bhopal, Indore and Ujjain!</p>
             </div>
 
-            <div class="hero-banner">
-              <div id="slideshow" style="width: 100%; height: 100%; position: relative; overflow: hidden;">
-
-  <img src="./assets/images/creta.jpeg" style="width: 100%; height: 100%; position: absolute; transition: opacity 1s; opacity: 1;">
-  <img src="./assets/images/innova.jpeg" style="width: 100%; height: 100%; position: absolute; transition: opacity 1s; opacity: 0;">
-  <img src="./assets/images/fortuner.jpg" style="width: 100%; height: 100%; position: absolute; transition: opacity 1s; opacity: 0;">
-  <img src="./assets/images/nexon.jpg" style="width: 100%; height: 100%; position: absolute; transition: opacity 1s; opacity: 0;">
-  <img src="./assets/images/maruti alto.jpg" style="width: 100%; height: 100%; position: absolute; transition: opacity 1s; opacity: 0;">
-  <img src="./assets/images/mahindra  scorpio.jpg" style="width: 100%; height: 100%; position: absolute; transition: opacity 1s; opacity: 0;">
-  <img src="./assets/images/swift desire.jpg" style="width: 100%; height: 100%; position: absolute; transition: opacity 1s; opacity: 0;">
-  <img src="./assets/images/alto.jpeg" style="width: 100%; height: 100%; position: absolute; transition: opacity 1s; opacity: 0;">
-
-</div>
-
-<script>
-  const images = document.querySelectorAll("#slideshow img");
-  let current = 0;
-
-  setInterval(() => {
-    images[current].style.opacity = 0; // hide current
-    current = (current + 1) % images.length;
-    images[current].style.opacity = 1; // show next
-  }, 3000); // change image every 3 seconds
-</script>
-
-            </div>
+            <div class="hero-banner"></div>
 
             <form action="" class="hero-form">
               <div class="input-wrapper">
@@ -1089,26 +1073,28 @@
             </li>
 
             <li>
-              <a href="src/pages/Askaques.html" class="footer-link"
-                >Ask a question</a
-              >
+              <a href="src/pages/Askaques.html" class="footer-link">Ask a question</a>
             </li>
             <li>
-              <a href="privacypolicy.html" class="footer-link"
-                >Privacy policy</a
-              >
+              <a href="privacypolicy.html" class="footer-link">Privacy policy</a>
             </li>
 
             <li>
-              <a href="src/pages/tandc.html" class="footer-link"
-                >Terms & conditions</a
-              >
+              <a href="src/pages/tandc.html" class="footer-link">Terms & conditions</a>
             </li>
           </ul>
-           <ul class="footer-list social-list">
-            <li>
-              <p class="social-title">Social</p>
-            </li>
+
+          <!-- <ul class="footer-list">
+
+          <li>
+            <p class="footer-list-title"> </p>
+          </li>
+
+        </ul> -->
+        </div>
+
+        <div class="footer-bottom">
+          <ul class="social-list">
             <li>
               <a href="#" class="social-link">
                 <ion-icon name="logo-facebook"></ion-icon>
@@ -1116,7 +1102,7 @@
             </li>
 
             <li>
-              <a href="#" class="social-link ">
+              <a href="#" class="social-link">
                 <ion-icon name="logo-instagram"></ion-icon>
               </a>
             </li>
@@ -1140,16 +1126,6 @@
             </li>
           </ul>
 
-          <!-- <ul class="footer-list">
-
-          <li>
-            <p class="footer-list-title"> </p>
-          </li>
-
-        </ul> -->
-        </div>
-
-        <div class="footer-bottom">
           <p class="copyright">
             &copy; 2023 <a href="./ContactUs.html">VehiGo</a> Contact us through
           </p>
@@ -1161,22 +1137,7 @@
     - custom js link
   -->
     <script src="./assets/js/script.js"></script>
-    <script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const toggleBtn = document.getElementById('dark-mode-toggle');
-
-    toggleBtn.addEventListener('click', () => {
-      document.body.classList.toggle('dark-mode');
-
-      // Change icon
-      if (document.body.classList.contains('dark-mode')) {
-        toggleBtn.textContent = '☀️'; // Light mode icon
-      } else {
-        toggleBtn.textContent = '🌙'; // Dark mode icon
-      }
-    });
-  });
-</script>
+    <!-- Removed dark mode script -->
 
 
     <!-- 
@@ -1193,9 +1154,9 @@
     ></script>
 
     <!-- Back to Top Button -->
-    <a href="#" class="back-to-top ">
-      <!-- <ion-icon name="chevron-up-outline"></ion-icon> -->
-      <span class="mybtn">Back to Top</span>
+    <a href="#" class="back-to-top">
+      <ion-icon name="chevron-up-outline"></ion-icon>
+      <span>Back to Top</span>
     </a>
   </body>
 </html>

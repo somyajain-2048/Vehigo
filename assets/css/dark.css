@@ -1,0 +1,39 @@
+:root {
+  --bg-color: #ffffff;
+  --text-color: #000000;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: all 0.3s ease;
+}
+
+body.dark-mode {
+  --bg-color: #31303045;
+  --text-color: #ffffff;
+}
+
+.dark-toggle {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+body.dark-mode .year{
+    color: black;
+}
+body.dark-mode .card-title{
+    color: #000000;
+}
+
+body.dark-mode .contact-link{
+    color: white;
+}
+
+.dark-toggle:hover {
+  font-size: 1.8rem; /* ✅ Correct hover effect */
+}

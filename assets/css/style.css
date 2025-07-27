@@ -161,6 +161,17 @@ body {
 
 
 
+/* Removed dark mode related CSS */
+
+#theme-toggle {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
 
 
 /*-----------------------------------*\
@@ -387,47 +398,7 @@ button, a { transition: var(--transition); }
   color: #e3ff00;
 }
 
-/* Dark Mode Styling */
-body.dark-mode {
-  background-color: #121212;
-  color: #ffffff;
-}
-body.dark-mode p,
-body.dark-mode h1,
-body.dark-mode h2,
-body.dark-mode h3,
-body.dark-mode a {
-  color: #f5f5f5;
-}
-
-body.dark-mode a,
-body.dark-mode .navbar-link {
-  color: #ffffff;
-}
-body.dark-mode .footer-bottom,
-body.dark-mode .footer-bottom p,
-body.dark-mode .footer-bottom a,
-body.dark-mode .footer-bottom ion-icon {
-  color: #121212;
-}
-body.dark-mode .user-btn ion-icon {
-  color: #200f0f; /* Light color for dark mode */
-}
-
-
-
-body.dark-mode .navbar {
-  background-color: #1a1a1a;
-}
-
-body.dark-mode header,
-body.dark-mode footer {
-  background-color: #1e1e1e;
-  color: #ffffff;
-}
-
-
-
+/* Removed dark mode Styling */
 
 
 /*-----------------------------------*\
@@ -488,7 +459,7 @@ body.dark-mode footer {
   color: var(--independence);
   line-height: 1.8;
   margin-bottom: 30px;
-  /* add margin from top */
+  
   margin-top: 10px;
 }
 
@@ -1597,4 +1568,129 @@ body.dark-mode footer {
 
   .footer-list:last-of-type { width: 33.33%; }
 
+}
+
+/* Theme Toggle Switch Styles */
+.theme-switch {
+  display: inline-block;
+  height: 34px;
+  position: relative;
+  width: 60px;
+  margin-left: 20px;
+}
+.theme-switch input {
+  display: none;
+}
+.slider {
+  background-color: #ccc;
+  bottom: 0;
+  cursor: pointer;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transition: 0.4s;
+  border-radius: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 6px;
+}
+.slider:before {
+  background-color: white;
+  border-radius: 50%;
+  bottom: 4px;
+  content: "";
+  height: 26px;
+  left: 4px;
+  position: absolute;
+  transition: 0.4s;
+  width: 26px;
+}
+input:checked + .slider {
+  background-color: #2196F3;
+}
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
+.slider .icon {
+  z-index: 2;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.7;
+  transition: opacity 0.3s;
+}
+.slider .icon.sun {
+  color: orange;
+}
+.slider .icon.moon {
+  color: #f5f5f5;
+}
+input:not(:checked) + .slider .icon.sun {
+  opacity: 1;
+}
+input:checked + .slider .icon.moon {
+  opacity: 1;
+}
+input:checked + .slider .icon.sun {
+  opacity: 0.3;
+}
+input:not(:checked) + .slider .icon.moon {
+  opacity: 0.3;
+}
+
+/* Light/Dark Theme Variables */
+:root {
+  --bg-color: #fff;
+  --text-color: #111;
+  --card-bg: #fff;
+  --card-hover-bg: #f0f0f0;
+  --card-border: #e0e0e0;
+}
+body {
+  background: var(--bg-color);
+  color: var(--text-color);
+  transition: background 0.3s, color 0.3s;
+}
+body.dark-mode {
+  --bg-color: #181818;
+  --text-color: #f5f5f5;
+  --card-bg: #232323;
+  --card-hover-bg: #292929;
+  --card-border: #333;
+}
+body.dark-mode .navbar,
+body.dark-mode .header,
+body.dark-mode .header .container {
+  background: var(--alice-blue-1) !important;
+  color: inherit !important;
+  border-color: var(--white) !important;
+}
+body.dark-mode .navbar-link {
+  color: var(--independence) !important;
+}
+body.dark-mode .navbar-link:is(:hover, :focus),
+body.dark-mode .navbar-link.active {
+  background-color: var(--carolina-blue) !important;
+  color: white !important;
+}
+
+/* Card Styles (applies to all cards) */
+.featured-car-card,
+.get-start-card,
+.blog-card,
+.eachdiv {
+  background: var(--card-bg) !important;
+  border-color: var(--card-border) !important;
+  color: var(--text-color) !important;
+  transition: background 0.3s, color 0.3s, border-color 0.3s;
+}
+.featured-car-card:hover,
+.get-start-card:hover,
+.blog-card:hover,
+.eachdiv:hover {
+  background: var(--card-hover-bg) !important;
 }

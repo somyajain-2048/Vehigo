@@ -1,163 +1,232 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vehigo Car Leasing and Hosting Terms and Conditions</title>
-    <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vehigo Terms and Conditions</title>
 
-    <!-- 
-      - custom css link
-    -->
-    <link rel="stylesheet" href="../assets/styles/style.css">
-    <link rel="stylesheet" href="../assets/styles/Tandc.css">
-    <!-- 
-      - google font link
-    -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600&family=Open+Sans&display=swap"
-      rel="stylesheet">
-    
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600&family=Open+Sans&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Open Sans', sans-serif;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+
+    .container {
+      display: flex;
+      max-width: 1200px;
+      margin: auto;
+      padding: 2rem 1rem;
+      gap: 2rem;
+    }
+
+    .heading {
+      text-align: center;
+      padding: 3rem 1rem 1rem;
+      background-color: #004a99;
+      color: white;
+      font-family: 'Nunito', sans-serif;
+    }
+
+    .heading h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
+
+    /* Sidebar */
+    .sidebar {
+      flex: 0 0 260px;
+      background: white;
+      padding: 1.5rem;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+      position: sticky;
+      top: 100px;
+      height: fit-content;
+    }
+
+    .sidebar h2 {
+      font-size: 1.25rem;
+      margin-bottom: 1rem;
+      color: #004a99;
+    }
+
+    .sidebar ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .sidebar li {
+      margin-bottom: 0.8rem;
+    }
+
+    .sidebar a {
+      color: #004a99;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      display: block;
+    }
+
+    .sidebar a:hover {
+      color: #e0b100;
+    }
+
+    /* Main content */
+    main {
+      flex: 1;
+      background: white;
+      padding: 2rem;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    }
+
+    main h2 {
+      font-family: 'Nunito', sans-serif;
+      color: #004a99;
+      font-size: 1.6rem;
+      margin-top: 2rem;
+    }
+
+    main p {
+      font-size: 1rem;
+      line-height: 1.7;
+      margin-bottom: 1.2rem;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      margin-top: 4rem;
+      padding: 1.5rem;
+      background-color: #004a99;
+      color: white;
+      font-size: 0.9rem;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+      }
+      .sidebar {
+        position: relative;
+        top: auto;
+        margin-bottom: 2rem;
+        box-shadow: none;
+      }
+    }
+
+    /* Smooth Scroll */
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
 </head>
 <body>
-    <header class="header" data-header>
-        <div class="container">
-    
-          <div class="overlay" data-overlay></div>
-    
-          <a href="#" class="logo">
-            <img src="../assets/images/vehigologo.png" alt="VehiGo logo">
-          </a>
-    
-          <nav class="navbar" data-navbar>
-            <ul class="navbar-list">
-    
-              <li>
-                <a href="#home" class="navbar-link" data-nav-link>Home</a>
-              </li>
-    
-              <li>
-                <a href="#featured-car" class="navbar-link" data-nav-link>Explore cars</a>
-              </li>
-    
-              <li>
-                <a href="./about.html" class="navbar-link" data-nav-link>About us</a>
-              </li>
-    
-              <li>
-                <a href="#blog" class="navbar-link" data-nav-link>Blog</a>
-              </li>
-    
-            </ul>
-          </nav>
-    
-          <div class="header-actions">
-    
-            <div class="header-contact">
-              <a href="tel:1800100100" class="contact-link">1800-100-100</a>
-    
-              <span class="contact-time">Customer support availabe 24/7</span>
-            </div>
-    
-            <a href="#featured-car" class="btn" aria-labelledby="aria-label-txt">
-              <ion-icon name="car-outline"></ion-icon>
-    
-              <span id="aria-label-txt">Explore cars</span>
-            </a>
-    
-            <a href="./login.html" class="btn user-btn" aria-label="Profile">
-              <ion-icon name="person-outline"></ion-icon>
-            </a>
-    
-            <button class="nav-toggle-btn" data-nav-toggle-btn aria-label="Toggle Menu">
-              <span class="one"></span>
-              <span class="two"></span>
-              <span class="three"></span>
-            </button>
-    
-          </div>
-    
-        </div>
-      </header>
-    <div class="heading">
-        <h1>Vehigo Car Leasing and Hosting Terms and Conditions</h1>
-    </div>
+
+  <div class="heading">
+    <h1>Vehigo Car Leasing and Hosting Terms and Conditions</h1>
+  </div>
+
+  <div class="container">
+    <!-- Sidebar Navigation -->
+    <nav class="sidebar">
+      <h2>Contents</h2>
+      <ul>
+        <li><a href="#introduction">Introduction</a></li>
+        <li><a href="#eligibility">Eligibility</a></li>
+        <li><a href="#service-agreement">Service Agreement</a></li>
+        <li><a href="#account-registration">Account Registration</a></li>
+        <li><a href="#service-fees">Service Fees</a></li>
+        <li><a href="#cancellation">Cancellation & Refunds</a></li>
+        <li><a href="#vehicle-use">Vehicle Use</a></li>
+        <li><a href="#insurance">Insurance</a></li>
+        <li><a href="#privacy">Privacy</a></li>
+        <li><a href="#termination">Termination</a></li>
+        <li><a href="#limitation">Limitation of Liability</a></li>
+        <li><a href="#governing-law">Governing Law</a></li>
+        <li><a href="#changes">Changes to Terms</a></li>
+      </ul>
+    </nav>
+
+    <!-- Main Terms Content -->
     <main>
-        <section>
-            <h2>Introduction</h2>
-            <p>Vehigo offers car leasing and hosting services, allowing individuals and businesses to lease and host vehicles for various purposes.</p>
-        </section>
+      <section id="introduction">
+        <h2>Introduction</h2>
+        <p>Vehigo offers car leasing and hosting services for both individuals and businesses. These Terms govern the use of our services and your responsibilities as a user.</p>
+      </section>
 
-        <section>
-            <h2>Eligibility</h2>
-            <p>You must be at least 18 years old to use our services. If you are accessing our services on behalf of a business entity, you represent and warrant that you have the authority to bind the entity to these Terms.</p>
-        </section>
+      <section id="eligibility">
+        <h2>Eligibility</h2>
+        <p>You must be 18 years or older to use our platform. Business users must have proper authorization to represent their entity.</p>
+      </section>
 
-        <section>
-            <h2>Service Agreement</h2>
-            <p>By using our services, you agree to comply with all applicable laws and regulations.</p>
-            <p>You understand that leasing and hosting vehicles may involve additional terms and agreements specific to each vehicle, and you agree to abide by those terms.</p>
-        </section>
+      <section id="service-agreement">
+        <h2>Service Agreement</h2>
+        <p>By using Vehigo’s services, you agree to follow all applicable local, state, and national laws. Individual agreements for each vehicle may include additional terms.</p>
+      </section>
 
-        <section>
-            <h2>Account Registration</h2>
-            <p>You may be required to create an account to access certain features of our services. You are responsible for maintaining the confidentiality of your account information.</p>
-            <p>You are responsible for all activities that occur under your account.</p>
-        </section>
+      <section id="account-registration">
+        <h2>Account Registration</h2>
+        <p>Users must register an account to access certain services. You are responsible for safeguarding your login credentials and all activity under your account.</p>
+      </section>
 
-        <section>
-            <h2>Service Fees</h2>
-            <p>You agree to pay all fees associated with the leasing and hosting of vehicles as specified in your agreement with Vehigo.</p>
-        </section>
+      <section id="service-fees">
+        <h2>Service Fees</h2>
+        <p>All fees, charges, and payment schedules are outlined in your individual agreements. You agree to pay in full and on time as specified.</p>
+      </section>
 
-        <section>
-            <h2>Cancellation and Refunds</h2>
-            <p>Cancellation and refund policies will be outlined in your specific lease or hosting agreement.</p>
-        </section>
+      <section id="cancellation">
+        <h2>Cancellation and Refunds</h2>
+        <p>Cancellation terms and refund eligibility are governed by the terms in your leasing or hosting agreement. Please review them carefully.</p>
+      </section>
 
-        <section>
-            <h2>Vehicle Use</h2>
-            <p>You agree to use the leased or hosted vehicle in accordance with all applicable laws, including traffic laws and safety regulations.</p>
-            <p>You are responsible for any damage to the vehicle during the lease or hosting period, except for normal wear and tear.</p>
-        </section>
+      <section id="vehicle-use">
+        <h2>Vehicle Use</h2>
+        <p>Vehicles must be used lawfully and safely. You are liable for any damage incurred during your lease/hosting period, excluding normal wear and tear.</p>
+      </section>
 
-        <section>
-            <h2>Insurance</h2>
-            <p>You must maintain appropriate insurance coverage as required by law for any vehicle you lease or host through Vehigo.</p>
-        </section>
+      <section id="insurance">
+        <h2>Insurance</h2>
+        <p>All users are required to maintain legally mandated vehicle insurance. Proof of valid coverage may be requested at any time.</p>
+      </section>
 
-        <section>
-            <h2>Privacy</h2>
-            <p>Vehigo may collect and use your personal information in accordance with our Privacy Policy.</p>
-        </section>
+      <section id="privacy">
+        <h2>Privacy</h2>
+        <p>Vehigo handles your personal data according to its Privacy Policy. We do not sell your information and only use it to enhance our services.</p>
+      </section>
 
-        <section>
-            <h2>Termination</h2>
-            <p>Vehigo reserves the right to terminate or suspend your account and access to our services if you violate these Terms or engage in any unlawful or fraudulent activities.</p>
-        </section>
+      <section id="termination">
+        <h2>Termination</h2>
+        <p>Vehigo may suspend or terminate your access to the platform if you violate these Terms or engage in any unlawful or fraudulent activity.</p>
+      </section>
 
-        <section>
-            <h2>Limitation of Liability</h2>
-            <p>Vehigo shall not be liable for any indirect, consequential, special, or punitive damages arising out of or related to the use of our services.</p>
-        </section>
+      <section id="limitation">
+        <h2>Limitation of Liability</h2>
+        <p>We are not liable for indirect, incidental, or consequential damages arising from your use of Vehigo’s services.</p>
+      </section>
 
-        <section>
-            <h2>Governing Law and Dispute Resolution</h2>
-            <p>These Terms are governed by the laws of India. Any disputes arising from or relating to these Terms shall be subject to the exclusive jurisdiction of the competent courts located in Madya Pradesh for resolution</p>
-        </section>
+      <section id="governing-law">
+        <h2>Governing Law</h2>
+        <p>These Terms are governed by the laws of India. Any disputes shall be resolved in the courts located in Madhya Pradesh.</p>
+      </section>
 
-        <section>
-            <h2>Changes to Terms</h2>
-            <p>Vehigo reserves the right to modify these Terms at any time. Updated Terms will be posted on our website, and your continued use of our services constitutes acceptance of the revised Terms.</p>
-        </section>
+      <section id="changes">
+        <h2>Changes to Terms</h2>
+        <p>Vehigo may modify these Terms from time to time. Updated versions will be posted on this page. Continued use indicates acceptance of changes.</p>
+      </section>
     </main>
+  </div>
 
-    <footer>
-        <p>Effective Date: January-20-2023 </p>
-        <p>If you have any questions or concerns regarding these Terms, please contact us at 1800-100-100.</p>
-    </footer>
+  <footer>
+    Effective Date: January 20, 2023 &nbsp; | &nbsp; Contact: 1800-100-100
+  </footer>
+
 </body>
-    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 </html>

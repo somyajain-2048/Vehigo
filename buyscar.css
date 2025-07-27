@@ -1,0 +1,154 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f5f8fc;
+  padding: 2rem;
+  color: #333;
+}
+
+.featured-section {
+  max-width: 1200px;
+  margin: auto;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.section-header h1 {
+  font-size: 2rem;
+  color: #333;
+}
+
+.view-more {
+  text-decoration: none;
+  color: #007bff;
+  font-weight: bold;
+}
+
+.car-cards {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.car-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  max-width: 340px;
+  width: 100%;
+  transition: transform 0.3s ease;
+}
+
+.car-card:hover {
+  transform: scale(1.03);
+}
+
+.car-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.car-info {
+  padding: 1rem;
+  position: relative;
+}
+
+.car-info h2 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.car-info p {
+  font-size: 0.95rem;
+  color: #555;
+  margin: 0.3rem 0;
+}
+
+.car-info i {
+  margin-right: 6px;
+  color: #007bff;
+}
+
+.car-year {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: #eaf4ff;
+  padding: 3px 10px;
+  border-radius: 15px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  color: #007bff;
+}
+
+.price {
+  font-size: 1.4rem;
+   font-weight: bold; 
+  color: #1e88e5;
+  margin-top: 1rem;
+}
+
+.price span {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  gap: 10px;
+}
+
+.rent-btn,
+.buy-btn {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 0.95rem;
+  transition: background 0.3s ease;
+}
+
+.rent-btn {
+  background: #1e88e5;
+  color: white;
+}
+
+.buy-btn {
+  background: #4caf50;
+  color: white;
+}
+
+.rent-btn:hover {
+  background: #1565c0;
+}
+
+.buy-btn:hover {
+  background: #388e3c;
+}
+
+@media (max-width: 768px) {
+  .car-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+
+

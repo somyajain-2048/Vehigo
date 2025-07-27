@@ -85,11 +85,11 @@
                 <header>Login</header>
                 <form action="" method="GET">
                     <div class="field input-field">
-                        <input id="email" type="email" placeholder="Email" class="input">
+                        <input id="email" name="login_email"  type="email" placeholder="Email" class="input" required >
                     </div>
 
                     <div class="field input-field">
-                        <input id="password" type="password" placeholder="Password" class="password">
+                        <input id="password" type="password" placeholder="Password" class="password" required>
                         <i class='bx bx-hide eye-icon'></i>
                     </div>
 
@@ -127,31 +127,31 @@
         <div class="form signup">
             <div class="form-content">
                 <header>Signup</header>
-                <form action="#">
+                <form id="signupForm" action="#">
 
                     <div class="field input-field">
-                        <input id="name" type="text" placeholder="Your Name" class="name">
+                        <input id="name" type="text" placeholder="Your Name" class="name" required>
                     </div>
                     
                     <div class="field input-field">
-                        <input id="signupEmail" type="email" placeholder="Email" class="email">
+                        <input id="signupEmail" type="email" placeholder="Email" class="email" required autocomplete="off">
                     </div>
 
                     <div class="field input-field">
-                        <input  id="signupPassword" type="password" placeholder="Create password" class="password">
+                        <input  id="signupPassword" type="password" placeholder="Create password" class="password" required>
                         <i class='bx bx-hide eye-icon'></i>
                     </div>
 
                     <div class="field input-field">
-                        <input id="phone_number" type="number" placeholder="Your Phone Number" class="ph-number">
+                        <input id="phone_number" type="number" placeholder="Your Phone Number" class="ph-number" required>
                     </div>
 
                     <div class="field input-field">
-                        <input id="address" type="text" placeholder="Your Address" class="address">
+                        <input id="address" type="text" placeholder="Your Address" class="address" required>
                     </div>
 
                     <div class="field button-field">
-                        <button>Signup</button>
+                        <button type="submit">Signup</button>
                     <div id="errorMessage"></div>
 
                     <div id="successMessage"></div>
@@ -198,6 +198,17 @@
 
     <!-- JavaScript -->
     <script src="../assets/js/login.js"></script>
+    <script>
+        const form = document.getElementById('signupForm');
+        form.addEventListener('submit', function (e) {
+            if (!form.checkValidity()) {
+                form.reportValidity();
+                e.preventDefault();
+                return;
+            }
+            e.preventDefault(); 
+        });
+    </script>
 </body>
 
 </html>

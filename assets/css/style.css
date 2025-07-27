@@ -25,10 +25,10 @@
   --alice-blue-2: hsl(216, 75%, 97%);
   --alice-blue-3: hsl(216, 38%, 95%);
   --alice-blue-4: hsl(217, 33%, 92%);
-  --independence: hsl(219, 21%, 39%);
+  --independence: hsl(219, 21%, 39%); /* Original independence color */
   --deep-cerise: hsl(329, 63%, 52%);
   --eerie-black: hsl(210, 11%, 15%);
-  --space-cadet: hsl(240, 22%, 25%);
+  --space-cadet: hsl(240, 22%, 25%); /* Used for headings, already quite dark */
   --blue-jeans: hsl(204, 80%, 63%);
   --slate-blue: hsl(262, 60%, 57%);
   --beau-blue: hsl(208, 86%, 92%);
@@ -36,7 +36,7 @@
   --mimi-pink: hsl(329, 63%, 90%);
   --red-salsa: hsl(0, 79%, 63%);
   --sapphire: hsl(211, 100%, 35%);
-  --manatee: hsl(219, 14%, 60%);
+  --manatee: hsl(219, 14%, 60%); /* Used for input labels, might need adjustment */
   --white: hsl(0, 0%, 100%);
 
   --gradient: linear-gradient(to top, var(--alice-blue-2), var(--alice-blue-3));
@@ -55,6 +55,9 @@
   --fs-5: 1.125rem;
   --fs-6: 0.875rem;
   --fs-7: 0.625rem;
+
+  /* NEW: Define a new font size variable for slightly larger nav links */
+  --fs-navbar-link: 1rem; /* 16px */
 
   --fw-400: 400;
   --fw-600: 600;
@@ -85,6 +88,13 @@
 
   --shadow-1: 3px 3px 9px hsla(240, 14%, 69%, 0.2);
   --shadow-2: 3px 3px 9px hsla(204, 92%, 59%, 0.3);
+
+  /* --- NEW CONTRAST COLORS --- */
+  --text-primary-dark: hsl(210, 11%, 15%); /* Very dark grey, closer to black */
+  --text-secondary-dark: hsl(219, 21%, 25%); /* Darker shade of independence */
+  --text-light-on-dark: hsl(0, 0%, 90%); /* Light grey for text on dark backgrounds */
+  /* --- END NEW CONTRAST COLORS --- */
+
 }
 
 /*-----------------------------------*\
@@ -138,15 +148,17 @@ ion-icon {
 
 html {
   font-family: var(--ff-open-sans);
-  color: var(--eerie-black);
+  color: var(--text-primary-dark); /* Changed global text color for better readability */
   font-size: 1rem;
   line-height: 1.5;
   scroll-behavior: smooth;
+  height: 100%; /* Ensure html has 100% height for vh to work consistently */
 }
 
 body {
   background: var(--alice-blue-1);
   overflow-x: hidden;
+  height: 100%; /* Ensure body has 100% height for vh to work consistently */
 }
 
 ::-webkit-scrollbar {
@@ -171,20 +183,10 @@ body {
   #REUSED STYLE
 \*-----------------------------------*/
 
-.container {
-  width: 100%;
-  padding-inline: 15px;
-}
-
-button,
-a {
-  transition: var(--transition);
-}
-
 .btn {
   position: relative;
   background: var(--background, var(--carolina-blue));
-  color: var(--color, var(--white));
+  color: var(--color, var(--white)); /* Buttons on blue background should have white text */
   min-width: var(--width, 40px);
   min-height: var(--height, 40px);
   padding: 5px;
@@ -227,7 +229,7 @@ a {
 .h1,
 .h2,
 .h3 {
-  color: var(--space-cadet);
+  color: var(--text-primary-dark); /* Headings should be very dark for contrast */
   font-family: var(--ff-nunito);
   line-height: 1.4;
 }
@@ -253,6 +255,28 @@ a {
 .w-100 {
   width: 100%;
 }
+
+
+/* --- BEGINNING OF .container adjustments for left alignment --- */
+.container {
+  width: 100%;
+  padding-inline: 15px; /* Default padding for all containers */
+  /* REMOVED margin-inline: auto and max-width from here and moved to media queries */
+  /* for a more intentional left alignment on larger screens */
+}
+
+/* Specific adjustments for header container only */
+.header .container {
+    padding-inline: 15px; /* Adjust padding for small screens */
+}
+
+/* --- END OF .container adjustments --- */
+
+
+button, a {
+  transition: var(--transition);
+}
+
 
 /*-----------------------------------*\
   #HEADER
@@ -281,6 +305,7 @@ a {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  /* Removed padding-inline from here as it's now in the generic .container above */
 }
 
 .header-actions {
@@ -368,9 +393,9 @@ a {
 }
 
 .navbar-link {
-  color: var(--independence);
+  color: var(--text-secondary-dark); /* Use a darker text color for navbar links */
   font-family: var(--ff-nunito);
-  font-size: var(--fs-6);
+  font-size: var(--fs-navbar-link); /* Using the new variable */
   padding-block: 5px;
   margin-bottom: 15px;
   transition: 0.3s ease;
@@ -380,7 +405,7 @@ a {
 }
 
 .navbar-link:is(:hover, :focus) {
-  color: white;
+  color: white; /* This contrast should be good on carolina-blue */
   background-color: var(--carolina-blue);
   padding-left: 8px;
   padding-right: 8px;
@@ -466,7 +491,6 @@ body.dark-mode footer {
   flex-direction: column;
   min-width: 20ch;
   overflow: hidden;
-  /* add margin from bottom */
   margin-bottom: 3rem;
 }
 .hero-title {
@@ -474,19 +498,16 @@ body.dark-mode footer {
   margin-bottom: 10px;
   cursor: pointer;
   -webkit-text-fill-color: transparent;
-  /* add linear gradient background in hero text */
   background: linear-gradient(50deg, var(--independence), var(--carolina-blue));
   -webkit-background-clip: text;
   overflow: hidden;
   white-space: nowrap;
   width: 0;
   border-right: 0.3rem solid var(--carolina-blue-1);
-  /* add animation in txt */
   animation: hideRevel 4s steps(14) 1s infinite,
     blink 0.6s infinite step-end alternate;
 }
 .first {
-  /* for smooth animation */
   max-width: 17ch;
 }
 
@@ -511,15 +532,14 @@ body.dark-mode footer {
 }
 
 .hero-text {
-  color: var(--independence);
+  color: var(--text-secondary-dark); /* Use a darker text color for hero text */
   line-height: 1.8;
   margin-bottom: 30px;
-  /* add margin from top */
   margin-top: 10px;
 }
 
 .hero-banner {
-  display: none;
+  display: none; /* Default for mobile, will be overridden by media queries */
 }
 
 .hero-form {
@@ -528,17 +548,13 @@ body.dark-mode footer {
   box-shadow: var(--shadow-1);
   border-radius: var(--radius-18);
   font-family: var(--ff-nunito);
-  /* --- ADJUSTMENTS START HERE --- */
-  padding: 25px; /* Increase overall padding */
-  display: grid; /* Already grid, but ensure it's here for consistency */
-  gap: 20px; /* Add spacing between inputs in mobile/default view */
-  /* --- ADJUSTMENTS END HERE --- */
+  padding: 25px;
+  display: grid;
+  gap: 20px;
 }
 
 .input-wrapper {
-  /* --- ADJUSTMENTS START HERE --- */
-  padding: 18px 25px; /* Increase padding around each input/select */
-  /* --- ADJUSTMENTS END HERE --- */
+  padding: 18px 25px;
 }
 
 .input-wrapper:not(:last-of-type) {
@@ -546,51 +562,63 @@ body.dark-mode footer {
 }
 
 .input-label {
-  color: var(--manatee);
+  color: var(--manatee); /* Keep original manatee, or adjust if needed */
   font-size: var(--fs-6);
-  /* --- ADJUSTMENTS START HERE --- */
-  margin-bottom: 12px; /* Slightly more space for label */
-  font-size: var(--fs-5); /* Make label text a bit larger */
-  /* --- ADJUSTMENTS END HERE --- */
+  margin-bottom: 12px;
+  font-size: var(--fs-5);
 }
 
 .input-field {
-  color: var(--space-cadet);
+  color: var(--text-primary-dark); /* Input field typed text should be very dark */
   outline: 2px solid transparent;
   outline-offset: 5px;
   border-radius: 4px;
   transition: var(--transition);
-  /* --- ADJUSTMENTS START HERE --- */
-  padding: 10px 0; /* Add vertical padding to the input fields themselves */
-  font-size: var(--fs-4); /* Make input/select text larger */
-  /* Ensure select elements also get this style */
-  appearance: none; /* Remove default dropdown arrow for custom styling */
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%236c757d'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E"); /* Custom dropdown arrow */
-  background-repeat: no-repeat;
-  background-position: right 10px center;
-  background-size: 20px;
-  padding-right: 35px; /* Make space for the custom arrow */
-  /* --- ADJUSTMENTS END HERE --- */
-}
-
-/* Add this to style the text inputs with a dropdown arrow */
-.hero-form #input-1,
-.hero-form #input-2 {
-  /* Inherit the custom background image from select elements */
+  padding: 10px 0;
+  font-size: var(--fs-4);
+  appearance: none;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%236c757d'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-position: right 10px center;
   background-size: 20px;
-  padding-right: 35px; /* Make space for the custom arrow */
+  padding-right: 35px;
 }
 
+.hero-form #input-1,
+.hero-form #input-2 {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%236c757d'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 20px;
+  padding-right: 35px;
+}
+
+.hero-form #input-1::placeholder {
+  color: var(--text-secondary-dark); /* Darken placeholder text for contrast */
+  opacity: 1;
+}
+
+.hero-form #input-2::placeholder {
+  color: var(--text-secondary-dark); /* Darken placeholder text for contrast */
+  opacity: 1;
+}
+
+.hero-form #input-1 {
+  font-size: var(--fs-4);
+  color: var(--text-primary-dark); /* Ensure input text is dark */
+}
+
+.hero-form #input-2 {
+  font-size: var(--fs-4);
+  color: var(--text-primary-dark); /* Ensure input text is dark */
+}
 
 .input-field:focus {
   outline-color: var(--carolina-blue);
 }
 
 .input-field::placeholder {
-  color: var(--independence);
+  color: var(--independence); /* Keep this as it's for default, then override above */
 }
 
 .hero-form .btn {
@@ -614,10 +642,10 @@ body.dark-mode footer {
 }
 
 .featured-car-link {
+  color: var(--text-secondary-dark); /* Adjust featured car link color */
   display: flex;
   align-items: center;
   gap: 5px;
-  color: var(--independence);
   font-size: var(--fs-6);
 }
 
@@ -723,7 +751,7 @@ body.dark-mode footer {
 }
 
 .featured-car-card .card-item-text {
-  color: var(--independence);
+  color: var(--text-secondary-dark); /* Adjust featured car item text color */
   font-size: var(--fs-6);
 }
 
@@ -736,9 +764,9 @@ body.dark-mode footer {
 }
 
 .featured-car-card .card-price {
+  color: var(--space-cadet);
   font-family: var(--ff-nunito);
   font-size: var(--fs-6);
-  color: var(--space-cadet);
 }
 
 .featured-car-card .card-price strong {
@@ -795,7 +823,7 @@ body.dark-mode footer {
 }
 
 .get-start-card .card-icon {
-  background: var(--icon-card-bg, var(--columnia-blue));
+  background: var(--icon-card-bg, var(--columbia-blue));
   color: var(--icon-card-color, var(--carolina-blue));
   height: 50px;
   width: 50px;
@@ -803,11 +831,6 @@ body.dark-mode footer {
   place-items: center;
   border-radius: var(--radius-14);
   margin-bottom: 20px;
-}
-
-.get-start-card .card-icon ion-icon {
-  font-size: 26px;
-  --ionicon-stroke-width: 45px;
 }
 
 .get-start-card .icon-1 {
@@ -831,14 +854,14 @@ body.dark-mode footer {
 }
 
 .get-start-card .card-title {
-  color: var(--space-cadet);
+  color: var(--text-primary-dark); /* Card titles should be very dark */
   font-family: var(--ff-nunito);
   font-weight: var(--fw-400);
   margin-bottom: 15px;
 }
 
 .get-start-card .card-text {
-  color: var(--independence);
+  color: var(--text-secondary-dark); /* Adjust get-start card text color */
 }
 
 .get-start-card .card-link {
@@ -1322,9 +1345,10 @@ body.dark-mode footer {
    */
 
   .container {
-    max-width: 540px;
-    margin-inline: auto;
+    /* Removed max-width and margin-inline: auto to allow it to be flexible */
+    padding-inline: 30px; /* Increase padding for larger screens */
   }
+
 
   /**
    * HEADER
@@ -1340,6 +1364,7 @@ body.dark-mode footer {
     display: none;
   }
 }
+
 
 /**
  * responsive for large than 768px screen
@@ -1363,9 +1388,10 @@ body.dark-mode footer {
    */
 
   .container {
-    max-width: 720px;
-    margin-inline: auto;
+    /* Removed max-width and margin-inline: auto */
+    padding-inline: 50px; /* Adjust padding for larger screens */
   }
+
 
   /**
    * HEADER
@@ -1405,42 +1431,40 @@ body.dark-mode footer {
     min-height: 85vh;
     display: flex;
     align-items: center;
-    /* This padding-left pushes the hero content and form to the right */
-    /* Remove or adjust if you want the form to be fixed left */
-    /* padding-left: 40px;  */
+    /* Hero section's padding-left is handled by its child .container */
     z-index: 1;
   }
 
+  .hero-content {
+      /* Keep hero-content aligned with the left edge of its container */
+      width: 100%; /* Ensure it takes full width of its container */
+  }
+
   .hero-form {
-    /* --- ADJUSTMENTS START HERE --- */
-    /* Define a 2-column layout for the first row, then push subsequent elements to new rows */
     grid-template-columns: 1fr 1fr;
-    max-width: 600px; /* Adjusted to be narrower as per image */
-    /* To fix it left, remove auto margins or set margin-left to 0 */
-    margin-inline: 0; /* Remove auto margins to allow fixed positioning or left alignment */
-    /* Explicitly align to the left within its parent context */
-    justify-self: start; /* Aligns the grid item to the start of the grid area */
-    padding: 30px; /* Consistent padding */
-    gap: 30px; /* Consistent gap */
-    /* --- ADJUSTMENTS END HERE --- */
+    max-width: 600px; /* Keep it narrower as per image */
+    margin-inline: 0; /* Align left */
+    justify-self: start;
+    padding: 30px;
+    gap: 30px;
   }
 
   .input-wrapper:not(:last-of-type) {
-    border-bottom: none; /* No bottom border for two-column layout */
+    border-bottom: none;
     border-right: 1px solid hsla(0, 0%, 0%, 0.08);
   }
 
   /* Specific border adjustments for 768px breakpoint */
   .hero-form .input-wrapper:nth-child(2) {
-    border-right: none; /* No right border on second column item */
+    border-right: none;
   }
 
   .hero-form .input-wrapper:nth-child(even) {
-      border-right: none; /* Ensure even numbered inputs don't have right border */
+      border-right: none;
   }
 
   .hero-form .input-wrapper:nth-child(odd) {
-      border-right: 1px solid hsla(0, 0%, 0%, 0.08); /* Ensure odd numbered inputs have right border */
+      border-right: 1px solid hsla(0, 0%, 0%, 0.08);
   }
 
 
@@ -1458,9 +1482,9 @@ body.dark-mode footer {
 
   /* Force 'Fuel Type' to start on a new row and span both columns */
   .hero-form .input-wrapper:nth-child(5) {
-    grid-column: 1 / -1; /* Make it span all columns */
-    border-right: none; /* No right border when spanning full width */
-    border-bottom: none; /* No bottom border as it's the last input row before the button */
+    grid-column: 1 / -1;
+    border-right: none;
+    border-bottom: none;
   }
 
   .input-label {
@@ -1483,10 +1507,9 @@ body.dark-mode footer {
     z-index: -1;
   }
   .hero-form .btn {
-    /* Now the button should also span all columns to be below the fuel type */
     grid-column: 1 / -1;
-    width: 100%; /* Make it full width of the grid */
-    margin: 20px auto; /* Center the button horizontally */
+    width: 100%;
+    margin: 20px auto;
     text-transform: uppercase;
   }
 
@@ -1544,6 +1567,7 @@ body.dark-mode footer {
   }
 }
 
+
 /**
  * responsive for large than 992px screen
  */
@@ -1554,12 +1578,17 @@ body.dark-mode footer {
    */
 
   .container {
-    max-width: 960px;
-    margin-inline: auto;
+    /* Removed max-width and margin-inline: auto */
+    padding-inline: 80px; /* Adjust padding for larger screens */
   }
 
+
+  /**
+   * HEADER
+   */
+
   .header .container {
-    max-width: 960px;
+    /* Removed max-width and margin-inline: auto */
   }
 
   /**
@@ -1571,22 +1600,19 @@ body.dark-mode footer {
   }
 
   .hero-form {
-    /* --- ADJUSTMENTS START HERE --- */
-    /* Consistent 2-column layout */
     grid-template-columns: 1fr 1fr;
     max-width: 600px; /* Keep it narrower */
     margin-inline: 0; /* Align left */
     justify-self: start;
     padding: 35px;
-    gap: 30px; /* Reduced gap for a more compact look as in image */
-    /* --- ADJUSTMENTS END HERE --- */
+    gap: 30px;
   }
 
   /* Specific styling for input wrappers within hero-form */
   .hero-form .input-wrapper {
     padding: 0 20px;
     border-right: 1px solid hsla(0, 0%, 0%, 0.08);
-    border-bottom: 1px solid hsla(0, 0%, 0%, 0.08); /* All inputs get bottom border for clarity */
+    border-bottom: 1px solid hsla(0, 0%, 0%, 0.08);
   }
 
   /* Remove border for elements at the end of a row */
@@ -1595,15 +1621,21 @@ body.dark-mode footer {
     border-right: none;
   }
 
+  /* Remove bottom border from the last input-wrapper in the first row (Car Type) */
+  .hero-form .input-wrapper:nth-child(3),
+  .hero-form .input-wrapper:nth-child(4) {
+      border-bottom: 1px solid hsla(0, 0%, 0%, 0.08); /* Ensure consistent bottom border for the pair */
+  }
+
+
   /* Force 'Fuel Type' to start on a new row and span both columns */
   .hero-form .input-wrapper:nth-child(5) {
-    grid-column: 1 / -1; /* Span across both columns */
-    border-right: none; /* No right border when spanning full width */
-    border-bottom: none; /* No bottom border as it's the last input row */
+    grid-column: 1 / -1;
+    border-right: none;
+    border-bottom: none;
   }
 
   .hero-form .btn {
-    /* Make the button span all columns */
     grid-column: 1 / -1;
     min-height: 60px;
     font-size: var(--fs-4);
@@ -1637,6 +1669,7 @@ body.dark-mode footer {
   }
 }
 
+
 /**
  * responsive for large than 1200px screen
  */
@@ -1660,13 +1693,10 @@ body.dark-mode footer {
    */
 
   .container {
-    max-width: 1200px;
-    margin-inline: auto;
+    /* Removed max-width and margin-inline: auto */
+    padding-inline: 120px; /* Adjust padding for very large screens */
   }
 
-  .header .container {
-    max-width: 1200px;
-  }
 
   /**
    * HEADER
@@ -1692,6 +1722,11 @@ body.dark-mode footer {
     gap: 50px;
   }
 
+  .header .container {
+    /* Removed specific max-width and margin for full width layout */
+  }
+
+
   /**
    * HERO
    */
@@ -1707,15 +1742,12 @@ body.dark-mode footer {
   }
 
   .hero-form {
-    /* --- ADJUSTMENTS START HERE --- */
-    /* 2 columns per row, with Fuel Type and Search spanning full width */
     grid-template-columns: 1fr 1fr;
     max-width: 600px; /* Keep it narrower to match the reference image */
     margin-inline: 0; /* Align left */
     justify-self: start;
     padding: 40px;
-    gap: 30px; /* Keep consistent gap */
-    /* --- ADJUSTMENTS END HERE --- */
+    gap: 30px;
   }
 
   .hero-form .input-wrapper {
@@ -1738,13 +1770,12 @@ body.dark-mode footer {
 
   /* Force 'Fuel Type' to start on a new row and span all columns */
   .hero-form .input-wrapper:nth-child(5) {
-    grid-column: 1 / -1; /* Span across all available columns */
+    grid-column: 1 / -1;
     border-right: none;
-    border-bottom: none; /* No bottom border as it's the last input row */
+    border-bottom: none;
   }
 
   .hero-form .btn {
-    /* Make the button span all columns */
     grid-column: 1 / -1;
     min-height: 65px;
     font-size: var(--fs-3);
@@ -1800,9 +1831,8 @@ body.dark-mode footer {
 }
 
 /* Additional style for select elements to ensure consistent height and look */
-/* This is important as select elements can be tricky to style consistently */
 .input-field select {
-  height: auto; /* Override any browser default fixed height */
-  line-height: 1.5; /* Ensure text sits well */
-  padding: 10px 35px 10px 0; /* Adjust padding for consistent input height and arrow space */
+  height: auto;
+  line-height: 1.5;
+  padding: 10px 35px 10px 0;
 }

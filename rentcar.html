@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Add Your Car for Rent - Vehigo</title>
+  <link rel="stylesheet" href="./styles/rentcar.css">
+</head>
+<body>
+  <h1>🚗 Add Your Car for Rent</h1>
+  <hr
+  <div id="message" class="message">
+    <h3><b>!! BEFORE ADDING CAR PLEASE SEE AVAIBILITY OF OUR OFFLINE CENTERS</b></h3>
+    <button class="btn" onclick="window.location.href='offline.html'">Check Availability</button>
+  </div>
+<hr>
+  <form id="carForm">
+    <input type="text" id="carName" placeholder="Car Make & Model" required />
+    <input type="text" id="year" placeholder="Year of Registration" required />
+    <input type="text" id="price" placeholder="Rental Price per Day (₹)" required />
+    <input type="text" id="location" placeholder="Pickup Location" required />
+    <input type="url" id="imageUrl" placeholder="Image URL of Car" required />
+    <button type="submit">Add Car</button>
+  </form>
+
+  <hr>
+
+  <h2>Available Cars for Rent</h2>
+  <div id="carList" class="car-list"></div>
+
+    <hr>
+  <h2>BUY OR Sell </h2>
+  <p>Looking to buy or sell a car? Check out our dedicated pages:</p>
+  <p>Get great Deals lik never before only on Vehigo </p>
+
+  <div class="buy-sell">
+    <button class="btns" onclick="window.location.href='buy.html'">Buy a Car</button>
+    <button class="btns" onclick="window.location.href='sell.html'">Sell Your Car</button>
+  </div>
+
+
+
+  <script src="./scripts/rentcar.js"></script>
+</body>
+</html>

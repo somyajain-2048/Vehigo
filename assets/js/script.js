@@ -22,6 +22,40 @@ for (let i = 0; i < navbarLinks.length; i++) {
   navbarLinks[i].addEventListener("click", navToggleFunc);
 }
 
+// LOGIN ↔ SIGNUP form toggle logic
+document.addEventListener("DOMContentLoaded", function () {
+  const wrapper = document.querySelector(".forms");
+  const signupLink = document.querySelector(".signup-link");
+  const loginLink = document.querySelector(".login-link");
+
+  if (signupLink && loginLink && wrapper) {
+    signupLink.addEventListener("click", (e) => {
+      e.preventDefault();
+      wrapper.classList.remove("show-login");
+      wrapper.classList.add("show-signup");
+    });
+
+    loginLink.addEventListener("click", (e) => {
+      e.preventDefault();
+      wrapper.classList.remove("show-signup");
+      wrapper.classList.add("show-login");
+    });
+  }
+});
+document.querySelectorAll(".eye-icon").forEach(eyeIcon => {
+  eyeIcon.addEventListener("click", () => {
+    // Find the password input next to the icon
+    const passwordInput = eyeIcon.previousElementSibling; // Assuming input is right before the icon
+
+    if (passwordInput.type === "password") {
+      passwordInput.type = "text";
+      eyeIcon.classList.replace("bx-hide", "bx-show");
+    } else {
+      passwordInput.type = "password";
+      eyeIcon.classList.replace("bx-show", "bx-hide");
+    }
+  });
+});
 
 
 /**
@@ -40,21 +74,23 @@ window.addEventListener("scroll", function () {
  */
 
 document.addEventListener("DOMContentLoaded", function () {
-  const blogList = document.querySelector(".blog-list");
-  const leftArrow = document.querySelector(".left-arrow");
-  const rightArrow = document.querySelector(".right-arrow");
+    const blogList = document.querySelector(".blog-list");
+    const leftArrow = document.querySelector(".left-arrow");
+    const rightArrow = document.querySelector(".right-arrow");
 
-  const scrollAmount = 340; 
+    const scrollAmount = 340; 
 
-  rightArrow?.addEventListener("click", () => {
-    blogList?.scrollBy({ left: scrollAmount, behavior: "smooth" });
-  });
+    rightArrow.addEventListener("click", () => {
+      blogList.scrollBy({ left: scrollAmount, behavior: "smooth" });
+    });
 
-  leftArrow?.addEventListener("click", () => {
-    blogList?.scrollBy({ left: -scrollAmount, behavior: "smooth" });
+    leftArrow.addEventListener("click", () => {
+      blogList.scrollBy({ left: -scrollAmount, behavior: "smooth" });
+    });
   });
 
   // Back to Top Button
+document.addEventListener('DOMContentLoaded', function() {
   const backToTopButton = document.querySelector('.back-to-top');
   let isScrolling;
   
@@ -62,22 +98,22 @@ document.addEventListener("DOMContentLoaded", function () {
     window.clearTimeout(isScrolling);
     
     if (window.pageYOffset > 300) {
-      backToTopButton?.classList.add('show');
+      backToTopButton.classList.add('show');
     } else {
-      backToTopButton?.classList.remove('show');
+      backToTopButton.classList.remove('show');
     }
     
     isScrolling = setTimeout(function() {
       if (window.pageYOffset > 300) {
-        backToTopButton?.classList.add('pulse-effect');
+        backToTopButton.classList.add('pulse-effect');
         setTimeout(() => {
-          backToTopButton?.classList.remove('pulse-effect');
+          backToTopButton.classList.remove('pulse-effect');
         }, 1000);
       }
     }, 100);
   });
   
-  backToTopButton?.addEventListener('click', function(e) {
+  backToTopButton.addEventListener('click', function(e) {
     e.preventDefault();
     this.classList.add('clicked');
     setTimeout(() => {
@@ -89,22 +125,31 @@ document.addEventListener("DOMContentLoaded", function () {
       behavior: 'smooth'
     });
   });
+});
 
-  // 🌙 Dark Mode Toggle Logic
-  const toggleBtn = document.getElementById('dark-mode-toggle');
-  const body = document.body;
-
-  if (toggleBtn) {
+document.addEventListener('DOMContentLoaded', function () {
+  const themeToggle = document.getElementById('theme-toggle');
+  if (themeToggle) {
+    // Load theme from localStorage
     if (localStorage.getItem('theme') === 'dark') {
-      body.classList.add('dark-mode');
+      document.body.classList.add('dark-mode');
+      themeToggle.checked = true;
     }
-
-    toggleBtn.addEventListener('click', () => {
-      body.classList.toggle('dark-mode');
-      localStorage.setItem(
-        'theme',
-        body.classList.contains('dark-mode') ? 'dark' : 'light'
-      );
+    themeToggle.addEventListener('change', function () {
+      if (this.checked) {
+        document.body.classList.add('dark-mode');
+        localStorage.setItem('theme', 'dark');
+      } else {
+        document.body.classList.remove('dark-mode');
+        localStorage.setItem('theme', 'light');
+      }
     });
+  } else {
+    // Apply theme if toggle is not present (for pages without header)
+    if (localStorage.getItem('theme') === 'dark') {
+      document.body.classList.add('dark-mode');
+    } else {
+      document.body.classList.remove('dark-mode');
+    }
   }
 });

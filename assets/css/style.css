@@ -175,8 +175,21 @@ body {
   border: 2px solid var(--white);
 }
 
-::-webkit-scrollbar-thumb:hover {
-  background: hsla(219, 14%, 60%, 0.5);
+
+::-webkit-scrollbar-thumb:hover { background: hsla(219, 14%, 60%, 0.5); }
+
+
+
+/* Removed dark mode related CSS */
+
+#theme-toggle {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
 }
 
 /*-----------------------------------*\
@@ -441,6 +454,7 @@ button, a {
   color: #e3ff00;
 }
 
+
 /* Dark Mode Styling */
 body.dark-mode {
   background-color: #121212;
@@ -477,6 +491,7 @@ body.dark-mode footer {
   background-color: #1e1e1e;
   color: #ffffff;
 }
+
 
 /*-----------------------------------*\
   #HERO
@@ -1835,4 +1850,5 @@ body.dark-mode footer {
   height: auto;
   line-height: 1.5;
   padding: 10px 35px 10px 0;
+
 }

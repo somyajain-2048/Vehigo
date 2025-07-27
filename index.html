@@ -11,9 +11,17 @@
 
     <title>Vehigo - Rent your favourite car</title>
 
-    <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml" />
 
-    <link rel="stylesheet" href="./assets/css/style.css" />
+    <!-- 
+    - favicon
+  -->
+    <link rel="shortcut icon" href="./public/favicon.svg" type="image/svg+xml" />
+
+    <!-- 
+    - custom css link
+  -->
+    <link rel="stylesheet" href="assets/css/style.css" />
+
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -53,8 +61,17 @@
             </li>
 
             <li>
-              <button id="dark-mode-toggle" class="dark-toggle">🌙</button>
+              <a href="offline.html" class="navbar-link" data-nav-link
+                >Offline Centers</a
+              >
             </li>
+
+             <li>
+              <a href="rentcar.html" class="navbar-link" data-nav-link>Rent Your Car</a>
+            </li>
+
+            <!-- 🌙 Dark Mode Toggle Button -->
+            <!-- Removed dark mode toggle button -->
           </ul>
         </nav>
 
@@ -64,6 +81,18 @@
 
             <span class="contact-time">Mon - Sat: 9:00 am - 6:00 pm</span>
           </div>
+          <!-- Theme Toggle Switch with SVG icons -->
+          <label class="theme-switch" for="theme-toggle">
+            <input type="checkbox" id="theme-toggle" />
+            <span class="slider">
+              <span class="icon sun" aria-label="Light mode">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="orange" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+              </span>
+              <span class="icon moon" aria-label="Dark mode">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#f5f5f5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z"/></svg>
+              </span>
+            </span>
+          </label>
           <li>
             <a href="./src/pages/about.html" class="navbar-link" data-nav-link
               >About us</a
@@ -73,7 +102,10 @@
           <li>
             <a href="#blog" class="navbar-link" data-nav-link>Blog</a>
           </li>
-          <button id="logoutBtn" style="display: none;">Logout</button>
+
+          <!-- home.html -->
+          <button id="logoutBtn" style="display: none">Logout</button>
+
 
           <a href="#featured-car" class="btn" aria-labelledby="aria-label-txt">
             <ion-icon name="car-outline"></ion-icon>
@@ -100,7 +132,13 @@
 
     <main>
       <article>
-        <section class="hero section" id="home" style="padding-left: 40px;">
+
+        <!-- 
+        -!= #HERO
+      -->
+
+        <section class="hero section" id="home" style="padding-left: 40px">
+
           <div class="container">
             <div class="hero-content">
               <div class="curr-hero">
@@ -754,6 +792,12 @@
           </div>
         </section>
 
+
+        <!-- 
+        - #BLOG
+      -->
+
+
         <section class="section blog" id="blog">
           <div class="container">
             <div class="blog-wrapper">
@@ -762,6 +806,9 @@
               <button class="left-arrow">&#10094;</button>
 
               <ul class="blog-list has-scrollbar">
+
+                <!-- BLOG 1 -->
+
                 <li>
                   <div class="blog-card">
                     <figure class="card-banner">
@@ -790,17 +837,27 @@
                           <time datetime="2022-01-14">January 14, 2022</time>
                         </div>
                         <div class="comments">
+
                           <ion-icon name="chatbubble-ellipses-outline"></ion-icon>
+
                           <data value="114">114</data>
                         </div>
                       </div>
                       <div class="card-author">
-                        <img src="./assets/images/author.jpg" class="author-img" />
+
+                        <img
+                          src="./assets/images/author.jpg"
+                          class="author-img"
+                        />
+
                         <div class="author-name">Benialla Dsouza</div>
                       </div>
                     </div>
                   </div>
                 </li>
+
+
+                <!-- BLOG 2 -->
 
                 <li>
                   <div class="blog-card">
@@ -820,7 +877,9 @@
 
                     <div class="card-content">
                       <h3 class="h3 card-title">
+
                         <a href="blogs/blog2.html">What cars are most vulnerable</a>
+
                       </h3>
                       <div class="card-meta">
                         <div class="publish-date">
@@ -828,17 +887,27 @@
                           <time datetime="2022-01-14">January 14, 2022</time>
                         </div>
                         <div class="comments">
-                          <ion-icon name="chatbubble-ellipses-outline"></ion-icon>
+
+                          <ion-icon
+                            name="chatbubble-ellipses-outline"
+                          ></ion-icon>
+
                           <data value="114">114</data>
                         </div>
                       </div>
                       <div class="card-author">
+
                         <img src="./assets/images/author.jpg" class="author-img" />
+
                         <div class="author-name">Siddharth Menon</div>
                       </div>
                     </div>
                   </div>
                 </li>
+
+
+
+                <!-- BLOG 3 -->
 
                 <li>
                   <div class="blog-card">
@@ -866,17 +935,27 @@
                           <time datetime="2022-01-14">January 14, 2022</time>
                         </div>
                         <div class="comments">
-                          <ion-icon name="chatbubble-ellipses-outline"></ion-icon>
+
+                          <ion-icon
+                            name="chatbubble-ellipses-outline"
+                          ></ion-icon>
                           <data value="114">114</data>
                         </div>
                       </div>
                       <div class="card-author">
-                        <img src="./assets/images/author.jpg" class="author-img" />
+
+                        <img
+                          src="./assets/images/author.jpg"
+                          class="author-img"
+                        />
+
                         <div class="author-name">Priya Deshmukh</div>
                       </div>
                     </div>
                   </div>
                 </li>
+
+                <!-- BLOG 4 -->
 
                 <li>
                   <div class="blog-card">
@@ -904,17 +983,29 @@
                           <time datetime="2022-01-14">January 14, 2022</time>
                         </div>
                         <div class="comments">
-                          <ion-icon name="chatbubble-ellipses-outline"></ion-icon>
+
+                          <ion-icon
+                            name="chatbubble-ellipses-outline"
+                          ></ion-icon>
+
                           <data value="114">114</data>
                         </div>
                       </div>
                       <div class="card-author">
-                        <img src="./assets/images/author.jpg" class="author-img" />
+
+                        <img
+                          src="./assets/images/author.jpg"
+                          class="author-img"
+                        />
+
                         <div class="author-name">Ravi Khanna</div>
                       </div>
                     </div>
                   </div>
                 </li>
+
+
+                <!-- BLOG 5 -->
 
                 <li>
                   <div class="blog-card">
@@ -944,12 +1035,21 @@
                           <time datetime="2022-01-14">January 14, 2022</time>
                         </div>
                         <div class="comments">
-                          <ion-icon name="chatbubble-ellipses-outline"></ion-icon>
+
+                          <ion-icon
+                            name="chatbubble-ellipses-outline"
+                          ></ion-icon>
+
                           <data value="114">114</data>
                         </div>
                       </div>
                       <div class="card-author">
-                        <img src="./assets/images/author.jpg" class="author-img" />
+
+                        <img
+                          src="./assets/images/author.jpg"
+                          class="author-img"
+                        />
+
                         <div class="author-name">Shruti Yadav</div>
                       </div>
                     </div>
@@ -963,6 +1063,12 @@
         </section>
       </article>
     </main>
+
+
+    <!-- 
+    - #FOOTER
+  -->
+
 
     <footer class="footer">
       <div class="container">
@@ -997,7 +1103,7 @@
             </li>
 
             <li>
-              <a href="#" class="footer-link">Contacts</a>
+              <a href="./ContactUs.html" class="footer-link">Contact Us</a>
             </li>
           </ul>
 
@@ -1011,15 +1117,14 @@
             </li>
 
             <li>
-              <a href="#" class="footer-link">Ask a question</a>
+              <a href="src/pages/Askaques.html" class="footer-link">Ask a question</a>
+            </li>
+            <li>
+              <a href="privacypolicy.html" class="footer-link">Privacy policy</a>
             </li>
 
             <li>
-              <a href="#" class="footer-link">Privacy policy</a>
-            </li>
-
-            <li>
-              <a href="./tandc.html" class="footer-link">Terms & conditions</a>
+              <a href="src/pages/tandc.html" class="footer-link">Terms & conditions</a>
             </li>
           </ul>
 
@@ -1059,13 +1164,15 @@
           </ul>
 
           <p class="copyright">
-            &copy; 2023 <a href="#">VehiGo</a> Contact us through
+            &copy; 2023 <a href="./ContactUs.html">VehiGo</a> Contact us through
           </p>
         </div>
       </div>
     </footer>
 
     <script src="./assets/js/script.js"></script>
+    <!-- Removed dark mode script -->
+
 
     <script src="./scripts/logout.js"></script>
     <script
@@ -1077,9 +1184,12 @@
       src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
     ></script>
 
-    <!-- <a href="#" class="back-to-top">
+
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top">
       <ion-icon name="chevron-up-outline"></ion-icon>
       <span>Back to Top</span>
-    </a> -->
+    </a>
   </body>
 </html>
+

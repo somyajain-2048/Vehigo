@@ -126,3 +126,30 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 });
+
+document.addEventListener('DOMContentLoaded', function () {
+  const themeToggle = document.getElementById('theme-toggle');
+  if (themeToggle) {
+    // Load theme from localStorage
+    if (localStorage.getItem('theme') === 'dark') {
+      document.body.classList.add('dark-mode');
+      themeToggle.checked = true;
+    }
+    themeToggle.addEventListener('change', function () {
+      if (this.checked) {
+        document.body.classList.add('dark-mode');
+        localStorage.setItem('theme', 'dark');
+      } else {
+        document.body.classList.remove('dark-mode');
+        localStorage.setItem('theme', 'light');
+      }
+    });
+  } else {
+    // Apply theme if toggle is not present (for pages without header)
+    if (localStorage.getItem('theme') === 'dark') {
+      document.body.classList.add('dark-mode');
+    } else {
+      document.body.classList.remove('dark-mode');
+    }
+  }
+});

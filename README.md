@@ -81,6 +81,8 @@ git clone https://github.com/InnoWebLabs/Vehigo.git
 ### 📁 Project Structure
 
 VehiGo's files are organized to keep things tidy. Here's a glimpse:
+
+```
 📦 VehiGo/
 ├── .vscode/ # VS Code specific settings
 ├── assets/ # General assets (e.g., fonts, icons)
@@ -98,6 +100,7 @@ VehiGo's files are organized to keep things tidy. Here's a glimpse:
 ├── PULL_REQUEST_TEMPLATE.md # Template for pull requests
 ├── CODE_OF_CONDUCT.md # Guidelines for community behavior
 ├── ... (other HTML, CSS, JS files like accountpage.html, buy.html, etc.)
+```
 
 ---
 

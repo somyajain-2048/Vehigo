@@ -11,6 +11,7 @@
 
     <title>Vehigo - Rent your favourite car</title>
 
+
     <!-- 
     - favicon
   -->
@@ -21,9 +22,7 @@
   -->
     <link rel="stylesheet" href="assets/css/style.css" />
 
-    <!-- 
-    - google font link
-  -->
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -33,10 +32,6 @@
   </head>
 
   <body>
-    <!-- 
-    - #HEADER
-  -->
-
     <header class="header" data-header>
       <div class="container">
         <div class="overlay" data-overlay></div>
@@ -107,8 +102,10 @@
           <li>
             <a href="#blog" class="navbar-link" data-nav-link>Blog</a>
           </li>
+
           <!-- home.html -->
           <button id="logoutBtn" style="display: none">Logout</button>
+
 
           <a href="#featured-car" class="btn" aria-labelledby="aria-label-txt">
             <ion-icon name="car-outline"></ion-icon>
@@ -135,11 +132,13 @@
 
     <main>
       <article>
+
         <!-- 
         -!= #HERO
       -->
 
         <section class="hero section" id="home" style="padding-left: 40px">
+
           <div class="container">
             <div class="hero-content">
               <div class="curr-hero">
@@ -179,25 +178,55 @@
                 />
               </div>
 
+              <div class="input-wrapper">
+                <label for="car-type" class="input-label">Car Type</label>
+                <select name="car-type" id="car-type" class="input-field">
+                  <option value="">Select Car Type</option>
+                  <option value="suv">SUV</option>
+                  <option value="sedan">Sedan</option>
+                  <option value="hatchback">Hatchback</option>
+                  <option value="mpv">MPV</option>
+                  <option value="luxury">Luxury</option>
+                </select>
+              </div>
+
+              <div class="input-wrapper">
+                <label for="transmission" class="input-label"
+                  >Transmission</label
+                >
+                <select name="transmission" id="transmission" class="input-field">
+                  <option value="">Select Transmission</option>
+                  <option value="automatic">Automatic</option>
+                  <option value="manual">Manual</option>
+                </select>
+              </div>
+
+              <div class="input-wrapper">
+                <label for="fuel-type" class="input-label">Fuel Type</label>
+                <select name="fuel-type" id="fuel-type" class="input-field">
+                  <option value="">Select Fuel Type</option>
+                  <option value="petrol">Petrol</option>
+                  <option value="diesel">Diesel</option>
+                  <option value="ev">EV</option>
+                  <option value="cng">CNG</option>
+                </select>
+              </div>
+
               <button type="submit" class="btn">Search</button>
             </form>
           </div>
         </section>
-
-        <!-- 
-        - #FEATURED CAR
-      -->
 
         <section class="section featured-car" id="featured-car">
           <div class="container">
             <div class="title-wrapper">
               <h2 class="h2 section-title">Featured cars</h2>
 
-              <a href="#" class="featured-car-link">
+              <!-- <a href="#" class="featured-car-link">
                 <span>View more</span>
 
                 <ion-icon name="arrow-forward-outline"></ion-icon>
-              </a>
+              </a> -->
             </div>
 
             <ul class="featured-car-list">
@@ -490,7 +519,7 @@
                 <div class="featured-car-card">
                   <figure class="card-banner">
                     <img
-                      src="./assets/images/mahindra  scorpio.jpg"
+                      src="./assets/images/mahindra-scorpio.jpg"
                       alt="Mahindra Scorpio"
                       loading="lazy"
                       width="440"
@@ -545,10 +574,6 @@
             </ul>
           </div>
         </section>
-
-        <!-- 
-        - #GET START
-      -->
 
         <section class="section get-start">
           <div class="container">
@@ -620,16 +645,11 @@
           </div>
         </section>
 
-        <!-- 
-        - #REVIEW
-      -->
-
         <section class="reviews" id="reviews">
           <div class="contain container">
             <h2>Reviews</h2>
             <div class="outerdiv">
               <div class="innerdiv">
-                <!-- div1 -->
                 <div class="div1 eachdiv">
                   <div class="userdetails">
                     <div class="imgbox">
@@ -658,7 +678,6 @@
                     </p>
                   </div>
                 </div>
-                <!-- div2 -->
                 <div class="div2 eachdiv">
                   <div class="userdetails">
                     <div class="imgbox">
@@ -682,7 +701,6 @@
                     </p>
                   </div>
                 </div>
-                <!-- div3 -->
                 <div class="div3 eachdiv">
                   <div class="userdetails">
                     <div class="imgbox">
@@ -717,7 +735,6 @@
                     </p>
                   </div>
                 </div>
-                <!-- div4 -->
                 <div class="div4 eachdiv">
                   <div class="userdetails">
                     <div class="imgbox">
@@ -742,7 +759,6 @@
                     </p>
                   </div>
                 </div>
-                <!-- div5 -->
                 <div class="div5 eachdiv">
                   <div class="userdetails">
                     <div class="imgbox">
@@ -776,9 +792,11 @@
           </div>
         </section>
 
+
         <!-- 
         - #BLOG
       -->
+
 
         <section class="section blog" id="blog">
           <div class="container">
@@ -788,7 +806,9 @@
               <button class="left-arrow">&#10094;</button>
 
               <ul class="blog-list has-scrollbar">
+
                 <!-- BLOG 1 -->
+
                 <li>
                   <div class="blog-card">
                     <figure class="card-banner">
@@ -817,24 +837,28 @@
                           <time datetime="2022-01-14">January 14, 2022</time>
                         </div>
                         <div class="comments">
-                          <ion-icon
-                            name="chatbubble-ellipses-outline"
-                          ></ion-icon>
+
+                          <ion-icon name="chatbubble-ellipses-outline"></ion-icon>
+
                           <data value="114">114</data>
                         </div>
                       </div>
                       <div class="card-author">
+
                         <img
                           src="./assets/images/author.jpg"
                           class="author-img"
                         />
+
                         <div class="author-name">Benialla Dsouza</div>
                       </div>
                     </div>
                   </div>
                 </li>
 
+
                 <!-- BLOG 2 -->
+
                 <li>
                   <div class="blog-card">
                     <figure class="card-banner">
@@ -853,9 +877,9 @@
 
                     <div class="card-content">
                       <h3 class="h3 card-title">
-                        <a href="blogs/blog2.html"
-                          >What cars are most vulnerable</a
-                        >
+
+                        <a href="blogs/blog2.html">What cars are most vulnerable</a>
+
                       </h3>
                       <div class="card-meta">
                         <div class="publish-date">
@@ -863,24 +887,28 @@
                           <time datetime="2022-01-14">January 14, 2022</time>
                         </div>
                         <div class="comments">
+
                           <ion-icon
                             name="chatbubble-ellipses-outline"
                           ></ion-icon>
+
                           <data value="114">114</data>
                         </div>
                       </div>
                       <div class="card-author">
-                        <img
-                          src="./assets/images/author.jpg"
-                          class="author-img"
-                        />
+
+                        <img src="./assets/images/author.jpg" class="author-img" />
+
                         <div class="author-name">Siddharth Menon</div>
                       </div>
                     </div>
                   </div>
                 </li>
 
+
+
                 <!-- BLOG 3 -->
+
                 <li>
                   <div class="blog-card">
                     <figure class="card-banner">
@@ -907,6 +935,7 @@
                           <time datetime="2022-01-14">January 14, 2022</time>
                         </div>
                         <div class="comments">
+
                           <ion-icon
                             name="chatbubble-ellipses-outline"
                           ></ion-icon>
@@ -914,10 +943,12 @@
                         </div>
                       </div>
                       <div class="card-author">
+
                         <img
                           src="./assets/images/author.jpg"
                           class="author-img"
                         />
+
                         <div class="author-name">Priya Deshmukh</div>
                       </div>
                     </div>
@@ -925,6 +956,7 @@
                 </li>
 
                 <!-- BLOG 4 -->
+
                 <li>
                   <div class="blog-card">
                     <figure class="card-banner">
@@ -951,24 +983,30 @@
                           <time datetime="2022-01-14">January 14, 2022</time>
                         </div>
                         <div class="comments">
+
                           <ion-icon
                             name="chatbubble-ellipses-outline"
                           ></ion-icon>
+
                           <data value="114">114</data>
                         </div>
                       </div>
                       <div class="card-author">
+
                         <img
                           src="./assets/images/author.jpg"
                           class="author-img"
                         />
+
                         <div class="author-name">Ravi Khanna</div>
                       </div>
                     </div>
                   </div>
                 </li>
 
+
                 <!-- BLOG 5 -->
+
                 <li>
                   <div class="blog-card">
                     <figure class="card-banner">
@@ -997,17 +1035,21 @@
                           <time datetime="2022-01-14">January 14, 2022</time>
                         </div>
                         <div class="comments">
+
                           <ion-icon
                             name="chatbubble-ellipses-outline"
                           ></ion-icon>
+
                           <data value="114">114</data>
                         </div>
                       </div>
                       <div class="card-author">
+
                         <img
                           src="./assets/images/author.jpg"
                           class="author-img"
                         />
+
                         <div class="author-name">Shruti Yadav</div>
                       </div>
                     </div>
@@ -1022,9 +1064,11 @@
       </article>
     </main>
 
+
     <!-- 
     - #FOOTER
   -->
+
 
     <footer class="footer">
       <div class="container">
@@ -1084,14 +1128,7 @@
             </li>
           </ul>
 
-          <!-- <ul class="footer-list">
-
-          <li>
-            <p class="footer-list-title"> </p>
-          </li>
-
-        </ul> -->
-        </div>
+          </div>
 
         <div class="footer-bottom">
           <ul class="social-list">
@@ -1133,16 +1170,10 @@
       </div>
     </footer>
 
-    <!-- 
-    - custom js link
-  -->
     <script src="./assets/js/script.js"></script>
     <!-- Removed dark mode script -->
 
 
-    <!-- 
-    - ionicon link
-  -->
     <script src="./scripts/logout.js"></script>
     <script
       type="module"
@@ -1153,6 +1184,7 @@
       src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
     ></script>
 
+
     <!-- Back to Top Button -->
     <a href="#" class="back-to-top">
       <ion-icon name="chevron-up-outline"></ion-icon>
@@ -1160,3 +1192,4 @@
     </a>
   </body>
 </html>
+

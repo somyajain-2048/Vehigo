@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600&family=Open+Sans&display=swap"
+        rel="stylesheet" />
+    <style>
+        .about-us {
+            padding: 50px 0;
+            background-color: #f4f4f4;
+        }
+
+        .about-us .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        .about-us-heading {
+            font-size: 36px;
+            font-weight: 600;
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .about-us-text {
+            font-size: 18px;
+            text-align: center;
+            color: #666;
+            margin-bottom: 40px;
+            line-height: 1.6;
+        }
+
+        .about-us-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 30px;
+        }
+
+        .about-us-img {
+            flex: 1;
+            max-width: 50%;
+        }
+
+        .about-us-img img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .about-us-info {
+            flex: 1;
+            max-width: 50%;
+        }
+
+        .about-us-info h3 {
+            font-size: 24px;
+            font-weight: 600;
+            margin-top: 20px;
+            color: #f4a261;
+        }
+
+        .about-us-info p {
+            font-size: 16px;
+            color: #444;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .about-us-info ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .about-us-info ul li {
+            font-size: 16px;
+            color: #555;
+            margin-bottom: 10px;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .about-us-info ul li:before {
+            content: "\2022";
+            position: absolute;
+            left: 0;
+            top: 0;
+            font-size: 24px;
+            color: #f4a261;
+        }
+
+        .about-us-footer {
+            text-align: center;
+            margin-top: 40px;
+            color: #888;
+        }
+
+        .about-us-footer p {
+            font-size: 14px;
+        }
+
+        @media (max-width: 768px) {
+            .about-us-content {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .about-us-img {
+                max-width: 100%;
+                margin-bottom: 20px;
+            }
+
+            .about-us-info {
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header" data-header>
+        <div class="container">
+            <div class="overlay" data-overlay></div>
+
+            <a href="index.html" class="logo">
+                <img src="./assets/images/vehigologo.png" alt="VehiGo logo" />
+            </a>
+
+            <nav class="navbar" data-navbar>
+                <ul class="navbar-list">
+                    <li>
+                        <a href="index.html" class="navbar-link" data-nav-link>Home</a>
+                    </li>
+
+                    <li>
+                        <a href="featured-car.html" class="navbar-link" data-nav-link>Explore cars</a>
+                    </li>
+
+                    <li>
+                        <a href="about-us.html" class="navbar-link" data-nav-link>About us</a>
+                    </li>
+
+                    <li>
+                        <a href="blog.html" class="navbar-link" data-nav-link>Blog</a>
+                    </li>
+
+                    <li>
+                        <a href="offline.html" class="navbar-link" data-nav-link>Offline Centers</a>
+                    </li>
+
+                    <li>
+                        <a href="rentcar.html" class="navbar-link" data-nav-link>Rent Your Car</a>
+                    </li>
+
+                    <!-- 🌙 Dark Mode Toggle Button -->
+                    <!-- Removed dark mode toggle button -->
+                </ul>
+            </nav>
+
+            <div class="header-actions">
+                <div class="header-contact">
+                    <a href="tel:1800100100" class="contact-link">1800-100-100</a>
+
+                    <span class="contact-time">Mon - Sat: 9:00 am - 6:00 pm</span>
+                </div>
+                <!-- Theme Toggle Switch with SVG icons -->
+                <label class="theme-switch" for="theme-toggle">
+                    <input type="checkbox" id="theme-toggle" />
+                    <span class="slider">
+                        <span class="icon sun" aria-label="Light mode">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="orange" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="5" />
+                                <line x1="12" y1="1" x2="12" y2="3" />
+                                <line x1="12" y1="21" x2="12" y2="23" />
+                                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+                                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+                                <line x1="1" y1="12" x2="3" y2="12" />
+                                <line x1="21" y1="12" x2="23" y2="12" />
+                                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+                                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+                            </svg>
+                        </span>
+                        <span class="icon moon" aria-label="Dark mode">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#f5f5f5"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z" />
+                            </svg>
+                        </span>
+                    </span>
+                </label>
+            </div>
+    </header>
+    <br>
+    <main>
+        <article>
+            <section class="about-us">
+                <div class="container">
+                    <h2 class="about-us-heading">About Vehigo</h2>
+                    <p class="about-us-text">
+                        At <b>Vehigo</b>, we are dedicated to providing you with the best car rental experience. Whether
+                        you're
+                        traveling for business or pleasure, we have a diverse range of vehicles to suit every need. Our
+                        easy-to-use platform ensures you can find and book your car effortlessly, no matter where you
+                        are.
+                    </p>
+
+                    <div class="about-us-content">
+                        <div class="about-us-img">
+                            <img src="car-1.jpg" alt="About Vehigo" />
+                        </div>
+                        <div class="about-us-info">
+                            <h3>Our Mission</h3>
+                            <p>
+                                Our mission is to offer a seamless and transparent car rental experience that is easy,
+                                affordable, and accessible to everyone. With an extensive fleet, easy booking process,
+                                and
+                                exceptional customer service, we make sure that you get the best deal and enjoy your
+                                journey.
+                            </p>
+
+                            <h3>Why Choose Us?</h3>
+                            <ul>
+                                <li>Wide Range of Cars: From economy to luxury, we have it all.</li>
+                                <li>Easy & Fast Booking: Book in just a few clicks.</li>
+                                <li>24/7 Support: We're always here for you, whether it's before or during your trip.
+                                </li>
+                                <li>Affordable Prices: Get the best deals on every rental.</li>
+                                <li>Flexible Pickup & Return Locations: Multiple locations for added convenience.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="about-us-footer">
+                        <p>&copy; 2023 Vehigo. All Rights Reserved.</p>
+                    </div>
+                </div>
+            </section>
+        </article>
+    </main>
+
+</body>
+
+</html>

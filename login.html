@@ -29,7 +29,7 @@
   <script src="./scripts/logout.js"></script>
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-  
+
 
   <style>
     * {
@@ -473,6 +473,34 @@
       height: 32px;
       fill: white;
     }
+
+    .google-btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background-color: #ffffff;
+  color: #444;
+  border: 1px solid #ccc;
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+}
+
+
+.google-btn:hover {
+  background-color: #f7f7f7;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.15);
+}
+
+.google-btn-img{
+  width: 30px;
+  height: 30px;
+  border-radius: 100%;
+}
   </style>
 </head>
 
@@ -627,7 +655,12 @@
             </button>
           </div>
         </form>
-
+         <div>
+          <button class="google-btn" id="googleBtn">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSvlNehus3-SKgIVt5GaHVwMmJ0OdypTEqDAw&s" alt="google icon" class="google-btn-img">
+           <span>Sign in with Google</span>
+          </button>
+        </div>
         <!-- Form Link -->
         <div class="form-link">
           <span>Don't have an account? <a href="signup.html">Create Account</a></span>
@@ -636,7 +669,7 @@
     </div>
   </main>
 
-  <script>
+  <script type="module">
     // Form elements
     const loginForm = document.getElementById('loginForm');
     const emailInput = document.getElementById('email');
@@ -674,7 +707,7 @@
       
       const email = emailInput.value.trim();
       const password = passwordInput.value.trim();
-      
+      const auth_provider='email'
       // Clear previous messages
       clearAllMessages();
       
@@ -690,9 +723,10 @@
       showLoading(true);
       
       // Simulate API call
+      //Send auth_provider in the API call 
       setTimeout(() => {
         if (email === 'demo@vehigo.com' && password === 'password123') {
-          showSuccess('Login successful! Redirecting to dashboard...');
+          showSuccessMessage('Login successful! Redirecting to dashboard...');
           
           // Simulate redirect
           setTimeout(() => {
@@ -764,7 +798,7 @@
       successMessage.classList.remove('show');
     }
 
-    function showSuccess(message) {
+    function showSuccessMessage(message) {
       successMessage.querySelector('span').textContent = message;
       successMessage.classList.add('show');
     }
@@ -791,6 +825,57 @@
     window.addEventListener('load', function() {
       document.body.style.opacity = '1';
     });
+
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-analytics.js";
+  import { GoogleAuthProvider, getAuth, signInWithPopup } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-auth.js";
+
+
+   const firebaseConfig = {
+    apiKey: "",
+    authDomain: "",
+    projectId: "",
+    storageBucket: "",
+    messagingSenderId: "",
+    appId: "",
+    measurementId: ""
+  };
+
+  const app = initializeApp(firebaseConfig);
+  const auth =getAuth(app)
+  const provider = new GoogleAuthProvider();
+
+  provider.setCustomParameters({
+  prompt: 'consent' 
+  });
+
+  document.getElementById('googleBtn').addEventListener('click',async function (){
+      let auth_provider='google'
+    try {
+      const result= await signInWithPopup(auth, provider)
+    const user=result.user
+
+    const response=await fetch("http://localhost:5001/api/auth/login",{
+      method:'POST',
+      headers:{
+        'Content-Type': 'application/json',
+      },
+      body:JSON.stringify({email:user.email,auth_provider,firebase_uid:user.uid})
+    })
+
+    if(!response.ok) {
+      alert("No account found . Please Login first")
+      await auth.signOut()
+    }
+    else{
+      showSuccessMessage("User signed in")
+      window.location.href = "index.html"
+    }
+    } catch (error) {
+    console.error("Google sign-in failed:", err);
+    alert("Error signing in");
+    }
+    })
   </script>
 </body>
 </html>

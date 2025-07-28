@@ -15,11 +15,21 @@ const navToggleFunc = function () {
   overlay.classList.toggle("active");
 }
 
-navToggleBtn.addEventListener("click", navToggleFunc);
-overlay.addEventListener("click", navToggleFunc);
+navToggleBtn.addEventListener("click", function(e) {
+  e.stopPropagation();
+  navToggleFunc();
+});
+
+overlay.addEventListener("click", function(e) {
+  e.stopPropagation();
+  navToggleFunc();
+});
 
 for (let i = 0; i < navbarLinks.length; i++) {
-  navbarLinks[i].addEventListener("click", navToggleFunc);
+  navbarLinks[i].addEventListener("click", function(e) {
+    // Don't stop propagation here as we want navbar links to work normally
+    navToggleFunc();
+  });
 }
 
 // LOGIN ↔ SIGNUP form toggle logic
@@ -55,19 +65,6 @@ document.querySelectorAll(".eye-icon").forEach(eyeIcon => {
       eyeIcon.classList.replace("bx-show", "bx-hide");
     }
   });
-});
-
-const toggleBtn = document.getElementById('theme-toggle');
-
-toggleBtn.addEventListener('click', () => {
-  document.body.classList.toggle('dark-mode');
-
-  // Change icon
-  if (document.body.classList.contains('dark-mode')) {
-    toggleBtn.textContent = '☀️'; // Light mode icon
-  } else {
-    toggleBtn.textContent = '🌙'; // Dark mode icon
-  }
 });
 
 
@@ -138,4 +135,49 @@ document.addEventListener('DOMContentLoaded', function() {
       behavior: 'smooth'
     });
   });
+});
+
+/**
+ * Theme Toggle Functionality
+ * Handles light/dark mode switching with proper event isolation
+ * to prevent interference with navbar functionality
+ */
+document.addEventListener('DOMContentLoaded', function () {
+  const themeToggle = document.getElementById('theme-toggle');
+  if (themeToggle) {
+    // Load theme from localStorage
+    if (localStorage.getItem('theme') === 'dark') {
+      document.body.classList.add('dark-mode');
+      themeToggle.checked = true;
+    }
+    
+    // Add event listener with proper event handling
+    themeToggle.addEventListener('change', function (e) {
+      // Prevent event bubbling to avoid interference with navbar
+      e.stopPropagation();
+      
+      if (this.checked) {
+        document.body.classList.add('dark-mode');
+        localStorage.setItem('theme', 'dark');
+      } else {
+        document.body.classList.remove('dark-mode');
+        localStorage.setItem('theme', 'light');
+      }
+    });
+    
+    // Prevent clicks on the theme switch from triggering navbar events
+    const themeSwitch = document.querySelector('.theme-switch');
+    if (themeSwitch) {
+      themeSwitch.addEventListener('click', function(e) {
+        e.stopPropagation();
+      });
+    }
+  } else {
+    // Apply theme if toggle is not present (for pages without header)
+    if (localStorage.getItem('theme') === 'dark') {
+      document.body.classList.add('dark-mode');
+    } else {
+      document.body.classList.remove('dark-mode');
+    }
+  }
 });

@@ -459,7 +459,7 @@
       transition: all 0.3s ease;
       position: relative;
       overflow: hidden;
-      margin-top: 10px;
+      margin-top:10px;
     }
 
     .signup-btn:hover:not(:disabled) {
@@ -589,6 +589,34 @@
       height: 32px;
       fill: white;
     }
+
+  .google-btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background-color: #ffffff;
+  color: #444;
+  border: 1px solid #ccc;
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+}
+
+
+.google-btn:hover {
+  background-color: #f7f7f7;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.15);
+}
+
+.google-btn-img{
+  width: 30px;
+  height: 30px;
+  border-radius: 100%;
+}
   </style>
 </head>
 <body>
@@ -705,7 +733,7 @@
       <div class="form-content">
         <form id="signupForm">
           <!-- Name Field -->
-          <div class="field">
+          <div class="field" id="fullName">
             <label for="name">
               <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
                 <path d="M12 12C14.7614 12 17 9.76142 17 7C17 4.23858 14.7614 2 12 2C9.23858 2 7 4.23858 7 7C7 9.76142 9.23858 12 12 12ZM12 14C8.13401 14 1 15.934 1 19.5V22H23V19.5C23 15.934 15.866 14 12 14Z"/>
@@ -724,8 +752,8 @@
           </div>
 
           <!-- Email and Phone Row -->
-          <div class="form-row">
-            <div class="field">
+          <div class="form-row" >
+            <div class="field" id="emailField">
               <label for="email">
                 <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
                   <path d="M12 12.713L.015 3H24L12 12.713zm0 2.574L0 6.713V21h24V6.713L12 15.287z"/>
@@ -763,7 +791,7 @@
           </div>
 
           <!-- Password Field -->
-          <div class="field">
+          <div class="field" id="passwordField">
             <label for="password">
               <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
                 <path d="M12 1C8.676 1 6 3.676 6 7V8C4.343 8 3 9.343 3 11V20C3 21.657 4.343 23 6 23H18C19.657 23 21 21.657 21 20V11C21 9.343 19.657 8 18 8V7C18 3.676 15.324 1 12 1ZM12 3C14.324 3 16 4.676 16 7V8H8V7C8 4.676 9.676 3 12 3Z"/>
@@ -792,7 +820,10 @@
               <span></span>
             </div>
           </div>
-
+          <!-- UID input box -->
+          <div>
+            <input type="hidden" id="uid" name="uid" />
+          </div>
           <!-- Address Field -->
           <div class="field">
             <label for="address">
@@ -828,7 +859,12 @@
             </button>
           </div>
         </form>
-
+        <div class="google-sign">
+          <button class="google-btn" id="googleBtn">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSvlNehus3-SKgIVt5GaHVwMmJ0OdypTEqDAw&s" alt="google icon" class="google-btn-img">
+           <span>Sign in with Google</span>
+          </button>
+        </div>
         <!-- Form Link -->
         <div class="form-link">
           <span>Already have an account? <a href="login.html">Sign In</a></span>
@@ -837,13 +873,16 @@
     </div>
   </main>
 
-  <script>
+  <script type="module">
+    let auth_provider;
+    let isGoogleSignup = false;
     // Form elements
     const signupForm = document.getElementById('signupForm');
     const nameInput = document.getElementById('name');
     const emailInput = document.getElementById('email');
     const phoneInput = document.getElementById('phone');
     const passwordInput = document.getElementById('password');
+    const uidInput=document.getElementById('uid')
     const addressInput = document.getElementById('address');
     const togglePasswordBtn = document.getElementById('togglePassword');
     const eyeIcon = document.getElementById('eyeIcon');
@@ -898,13 +937,13 @@
     });
 
     // Form submission
-    signupForm.addEventListener('submit', function(e) {
+    signupForm.addEventListener('submit',async function(e) {
       e.preventDefault();
-      
+      auth_provider='email'
+
       const name = nameInput.value.trim();
       const email = emailInput.value.trim();
-      const phone = phoneInput.value.trim();
-      const password = passwordInput.value.trim();
+      const phone_number = phoneInput.value.trim();
       const address = addressInput.value.trim();
       
       // Clear previous messages
@@ -913,29 +952,93 @@
       // Validate inputs
       const isNameValid = validateName(name, true);
       const isEmailValid = validateEmail(email, true);
-      const isPhoneValid = validatePhone(phone, true);
-      const isPasswordValid = validatePassword(password, true);
+      const isPhoneValid = validatePhone(phone_number, true);
       const isAddressValid = validateAddress(address, true);
+
+      let password=''
+      let firebase_uid=''
+
+      if(!isGoogleSignup){
+          password = passwordInput.value.trim();
+         const isPasswordValid = validatePassword(password, true);
+         if(!isPasswordValid) return;
+         auth_provider = 'email';
+      }else{
+         firebase_uid=uidInput.value.trim()
+         if(!firebase_uid) return;
+        auth_provider = 'google';
+      }
       
-      if (!isNameValid || !isEmailValid || !isPhoneValid || !isPasswordValid || !isAddressValid) {
+      if (!isNameValid || !isEmailValid || !isPhoneValid  || !isAddressValid || !auth_provider) {
         return;
       }
       
       // Show loading state
       showLoading(true);
       
-      // Simulate API call
-      setTimeout(() => {
+
+      try {
+       const requestBody =
+      auth_provider === 'email'
+        ? {
+            name,
+            email,
+            phone_number,
+            address,
+            password,
+            auth_provider,
+          }
+        : {
+            name,
+            email,
+            phone_number,
+            address,
+            firebase_uid,
+            auth_provider,
+          };
+
+    const resp = await fetch('http://localhost:5001/api/auth/signup', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(requestBody),
+    });
+
+    const data = await resp.json();
+
+    if (!resp.ok) {
+      throw new Error(data.message || 'Signup failed');
+    }
+
+    showLoading(false);
+    showSuccessMessage('Account created successfully! Welcome to VehiGo!');
+
+    setTimeout(() => {
+      signupForm.reset();
+      updatePasswordStrength({ score: 0, text: '', color: '' });
+      clearAllMessages();
+       window.location.href = "login.html";
+    }, 1500);
+      } catch (error) {
         showLoading(false);
-        showSuccess('Account created successfully! Welcome to VehiGo!');
+         showError(error.message || 'An error occurred during signup');
+       
+      }
+      
+      // Simulate API call
+      //add auth_provider in the fetch request 
+      // setTimeout(() => {
+      //   showLoading(false);
+      //   showSuccessMessage('Account created successfully! Welcome to VehiGo!');
         
-        // Reset form after success
-        setTimeout(() => {
-          signupForm.reset();
-          updatePasswordStrength({ score: 0, text: '', color: '' });
-          clearAllMessages();
-        }, 3000);
-      }, 2000);
+      //   // Reset form after success
+      //   setTimeout(() => {
+      //     signupForm.reset();
+      //     updatePasswordStrength({ score: 0, text: '', color: '' });
+      //     clearAllMessages();
+      //   }, 3000);
+      // }, 2000);
     });
 
     // Validation functions
@@ -1093,7 +1196,7 @@
       successMessage.classList.remove('show');
     }
 
-    function showSuccess(message) {
+    function showSuccessMessage(message) {
       successMessage.querySelector('span').textContent = message;
       successMessage.classList.add('show');
     }
@@ -1120,6 +1223,59 @@
     window.addEventListener('load', function() {
       document.body.style.opacity = '1';
     });
+  
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-app.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-analytics.js";
+    import { GoogleAuthProvider, getAuth, signInWithPopup } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-auth.js";
+
+
+    const firebaseConfig = {
+    apiKey: "",
+    authDomain: "",
+    projectId: "",
+    storageBucket: "",
+    messagingSenderId: "",
+    appId: "",
+    measurementId: ""
+    };
+
+
+    const app = initializeApp(firebaseConfig);
+    const auth =getAuth(app)
+    const provider = new GoogleAuthProvider();
+
+    provider.setCustomParameters({
+    prompt: 'consent' 
+     });
+
+    document.getElementById('googleBtn').addEventListener('click', async function (e) {
+      e.preventDefault(); 
+      try {
+    const result = await signInWithPopup(auth, provider);
+    const user = result.user;
+    if (user){
+    isGoogleSignup=true
+    const name = user.displayName;
+    const email = user.email;
+    const uid = user.uid;
+    uidInput.value=uid
+
+    nameInput.value = name;
+    nameInput.readOnly =true;
+    emailInput.value = email;
+    emailInput.readOnly=true;
+    
+    nameInput.style.display = 'block';
+    document.getElementById("emailField").style.display = 'block';
+    phoneInput.parentElement.parentElement.style.display = 'block'; // Phone
+    addressInput.parentElement.parentElement.style.display = 'block'; // Address
+    document.getElementById("passwordField").style.display = 'none';
+    passwordInput.required=false;
+    document.getElementById("googleBtn").style.display = 'none';
+      }} catch (error) {
+        console.log(error)
+      }
+    })
   </script>
   
   <!-- JavaScript files for navbar functionality -->

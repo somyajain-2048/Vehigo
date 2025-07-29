@@ -15,11 +15,21 @@ const navToggleFunc = function () {
   overlay.classList.toggle("active");
 }
 
-navToggleBtn.addEventListener("click", navToggleFunc);
-overlay.addEventListener("click", navToggleFunc);
+navToggleBtn.addEventListener("click", function(e) {
+  e.stopPropagation();
+  navToggleFunc();
+});
+
+overlay.addEventListener("click", function(e) {
+  e.stopPropagation();
+  navToggleFunc();
+});
 
 for (let i = 0; i < navbarLinks.length; i++) {
-  navbarLinks[i].addEventListener("click", navToggleFunc);
+  navbarLinks[i].addEventListener("click", function(e) {
+    // Don't stop propagation here as we want navbar links to work normally
+    navToggleFunc();
+  });
 }
 
 // LOGIN ↔ SIGNUP form toggle logic
@@ -127,6 +137,11 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 
+/**
+ * Theme Toggle Functionality
+ * Handles light/dark mode switching with proper event isolation
+ * to prevent interference with navbar functionality
+ */
 document.addEventListener('DOMContentLoaded', function () {
   const themeToggle = document.getElementById('theme-toggle');
   if (themeToggle) {
@@ -135,7 +150,12 @@ document.addEventListener('DOMContentLoaded', function () {
       document.body.classList.add('dark-mode');
       themeToggle.checked = true;
     }
-    themeToggle.addEventListener('change', function () {
+    
+    // Add event listener with proper event handling
+    themeToggle.addEventListener('change', function (e) {
+      // Prevent event bubbling to avoid interference with navbar
+      e.stopPropagation();
+      
       if (this.checked) {
         document.body.classList.add('dark-mode');
         localStorage.setItem('theme', 'dark');
@@ -144,6 +164,14 @@ document.addEventListener('DOMContentLoaded', function () {
         localStorage.setItem('theme', 'light');
       }
     });
+    
+    // Prevent clicks on the theme switch from triggering navbar events
+    const themeSwitch = document.querySelector('.theme-switch');
+    if (themeSwitch) {
+      themeSwitch.addEventListener('click', function(e) {
+        e.stopPropagation();
+      });
+    }
   } else {
     // Apply theme if toggle is not present (for pages without header)
     if (localStorage.getItem('theme') === 'dark') {

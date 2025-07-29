@@ -193,6 +193,103 @@ body {
 }
 
 /*-----------------------------------*\
+  #THEME SWITCH
+\*-----------------------------------*/
+
+.theme-switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 30px;
+  margin-left: 15px;
+  z-index: 1000;
+}
+
+.theme-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: .4s;
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 5px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 22px;
+  width: 22px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: .4s;
+  border-radius: 50%;
+  z-index: 2;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:checked + .slider:before {
+  transform: translateX(30px);
+}
+
+.slider .icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+
+.slider .icon.sun {
+  color: #f39c12;
+}
+
+.slider .icon.moon {
+  color: #f5f5f5;
+}
+
+/* Ensure theme switch doesn't interfere with navbar */
+.header-actions {
+  position: relative;
+  z-index: 1001;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.theme-switch {
+  pointer-events: auto;
+  position: relative;
+  z-index: 1002;
+}
+
+/* Ensure proper spacing in header actions */
+.header-actions .btn {
+  margin-left: 10px;
+}
+
+/* Prevent theme switch from interfering with other elements */
+.header-actions > *:not(.theme-switch) {
+  position: relative;
+  z-index: 1000;
+}
+
+/*-----------------------------------*\
   #REUSED STYLE
 \*-----------------------------------*/
 
@@ -1680,7 +1777,7 @@ body.dark-mode footer {
   }
 
   .footer-list:last-of-type {
-    width: 50%;
+    width: 17.33%;
   }
 }
 
@@ -1841,7 +1938,7 @@ body.dark-mode footer {
   }
 
   .footer-list:last-of-type {
-    width: 33.33%;
+    width: 15.33%;
   }
 }
 
@@ -1852,6 +1949,7 @@ body.dark-mode footer {
   padding: 10px 35px 10px 0;
 
 }
+
 
 .error-message {
   color: red;
@@ -1866,4 +1964,50 @@ body.dark-mode footer {
 
 select.error-border {
   border: 2px solid red;
+}
+
+/* Ensure theme switch is always visible and functional */
+.theme-switch {
+  position: relative;
+  z-index: 1002;
+  pointer-events: auto;
+}
+
+.theme-switch:hover {
+  transform: scale(1.05);
+  transition: transform 0.2s ease;
+}
+
+/* Responsive design for theme switch */
+@media (max-width: 768px) {
+  .theme-switch {
+    width: 50px;
+    height: 25px;
+    margin-left: 10px;
+  }
+  
+  .slider:before {
+    height: 18px;
+    width: 18px;
+  }
+  
+  input:checked + .slider:before {
+    transform: translateX(25px);
+  }
+  
+  .slider .icon svg {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .header-actions {
+    gap: 5px;
+  }
+  
+  .theme-switch {
+    margin-left: 5px;
+  }
+
 }

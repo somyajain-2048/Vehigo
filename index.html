@@ -53,7 +53,7 @@
             </li>
 
             <li>
-              <a href="#" class="navbar-link" data-nav-link>About us</a>
+              <a href="./src/pages/about.html" class="navbar-link" data-nav-link>About us</a>
             </li>
 
             <li>
@@ -93,15 +93,7 @@
               </span>
             </span>
           </label>
-          <li>
-            <a href="./src/pages/about.html" class="navbar-link" data-nav-link
-              >About us</a
-            >
-          </li>
 
-          <li>
-            <a href="#blog" class="navbar-link" data-nav-link>Blog</a>
-          </li>
 
           <!-- home.html -->
           <button id="logoutBtn" style="display: none">Logout</button>
@@ -151,7 +143,7 @@
 
             <div class="hero-banner"></div>
 
-            <form action="" class="hero-form">
+            <form action="" id="searchForm" class="hero-form">
               <div class="input-wrapper">
                 <label for="input-1" class="input-label">Location</label>
 
@@ -162,6 +154,7 @@
                   class="input-field"
                   placeholder="Enter your Location"
                 />
+                <span id="location-error" class="error-message"></span>
               </div>
 
               <div class="input-wrapper">
@@ -176,6 +169,7 @@
                   class="input-field"
                   placeholder="Add an amount "
                 />
+                <span id="rent-error" class="error-message"></span>
               </div>
 
               <div class="input-wrapper">
@@ -188,6 +182,8 @@
                   <option value="mpv">MPV</option>
                   <option value="luxury">Luxury</option>
                 </select>
+                <span class="error-msg" id="carType-error"></span>
+
               </div>
 
               <div class="input-wrapper">
@@ -199,6 +195,8 @@
                   <option value="automatic">Automatic</option>
                   <option value="manual">Manual</option>
                 </select>
+                <span class="error-msg" id="transmission-error"></span>
+
               </div>
 
               <div class="input-wrapper">
@@ -210,6 +208,7 @@
                   <option value="ev">EV</option>
                   <option value="cng">CNG</option>
                 </select>
+                <span class="error-msg" id="fuelType-error"></span>
               </div>
 
               <button type="submit" class="btn">Search</button>
@@ -1185,11 +1184,29 @@
     ></script>
 
 
+    
     <!-- Back to Top Button -->
-    <a href="#" class="back-to-top">
-      <ion-icon name="chevron-up-outline"></ion-icon>
-      <span>Back to Top</span>
-    </a>
+    <a href="./index.html" style="
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background-color: #007BFF;
+  color: white;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  z-index: 999;
+  transition: background-color 0.3s;
+" onmouseover="this.style.backgroundColor='#0056b3'" onmouseout="this.style.backgroundColor='#007BFF'">
+  <ion-icon name="chevron-up-outline" style="font-size: 24px;"></ion-icon>
+</a>
+
+    
   </body>
 </html>
 

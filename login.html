@@ -29,7 +29,7 @@
   <script src="./scripts/logout.js"></script>
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-  
+
 
   <style>
     * {
@@ -127,47 +127,9 @@
       50% { transform: translateY(-20px) rotate(180deg); }
     }
 
-    /* Header */
-    .header {
-      position: relative;
-      z-index: 10;
-      padding: 20px 0;
-      background: rgba(255, 255, 255, 0.1);
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-    }
+    /* Header styles are handled by style.css */
 
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 20px;
-    }
-
-    .logo {
-      display: flex;
-      align-items: center;
-      text-decoration: none;
-      color: var(--text-color);
-      font-size: 28px;
-      font-weight: bold;
-      transition: transform 0.3s ease;
-    }
-
-    .logo:hover {
-      transform: scale(1.05);
-    }
-
-    .logo-icon {
-      width: 40px;
-      height: 40px;
-      background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
-      border-radius: 12px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-right: 12px;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-    }
+    /* Container and logo styles are handled by style.css */
 
     /* Main Content */
     .main-content {
@@ -176,17 +138,148 @@
       align-items: center;
       justify-content: center;
       padding: 40px 20px;
+      padding-top: 120px; /* Add top padding to account for fixed navbar */
       position: relative;
-      z-index: 10;
+      z-index: 1; /* Reduced z-index to allow navbar to be clickable */
+    }
+
+    /* Responsive adjustments for smaller screens */
+    @media (max-width: 768px) {
+      .main-content {
+        padding-top: 100px; /* Slightly less padding on mobile */
+        padding: 20px 15px;
+      }
+      
+      .login-container {
+        max-width: 95%;
+        min-height: 550px;
+      }
+      
+      .form-content {
+        padding: 40px 30px 30px;
+      }
+      
+      .login-header {
+        padding: 40px 30px;
+      }
+    }
+
+    /* Ensure navbar is accessible */
+    .header {
+      z-index: 1000 !important;
+    }
+
+    .navbar {
+      z-index: 1001 !important;
+    }
+
+    .overlay {
+      z-index: 999 !important;
+    }
+
+    .nav-toggle-btn {
+      z-index: 1002 !important;
+    }
+
+    /* Dark mode styles for login page */
+    body.dark-mode .login-container {
+      background: rgba(45, 45, 45, 0.95) !important;
+      border: 1px solid rgba(255, 255, 255, 0.2) !important;
+      color: #ffffff !important;
+      backdrop-filter: blur(20px) !important;
+    }
+
+    body.dark-mode .login-header {
+      background: linear-gradient(135deg, #4a5568 0%, #2d3748 100%) !important;
+      color: #ffffff !important;
+    }
+
+    body.dark-mode .login-header h2 {
+      color: #ffffff !important;
+    }
+
+    body.dark-mode .login-header p {
+      color: #e2e8f0 !important;
+    }
+
+    body.dark-mode .field label {
+      color: #e2e8f0 !important;
+    }
+
+    body.dark-mode .input {
+      background: rgba(55, 55, 55, 0.8) !important;
+      border: 1px solid rgba(255, 255, 255, 0.2) !important;
+      color: #ffffff !important;
+    }
+
+    body.dark-mode .input:focus {
+      border-color: #4299e1 !important;
+      background: rgba(55, 55, 55, 0.9) !important;
+    }
+
+    body.dark-mode .input::placeholder {
+      color: #a0aec0 !important;
+    }
+
+    body.dark-mode .login-btn {
+      background: linear-gradient(135deg, #4299e1 0%, #3182ce 100%) !important;
+      color: #ffffff !important;
+    }
+
+    body.dark-mode .login-btn:hover {
+      background: linear-gradient(135deg, #3182ce 0%, #2c5282 100%) !important;
+    }
+
+    body.dark-mode .form-link a {
+      color: #4299e1 !important;
+    }
+
+    body.dark-mode .form-link a:hover {
+      color: #3182ce !important;
+    }
+
+    body.dark-mode .input.error {
+      border-color: #fc8181 !important;
+      background: rgba(252, 129, 129, 0.1) !important;
+    }
+
+    body.dark-mode .input.success {
+      border-color: #68d391 !important;
+      background: rgba(104, 211, 145, 0.1) !important;
+    }
+
+    body.dark-mode .error-message {
+      color: #fc8181 !important;
+    }
+
+    body.dark-mode .success-message {
+      color: #68d391 !important;
+    }
+
+    body.dark-mode .password-toggle {
+      color: #a0aec0 !important;
+    }
+
+    body.dark-mode .password-toggle:hover {
+      color: #4299e1 !important;
+    }
+
+    body.dark-mode .icon {
+      color: #a0aec0 !important;
+    }
+
+    body.dark-mode .field label svg {
+      color: #a0aec0 !important;
     }
 
     .login-container {
       background: var(--card-bg, #fff);
       border-radius: 20px;
       box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
-      overflow: hidden;
+      overflow: visible;
       width: 100%;
-      max-width: 420px;
+      max-width: 480px;
+      min-height: 600px;
       backdrop-filter: blur(20px);
       border: 1px solid var(--card-border, #e0e0e0);
       animation: slideUp 0.8s ease-out;
@@ -209,7 +302,7 @@
       background: var(--carolina-blue, #2196F3) !important;
       color: var(--carolina-blue-1, #1565c0) !important;
       text-align: center;
-      padding: 40px 30px;
+      padding: 50px 40px;
       position: relative;
     }
 
@@ -251,7 +344,7 @@
     }
 
     .form-content {
-      padding: 40px 30px 30px;
+      padding: 50px 40px 40px;
     }
 
     .field {
@@ -496,6 +589,34 @@
     body.dark-mode .login-header p {
       color: #fff !important;
     }
+
+    .google-btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background-color: #ffffff;
+  color: #444;
+  border: 1px solid #ccc;
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+}
+
+
+.google-btn:hover {
+  background-color: #f7f7f7;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.15);
+}
+
+.google-btn-img{
+  width: 30px;
+  height: 30px;
+  border-radius: 100%;
+}
   </style>
 </head>
 
@@ -657,7 +778,12 @@
             </button>
           </div>
         </form>
-
+         <div>
+          <button class="google-btn" id="googleBtn">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSvlNehus3-SKgIVt5GaHVwMmJ0OdypTEqDAw&s" alt="google icon" class="google-btn-img">
+           <span>Sign in with Google</span>
+          </button>
+        </div>
         <!-- Form Link -->
         <div class="form-link">
           <span>Don't have an account? <a href="signup.html">Create Account</a></span>
@@ -666,7 +792,7 @@
     </div>
   </main>
 
-  <script>
+  <script type="module">
     // Form elements
     const loginForm = document.getElementById('loginForm');
     const emailInput = document.getElementById('email');
@@ -704,7 +830,7 @@
       
       const email = emailInput.value.trim();
       const password = passwordInput.value.trim();
-      
+      const auth_provider='email'
       // Clear previous messages
       clearAllMessages();
       
@@ -720,9 +846,10 @@
       showLoading(true);
       
       // Simulate API call
+      //Send auth_provider in the API call 
       setTimeout(() => {
         if (email === 'demo@vehigo.com' && password === 'password123') {
-          showSuccess('Login successful! Redirecting to dashboard...');
+          showSuccessMessage('Login successful! Redirecting to dashboard...');
           
           // Simulate redirect
           setTimeout(() => {
@@ -794,7 +921,7 @@
       successMessage.classList.remove('show');
     }
 
-    function showSuccess(message) {
+    function showSuccessMessage(message) {
       successMessage.querySelector('span').textContent = message;
       successMessage.classList.add('show');
     }
@@ -822,6 +949,59 @@
       document.body.style.opacity = '1';
     });
 
+//Google auth
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-analytics.js";
+  import { GoogleAuthProvider, getAuth, signInWithPopup } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-auth.js";
+
+
+   const firebaseConfig = {
+    apiKey: "",
+    authDomain: "",
+    projectId: "",
+    storageBucket: "",
+    messagingSenderId: "",
+    appId: "",
+    measurementId: ""
+  };
+
+  const app = initializeApp(firebaseConfig);
+  const auth =getAuth(app)
+  const provider = new GoogleAuthProvider();
+
+  provider.setCustomParameters({
+  prompt: 'consent' 
+  });
+
+  document.getElementById('googleBtn').addEventListener('click',async function (){
+      let auth_provider='google'
+    try {
+      const result= await signInWithPopup(auth, provider)
+    const user=result.user
+
+    const response=await fetch("http://localhost:5001/api/auth/login",{
+      method:'POST',
+      headers:{
+        'Content-Type': 'application/json',
+      },
+      body:JSON.stringify({email:user.email,auth_provider,firebase_uid:user.uid})
+    })
+
+    if(!response.ok) {
+      alert("No account found . Please Login first")
+      await auth.signOut()
+    }
+    else{
+      showSuccessMessage("User signed in")
+      window.location.href = "index.html"
+    }
+    } catch (error) {
+    console.error("Google sign-in failed:", error);
+    alert("Error signing in");
+    }
+    })
+    
+    
     // Dark mode toggle logic
     document.addEventListener('DOMContentLoaded', function () {
       const themeToggle = document.getElementById('theme-toggle');

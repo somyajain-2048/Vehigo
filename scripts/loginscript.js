@@ -2,6 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const loginForm = document.querySelector(".form.login form");
   const errorMessage = document.getElementById("errorMessage");
   const successMessage = document.getElementById("successMessage");
+  const googleBtn = document.getElementById("googleBtn");
 
   if (loginForm) {
     loginForm.addEventListener("submit", async (e) => {

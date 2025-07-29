@@ -181,3 +181,74 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   }
 });
+
+document.getElementById("searchForm").addEventListener("submit", function (e) {
+  e.preventDefault(); // Prevent form from submitting immediately
+
+  // Get all field elements
+  const location = document.getElementById("input-1");
+  const rent = document.getElementById("input-2");
+  const carType = document.getElementById("car-type");
+  const transmission = document.getElementById("transmission");
+  const fuelType = document.getElementById("fuel-type");
+
+  let isValid = true;
+
+  // Clear all previous errors
+  clearError(location, "location-error");
+  clearError(rent, "rent-error");
+  clearError(carType, "carType-error");
+  clearError(transmission, "transmission-error");
+  clearError(fuelType, "fuelType-error");
+
+  // Validate Location
+  if (location.value.trim() === "") {
+    showError(location, "location-error", "Location is required");
+    isValid = false;
+  }
+
+  // Validate Rent
+  if (rent.value.trim() === "") {
+    showError(rent, "rent-error", "Rent amount is required");
+    isValid = false;
+  } else if (isNaN(rent.value.trim()) || Number(rent.value.trim()) <= 0) {
+    showError(rent, "rent-error", "Please enter a valid number");
+    isValid = false;
+  }
+
+  // Validate Car Type
+  if (carType.value === "") {
+    showError(carType, "carType-error", "Please select a car type");
+    isValid = false;
+  }
+
+  // Validate Transmission
+  if (transmission.value === "") {
+    showError(transmission, "transmission-error", "Please select transmission");
+    isValid = false;
+  }
+
+  // Validate Fuel Type
+  if (fuelType.value === "") {
+    showError(fuelType, "fuelType-error", "Please select fuel type");
+    isValid = false;
+  }
+
+  // Submit or alert if valid
+  if (isValid) {
+    alert("Form is valid! Proceeding with search...");
+    // this.submit(); // Uncomment this line if you want to allow actual submission
+  }
+});
+
+// Show error and add red border
+function showError(inputEl, errorId, message) {
+  inputEl.classList.add("input-error");
+  document.getElementById(errorId).innerText = message;
+}
+
+// Clear previous error and red border
+function clearError(inputEl, errorId) {
+  inputEl.classList.remove("input-error");
+  document.getElementById(errorId).innerText = "";
+}

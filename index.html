@@ -143,7 +143,7 @@
 
             <div class="hero-banner"></div>
 
-            <form action="" class="hero-form">
+            <form action="" id="searchForm" class="hero-form">
               <div class="input-wrapper">
                 <label for="input-1" class="input-label">Location</label>
 
@@ -154,6 +154,7 @@
                   class="input-field"
                   placeholder="Enter your Location"
                 />
+                <span id="location-error" class="error-message"></span>
               </div>
 
               <div class="input-wrapper">
@@ -168,6 +169,7 @@
                   class="input-field"
                   placeholder="Add an amount "
                 />
+                <span id="rent-error" class="error-message"></span>
               </div>
 
               <div class="input-wrapper">
@@ -180,6 +182,8 @@
                   <option value="mpv">MPV</option>
                   <option value="luxury">Luxury</option>
                 </select>
+                <span class="error-msg" id="carType-error"></span>
+
               </div>
 
               <div class="input-wrapper">
@@ -191,6 +195,8 @@
                   <option value="automatic">Automatic</option>
                   <option value="manual">Manual</option>
                 </select>
+                <span class="error-msg" id="transmission-error"></span>
+
               </div>
 
               <div class="input-wrapper">
@@ -202,6 +208,7 @@
                   <option value="ev">EV</option>
                   <option value="cng">CNG</option>
                 </select>
+                <span class="error-msg" id="fuelType-error"></span>
               </div>
 
               <button type="submit" class="btn">Search</button>

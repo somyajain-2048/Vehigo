@@ -1950,6 +1950,22 @@ body.dark-mode footer {
 
 }
 
+
+.error-message {
+  color: red;
+  font-size: 12px;
+  margin-top: 4px;
+  display: block;
+}
+
+.input-error {
+  border: 2px solid red !important;
+}
+
+select.error-border {
+  border: 2px solid red;
+}
+
 /* Ensure theme switch is always visible and functional */
 .theme-switch {
   position: relative;
@@ -1993,4 +2009,5 @@ body.dark-mode footer {
   .theme-switch {
     margin-left: 5px;
   }
+
 }

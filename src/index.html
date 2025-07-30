@@ -1080,6 +1080,69 @@
         </div>
       </section>
 
+      <!-- Filtering and Sorting Section -->
+<section class="filter-sort-section">
+  <div class="container">
+    <h2 class="h2 section-title">Filter and Sort Cars</h2>
+
+    <form id="filter-sort-form">
+      <!-- Filter by Car Type -->
+      <div class="input-wrapper">
+        <label for="filter-car-type" class="input-label">Car Type</label>
+        <select name="filter-car-type" id="filter-car-type">
+          <option value="">All</option>
+          <option value="SUV">SUV</option>
+          <option value="Sedan">Sedan</option>
+          <option value="Hatchback">Hatchback</option>
+        </select>
+      </div>
+
+      <!-- Filter by Location -->
+      <div class="input-wrapper">
+        <label for="filter-location" class="input-label">Location</label>
+        <select name="filter-location" id="filter-location">
+          <option value="">All</option>
+          <option value="Bhopal">Bhopal</option>
+          <option value="Indore">Indore</option>
+          <option value="Ujjain">Ujjain</option>
+        </select>
+      </div>
+
+      <!-- Sort by Price -->
+      <div class="input-wrapper">
+        <label for="sort-price" class="input-label">Sort by Price</label>
+        <select name="sort-price" id="sort-price">
+          <option value="">None</option>
+          <option value="low-to-high">Low to High</option>
+          <option value="high-to-low">High to Low</option>
+        </select>
+      </div>
+
+      <!-- Sort by Model Year -->
+      <div class="input-wrapper">
+        <label for="sort-year" class="input-label">Sort by Model Year</label>
+        <select name="sort-year" id="sort-year">
+          <option value="">None</option>
+          <option value="new-to-old">New to Old</option>
+          <option value="old-to-new">Old to New</option>
+        </select>
+      </div>
+
+      <!-- Sort by Ratings -->
+      <div class="input-wrapper">
+        <label for="sort-rating" class="input-label">Sort by Ratings</label>
+        <select name="sort-rating" id="sort-rating">
+          <option value="">None</option>
+          <option value="high-to-low">High to Low</option>
+          <option value="low-to-high">Low to High</option>
+        </select>
+      </div>
+
+      <button type="submit" class="btn">Apply</button>
+    </form>
+  </div>
+</section>
+
     </article>
   </main>
 
@@ -1226,6 +1289,62 @@
   -->
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+  <!-- Ensure Images are Displayed Properly -->
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const featuredCarImages = document.querySelectorAll('.featured-car-card img');
+    featuredCarImages.forEach(img => {
+      if (!img.src) {
+        img.src = './assets/images/default-car.jpg'; // Fallback image
+      }
+    });
+  });
+</script>
+
+<!-- Filtering and Sorting JavaScript -->
+<script>
+  document.getElementById('filter-sort-form').addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    const carType = document.getElementById('filter-car-type').value;
+    const location = document.getElementById('filter-location').value;
+    const sortPrice = document.getElementById('sort-price').value;
+
+    const carCards = document.querySelectorAll('.featured-car-card');
+
+    carCards.forEach(card => {
+      const cardType = card.querySelector('.card-item-text').textContent;
+      const cardLocation = card.querySelector('.card-title a').textContent;
+      const cardPrice = parseInt(card.querySelector('.card-price strong').textContent.replace('₹', ''));
+
+      let isVisible = true;
+
+      if (carType && !cardType.includes(carType)) {
+        isVisible = false;
+      }
+
+      if (location && !cardLocation.includes(location)) {
+        isVisible = false;
+      }
+
+      card.style.display = isVisible ? 'block' : 'none';
+    });
+
+    if (sortPrice) {
+      const sortedCards = Array.from(carCards).sort((a, b) => {
+        const priceA = parseInt(a.querySelector('.card-price strong').textContent.replace('₹', ''));
+        const priceB = parseInt(b.querySelector('.card-price strong').textContent.replace('₹', ''));
+
+        return sortPrice === 'low-to-high' ? priceA - priceB : priceB - priceA;
+      });
+
+      const carList = document.querySelector('.featured-car-list');
+      carList.innerHTML = '';
+      sortedCards.forEach(card => carList.appendChild(card));
+    }
+  });
+</script>
 
 </body>
 

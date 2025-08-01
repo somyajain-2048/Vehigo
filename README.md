@@ -22,7 +22,6 @@
 - [✨ Features](#-features)
 - [🛠️ Technologies Used](#-technologies-used)
 - [📄 License](#-license)
-- [🚀 Getting Started](#-getting-started)
 - [📁 Project Structure](#-project-structure)
 - [💡 Usage](#-usage)
 - [🤝 Contributing](#-contributing)
@@ -66,18 +65,6 @@ You’re free to use, modify, and share this software under the license terms.
 
 ---
 
-## 🚀 Getting Started
-
-Follow these steps to run VehiGo locally:
-
-### 1. Clone the repository
-
-```bash
-git clone https://github.com/InnoWebLabs/Vehigo.git
-```
-
----
-
 ### 📁 Project Structure
 
 VehiGo's files are organized to keep things tidy. Here's a glimpse:
@@ -113,3 +100,10 @@ Your journey with VehiGo is seamless!
 - **Guided Experience:** Follow our "4 simple steps" to easily navigate from profile creation to securing your rental.
 - **Beyond the Drive:** Check out authentic customer "Reviews" and explore our "Blog" for insights and updates.
 - **Always Connected:** Access support, company info, and contact options conveniently from the footer, or through our responsive navigation, tailored for any device.
+
+---
+## 🤝 Contributing
+
+We welcome and encourage contributions from the community to help improve VehiGo. Whether you wish to report a bug, suggest a new feature, or submit a pull request, your input is highly valued and appreciated.
+
+Before contributing, please take a moment to review our [Contributing Guidelines](CONTRIBUTING.md). These guidelines outline the process for submitting issues and pull requests, as well as the standards we strive to maintain for code quality and collaboration.by contributing to VehiGo, you help us build a better, more robust platform for everyone. Thank you for your interest and support!

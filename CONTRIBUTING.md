@@ -21,7 +21,8 @@ Welcome! Thank you for your interest in contributing to this project. Whether yo
 
 1. **Fork the Repository**  
     Click the "Fork" button at the top right of this repository to create your own copy.  
-    ![Fork Repository Example](https://docs.github.com/assets/images/help/repository/fork_button.png)
+   <img align="right" width="300" src="https://firstcontributions.github.io/assets/Readme/clone.png" alt="clone this repository" />
+
 
 2. **Clone Your Fork**  
     Copy the URL from your forked repository and run:

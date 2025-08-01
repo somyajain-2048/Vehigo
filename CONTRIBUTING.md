@@ -69,7 +69,7 @@ Please follow these best practices for contributions:
 
 ## 📄 Code of Conduct
 
-We expect all contributors to follow our [CODE_OF_CONDUCT](https://github.com/aryansoni13/VehiGo/blob/main/CODE_OF_CONDUCT.md) to ensure a welcoming environment for everyone.
+We expect all contributors to follow our [CODE_OF_CONDUCT]([https://github.com/aryansoni13/VehiGo/blob/main/CODE_OF_CONDUCT.md](https://github.com/InnoWebLabs/Vehigo/blob/main/CODE_OF_CONDUCT.md)) to ensure a welcoming environment for everyone.
 
 ---
 

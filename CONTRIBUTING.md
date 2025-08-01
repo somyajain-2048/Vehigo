@@ -75,7 +75,11 @@ We expect all contributors to follow our [CODE OF CONDUCT](https://github.com/ar
 
 ## 🙌 Need Help?
 
-Feel free to open an issue if you have questions, or connect with the maintainers via discussions or GitHub issues. We're here to help!
+If you have any questions, run into issues, or need clarification:
+
+- 💬 **Open an Issue**: For bugs, suggestions, or guidance, open a GitHub Issue.
+- 👥 **Reach Out to Maintainers**: You can contact the maintainers via email at [akashshelke594@gmail.com](mailto:akashshelke594@gmail.com).
+We're here to support your contribution journey — no question is too small!
 
 ---
 

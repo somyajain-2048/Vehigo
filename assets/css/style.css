@@ -1329,8 +1329,13 @@ body.dark-mode footer {
 \*-----------------------------------*/
 
 .footer {
-  background: var(--alice-blue-4);
+  
   color: var(--independence);
+  background-color: #ceeafd; 
+  padding: 3rem 1rem; 
+  font-family: 'Segoe UI', sans-serif; 
+  font-size: 1.05rem; 
+  color: #333;
 }
 
 .footer a {
@@ -1357,6 +1362,9 @@ body.dark-mode footer {
 
 .footer-list {
   font-family: var(--ff-nunito);
+  list-style: none;
+   padding: 0;
+    flex: 1 1 200px;
 }
 
 .footer-list:not(:last-of-type) {
@@ -1364,18 +1372,23 @@ body.dark-mode footer {
 }
 
 .footer-list-title {
+  font-weight: 700; 
+  font-size: 1.6rem;
+   margin-bottom: 0.75rem;
   color: var(--space-cadet);
-  font-weight: var(--fw-600);
-  margin-bottom: 8px;
 }
 
 .footer-link {
-  font-size: var(--fs-6);
+  font-size: 1.1rem;
   padding-block: 6px;
+  color: #444; 
+  text-decoration: none; 
+  display: block;
+   margin-bottom: 0.5rem;
 }
 
-.footer-link:is(:hover, :focus) {
-  color: var(--carolina-blue);
+.footer-link:hover{
+  color: rgb(42, 21, 231);
 }
 
 .footer-list:last-child > li:first-child {
@@ -1383,8 +1396,8 @@ body.dark-mode footer {
 }
 
 .footer-bottom {
-  background: var(--gradient);
-  border: 1px solid var(--white);
+ 
+  border: 1px solid rgb(107, 207, 254);
   border-radius: var(--radius-18) var(--radius-18) 0 0;
   padding: 20px;
 }
@@ -1397,7 +1410,7 @@ body.dark-mode footer {
 }
 
 .social-link {
-  font-size: 20px;
+  font-size: 35px;
 }
 
 .social-link ion-icon {

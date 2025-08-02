@@ -462,7 +462,7 @@
                   <figure class="card-banner">
                     <img
                       src="./assets/images/innova.jpeg"
-                      alt="Toyota Innova Crsyta"
+                      alt="Toyota Innova Crysta"
                       loading="lazy"
                       width="440"
                       height="300"
@@ -1109,21 +1109,16 @@
     <div class="footer-bottom" >
       
       <!-- Social Icons -->
-      
-       <a href="https://www.facebook.com/" class="social-link" aria-label="Facebook" ><ion-icon name="logo-facebook"></ion-icon></a>
-      <a href="https://www.instagram.com/" class="social-link" aria-label="Instagram"><ion-icon name="logo-instagram"></ion-icon></a>
-      <a href="https://x.com/" class="social-link" aria-label="Twitter" ><ion-icon name="logo-twitter"></ion-icon></a>
-      <a href="https://www.linkedin.com/feed/" class="social-link" aria-label="LinkedIn" ><ion-icon name="logo-linkedin"></ion-icon></a>
-      <a href="mailto:support@vehigo.com" class="social-link" aria-label="Email"><ion-icon name="mail-outline"></ion-icon></a>
-      
-      
-</div>
-    <!-- Copyright -->
-      <p class="copyright" style="color:#1a1a1a; font-size: 1.2rem; text-align: center; margin-top: 2rem; margin-bottom: 2rem;">
-    &copy; 2023 <a href="./ContactUs.html" style="color: #007bff; text-decoration: none;">VehiGo</a> — All rights reserved.
-</p>
+<footer style="background-color: #e3f2fd; padding: 20px 0; text-align: center;">
+  <div class="social-icons" style="margin-bottom: 10px;">
+    <a href="https://www.linkedin.com" target="_blank" style="margin: 0 10px; font-size: 24px; color: #0077b5;"><i class="fab fa-linkedin"></i></a>
+    <a href="https://www.twitter.com" target="_blank" style="margin: 0 10px; font-size: 24px; color: #1da1f2;"><i class="fab fa-twitter"></i></a>
+    <a href="https://www.instagram.com" target="_blank" style="margin: 0 10px; font-size: 24px; color: #e1306c;"><i class="fab fa-instagram"></i></a>
+    <a href="https://www.facebook.com" target="_blank" style="margin: 0 10px; font-size: 24px; color: #3b5998;"><i class="fab fa-facebook"></i></a>
   </div>
+  <p style="font-size: 14px; color: #333;">© 2023 Vehigo — All rights reserved.</p>
 </footer>
+
 
 
 
@@ -1131,6 +1126,15 @@
     <script src="./assets/js/script.js"></script>
     <!-- Removed dark mode script -->
 
+    <script>
+      // Dynamically set the copyright year
+      document.addEventListener('DOMContentLoaded', function() {
+        var yearSpan = document.getElementById('copyright-year');
+        if (yearSpan) {
+          yearSpan.textContent = new Date().getFullYear();
+        }
+      });
+    </script>
 
     <script src="./scripts/logout.js"></script>
     <script

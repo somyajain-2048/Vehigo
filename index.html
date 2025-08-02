@@ -21,7 +21,7 @@
   -->
     <link rel="stylesheet" href="assets/css/style.css" />
 
-
+     
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -31,13 +31,54 @@
   </head>
 
   <body>
+
   <header class="header" data-header>
   <div class="container">
     <div class="overlay" data-overlay></div>
 
+    <header class="header" data-header>
+      <div class="container">
+        <div class="overlay" data-overlay></div>
+
+        <a href="index.html" class="logo">
+          <img src="./assets/images/vehigologo.png" alt="VehiGo logo" />
+        </a>
+
+        <nav class="navbar" data-navbar>
+          <ul class="navbar-list">
+            <li>
+              <a href="index.html" class="navbar-link" data-nav-link>Home</a>
+            </li>
+
+            <li>
+              <a href="#featured-car" class="navbar-link" data-nav-link
+                >Explore cars</a
+              >
+            </li>
+
+            <li>
+              <a href="./src/pages/about.html" class="navbar-link" data-nav-link>About us</a>
+            </li>
+
+            <li>
+              <a href="#blog" class="navbar-link" data-nav-link>Blog</a>
+            </li>
+
+            <li>
+              <a href="offline.html" class="navbar-link" data-nav-link
+                >Offline Centers</a
+              >
+            </li>
+
+             <li>
+              <a href="rentcar.html" class="navbar-link" data-nav-link>Rent Your Car</a>
+            </li>
+
+
     <a href="index.html" class="logo">
       <img src="./assets/images/vehigologo.png" alt="VehiGo logo" />
     </a>
+
 
     <nav class="navbar" data-navbar>
       <ul class="navbar-list">
@@ -54,6 +95,48 @@
       <div class="header-contact">
         <a href="tel:1800100100" class="contact-link">1800-100-100</a>
         <span class="contact-time">Mon - Sat: 9:00 am - 6:00 pm</span>
+
+            <span class="contact-time">Mon - Sat: 9:00 am - 6:00 pm</span>
+          </div>
+          <!-- Theme Toggle Switch with SVG icons -->
+          <label class="theme-switch" for="theme-toggle">
+            <input type="checkbox" id="theme-toggle" />
+            <span class="slider">
+              <span class="icon sun" aria-label="Light mode">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="orange" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+              </span>
+              <span class="icon moon" aria-label="Dark mode">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#f5f5f5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z"/></svg>
+              </span>
+            </span>
+          </label>
+
+
+          <!-- home.html -->
+          <button id="logoutBtn" style="display: none">Logout</button>
+
+
+          <a href="#featured-car" class="btn" aria-labelledby="aria-label-txt">
+            <ion-icon name="car-outline"></ion-icon>
+
+            <span id="aria-label-txt">Explore cars</span>
+          </a>
+
+          <a href="./login.html" class="btn user-btn" aria-label="Profile">
+            <ion-icon name="person-outline"></ion-icon>
+          </a>
+
+          <button
+            class="nav-toggle-btn"
+            data-nav-toggle-btn
+            aria-label="Toggle Menu"
+          >
+            <span class="one"></span>
+            <span class="two"></span>
+            <span class="three"></span>
+          </button>
+        </div>
+
       </div>
 
       <!-- 🌙 Theme Toggle Switch -->
@@ -123,7 +206,7 @@
 
             <div class="hero-banner"></div>
 
-            <form action="" class="hero-form">
+            <form action="" id="searchForm" class="hero-form">
               <div class="input-wrapper">
                 <label for="input-1" class="input-label">Location</label>
 
@@ -134,6 +217,7 @@
                   class="input-field"
                   placeholder="Enter your Location"
                 />
+                <span id="location-error" class="error-message"></span>
               </div>
 
               <div class="input-wrapper">
@@ -148,6 +232,7 @@
                   class="input-field"
                   placeholder="Add an amount "
                 />
+                <span id="rent-error" class="error-message"></span>
               </div>
 
               <div class="input-wrapper">
@@ -160,6 +245,8 @@
                   <option value="mpv">MPV</option>
                   <option value="luxury">Luxury</option>
                 </select>
+                <span class="error-msg" id="carType-error"></span>
+
               </div>
 
               <div class="input-wrapper">
@@ -171,6 +258,8 @@
                   <option value="automatic">Automatic</option>
                   <option value="manual">Manual</option>
                 </select>
+                <span class="error-msg" id="transmission-error"></span>
+
               </div>
 
               <div class="input-wrapper">
@@ -182,6 +271,7 @@
                   <option value="ev">EV</option>
                   <option value="cng">CNG</option>
                 </select>
+                <span class="error-msg" id="fuelType-error"></span>
               </div>
 
               <button type="submit" class="btn">Search</button>
@@ -435,7 +525,7 @@
                   <figure class="card-banner">
                     <img
                       src="./assets/images/innova.jpeg"
-                      alt="Toyota Innova Crsyta"
+                      alt="Toyota Innova Crysta"
                       loading="lazy"
                       width="440"
                       height="300"
@@ -1042,109 +1132,72 @@
   -->
 
 
-    <footer class="footer">
-      <div class="container">
-        <div class="footer-top">
-          <div class="footer-brand">
-            <a href="#" class="logo">
-              <img src="./assets/images/vehigologo.png" alt="VehiGo logo" />
-            </a>
-
-            <p class="footer-text">
-              Search for cheap rental cars in Madhaya Pradesh. We offers our
-              customers an attractive and fun selection of vehicals as well as
-              an opportunity to rent thier cars when not in use.
-            </p>
-          </div>
-
-          <ul class="footer-list">
-            <li>
-              <p class="footer-list-title">Company</p>
-            </li>
-
-            <li>
-              <a href="#" class="footer-link">About us</a>
-            </li>
-
-            <li>
-              <a href="#" class="footer-link">Pricing plans</a>
-            </li>
-
-            <li>
-              <a href="#" class="footer-link">Our blog</a>
-            </li>
-
-            <li>
-              <a href="./ContactUs.html" class="footer-link">Contact Us</a>
-            </li>
-          </ul>
-
-          <ul class="footer-list">
-            <li>
-              <p class="footer-list-title">Support</p>
-            </li>
-
-            <li>
-              <a href="#" class="footer-link">Help center</a>
-            </li>
-
-            <li>
-              <a href="src/pages/Askaques.html" class="footer-link">Ask a question</a>
-            </li>
-            <li>
-              <a href="privacypolicy.html" class="footer-link">Privacy policy</a>
-            </li>
-
-            <li>
-              <a href="src/pages/tandc.html" class="footer-link">Terms & conditions</a>
-            </li>
-          </ul>
-
-          </div>
-
-        <div class="footer-bottom">
-          <ul class="social-list">
-            <li>
-              <a href="#" class="social-link">
-                <ion-icon name="logo-facebook"></ion-icon>
-              </a>
-            </li>
-
-            <li>
-              <a href="#" class="social-link">
-                <ion-icon name="logo-instagram"></ion-icon>
-              </a>
-            </li>
-
-            <li>
-              <a href="#" class="social-link">
-                <ion-icon name="logo-twitter"></ion-icon>
-              </a>
-            </li>
-
-            <li>
-              <a href="#" class="social-link">
-                <ion-icon name="logo-linkedin"></ion-icon>
-              </a>
-            </li>
-
-            <li>
-              <a href="#" class="social-link">
-                <ion-icon name="mail-outline"></ion-icon>
-              </a>
-            </li>
-          </ul>
-
-          <p class="copyright">
-            &copy; 2023 <a href="./ContactUs.html">VehiGo</a> Contact us through
-          </p>
-        </div>
+<footer class="footer">
+  <div class="container" style="max-width: 1200px; margin: auto;">
+    
+    <!-- Top Section -->
+    <div class="footer-top" style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 2.5rem;">
+      
+      <!-- Brand Section -->
+      <div class="footer-brand" style="flex: 1 1 300px;">
+        <a href="#" class="logo">
+          <img src="./assets/images/vehigologo.png" alt="VehiGo logo" style="width: 160px;" />
+        </a>
+        <p class="footer-text" style="margin-top: 1rem; line-height: 1.6;">
+          🚗 <strong>Find affordable rental cars across Madhya Pradesh!</strong><br>
+          Choose from a wide range of vehicles, or rent out your own when not in use. We make car rental easy, accessible, and efficient for everyone.
+        </p>
       </div>
-    </footer>
+
+      <!-- Company Section -->
+      <ul class="footer-list">
+        <li><p class="footer-list-title">Company</p></li>
+        <li><a href="#" class="footer-link" >About Us</a></li>
+        <li><a href="#" class="footer-link" >Pricing Plans</a></li>
+        <li><a href="#" class="footer-link" >Our Blog</a></li>
+        <li><a href="./ContactUs.html" class="footer-link" >Contact Us</a></li>
+      </ul>
+
+      <!-- Support Section -->
+      <ul class="footer-list">
+        <li><p class="footer-list-title">Support</p></li>
+        <li><a href="#" class="footer-link" >Help Center</a></li>
+        <li><a href="./src/pages/Askaques.html" class="footer-link" >Ask a Question</a></li>
+        <li><a href="./privacypolicy.html" class="footer-link" >Privacy Policy</a></li>
+        <li><a href="./src/pages/tandc.html" class="footer-link">Terms & Conditions</a></li>
+      </ul>
+    </div>
+
+    <!-- Bottom Section -->
+    <div class="footer-bottom" >
+      
+      <!-- Social Icons -->
+<footer style="background-color: #e3f2fd; padding: 20px 0; text-align: center;">
+  <div class="social-icons" style="margin-bottom: 10px;">
+    <a href="https://www.linkedin.com" target="_blank" style="margin: 0 10px; font-size: 24px; color: #0077b5;"><i class="fab fa-linkedin"></i></a>
+    <a href="https://www.twitter.com" target="_blank" style="margin: 0 10px; font-size: 24px; color: #1da1f2;"><i class="fab fa-twitter"></i></a>
+    <a href="https://www.instagram.com" target="_blank" style="margin: 0 10px; font-size: 24px; color: #e1306c;"><i class="fab fa-instagram"></i></a>
+    <a href="https://www.facebook.com" target="_blank" style="margin: 0 10px; font-size: 24px; color: #3b5998;"><i class="fab fa-facebook"></i></a>
+  </div>
+  <p style="font-size: 14px; color: #333;">© 2023 Vehigo — All rights reserved.</p>
+</footer>
+
+
+
+
 
     <script src="./assets/js/script.js"></script>
     <!-- Removed dark mode script -->
 
+    <script>
+      // Dynamically set the copyright year
+      document.addEventListener('DOMContentLoaded', function() {
+        var yearSpan = document.getElementById('copyright-year');
+        if (yearSpan) {
+          yearSpan.textContent = new Date().getFullYear();
+        }
+      });
+    </script>
 
     <script src="./scripts/logout.js"></script>
     <script
@@ -1157,11 +1210,29 @@
     ></script>
 
 
+    
     <!-- Back to Top Button -->
-    <a href="#" class="back-to-top">
-      <ion-icon name="chevron-up-outline"></ion-icon>
-      <span>Back to Top</span>
-    </a>
+    <a href="./index.html" style="
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background-color: #007BFF;
+  color: white;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  z-index: 999;
+  transition: background-color 0.3s;
+" onmouseover="this.style.backgroundColor='#0056b3'" onmouseout="this.style.backgroundColor='#007BFF'">
+  <ion-icon name="chevron-up-outline" style="font-size: 24px;"></ion-icon>
+</a>
+
+    
   </body>
 </html>
 

@@ -19,6 +19,32 @@ body {
   box-shadow: var(--shadow-1);
 }
 
+body.dark-mode header{
+  background-color: black;
+  color: white;
+}
+body.dark-mode .container{
+  background-color: black;
+  color: white;
+}
+
+body.dark-mode .contact-link{
+  color: white;
+}
+
+body.dark-mode h2.section-title1 {
+  color: white;
+}
+
+body.dark-mode h2.section-title{
+  color: white;
+}
+body.dark-mode .social-link{
+  background-color: black;
+  color: white;
+}
+body.dark-mod
+
 /* Navbar link styles */
 .navbar-list .navbar-link {
   color: var(--independence);
@@ -680,7 +706,10 @@ input:checked + .slider:before {
   justify-content: space-between;
   padding: 0 5px;
 }
-
+body.dark-mode {
+  background-color: #121212;
+  color: #ffffff;
+}
 .slider:before {
   position: absolute;
   content: "";
@@ -783,9 +812,7 @@ input:checked + .slider:before {
 .btn:is(:hover, :focus)::before {
   opacity: 1;
 }
-html.dark{
-  
-}
+
 
 
 @media (max-width: 767px) {

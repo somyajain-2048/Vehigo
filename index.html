@@ -1091,9 +1091,21 @@
         <li><p class="footer-list-title">Company</p></li>
         <li><a href="#" class="footer-link" >About Us</a></li>
         <li><a href="#" class="footer-link" >Pricing Plans</a></li>
-        <li><a href="#" class="footer-link" >Our Blog</a></li>
+        <li><a href="#" onclick="scrollToSection(event)"  class="footer-link" >Our Blog</a></li>
         <li><a href="./ContactUs.html" class="footer-link" >Contact Us</a></li>
       </ul>
+<script>
+  function scrollToSection(event) {
+    event.preventDefault(); // Prevent default anchor behavior
+    const el = document.querySelectorAll('.section-title'); // selects first matching element
+   el.forEach(ele => {
+  if (ele.textContent.trim().toLowerCase() === "our blog")
+ {
+    ele.scrollIntoView({ behavior: 'smooth' });
+  }
+});
+  }
+</script>
 
       <!-- Support Section -->
       <ul class="footer-list">

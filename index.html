@@ -462,7 +462,7 @@
                   <figure class="card-banner">
                     <img
                       src="./assets/images/innova.jpeg"
-                      alt="Toyota Innova Crsyta"
+                      alt="Toyota Innova Crysta"
                       loading="lazy"
                       width="440"
                       height="300"
@@ -1118,8 +1118,9 @@
       </ul>
 
       <!-- Copyright -->
+      <span>
       <p class="copyright" style="color: #666; font-size: 0.95rem;">
-        &copy; 2023 <a href="./ContactUs.html" style="color: #007bff; text-decoration: none;">VehiGo</a> — All rights reserved.
+        &copy; <span id="copyright-year"></span></span> <a href="./ContactUs.html" style="color: #007bff; text-decoration: none;">VehiGo</a> — All rights reserved.
       </p>
     </div>
   </div>
@@ -1131,6 +1132,15 @@
     <script src="./assets/js/script.js"></script>
     <!-- Removed dark mode script -->
 
+    <script>
+      // Dynamically set the copyright year
+      document.addEventListener('DOMContentLoaded', function() {
+        var yearSpan = document.getElementById('copyright-year');
+        if (yearSpan) {
+          yearSpan.textContent = new Date().getFullYear();
+        }
+      });
+    </script>
 
     <script src="./scripts/logout.js"></script>
     <script

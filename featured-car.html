@@ -51,7 +51,12 @@
                     </li>
 
                     <!-- 🌙 Dark Mode Toggle Button -->
-                    <!-- Removed dark mode toggle button -->
+                    <li>
+                        <button id="darkModeToggle" class="navbar-link" style="background:none;border:none;cursor:pointer;">
+                            <span class="fa fa-moon-o" aria-hidden="true"></span>
+                            <span style="margin-left:6px;">Dark Mode</span>
+                        </button>
+                    </li>
                 </ul>
             </nav>
 
@@ -130,7 +135,85 @@
 
                                         <li class="card-list-item">
                                             <ion-icon name="flash-outline"></ion-icon>
-
+            </nav>
+            <script>
+                // Dark mode toggle logic
+                (function() {
+                    const toggleBtn = document.getElementById('darkModeToggle');
+                    const themeToggle = document.getElementById('theme-toggle');
+                    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+                    const savedTheme = localStorage.getItem('theme');
+                    function setTheme(dark) {
+                        if (dark) {
+                            document.documentElement.classList.add('dark-mode');
+                            localStorage.setItem('theme', 'dark');
+                            if (themeToggle) themeToggle.checked = true;
+                        } else {
+                            document.documentElement.classList.remove('dark-mode');
+                            localStorage.setItem('theme', 'light');
+                            if (themeToggle) themeToggle.checked = false;
+                        }
+                    }
+                    // Initial theme
+                    if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
+                        setTheme(true);
+                    } else {
+                        setTheme(false);
+                    }
+                    // Navbar button
+                    if (toggleBtn) {
+                        toggleBtn.addEventListener('click', function() {
+                            setTheme(!document.documentElement.classList.contains('dark-mode'));
+                        });
+                    }
+                    // Header switch
+                    if (themeToggle) {
+                        themeToggle.addEventListener('change', function() {
+                            setTheme(themeToggle.checked);
+                        });
+                    }
+                })();
+            </script>
+            <style>
+                /* Basic dark mode styles */
+                .dark-mode {
+                    background: #181a1b !important;
+                    color: #f5f5f5 !important;
+                }
+                .dark-mode .header,
+                .dark-mode .navbar,
+                .dark-mode .featured-car-card,
+                .dark-mode .container,
+                .dark-mode main,
+                .dark-mode .card-price,
+                .dark-mode .card-content {
+                    background: #23272a !important;
+                    color: #f5f5f5 !important;
+                }
+                .dark-mode .navbar-link,
+                .dark-mode .btn,
+                .dark-mode .card-title,
+                .dark-mode .card-item-text {
+                    color: #f5f5f5 !important;
+                }
+                .dark-mode .btn {
+                    background: #444 !important;
+                    border-color: #888 !important;
+                }
+                .dark-mode .featured-car-card {
+                    box-shadow: 0 2px 8px rgba(0,0,0,0.7) !important;
+                }
+                .dark-mode .card-banner img {
+                    filter: brightness(0.85) contrast(1.1);
+                }
+                /* Optional: style the dark mode toggle button */
+                #darkModeToggle .fa-moon-o {
+                    color: #f5f5f5;
+                }
+                .dark-mode #darkModeToggle .fa-moon-o {
+                    color: orange;
+                }
+            </style>
                                             <span class="card-item-text">Petrol</span>
                                         </li>
 

@@ -6,7 +6,14 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
+    /* background:url(../images/blog-3.jpg); */
 }
+.body_tag {
+  background:linear-gradient(rgb(0,0,0,0.5),rgba(0, 0, 0, 0.5)) ,url(../images/hero_banner_mustang.png) no-repeat center center;
+  background-size: cover;
+  min-height: 100vh;
+}
+
 
 .container {
     height: 100vh;
@@ -14,8 +21,9 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: hsl(216, 38%, 95%);;
+    /* background-color: hsl(216, 38%, 95%); */
     column-gap: 30px;
+    
 }
 
 .form {
@@ -28,12 +36,19 @@
     background: #ffffff;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     margin: 50px;
+    border: 2px black solid;
+    
+}
+.form:hover{
+    /* transform: translateY(8px) */
+    transform: scale(1.2);
 }
 
 .form.signup {
     opacity: 0;
     pointer-events: none;
     padding-bottom: 60px;
+    /* border:2px green solid; */
 }
 
 .forms.show-signup .form.signup {
@@ -49,8 +64,10 @@
 header {
     font-size: 28px;
     font-weight: 600;
-    color: #232836;
+    /* color: #232836; */
+    color: #0171d3;
     text-align: center;
+    background-color: white;
 }
 
 form {
@@ -73,12 +90,15 @@ form {
     font-size: 16px;
     font-weight: 400;
     border-radius: 6px;
+    
 }
 
 .field input {
     outline: none;
     padding: 0 15px;
     border: 1px solid#CACACA;
+
+    
 }
 
 .field input:focus {
@@ -101,10 +121,12 @@ form {
     background-color: #0171d3;
     transition: all 0.3s ease;
     cursor: pointer;
+    border: 2px #0171d3 solid;
+    /* background:linear-gradient(rgb(0,0,0,0.5),rgba(0, 0, 0, 0.5)) ,url(../images/blog-4.jpg) no-repeat center center; */
 }
 
 .field button:hover {
-    background-color: #016dcb;
+    background-color: black;
 }
 
 .form-link {

@@ -9,6 +9,41 @@
 
   <title>Vehigo - Rent your favourite car</title>
 
+  <style>
+    /* ======= Custom Style for Select Dropdown ======= */
+
+    select {
+      appearance: none;
+      /* Remove default arrow in most browsers */
+      -webkit-appearance: none;
+      -moz-appearance: none;
+
+      background-color: #fff;
+      border: 2px solid #dcdcdc;
+      border-radius: 8px;
+      padding: 0.8rem 1rem;
+      font-size: 1rem;
+      font-family: 'Open Sans', sans-serif;
+      color: #333;
+      margin: 0.5rem 0;
+      width: 100%;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      transition: border-color 0.3s ease-in-out;
+    }
+
+    select:focus {
+      border-color: #007bff;
+      outline: none;
+    }
+
+    /* Optional: Add a custom down arrow using background image */
+    select {
+      background-image: url("data:image/svg+xml;utf8,<svg fill='gray' height='20' viewBox='0 0 24 24' width='20' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>");
+      background-repeat: no-repeat;
+      background-position: right 1rem center;
+      background-size: 1rem;
+    }
+  </style>
   <!-- 
     - favicon
   -->
@@ -43,27 +78,32 @@
         <img src="./assets/images/vehigologo.png" alt="VehiGo logo">
       </a>
 
-      <nav class="navbar" data-navbar>
-        <ul class="navbar-list">
+<nav class="navbar" data-navbar>
+  <ul class="navbar-list">
 
-          <li>
-            <a href="index.html" class="navbar-link" data-nav-link>Home</a>
-          </li>
+    <li>
+      <a href="index.html" class="navbar-link" data-nav-link>Home</a>
+    </li>
 
-          <li>
-            <a href="#featured-car" class="navbar-link" data-nav-link>Explore cars</a>
-          </li>
+    <li>
+      <a href="index.html#featured-car" class="navbar-link" data-nav-link>Explore cars</a>
+    </li>
 
-          <li>
-            <a href="#" class="navbar-link" data-nav-link>About us</a>
-          </li>
+    <li>
+      <a href="pages/about.html" class="navbar-link" data-nav-link>About us</a>
+    </li>
 
-          <li>
-            <a href="#blog" class="navbar-link" data-nav-link>Blog</a>
-          </li>
+    <li>
+      <a href="index.html#blog" class="navbar-link" data-nav-link>Blog</a>
+    </li>
 
-        </ul>
-      </nav>
+    <li>
+      <a href="./pages/bill.html" class="navbar-link" data-nav-link>Fare Calculator</a>
+    </li>
+
+  </ul>
+</nav>
+
 
       <div class="header-actions">
 
@@ -72,12 +112,6 @@
 
           <span class="contact-time">Mon - Sat: 9:00 am - 6:00 pm</span>
         </div>
-
-        <a href="#featured-car" class="btn" aria-labelledby="aria-label-txt">
-          <ion-icon name="car-outline"></ion-icon>
-
-          <span id="aria-label-txt">Explore cars</span>
-        </a>
 
         <a href="./pages/login.html" class="btn user-btn" aria-label="Profile">
           <ion-icon name="person-outline"></ion-icon>
@@ -105,7 +139,7 @@
         <div class="container">
 
           <div class="hero-content">
-            <h2 class="h1 hero-title">Seemless rentals,<br>Endless Adventures!</h2>
+            <h2 class="h1 hero-title">SEAMLESS RENTALS,<br>Endless Adventures!</h2>
 
             <p class="hero-text">
               Live in Bhopal, Indore and Ujjain!
@@ -119,17 +153,45 @@
             <div class="input-wrapper">
               <label for="input-1" class="input-label">Location</label>
 
-              <input type="text" name="car-model" id="input-1" class="input-field" placeholder="Enter your Location">
+              <input type="text" name="car-model" id="input-1" class="input-field" placeholder="e.g., Bhopal">
             </div>
 
             <div class="input-wrapper">
               <label for="input-2" class="input-label">Max. Rent payment</label>
 
-              <input type="text" name="monthly-pay" id="input-2" class="input-field" placeholder="Add an amount ">
+              <input type="text" name="monthly-pay" id="input-2" class="input-field" placeholder="Max Budget (₹)">
             </div>
 
 
             <button type="submit" class="btn">Search</button>
+            <div class="input-wrapper">
+              <label for="car-type" class="input-label">Car Type</label>
+              <select name="car-type" id="car-type">
+                <option>SUV</option>
+                <option>Sedan</option>
+                <option>Hatchback</option>
+              </select>
+            </div>
+
+            <div class="input-wrapper">
+              <label for="transmission" class="input-label">Transmission</label>
+              <select name="transmission" id="transmission">
+                <option>Manual</option>
+                <option>Automatic</option>
+              </select>
+            </div>
+
+            <div class="input-wrapper">
+              <label for="fuel-type" class="input-label">Fuel Type</label>
+              <select name="fuel-type" id="fuel-type">
+                <option>Petrol</option>
+                <option>Diesel</option>
+                <option>Electric</option>
+                <option>Hybrid</option>
+              </select>
+            </div>
+
+
 
           </form>
 
@@ -157,391 +219,81 @@
             </a>
           </div>
 
-          <ul class="featured-car-list">
-
-            <li>
-              <div class="featured-car-card">
-
-                <figure class="card-banner">
-                  <img src="./assets/images/creta.jpeg" alt="Hyundai Creta" loading="lazy" width="440" height="300"
-                    class="w-100">
-                </figure>
-
-                <div class="card-content">
-
-                  <div class="card-title-wrapper">
-                    <h3 class="h3 card-title">
-                      <a href="#">Hyundai Creta</a>
-                    </h3>
-
-                    <data class="year" value="2021">2022</data>
-                  </div>
-
-                  <ul class="card-list">
-
-                    <li class="card-list-item">
-                      <ion-icon name="people-outline"></ion-icon>
-
-                      <span class="card-item-text">5 People</span>
-                    </li>
-
-                    <li class="card-list-item">
-                      <ion-icon name="flash-outline"></ion-icon>
-
-                      <span class="card-item-text">Petrol</span>
-                    </li>
-
-                    <li class="card-list-item">
-                      <ion-icon name="speedometer-outline"></ion-icon>
-
-                      <span class="card-item-text">17.2km / 1-litre</span>
-                    </li>
-
-                    <li class="card-list-item">
-                      <ion-icon name="hardware-chip-outline"></ion-icon>
-
-                      <span class="card-item-text">Manual</span>
-                    </li>
-
-                  </ul>
-
-                  <div class="card-price-wrapper">
-
-                    <p class="card-price">
-                      <strong>₹283</strong> / hour
-                    </p>
-
-
-
-                    <button class="btn">Rent now</button>
-
-                  </div>
-
-                </div>
-
-              </div>
-            </li>
-
-            <li>
-              <div class="featured-car-card">
-
-                <figure class="card-banner">
-                  <img src="./assets/images/nexon.jpg" alt="nexon" loading="lazy" width="440" height="300"
-                    class="w-100">
-                </figure>
-
-                <div class="card-content">
-
-                  <div class="card-title-wrapper">
-                    <h3 class="h3 card-title">
-                      <a href="#">Tata Nexon</a>
-                    </h3>
-
-                    <data class="year" value="2019">2019</data>
-                  </div>
-
-                  <ul class="card-list">
-
-                    <li class="card-list-item">
-                      <ion-icon name="people-outline"></ion-icon>
-
-                      <span class="card-item-text">5 People</span>
-                    </li>
-
-                    <li class="card-list-item">
-                      <ion-icon name="flash-outline"></ion-icon>
-
-                      <span class="card-item-text">Petrol</span>
-                    </li>
-
-                    <li class="card-list-item">
-                      <ion-icon name="speedometer-outline"></ion-icon>
-
-                      <span class="card-item-text">17.4km / 1-litre</span>
-                    </li>
-
-                    <li class="card-list-item">
-                      <ion-icon name="hardware-chip-outline"></ion-icon>
-
-                      <span class="card-item-text">Manual</span>
-                    </li>
-
-                  </ul>
-
-                  <div class="card-price-wrapper">
-
-                    <p class="card-price">
-                      <strong>₹210</strong> / hour
-                    </p>
-
-
-
-                    <button class="btn">Rent now</button>
-
-                  </div>
-
-                </div>
-
-              </div>
-            </li>
-
-            <li>
-              <div class="featured-car-card">
-
-                <figure class="card-banner">
-                  <img src="./assets/images/swift desire.jpg" alt="Swift desire" loading="lazy" width="440" height="300"
-                    class="w-100">
-                </figure>
-
-                <div class="card-content">
-
-                  <div class="card-title-wrapper">
-                    <h3 class="h3 card-title">
-                      <a href="#">Swift Desire</a>
-                    </h3>
-
-                    <data class="year" value="2020">2018</data>
-                  </div>
-
-                  <ul class="card-list">
-
-                    <li class="card-list-item">
-                      <ion-icon name="people-outline"></ion-icon>
-
-                      <span class="card-item-text">5 People</span>
-                    </li>
-
-                    <li class="card-list-item">
-                      <ion-icon name="flash-outline"></ion-icon>
-
-                      <span class="card-item-text">Petrol</span>
-                    </li>
-
-                    <li class="card-list-item">
-                      <ion-icon name="speedometer-outline"></ion-icon>
-
-                      <span class="card-item-text">23.3km / 1-litre</span>
-                    </li>
-
-                    <li class="card-list-item">
-                      <ion-icon name="hardware-chip-outline"></ion-icon>
-
-                      <span class="card-item-text">Automatic</span>
-                    </li>
-
-                  </ul>
-
-                  <div class="card-price-wrapper">
-
-                    <p class="card-price">
-                      <strong>₹180</strong> / hour
-                    </p>
-
-
-
-                    <button class="btn">Rent now</button>
-
-                  </div>
-
-                </div>
-
-              </div>
-            </li>
-
-            <li>
-              <div class="featured-car-card">
-
-                <figure class="card-banner">
-                  <img src="./assets/images/fortuner.jpg" alt="Toyota Fortuner" loading="lazy" width="440" height="300"
-                    class="w-100">
-                </figure>
-
-                <div class="card-content">
-
-                  <div class="card-title-wrapper">
-                    <h3 class="h3 card-title">
-                      <a href="#">Toyota Fortuner</a>
-                    </h3>
-
-                    <data class="year" value="2020">2020</data>
-                  </div>
-
-                  <ul class="card-list">
-
-                    <li class="card-list-item">
-                      <ion-icon name="people-outline"></ion-icon>
-
-                      <span class="card-item-text">7 People</span>
-                    </li>
-
-                    <li class="card-list-item">
-                      <ion-icon name="flash-outline"></ion-icon>
-
-                      <span class="card-item-text">Diesel</span>
-                    </li>
-
-                    <li class="card-list-item">
-                      <ion-icon name="speedometer-outline"></ion-icon>
-
-                      <span class="card-item-text">12.9km / 1-litre</span>
-                    </li>
-
-                    <li class="card-list-item">
-                      <ion-icon name="hardware-chip-outline"></ion-icon>
-
-                      <span class="card-item-text">Automatic</span>
-                    </li>
-
-                  </ul>
-
-                  <div class="card-price-wrapper">
-
-                    <p class="card-price">
-                      <strong>₹490</strong> / hour
-                    </p>
-
-
-                    <button class="btn">Rent now</button>
-
-                  </div>
-
-                </div>
-
-              </div>
-            </li>
-
-            <li>
-              <div class="featured-car-card">
-
-                <figure class="card-banner">
-                  <img src="./assets/images/innova.jpeg" alt="Toyota Innova Crsyta" loading="lazy" width="440"
-                    height="300" class="w-100">
-                </figure>
-
-                <div class="card-content">
-
-                  <div class="card-title-wrapper">
-                    <h3 class="h3 card-title">
-                      <a href="#">Toyota Innova Crsyta</a>
-                    </h3>
-
-                    <data class="year" value="2021">2021</data>
-                  </div>
-
-                  <ul class="card-list">
-
-                    <li class="card-list-item">
-                      <ion-icon name="people-outline"></ion-icon>
-
-                      <span class="card-item-text">7 People</span>
-                    </li>
-
-                    <li class="card-list-item">
-                      <ion-icon name="flash-outline"></ion-icon>
-
-                      <span class="card-item-text">Diesel</span>
-                    </li>
-
-                    <li class="card-list-item">
-                      <ion-icon name="speedometer-outline"></ion-icon>
-
-                      <span class="card-item-text">14.3km / 1-litre</span>
-                    </li>
-
-                    <li class="card-list-item">
-                      <ion-icon name="hardware-chip-outline"></ion-icon>
-
-                      <span class="card-item-text">Automatic</span>
-                    </li>
-
-                  </ul>
-
-                  <div class="card-price-wrapper">
-
-                    <p class="card-price">
-                      <strong>₹355</strong> / hour
-                    </p>
-
-
-                    <button class="btn">Rent now</button>
-
-                  </div>
-
-                </div>
-
-              </div>
-            </li>
-
-            <li>
-              <div class="featured-car-card">
-
-                <figure class="card-banner">
-                  <img src="./assets/images/mahindra  scorpio.jpg" alt="Mahindra Scorpio" loading="lazy" width="440"
-                    height="300" class="w-100">
-                </figure>
-
-                <div class="card-content">
-
-                  <div class="card-title-wrapper">
-                    <h3 class="h3 card-title">
-                      <a href="#">Mahindra Scorpio</a>
-                    </h3>
-
-                    <data class="year" value="2019">2019</data>
-                  </div>
-
-                  <ul class="card-list">
-
-                    <li class="card-list-item">
-                      <ion-icon name="people-outline"></ion-icon>
-
-                      <span class="card-item-text">7 People</span>
-                    </li>
-
-                    <li class="card-list-item">
-                      <ion-icon name="flash-outline"></ion-icon>
-
-                      <span class="card-item-text">Diesel</span>
-                    </li>
-
-                    <li class="card-list-item">
-                      <ion-icon name="speedometer-outline"></ion-icon>
-
-                      <span class="card-item-text">14.6km / 1-litre</span>
-                    </li>
-
-                    <li class="card-list-item">
-                      <ion-icon name="hardware-chip-outline"></ion-icon>
-
-                      <span class="card-item-text">Manual</span>
-                    </li>
-
-                  </ul>
-
-                  <div class="card-price-wrapper">
-
-                    <p class="card-price">
-                      <strong>₹315</strong> / hour
-                    </p>
-
-
-                    <button class="btn">Rent now</button>
-
-                  </div>
-
-                </div>
-
-              </div>
-            </li>
-
+          <ul class="featured-car-list" id="featured-car-list">
+            <!-- Dynamic content will be injected here -->
           </ul>
 
         </div>
       </section>
 
+      <!-- Load Supabase client -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
 
+<script>
+  document.addEventListener('DOMContentLoaded', async () => {
+    const { createClient } = supabase; // Destructure from global `supabase`
+    
+    const SUPABASE_URL = 'https://lpqxhwvjafhoxlhldmad.supabase.co';
+    const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImxwcXhod3ZqYWZob3hsaGxkbWFkIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDUzOTEwOTUsImV4cCI6MjA2MDk2NzA5NX0.76inH5xouMvUl4jaUJH_1OI7Kesc9DFpeHpKHoIt2As'; // 🔒Use anon key for frontend
 
+    const supabaseClient = createClient(SUPABASE_URL, SUPABASE_KEY);
 
+    try {
+      const { data: cars, error } = await supabaseClient
+        .from('Cars')
+        .select('*');
+
+      if (error) {
+        console.error('Error fetching cars:', error.message);
+        return;
+      }
+
+      const featuredCarList = document.getElementById('featured-car-list');
+      featuredCarList.innerHTML = '';
+
+      cars.forEach(car => {
+        const carCard = document.createElement('li');
+        carCard.innerHTML = `
+          <div class="featured-car-card">
+            <figure class="card-banner">
+              <img src="${car.picture}" alt="${car.Car}" loading="lazy" width="440" height="300" class="w-100" onerror="this.onerror=null; this.src='https://via.placeholder.com/440x300?text=No+Image';">
+            </figure>
+            <div class="card-content">
+              <div class="card-title-wrapper">
+                <h3 class="h3 card-title"><a href="#">${car.Car}</a></h3>
+              </div>
+              <ul class="card-list">
+                <li class="card-list-item">
+                  <ion-icon name="people-outline"></ion-icon>
+                  <span class="card-item-text">${car["Number of people"]} People</span>
+                </li>
+                <li class="card-list-item">
+                  <ion-icon name="flash-outline"></ion-icon>
+                  <span class="card-item-text">${car.Fuel}</span>
+                </li>
+                <li class="card-list-item">
+                  <ion-icon name="speedometer-outline"></ion-icon>
+                  <span class="card-item-text">${car.Mileage}</span>
+                </li>
+                <li class="card-list-item">
+                  <ion-icon name="hardware-chip-outline"></ion-icon>
+                  <span class="card-item-text">${car["Gear Type"]}</span>
+                </li>
+              </ul>
+              <div class="card-price-wrapper">
+                <p class="card-price"><strong>₹${car.Price}</strong> / hour</p>
+                <button class="btn">Rent now</button>
+              </div>
+            </div>
+          </div>
+        `;
+        featuredCarList.appendChild(carCard);
+      });
+    } catch (err) {
+      console.error('Unexpected error:', err);
+    }
+  });
+</script>
 
       <!-- 
         - #GET START
@@ -634,8 +386,8 @@
       <section class="reviews" id="reviews">
         <div class="contain container">
           <h2>Reviews</h2>
-          <div class="outerdiv">
-            <div class=" innerdiv">
+          <div class="logos">
+            <div class="reviews-slide">
               <!-- div1 -->
               <div class="div1 eachdiv">
                 <div class="userdetails">
@@ -693,8 +445,7 @@
                   <h4>Vehigo is my top choice for renting a car whenever I travel. </h4>
                   <p>“ Their service is consistently outstanding, and I appreciate their attention to detail. The
                     vehicles are always clean, and the rental process is quick and hassle-free.
-                    Vehigo goes above and beyond to ensure customer satisfaction, and their flexible pickup and drop-off
-                    options make it incredibly convenient. The efficiency and professionalism
+                    The efficiency and professionalism
                     of their staff have saved me valuable time, enabling me to focus on my work without any worries
                     about transportation. I highly recommend Vehigo for corporate travelers.
                     I've recommended Vehigo to friends and family, and they have all been impressed with the quality of
@@ -745,6 +496,15 @@
                 </div>
               </div>
             </div>
+            <!-- <script>
+          
+              const slideContainer = document.querySelector('.reviews-slide');
+  const slides = Array.from(slideContainer.children);
+  for (let i = 0; i < slides.length; i++) {
+    slideContainer.appendChild(slides[i].cloneNode(true));
+  }
+              
+            </script> -->
           </div>
         </div>
       </section>
@@ -758,219 +518,321 @@
       <section class="section blog" id="blog">
         <div class="container">
 
-          <h2 class="h2 section-title">Our Blog</h2>
+          <div class="blog-wrapper">
+            <h2 class="h2 section-title">Our Blog</h2>
 
-          <ul class="blog-list has-scrollbar">
+            <button class="left-arrow">
+              &#10094;
+            </button>
 
-            <li>
-              <div class="blog-card">
+            <ul class="blog-list has-scrollbar">
 
-                <figure class="card-banner">
+              <li>
+                <div class="blog-card">
 
-                  <a href="#">
-                    <img src="./assets/images/blog-1.jpg" alt="Opening of new offices of the company" loading="lazy"
-                      class="w-100">
-                  </a>
+                  <figure class="card-banner">
 
-                  <a href="#" class="btn card-badge">Company</a>
+                    <a href="#">
+                      <img src="./assets/images/blog-1.jpg" alt="Opening of new offices of the company" loading="lazy"
+                        class="w-100">
+                    </a>
 
-                </figure>
+                    <a href="#" class="btn card-badge">Company</a>
 
-                <div class="card-content">
+                  </figure>
 
-                  <h3 class="h3 card-title">
-                    <a href="#">Opening of new offices of the company</a>
-                  </h3>
+                  <div class="card-content">
 
-                  <div class="card-meta">
+                    <h3 class="h3 card-title">
+                      <a href="#">Opening of new offices of the company</a>
+                    </h3>
 
-                    <div class="publish-date">
-                      <ion-icon name="time-outline"></ion-icon>
+                    <div class="card-meta">
 
-                      <time datetime="2022-01-14">January 14, 2022</time>
+                      <div class="publish-date">
+                        <ion-icon name="time-outline"></ion-icon>
+
+                        <time datetime="2022-01-14">January 14, 2022</time>
+                      </div>
+
+                      <div class="comments">
+                        <ion-icon name="chatbubble-ellipses-outline"></ion-icon>
+
+                        <data value="114">114</data>
+                      </div>
+
                     </div>
 
-                    <div class="comments">
-                      <ion-icon name="chatbubble-ellipses-outline"></ion-icon>
-
-                      <data value="114">114</data>
-                    </div>
-
-                  </div>
-
-                </div>
-
-              </div>
-            </li>
-
-            <li>
-              <div class="blog-card">
-
-                <figure class="card-banner">
-
-                  <a href="#">
-                    <img src="./assets/images/blog-2.jpg" alt="What cars are most vulnerable" loading="lazy"
-                      class="w-100">
-                  </a>
-
-                  <a href="#" class="btn card-badge">Repair</a>
-
-                </figure>
-
-                <div class="card-content">
-
-                  <h3 class="h3 card-title">
-                    <a href="#">What cars are most vulnerable</a>
-                  </h3>
-
-                  <div class="card-meta">
-
-                    <div class="publish-date">
-                      <ion-icon name="time-outline"></ion-icon>
-
-                      <time datetime="2022-01-14">January 14, 2022</time>
-                    </div>
-
-                    <div class="comments">
-                      <ion-icon name="chatbubble-ellipses-outline"></ion-icon>
-
-                      <data value="114">114</data>
+                    <div class="card-author">
+                      <img src="./assets/images/author.jpg" class="author-img">
+                      <div class="author-name">Benialla Dsouza</div>
                     </div>
 
                   </div>
 
                 </div>
 
-              </div>
-            </li>
 
-            <li>
-              <div class="blog-card">
+              </li>
 
-                <figure class="card-banner">
+              <li>
+                <div class="blog-card">
 
-                  <a href="#">
-                    <img src="./assets/images/blog-3.jpg" alt="Statistics showed which average age" loading="lazy"
-                      class="w-100">
-                  </a>
+                  <figure class="card-banner">
 
-                  <a href="#" class="btn card-badge">Cars</a>
+                    <a href="#">
+                      <img src="./assets/images/blog-2.jpg" alt="What cars are most vulnerable" loading="lazy"
+                        class="w-100">
+                    </a>
 
-                </figure>
+                    <a href="#" class="btn card-badge">Repair</a>
 
-                <div class="card-content">
+                  </figure>
 
-                  <h3 class="h3 card-title">
-                    <a href="#">Statistics showed which average age</a>
-                  </h3>
+                  <div class="card-content">
 
-                  <div class="card-meta">
+                    <h3 class="h3 card-title">
+                      <a href="#">What cars are most vulnerable</a>
+                    </h3>
 
-                    <div class="publish-date">
-                      <ion-icon name="time-outline"></ion-icon>
+                    <div class="card-meta">
 
-                      <time datetime="2022-01-14">January 14, 2022</time>
+                      <div class="publish-date">
+                        <ion-icon name="time-outline"></ion-icon>
+
+                        <time datetime="2022-01-14">January 14, 2022</time>
+                      </div>
+
+                      <div class="comments">
+                        <ion-icon name="chatbubble-ellipses-outline"></ion-icon>
+
+                        <data value="114">114</data>
+                      </div>
+
                     </div>
 
-                    <div class="comments">
-                      <ion-icon name="chatbubble-ellipses-outline"></ion-icon>
+                    <div class="card-author">
+                      <img src="./assets/images/author.jpg" class="author-img">
+                      <div class="author-name">Benialla Dsouza</div>
+                    </div>
 
-                      <data value="114">114</data>
+                  </div>
+
+                </div>
+              </li>
+
+              <li>
+                <div class="blog-card">
+
+                  <figure class="card-banner">
+
+                    <a href="#">
+                      <img src="./assets/images/blog-3.jpg" alt="Statistics showed which average age" loading="lazy"
+                        class="w-100">
+                    </a>
+
+                    <a href="#" class="btn card-badge">Cars</a>
+
+                  </figure>
+
+                  <div class="card-content">
+
+                    <h3 class="h3 card-title">
+                      <a href="#">Statistics showed which average age</a>
+                    </h3>
+
+                    <div class="card-meta">
+
+                      <div class="publish-date">
+                        <ion-icon name="time-outline"></ion-icon>
+
+                        <time datetime="2022-01-14">January 14, 2022</time>
+                      </div>
+
+                      <div class="comments">
+                        <ion-icon name="chatbubble-ellipses-outline"></ion-icon>
+
+                        <data value="114">114</data>
+                      </div>
+
+                    </div>
+
+                    <div class="card-author">
+                      <img src="./assets/images/author.jpg" class="author-img">
+                      <div class="author-name">Benialla Dsouza</div>
+                    </div>
+
+                  </div>
+
+                </div>
+              </li>
+
+              <li>
+                <div class="blog-card">
+
+                  <figure class="card-banner">
+
+                    <a href="#">
+                      <img src="./assets/images/blog-4.jpg" alt="What´s required when renting a car?" loading="lazy"
+                        class="w-100">
+                    </a>
+
+                    <a href="#" class="btn card-badge">Cars</a>
+
+                  </figure>
+
+                  <div class="card-content">
+
+                    <h3 class="h3 card-title">
+                      <a href="#">What's required when renting a car?</a>
+                    </h3>
+
+                    <div class="card-meta">
+
+                      <div class="publish-date">
+                        <ion-icon name="time-outline"></ion-icon>
+
+                        <time datetime="2022-01-14">January 14, 2022</time>
+                      </div>
+
+                      <div class="comments">
+                        <ion-icon name="chatbubble-ellipses-outline"></ion-icon>
+
+                        <data value="114">114</data>
+                      </div>
+
+                    </div>
+
+                    <div class="card-author">
+                      <img src="./assets/images/author.jpg" class="author-img">
+                      <div class="author-name">Benialla Dsouza</div>
+                    </div>
+
+                  </div>
+
+                </div>
+              </li>
+
+              <li>
+                <div class="blog-card">
+
+                  <figure class="card-banner">
+
+                    <a href="#">
+                      <img src="./assets/images/blog-5.jpg" alt="New rules for handling our cars" loading="lazy"
+                        class="w-100">
+                    </a>
+
+                    <a href="#" class="btn card-badge">Company</a>
+
+                  </figure>
+
+                  <div class="card-content">
+
+                    <h3 class="h3 card-title">
+                      <a href="#">New rules for handling our cars</a>
+                    </h3>
+
+                    <div class="card-meta">
+
+                      <div class="publish-date">
+                        <ion-icon name="time-outline"></ion-icon>
+
+                        <time datetime="2022-01-14">January 14, 2022</time>
+                      </div>
+
+                      <div class="comments">
+                        <ion-icon name="chatbubble-ellipses-outline"></ion-icon>
+
+                        <data value="114">114</data>
+                      </div>
+
+                    </div>
+
+                    <div class="card-author">
+                      <img src="./assets/images/author.jpg" class="author-img">
+                      <div class="author-name">Benialla Dsouza</div>
                     </div>
 
                   </div>
 
                 </div>
 
-              </div>
-            </li>
+              </li>
 
-            <li>
-              <div class="blog-card">
+            </ul>
 
-                <figure class="card-banner">
+            <button class="right-arrow">
+              &#10095;
+            </button>
 
-                  <a href="#">
-                    <img src="./assets/images/blog-4.jpg" alt="What´s required when renting a car?" loading="lazy"
-                      class="w-100">
-                  </a>
-
-                  <a href="#" class="btn card-badge">Cars</a>
-
-                </figure>
-
-                <div class="card-content">
-
-                  <h3 class="h3 card-title">
-                    <a href="#">What's required when renting a car?</a>
-                  </h3>
-
-                  <div class="card-meta">
-
-                    <div class="publish-date">
-                      <ion-icon name="time-outline"></ion-icon>
-
-                      <time datetime="2022-01-14">January 14, 2022</time>
-                    </div>
-
-                    <div class="comments">
-                      <ion-icon name="chatbubble-ellipses-outline"></ion-icon>
-
-                      <data value="114">114</data>
-                    </div>
-
-                  </div>
-
-                </div>
-
-              </div>
-            </li>
-
-            <li>
-              <div class="blog-card">
-
-                <figure class="card-banner">
-
-                  <a href="#">
-                    <img src="./assets/images/blog-5.jpg" alt="New rules for handling our cars" loading="lazy"
-                      class="w-100">
-                  </a>
-
-                  <a href="#" class="btn card-badge">Company</a>
-
-                </figure>
-
-                <div class="card-content">
-
-                  <h3 class="h3 card-title">
-                    <a href="#">New rules for handling our cars</a>
-                  </h3>
-
-                  <div class="card-meta">
-
-                    <div class="publish-date">
-                      <ion-icon name="time-outline"></ion-icon>
-
-                      <time datetime="2022-01-14">January 14, 2022</time>
-                    </div>
-
-                    <div class="comments">
-                      <ion-icon name="chatbubble-ellipses-outline"></ion-icon>
-
-                      <data value="114">114</data>
-                    </div>
-
-                  </div>
-
-                </div>
-
-              </div>
-            </li>
-
-          </ul>
+          </div>
 
         </div>
       </section>
+
+      <!-- Filtering and Sorting Section -->
+<section class="filter-sort-section">
+  <div class="container">
+    <h2 class="h2 section-title">Filter and Sort Cars</h2>
+
+    <form id="filter-sort-form">
+      <!-- Filter by Car Type -->
+      <div class="input-wrapper">
+        <label for="filter-car-type" class="input-label">Car Type</label>
+        <select name="filter-car-type" id="filter-car-type">
+          <option value="">All</option>
+          <option value="SUV">SUV</option>
+          <option value="Sedan">Sedan</option>
+          <option value="Hatchback">Hatchback</option>
+        </select>
+      </div>
+
+      <!-- Filter by Location -->
+      <div class="input-wrapper">
+        <label for="filter-location" class="input-label">Location</label>
+        <select name="filter-location" id="filter-location">
+          <option value="">All</option>
+          <option value="Bhopal">Bhopal</option>
+          <option value="Indore">Indore</option>
+          <option value="Ujjain">Ujjain</option>
+        </select>
+      </div>
+
+      <!-- Sort by Price -->
+      <div class="input-wrapper">
+        <label for="sort-price" class="input-label">Sort by Price</label>
+        <select name="sort-price" id="sort-price">
+          <option value="">None</option>
+          <option value="low-to-high">Low to High</option>
+          <option value="high-to-low">High to Low</option>
+        </select>
+      </div>
+
+      <!-- Sort by Model Year -->
+      <div class="input-wrapper">
+        <label for="sort-year" class="input-label">Sort by Model Year</label>
+        <select name="sort-year" id="sort-year">
+          <option value="">None</option>
+          <option value="new-to-old">New to Old</option>
+          <option value="old-to-new">Old to New</option>
+        </select>
+      </div>
+
+      <!-- Sort by Ratings -->
+      <div class="input-wrapper">
+        <label for="sort-rating" class="input-label">Sort by Ratings</label>
+        <select name="sort-rating" id="sort-rating">
+          <option value="">None</option>
+          <option value="high-to-low">High to Low</option>
+          <option value="low-to-high">Low to High</option>
+        </select>
+      </div>
+
+      <button type="submit" class="btn">Apply</button>
+    </form>
+  </div>
+</section>
 
     </article>
   </main>
@@ -1035,7 +897,7 @@
           </li>
 
           <li>
-            <a href="#" class="footer-link">Ask a question</a>
+            <a href="pages/Askaques.html" class="footer-link">Ask a question</a>
           </li>
 
           <li>
@@ -1118,6 +980,62 @@
   -->
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+  <!-- Ensure Images are Displayed Properly -->
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const featuredCarImages = document.querySelectorAll('.featured-car-card img');
+    featuredCarImages.forEach(img => {
+      if (!img.src) {
+        img.src = './assets/images/default-car.jpg'; // Fallback image
+      }
+    });
+  });
+</script>
+
+<!-- Filtering and Sorting JavaScript -->
+<script>
+  document.getElementById('filter-sort-form').addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    const carType = document.getElementById('filter-car-type').value;
+    const location = document.getElementById('filter-location').value;
+    const sortPrice = document.getElementById('sort-price').value;
+
+    const carCards = document.querySelectorAll('.featured-car-card');
+
+    carCards.forEach(card => {
+      const cardType = card.querySelector('.card-item-text').textContent;
+      const cardLocation = card.querySelector('.card-title a').textContent;
+      const cardPrice = parseInt(card.querySelector('.card-price strong').textContent.replace('₹', ''));
+
+      let isVisible = true;
+
+      if (carType && !cardType.includes(carType)) {
+        isVisible = false;
+      }
+
+      if (location && !cardLocation.includes(location)) {
+        isVisible = false;
+      }
+
+      card.style.display = isVisible ? 'block' : 'none';
+    });
+
+    if (sortPrice) {
+      const sortedCards = Array.from(carCards).sort((a, b) => {
+        const priceA = parseInt(a.querySelector('.card-price strong').textContent.replace('₹', ''));
+        const priceB = parseInt(b.querySelector('.card-price strong').textContent.replace('₹', ''));
+
+        return sortPrice === 'low-to-high' ? priceA - priceB : priceB - priceA;
+      });
+
+      const carList = document.querySelector('.featured-car-list');
+      carList.innerHTML = '';
+      sortedCards.forEach(card => carList.appendChild(card));
+    }
+  });
+</script>
 
 </body>
 

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Buy Car | Vehigo</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <link rel="stylesheet" href="./assets/css/buy.css"/>
+
+</head>
+<body>
+  <nav class="navbar" data-navbar>
+    <ul class="navbar-list">
+      <li><a href="index.html" class="navbar-link" data-nav-link>Home</a></li>
+      <li><a href="ContactUs.html" class="navbar-link" data-nav-link>Contact Us</a></li>
+      <li><a href="login.html" class="navbar-link" data-nav-link>Login</a></li>
+      <li><a href="tandc.html" class="navbar-link" data-nav-link>Terms & Conditions</a></li>
+      <li><a href="offline.html" class="navbar-link" data-nav-link>Offline Centers</a></li>
+      <li><a href="rentcar.html" class="navbar-link" data-nav-link>Rent Your Car</a></li>
+    </ul>
+  </nav>
+
+  <section class="featured-section">
+    <div class="section-header">
+      <h1>Available Cars</h1>
+      <a href="#" class="view-more">View more →</a>
+    </div>
+    <div class="car-cards">
+      <!-- Card 1 -->
+      <div class="car-card">
+        <img src="./images/car-1.jpg" alt="Hyundai Creta">
+        <div class="car-info">
+          <h2>Hyundai Creta</h2>
+          <p><i class="fas fa-users" title="Seating Capacity"></i> 5 People</p>
+          <p><i class="fas fa-gas-pump" title="Fuel Type"></i> Petrol</p>
+          <p><i class="fas fa-road" title="Mileage"></i> 17.2km / 1-litre</p>
+          <p><i class="fas fa-cogs" title="Transmission"></i> Manual</p>
+          <span class="car-year">2022</span>
+          <div class="price">Original: <strike>₹8,30,000</strike><br>Sale Price: ₹7,30,000</div>
+        </div>
+        <div class="buttons">
+          <button class="rent-btn" data-car="Hyundai Creta">Rent now</button>
+          <button class="buy-btn" data-car="Hyundai Creta">Buy Car</button>
+        </div>
+      </div>
+      <!-- Card 2 -->
+      <div class="car-card">
+        <img src="./images/car-2.jpg" alt="Tata Nexon">
+        <div class="car-info">
+          <h2>Tata Nexon</h2>
+          <p><i class="fas fa-users"></i> 5 People</p>
+          <p><i class="fas fa-gas-pump"></i> Petrol</p>
+          <p><i class="fas fa-road"></i> 17.4km / 1-litre</p>
+          <p><i class="fas fa-cogs"></i> Manual</p>
+          <span class="car-year">2019</span>
+          <div class="price">Original: <strike>₹10,30,000</strike><br>Sale Price: ₹8,93,000</div>
+        </div>
+        <div class="buttons">
+          <button class="rent-btn" data-car="Tata Nexon">Rent now</button>
+          <button class="buy-btn" data-car="Tata Nexon">Buy Car</button>
+        </div>
+      </div>
+      <!-- Card 3 -->
+      <div class="car-card">
+        <img src="./images/car-3.jpg" alt="Swift Desire">
+        <div class="car-info">
+          <h2>Swift Desire</h2>
+          <p><i class="fas fa-users"></i> 5 People</p>
+          <p><i class="fas fa-gas-pump"></i> Petrol</p>
+          <p><i class="fas fa-road"></i> 23.3km / 1-litre</p>
+          <p><i class="fas fa-cogs"></i> Automatic</p>
+          <span class="car-year">2018</span>
+          <div class="price">Original: <strike>₹12,00,000</strike><br>Sale Price: ₹9,00,000</div>
+        </div>
+        <div class="buttons">
+          <button class="rent-btn" data-car="Swift Desire">Rent now</button>
+          <button class="buy-btn" data-car="Swift Desire">Buy Car</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Modal -->
+  <div class="modal" id="modal">
+    <div class="modal-content" id="modal-content">
+      <button class="close-modal" id="close-modal" title="Close">&times;</button>
+      <h3 id="modal-title"></h3>
+      <p id="modal-message"></p>
+      <button class="buy-btn" id="modal-action" style="margin-top:1rem;display:none;">Proceed</button>
+    </div>
+  </div>
+
+  <script src="./scripts/buycar.js" defer></script>
+</body>
+</html>

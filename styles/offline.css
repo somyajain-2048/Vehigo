@@ -1,0 +1,80 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  text-align: center;
+}
+
+h1 {
+  margin: 20px 0;
+  color: #2c3e50;
+}
+
+#map {
+  height: 50vh;
+  width: 80%;
+  max-width: 1000px;
+  margin: 20px auto;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+/* 🆕 Card Styles */
+#center-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+}
+
+.card {
+  background: #fff;
+  border-radius: 10px;
+  padding: 16px;
+  width: 250px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  text-align: left;
+  transition: transform 0.2s ease;
+}
+
+.card:hover {
+  transform: scale(1.03);
+}
+
+.card h2 {
+  margin-top: 0;
+  font-size: 20px;
+  color: #34495e;
+}
+
+.card p {
+  margin: 8px 0;
+  color: #555;
+}
+
+.card .rating {
+  color: #f39c12;
+  font-weight: bold;
+}
+
+
+.book-service-container {
+  margin: 40px auto;
+  text-align: center;
+}
+
+#bookBtn {
+  background-color: #3498db;
+  color: white;
+  border: none;
+  padding: 14px 30px;
+  font-size: 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#bookBtn:hover {
+  background-color: #2980b9;
+}

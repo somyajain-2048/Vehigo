@@ -158,10 +158,6 @@ body {
     background: hsla(219, 14%, 60%, 0.5);
 }
 
-
-
-
-
 /*--------------*\   #REUSED STYLE  \*------------------*/
 
 .container {
@@ -225,6 +221,7 @@ a {
 }
 
 .h1 {
+    font-weight: 700;
     font-size: var(--fs-1);
     text-transform: uppercase;
 }
@@ -488,14 +485,15 @@ a {
 }
 
 .hero-title {
+    font-weight: 00;
     max-width: 25ch;
-    margin-bottom: 15px;
+    margin-bottom: 15px; 
 }
 
 .hero-text {
     color: var(--independence);
     line-height: 1.8;
-    margin-bottom: 30px;
+    margin-bottom: 10px;
 }
 
 .hero-banner {
@@ -562,12 +560,21 @@ body {
 }
 
 .featured-car-card {
-    background: white;
-    border: 1px solid var(--white);
-    border-radius: var(--radius-18);
-    padding: 10px;
-    box-shadow: var(--shadow-1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+  cursor: pointer !important;
+  will-change: transform !important;
 }
+
+.featured-car-card:hover {
+  transform: perspective(1000px) translateY(-10px) scale(1.02) !important;
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2) !important;
+}
+
+.featured-car-card:active {
+  transform: perspective(1000px) translateY(-4px) scale(1.01) !important;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15) !important;
+}
+
 
 .featured-car-card .card-banner {
     background: hsla(0, 0%, 0%, 0.2);

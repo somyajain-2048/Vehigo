@@ -568,6 +568,47 @@
         </div>
       </div>
     </footer>
+    <script>
+  document.addEventListener('DOMContentLoaded', function () {
+  const themeToggle = document.getElementById('theme-toggle');
+  if (themeToggle) {
+    // Load theme from localStorage
+    if (localStorage.getItem('theme') === 'dark') {
+      document.body.classList.add('dark-mode');
+      themeToggle.checked = true;
+    }
+    
+    // Add event listener with proper event handling
+    themeToggle.addEventListener('change', function (e) {
+      // Prevent event bubbling to avoid interference with navbar
+      e.stopPropagation();
+      
+      if (this.checked) {
+        document.body.classList.add('dark-mode');
+        localStorage.setItem('theme', 'dark');
+      } else {
+        document.body.classList.remove('dark-mode');
+        localStorage.setItem('theme', 'light');
+      }
+    });
+    
+    // Prevent clicks on the theme switch from triggering navbar events
+    const themeSwitch = document.querySelector('.theme-switch');
+    if (themeSwitch) {
+      themeSwitch.addEventListener('click', function(e) {
+        e.stopPropagation();
+      });
+    }
+  } else {
+    // Apply theme if toggle is not present (for pages without header)
+    if (localStorage.getItem('theme') === 'dark') {
+      document.body.classList.add('dark-mode');
+    } else {
+      document.body.classList.remove('dark-mode');
+    }
+  }
+});
+</script>
 
     <script src="../assets/js/script.js"></script>
   </body>

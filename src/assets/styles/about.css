@@ -350,9 +350,443 @@ body {
   text-decoration: underline;
 }
 
+
+::-webkit-scrollbar {
+  width: 15px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--white);
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsla(219, 14%, 60%, 0.3);
+  border: 2px solid var(--white);
+}
+
+
+::-webkit-scrollbar-thumb:hover { background: hsla(219, 14%, 60%, 0.5); }
+
+
+
+/* Removed dark mode related CSS */
+
+#theme-toggle {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
 /*-----------------------------------*\
-  #MEDIA QUERIES
+  #THEME SWITCH
 \*-----------------------------------*/
+
+.theme-switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 30px;
+  margin-left: 15px;
+  z-index: 1000;
+}
+
+.theme-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: .4s;
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 5px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 22px;
+  width: 22px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: .4s;
+  border-radius: 50%;
+  z-index: 2;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:checked + .slider:before {
+  transform: translateX(30px);
+}
+
+.slider .icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+
+.slider .icon.sun {
+  color: #f39c12;
+}
+
+.slider .icon.moon {
+  color: #f5f5f5;
+}
+
+/* Ensure theme switch doesn't interfere with navbar */
+.header-actions {
+  position: relative;
+  z-index: 1001;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.theme-switch {
+  pointer-events: auto;
+  position: relative;
+  z-index: 1002;
+}
+
+
+.header-actions .btn {
+  margin-left: 10px;
+}
+
+
+.header-actions > *:not(.theme-switch) {
+  position: relative;
+  z-index: 1000;
+}
+
+
+
+.btn {
+  position: relative;
+  background: var(--background, var(--carolina-blue));
+  color: var(--color, var(--white));
+  min-width: var(--width, 40px);
+  min-height: var(--height, 40px);
+  padding: 5px;
+  display: grid;
+  place-items: center;
+  border-radius: var(--radius-14);
+  font-family: var(--ff-nunito);
+  font-size: var(--fs-6);
+  font-weight: var(--fw-600);
+  overflow: hidden;
+}
+
+.btn ion-icon {
+  font-size: 22px;
+  --ionicon-stroke-width: 40px;
+}
+
+.btn::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, hsla(0, 0%, 100%, 0.4), transparent);
+  opacity: 0;
+  pointer-events: none;
+  transition: var(--transition);
+}
+
+.btn:is(:hover, :focus) {
+  box-shadow: var(--shadow-2);
+}
+
+.btn:is(:hover, :focus)::before {
+  opacity: 1;
+}
+
+
+::-webkit-scrollbar {
+  width: 15px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--white);
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsla(219, 14%, 60%, 0.3);
+  border: 2px solid var(--white);
+}
+
+
+::-webkit-scrollbar-thumb:hover { background: hsla(219, 14%, 60%, 0.5); }
+
+
+
+/* Removed dark mode related CSS */
+
+#theme-toggle {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/*-----------------------------------*\
+  #THEME SWITCH
+\*-----------------------------------*/
+
+.theme-switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 30px;
+  margin-left: 15px;
+  z-index: 1000;
+}
+
+.theme-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: .4s;
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 5px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 22px;
+  width: 22px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: .4s;
+  border-radius: 50%;
+  z-index: 2;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:checked + .slider:before {
+  transform: translateX(30px);
+}
+
+.slider .icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+
+.slider .icon.sun {
+  color: #f39c12;
+}
+
+.slider .icon.moon {
+  color: #f5f5f5;
+}
+
+/* Ensure theme switch doesn't interfere with navbar */
+.header-actions {
+  position: relative;
+  z-index: 1001;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.theme-switch {
+  pointer-events: auto;
+  position: relative;
+  z-index: 1002;
+}
+
+
+.header-actions .btn {
+  margin-left: 10px;
+}
+
+
+.header-actions > *:not(.theme-switch) {
+  position: relative;
+  z-index: 1000;
+}
+
+
+.theme-switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 30px;
+  margin-left: 15px;
+  z-index: 1000;
+}
+
+.theme-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: .4s;
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 5px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 22px;
+  width: 22px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: .4s;
+  border-radius: 50%;
+  z-index: 2;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:checked + .slider:before {
+  transform: translateX(30px);
+}
+
+.slider .icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+
+.slider .icon.sun {
+  color: #f39c12;
+}
+
+.slider .icon.moon {
+  color: #f5f5f5;
+}
+
+/* Ensure theme switch doesn't interfere with navbar */
+.header-actions {
+  position: relative;
+  z-index: 1001;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.theme-switch {
+  pointer-events: auto;
+  position: relative;
+  z-index: 1002;
+}
+
+
+.header-actions .btn {
+  margin-left: 10px;
+}
+
+
+.header-actions > *:not(.theme-switch) {
+  position: relative;
+  z-index: 1000;
+}
+
+
+
+.btn {
+  position: relative;
+  background: var(--background, var(--carolina-blue));
+  color: var(--color, var(--white));
+  min-width: var(--width, 40px);
+  min-height: var(--height, 40px);
+  padding: 5px;
+  display: grid;
+  place-items: center;
+  border-radius: var(--radius-14);
+  font-family: var(--ff-nunito);
+  font-size: var(--fs-6);
+  font-weight: var(--fw-600);
+  overflow: hidden;
+}
+
+.btn ion-icon {
+  font-size: 22px;
+  --ionicon-stroke-width: 40px;
+}
+
+.btn::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, hsla(0, 0%, 100%, 0.4), transparent);
+  opacity: 0;
+  pointer-events: none;
+  transition: var(--transition);
+}
+
+.btn:is(:hover, :focus) {
+  box-shadow: var(--shadow-2);
+}
+
+.btn:is(:hover, :focus)::before {
+  opacity: 1;
+}
+html.dark{
+  
+}
+
 
 @media (max-width: 767px) {
   .about-section {

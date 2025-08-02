@@ -278,25 +278,23 @@ input:checked + .slider:before {
   z-index: 1002;
 }
 
-/* Ensure proper spacing in header actions */
+
 .header-actions .btn {
   margin-left: 10px;
 }
 
-/* Prevent theme switch from interfering with other elements */
+
 .header-actions > *:not(.theme-switch) {
   position: relative;
   z-index: 1000;
 }
 
-/*-----------------------------------*\
-  #REUSED STYLE
-\*-----------------------------------*/
+
 
 .btn {
   position: relative;
   background: var(--background, var(--carolina-blue));
-  color: var(--color, var(--white)); /* Buttons on blue background should have white text */
+  color: var(--color, var(--white));
   min-width: var(--width, 40px);
   min-height: var(--height, 40px);
   padding: 5px;

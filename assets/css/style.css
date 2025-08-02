@@ -178,20 +178,6 @@ body {
 
 ::-webkit-scrollbar-thumb:hover { background: hsla(219, 14%, 60%, 0.5); }
 
-
-
-/* Removed dark mode related CSS */
-
-#theme-toggle {
-  position: fixed;
-  top: 1rem;
-  right: 1rem;
-  font-size: 1.5rem;
-  background: none;
-  border: none;
-  cursor: pointer;
-}
-
 /*-----------------------------------*\
   #THEME SWITCH
 \*-----------------------------------*/
@@ -203,6 +189,7 @@ body {
   height: 30px;
   margin-left: 15px;
   z-index: 1000;
+  cursor: pointer;
 }
 
 .theme-switch input {
@@ -253,6 +240,10 @@ input:checked + .slider:before {
   align-items: center;
   justify-content: center;
   z-index: 1;
+  width: 20px;
+  height: 20px;
+  opacity: 0.5;
+  transition: opacity 0.3s;
 }
 
 .slider .icon.sun {
@@ -261,32 +252,84 @@ input:checked + .slider:before {
 
 .slider .icon.moon {
   color: #f5f5f5;
+  opacity: 0;
 }
 
-/* Ensure theme switch doesn't interfere with navbar */
-.header-actions {
-  position: relative;
-  z-index: 1001;
-  display: flex;
-  align-items: center;
-  gap: 10px;
+input:checked + .slider .sun {
+  opacity: 0;
 }
 
-.theme-switch {
-  pointer-events: auto;
-  position: relative;
-  z-index: 1002;
+input:checked + .slider .moon {
+  opacity: 1;
 }
 
-/* Ensure proper spacing in header actions */
-.header-actions .btn {
-  margin-left: 10px;
+/*-----------------------------------*\
+  #DARK MODE
+\*-----------------------------------*/
+
+body.dark-mode {
+  background-color: #121212;
+  color: #f5f5f5;
 }
 
-/* Prevent theme switch from interfering with other elements */
-.header-actions > *:not(.theme-switch) {
-  position: relative;
-  z-index: 1000;
+body.dark-mode .header {
+  background-color: #1e1e1e;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.7);
+}
+
+body.dark-mode .navbar {
+  background-color: #1a1a1a;
+}
+
+body.dark-mode footer {
+  background-color: #1e1e1e;
+  color: #f5f5f5;
+}
+
+body.dark-mode p,
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3,
+body.dark-mode a,
+body.dark-mode .navbar-link,
+body.dark-mode .contact-link {
+  color: #f5f5f5;
+}
+
+body.dark-mode .navbar-link:hover {
+  color: #4dabf7;
+}
+
+body.dark-mode .header-contact .contact-time {
+  color: #bbbbbb;
+}
+
+body.dark-mode .slider {
+  background-color: #444;
+}
+
+body.dark-mode .theme-switch .moon svg {
+  stroke: #f5f5f5;
+}
+
+body.dark-mode .btn {
+  background-color: #0d6efd;
+  color: #fff;
+}
+
+body.dark-mode .user-btn {
+  background-color: #ffffff;
+}
+
+body.dark-mode .user-btn ion-icon {
+  color: #200f0f;
+}
+
+body.dark-mode .footer-bottom,
+body.dark-mode .footer-bottom p,
+body.dark-mode .footer-bottom a,
+body.dark-mode .footer-bottom ion-icon {
+  color: #121212;
 }
 
 /*-----------------------------------*\
@@ -415,13 +458,19 @@ button, a {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  /* Removed padding-inline from here as it's now in the generic .container above */
+  box-shadow: var(--shadow-1);
 }
 
 .header-actions {
+  position: relative;
+  z-index: 1001;
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 10px;
+}
+
+.header-actions .btn {
+  margin-left: 10px;
 }
 
 .header-actions .btn span {
@@ -439,7 +488,6 @@ button, a {
 .logo {
   margin-top: 0.5rem;
   transition: transform 0.5s ease-in-out;
- 
 }
 
 @keyframes zoom {
@@ -546,49 +594,6 @@ button, a {
   pointer-events: all;
 }
 
-.header .container {
-  box-shadow: var(--shadow-1);
-  color: #e3ff00;
-}
-
-
-/* Dark Mode Styling */
-body.dark-mode {
-  background-color: #121212;
-  color: #ffffff;
-}
-body.dark-mode p,
-body.dark-mode h1,
-body.dark-mode h2,
-body.dark-mode h3,
-body.dark-mode a {
-  color: #f5f5f5;
-}
-
-body.dark-mode a,
-body.dark-mode .navbar-link {
-  color: #ffffff;
-}
-body.dark-mode .footer-bottom,
-body.dark-mode .footer-bottom p,
-body.dark-mode .footer-bottom a,
-body.dark-mode .footer-bottom ion-icon {
-  color: #121212;
-}
-body.dark-mode .user-btn ion-icon {
-  color: #200f0f; /* Light color for dark mode */
-}
-
-body.dark-mode .navbar {
-  background-color: #1a1a1a;
-}
-
-body.dark-mode header,
-body.dark-mode footer {
-  background-color: #1e1e1e;
-  color: #ffffff;
-}
-
 
 /*-----------------------------------*\
   #HERO
@@ -677,7 +682,6 @@ body.dark-mode footer {
   color: var(--manatee); /* Keep original manatee, or adjust if needed */
   font-size: var(--fs-6);
   margin-bottom: 12px;
-  font-size: var(--fs-5);
 }
 
 .input-field {
@@ -698,119 +702,13 @@ body.dark-mode footer {
 
 .hero-form #input-1,
 .hero-form #input-2 {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%236c757d'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
-  background-repeat: no-repeat;
-  background-position: right 10px center;
-  background-size: 20px;
-  padding-right: 35px;
-}
-.theme-switch {
-  display: flex;
-  align-items: center;
-  margin: 0 1rem;
-  cursor: pointer;
+  background-image: none; /* Remove default dropdown arrow for text inputs */
 }
 
-.theme-switch input {
-  display: none;
-}
-
-.slider {
-  position: relative;
-  width: 50px;
-  height: 24px;
-  background-color: #00000000;
-  border-radius: 50px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 5px;
-  transition: background 0.3s ease;
-}
-
-.slider .icon {
-  width: 20px;
-  height: 20px;
-  opacity: 0.5;
-  transition: opacity 0.3s;
-}
-
-.slider .moon {
-  opacity: 0;
-}
-
-input:checked + .slider .sun {
-  opacity: 0;
-}
-
-input:checked + .slider .moon {
-  opacity: 1;
-}
-/* DARK THEME */
-body.dark-theme {
-  background-color: #121212;
-  color: #f5f5f5;
-}
-
-/* Header background and links */
-body.dark-theme .header {
-  background-color: #1e1e1e;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.7);
-}
-body.dark-theme .navbar-link .contact-link {
-  color: #ffffff;
-}
-
-body.dark-theme .navbar-link:hover {
-  color: #4dabf7;
-}
-
-/* Contact section */
-body.dark-theme .header-contact .contact-link,
-body.dark-theme .header-contact .contact-time {
-  color: #bbbbbb;
-}
-
-/* Theme toggle background */
-body.dark-theme .slider {
-  background-color: #444;
-}
-
-/* Moon icon should be brighter in dark mode */
-body.dark-theme .theme-switch .moon svg {
-  stroke: #f5f5f5;
-}
-
-/* Optional: Explore cars button */
-body.dark-theme .btn {
-  background-color: #0d6efd;
-  color: #fff;
-}
-
-/* Icon buttons */
-body.dark-theme .user-btn {
-  background-color: #ffffff;
-  color: #000000;
-}
-
-.hero-form #input-1::placeholder {
-  color: var(--text-secondary-dark); /* Darken placeholder text for contrast */
-  opacity: 1;
-}
-
+.hero-form #input-1::placeholder,
 .hero-form #input-2::placeholder {
   color: var(--text-secondary-dark); /* Darken placeholder text for contrast */
   opacity: 1;
-}
-
-.hero-form #input-1 {
-  font-size: var(--fs-4);
-  color: var(--text-primary-dark); /* Ensure input text is dark */
-}
-
-.hero-form #input-2 {
-  font-size: var(--fs-4);
-  color: var(--text-primary-dark); /* Ensure input text is dark */
 }
 
 .input-field:focus {
@@ -818,7 +716,7 @@ body.dark-theme .user-btn {
 }
 
 .input-field::placeholder {
-  color: var(--independence); /* Keep this as it's for default, then override above */
+  color: var(--independence);
 }
 
 .hero-form .btn {
@@ -1094,7 +992,6 @@ body.dark-theme .user-btn {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  /* font-family: 'Barlow Semi Condensed', sans-serif; */
   font-family: var(--ff-nunito);
 }
 .reviews .contain h2 {
@@ -1122,8 +1019,6 @@ body.dark-theme .user-btn {
 .eachdiv {
   padding: 1rem 1rem;
   border-radius: 0.8rem;
-  /* box-shadow: 5px 5px 20px #6d6b6b6b; */
-  /* box-shadow: var(--shadow-1); */
   color: white;
 }
 .div1 {
@@ -1417,13 +1312,11 @@ body.dark-theme .user-btn {
 \*-----------------------------------*/
 
 .footer {
-  
   color: var(--independence);
-  background-color: #ceeafd; 
-  padding: 3rem 1rem; 
-  font-family: 'Segoe UI', sans-serif; 
-  font-size: 1.05rem; 
-  color: #333;
+  background-color: #ceeafd;
+  padding: 3rem 1rem;
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 1.05rem;
 }
 
 .footer a {
@@ -1460,19 +1353,19 @@ body.dark-theme .user-btn {
 }
 
 .footer-list-title {
-  font-weight: 700; 
+  font-weight: 700;
   font-size: 1.6rem;
-   margin-bottom: 0.75rem;
+  margin-bottom: 0.75rem;
   color: var(--space-cadet);
 }
 
 .footer-link {
   font-size: 1.1rem;
   padding-block: 6px;
-  color: #444; 
-  text-decoration: none; 
+  color: #444;
+  text-decoration: none;
   display: block;
-   margin-bottom: 0.5rem;
+  margin-bottom: 0.5rem;
 }
 
 .footer-link:hover{
@@ -1484,7 +1377,6 @@ body.dark-theme .user-btn {
 }
 
 .footer-bottom {
- 
   border: 1px solid rgb(107, 207, 254);
   border-radius: var(--radius-18) var(--radius-18) 0 0;
   padding: 20px;
@@ -1601,7 +1493,6 @@ body.dark-theme .user-btn {
    */
 
   .container {
-    /* Removed max-width and margin-inline: auto */
     padding-inline: 50px; /* Adjust padding for larger screens */
   }
 
@@ -1631,7 +1522,7 @@ body.dark-theme .user-btn {
   }
 
   .header-contact .contact-time {
-    color: rgba(114, 166, 240, 0.786);
+    color: rgba(0, 106, 255, 0.666);
     font-size: var(--fs-7);
   }
 
@@ -1644,13 +1535,11 @@ body.dark-theme .user-btn {
     min-height: 85vh;
     display: flex;
     align-items: center;
-    /* Hero section's padding-left is handled by its child .container */
     z-index: 1;
   }
 
   .hero-content {
-      /* Keep hero-content aligned with the left edge of its container */
-      width: 100%; /* Ensure it takes full width of its container */
+      width: 100%;
   }
 
   .hero-form {
@@ -1667,11 +1556,7 @@ body.dark-theme .user-btn {
     border-right: 1px solid hsla(0, 0%, 0%, 0.08);
   }
 
-  /* Specific border adjustments for 768px breakpoint */
-  .hero-form .input-wrapper:nth-child(2) {
-    border-right: none;
-  }
-
+  .hero-form .input-wrapper:nth-child(2),
   .hero-form .input-wrapper:nth-child(even) {
       border-right: none;
   }
@@ -1680,20 +1565,15 @@ body.dark-theme .user-btn {
       border-right: 1px solid hsla(0, 0%, 0%, 0.08);
   }
 
-
-  /* Force 'Car Type' to have a bottom border if it's the last in its row before the wrap */
-  .hero-form .input-wrapper:nth-child(3), /* Car Type */
-  .hero-form .input-wrapper:nth-child(4) { /* Transmission */
+  .hero-form .input-wrapper:nth-child(3),
+  .hero-form .input-wrapper:nth-child(4) {
     border-bottom: 1px solid hsla(0, 0%, 0%, 0.08);
   }
 
-  /* Remove right border for 'Transmission' */
   .hero-form .input-wrapper:nth-child(4) {
       border-right: none;
   }
 
-
-  /* Force 'Fuel Type' to start on a new row and span both columns */
   .hero-form .input-wrapper:nth-child(5) {
     grid-column: 1 / -1;
     border-right: none;
@@ -1770,14 +1650,6 @@ body.dark-theme .user-btn {
   .copyright {
     font-size: var(--fs-6);
   }
-
-  .copyright > a {
-    display: inline-block;
-  }
-
-  .copyright > a:is(:hover, :focus) {
-    color: var(--carolina-blue);
-  }
 }
 
 
@@ -1791,17 +1663,7 @@ body.dark-theme .user-btn {
    */
 
   .container {
-    /* Removed max-width and margin-inline: auto */
     padding-inline: 80px; /* Adjust padding for larger screens */
-  }
-
-
-  /**
-   * HEADER
-   */
-
-  .header .container {
-    /* Removed max-width and margin-inline: auto */
   }
 
   /**
@@ -1814,34 +1676,29 @@ body.dark-theme .user-btn {
 
   .hero-form {
     grid-template-columns: 1fr 1fr;
-    max-width: 600px; /* Keep it narrower */
-    margin-inline: 0; /* Align left */
+    max-width: 600px;
+    margin-inline: 0;
     justify-self: start;
     padding: 35px;
     gap: 30px;
   }
 
-  /* Specific styling for input wrappers within hero-form */
   .hero-form .input-wrapper {
     padding: 0 20px;
     border-right: 1px solid hsla(0, 0%, 0%, 0.08);
     border-bottom: 1px solid hsla(0, 0%, 0%, 0.08);
   }
 
-  /* Remove border for elements at the end of a row */
-  .hero-form .input-wrapper:nth-child(2), /* Max Rent */
-  .hero-form .input-wrapper:nth-child(4) { /* Transmission */
+  .hero-form .input-wrapper:nth-child(2),
+  .hero-form .input-wrapper:nth-child(4) {
     border-right: none;
   }
 
-  /* Remove bottom border from the last input-wrapper in the first row (Car Type) */
   .hero-form .input-wrapper:nth-child(3),
   .hero-form .input-wrapper:nth-child(4) {
-      border-bottom: 1px solid hsla(0, 0%, 0%, 0.08); /* Ensure consistent bottom border for the pair */
+      border-bottom: 1px solid hsla(0, 0%, 0%, 0.08);
   }
 
-
-  /* Force 'Fuel Type' to start on a new row and span both columns */
   .hero-form .input-wrapper:nth-child(5) {
     grid-column: 1 / -1;
     border-right: none;
@@ -1893,10 +1750,6 @@ body.dark-theme .user-btn {
    */
 
   :root {
-    /**
-     * typography
-     */
-
     --fs-1: 2.875rem;
     --fs-2: 2rem;
   }
@@ -1906,8 +1759,7 @@ body.dark-theme .user-btn {
    */
 
   .container {
-    /* Removed max-width and margin-inline: auto */
-    padding-inline: 120px; /* Adjust padding for very large screens */
+    padding-inline: 120px;
   }
 
 
@@ -1935,11 +1787,6 @@ body.dark-theme .user-btn {
     gap: 50px;
   }
 
-  .header .container {
-    /* Removed specific max-width and margin for full width layout */
-  }
-
-
   /**
    * HERO
    */
@@ -1956,8 +1803,8 @@ body.dark-theme .user-btn {
 
   .hero-form {
     grid-template-columns: 1fr 1fr;
-    max-width: 600px; /* Keep it narrower to match the reference image */
-    margin-inline: 0; /* Align left */
+    max-width: 600px;
+    margin-inline: 0;
     justify-self: start;
     padding: 40px;
     gap: 30px;
@@ -1969,19 +1816,15 @@ body.dark-theme .user-btn {
     border-bottom: 1px solid hsla(0, 0%, 0%, 0.08);
   }
 
-  /* Remove right border for second and fourth input-wrappers */
   .hero-form .input-wrapper:nth-child(2),
   .hero-form .input-wrapper:nth-child(4) {
     border-right: none;
   }
 
-  /* Ensure the last input-wrapper for 'Transmission' has a bottom border if it's the last in its pair */
   .hero-form .input-wrapper:nth-child(4) {
       border-bottom: 1px solid hsla(0, 0%, 0%, 0.08);
   }
 
-
-  /* Force 'Fuel Type' to start on a new row and span all columns */
   .hero-form .input-wrapper:nth-child(5) {
     grid-column: 1 / -1;
     border-right: none;
@@ -2065,13 +1908,6 @@ body.dark-theme .user-btn {
 
 select.error-border {
   border: 2px solid red;
-}
-
-/* Ensure theme switch is always visible and functional */
-.theme-switch {
-  position: relative;
-  z-index: 1002;
-  pointer-events: auto;
 }
 
 .theme-switch:hover {

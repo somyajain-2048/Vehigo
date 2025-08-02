@@ -43,7 +43,25 @@ body.dark-mode .social-link{
   background-color: black;
   color: white;
 }
-body.dark-mod
+body.dark-mode .social-list{
+  background-color: black;
+  color: white;
+}
+
+body.dark-mode footer,
+body.dark-mode .footer,
+body.dark-mode .footer-top,
+body.dark-mode .footer-bottom,
+body.dark-mode .footer-brand,
+body.dark-mode .footer-list,
+body.dark-mode .footer-text,
+body.dark-mode .footer-link,
+body.dark-mode .footer-list-title,
+body.dark-mode .copyright {
+  background-color: black;
+  color: white;
+}
+
 
 /* Navbar link styles */
 .navbar-list .navbar-link {

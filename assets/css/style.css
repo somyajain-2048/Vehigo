@@ -25,10 +25,12 @@
   --alice-blue-2: hsl(216, 75%, 97%);
   --alice-blue-3: hsl(216, 38%, 95%);
   --alice-blue-4: hsl(217, 33%, 92%);
-  --independence: hsl(219, 21%, 39%); /* Original independence color */
+  --independence: hsl(219, 21%, 39%);
+  /* Original independence color */
   --deep-cerise: hsl(329, 63%, 52%);
   --eerie-black: hsl(210, 11%, 15%);
-  --space-cadet: hsl(240, 22%, 25%); /* Used for headings, already quite dark */
+  --space-cadet: hsl(240, 22%, 25%);
+  /* Used for headings, already quite dark */
   --blue-jeans: hsl(204, 80%, 63%);
   --slate-blue: hsl(262, 60%, 57%);
   --beau-blue: hsl(208, 86%, 92%);
@@ -36,7 +38,8 @@
   --mimi-pink: hsl(329, 63%, 90%);
   --red-salsa: hsl(0, 79%, 63%);
   --sapphire: hsl(211, 100%, 35%);
-  --manatee: hsl(219, 14%, 60%); /* Used for input labels, might need adjustment */
+  --manatee: hsl(219, 14%, 60%);
+  /* Used for input labels, might need adjustment */
   --white: hsl(0, 0%, 100%);
 
   --gradient: linear-gradient(to top, var(--alice-blue-2), var(--alice-blue-3));
@@ -57,7 +60,8 @@
   --fs-7: 0.625rem;
 
   /* NEW: Define a new font size variable for slightly larger nav links */
-  --fs-navbar-link: 1rem; /* 16px */
+  --fs-navbar-link: 1rem;
+  /* 16px */
 
   --fw-400: 400;
   --fw-600: 600;
@@ -90,9 +94,12 @@
   --shadow-2: 3px 3px 9px hsla(204, 92%, 59%, 0.3);
 
   /* --- NEW CONTRAST COLORS --- */
-  --text-primary-dark: hsl(210, 11%, 15%); /* Very dark grey, closer to black */
-  --text-secondary-dark: hsl(219, 21%, 25%); /* Darker shade of independence */
-  --text-light-on-dark: hsl(0, 0%, 90%); /* Light grey for text on dark backgrounds */
+  --text-primary-dark: hsl(210, 11%, 15%);
+  /* Very dark grey, closer to black */
+  --text-secondary-dark: hsl(219, 21%, 25%);
+  /* Darker shade of independence */
+  --text-light-on-dark: hsl(0, 0%, 90%);
+  /* Light grey for text on dark backgrounds */
   /* --- END NEW CONTRAST COLORS --- */
 
 }
@@ -148,17 +155,20 @@ ion-icon {
 
 html {
   font-family: var(--ff-open-sans);
-  color: var(--text-primary-dark); /* Changed global text color for better readability */
+  color: var(--text-primary-dark);
+  /* Changed global text color for better readability */
   font-size: 1rem;
   line-height: 1.5;
   scroll-behavior: smooth;
-  height: 100%; /* Ensure html has 100% height for vh to work consistently */
+  height: 100%;
+  /* Ensure html has 100% height for vh to work consistently */
 }
 
 body {
   background: var(--alice-blue-1);
   overflow-x: hidden;
-  height: 100%; /* Ensure body has 100% height for vh to work consistently */
+  height: 100%;
+  /* Ensure body has 100% height for vh to work consistently */
 }
 
 ::-webkit-scrollbar {
@@ -176,7 +186,9 @@ body {
 }
 
 
-::-webkit-scrollbar-thumb:hover { background: hsla(219, 14%, 60%, 0.5); }
+::-webkit-scrollbar-thumb:hover {
+  background: hsla(219, 14%, 60%, 0.5);
+}
 
 /*-----------------------------------*\
   #THEME SWITCH
@@ -227,11 +239,11 @@ body {
   z-index: 2;
 }
 
-input:checked + .slider {
+input:checked+.slider {
   background-color: #2196F3;
 }
 
-input:checked + .slider:before {
+input:checked+.slider:before {
   transform: translateX(30px);
 }
 
@@ -255,11 +267,11 @@ input:checked + .slider:before {
   opacity: 0;
 }
 
-input:checked + .slider .sun {
+input:checked+.slider .sun {
   opacity: 0;
 }
 
-input:checked + .slider .moon {
+input:checked+.slider .moon {
   opacity: 1;
 }
 
@@ -339,7 +351,8 @@ body.dark-mode .footer-bottom ion-icon {
 .btn {
   position: relative;
   background: var(--background, var(--carolina-blue));
-  color: var(--color, var(--white)); /* Buttons on blue background should have white text */
+  color: var(--color, var(--white));
+  /* Buttons on blue background should have white text */
   min-width: var(--width, 40px);
   min-height: var(--height, 40px);
   padding: 5px;
@@ -382,7 +395,8 @@ body.dark-mode .footer-bottom ion-icon {
 .h1,
 .h2,
 .h3 {
-  color: var(--text-primary-dark); /* Headings should be very dark for contrast */
+  color: var(--text-primary-dark);
+  /* Headings should be very dark for contrast */
   font-family: var(--ff-nunito);
   line-height: 1.4;
 }
@@ -413,20 +427,23 @@ body.dark-mode .footer-bottom ion-icon {
 /* --- BEGINNING OF .container adjustments for left alignment --- */
 .container {
   width: 100%;
-  padding-inline: 15px; /* Default padding for all containers */
+  padding-inline: 15px;
+  /* Default padding for all containers */
   /* REMOVED margin-inline: auto and max-width from here and moved to media queries */
   /* for a more intentional left alignment on larger screens */
 }
 
 /* Specific adjustments for header container only */
 .header .container {
-    padding-inline: 15px; /* Adjust padding for small screens */
+  padding-inline: 15px;
+  /* Adjust padding for small screens */
 }
 
 /* --- END OF .container adjustments --- */
 
 
-button, a {
+button,
+a {
   transition: var(--transition);
 }
 
@@ -494,9 +511,11 @@ button, a {
   0% {
     transform: scale(1) translateY(0px);
   }
+
   50% {
     transform: scale(1.1) translateY(-10px);
   }
+
   100% {
     transform: scale(1) translateY(0px);
   }
@@ -551,9 +570,11 @@ button, a {
 }
 
 .navbar-link {
-  color: var(--text-secondary-dark); /* Use a darker text color for navbar links */
+  color: var(--text-secondary-dark);
+  /* Use a darker text color for navbar links */
   font-family: var(--ff-nunito);
-  font-size: var(--fs-navbar-link); /* Using the new variable */
+  font-size: var(--fs-navbar-link);
+  /* Using the new variable */
   padding-block: 5px;
   margin-bottom: 15px;
   transition: 0.3s ease;
@@ -563,7 +584,8 @@ button, a {
 }
 
 .navbar-link:is(:hover, :focus) {
-  color: white; /* This contrast should be good on carolina-blue */
+  color: white;
+  /* This contrast should be good on carolina-blue */
   background-color: var(--carolina-blue);
   padding-left: 8px;
   padding-right: 8px;
@@ -610,6 +632,7 @@ button, a {
   overflow: hidden;
   margin-bottom: 3rem;
 }
+
 .hero-title {
   max-width: 22ch;
   margin-bottom: 10px;
@@ -624,6 +647,7 @@ button, a {
   animation: hideRevel 4s steps(14) 1s infinite,
     blink 0.6s infinite step-end alternate;
 }
+
 .first {
   max-width: 17ch;
 }
@@ -632,16 +656,20 @@ button, a {
   0% {
     width: 0;
   }
+
   50% {
     width: 20ch;
   }
+
   70% {
     width: 20ch;
   }
+
   100% {
     width: 0;
   }
 }
+
 @keyframes blink {
   50% {
     border-color: transparent;
@@ -649,14 +677,16 @@ button, a {
 }
 
 .hero-text {
-  color: var(--text-secondary-dark); /* Use a darker text color for hero text */
+  color: var(--text-secondary-dark);
+  /* Use a darker text color for hero text */
   line-height: 1.8;
   margin-bottom: 30px;
   margin-top: 10px;
 }
 
 .hero-banner {
-  display: none; /* Default for mobile, will be overridden by media queries */
+  display: none;
+  /* Default for mobile, will be overridden by media queries */
 }
 
 .hero-form {
@@ -679,13 +709,15 @@ button, a {
 }
 
 .input-label {
-  color: var(--manatee); /* Keep original manatee, or adjust if needed */
+  color: var(--manatee);
+  /* Keep original manatee, or adjust if needed */
   font-size: var(--fs-6);
   margin-bottom: 12px;
 }
 
 .input-field {
-  color: var(--text-primary-dark); /* Input field typed text should be very dark */
+  color: var(--text-primary-dark);
+  /* Input field typed text should be very dark */
   outline: 2px solid transparent;
   outline-offset: 5px;
   border-radius: 4px;
@@ -702,12 +734,14 @@ button, a {
 
 .hero-form #input-1,
 .hero-form #input-2 {
-  background-image: none; /* Remove default dropdown arrow for text inputs */
+  background-image: none;
+  /* Remove default dropdown arrow for text inputs */
 }
 
 .hero-form #input-1::placeholder,
 .hero-form #input-2::placeholder {
-  color: var(--text-secondary-dark); /* Darken placeholder text for contrast */
+  color: var(--text-secondary-dark);
+  /* Darken placeholder text for contrast */
   opacity: 1;
 }
 
@@ -740,7 +774,8 @@ button, a {
 }
 
 .featured-car-link {
-  color: var(--text-secondary-dark); /* Adjust featured car link color */
+  color: var(--text-secondary-dark);
+  /* Adjust featured car link color */
   display: flex;
   align-items: center;
   gap: 5px;
@@ -776,6 +811,15 @@ button, a {
   border-radius: var(--radius-18);
   padding: 10px;
   box-shadow: var(--shadow-1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+
+.featured-car-card:hover,
+.blog-card:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
 }
 
 .featured-car-card .card-banner {
@@ -785,7 +829,7 @@ button, a {
   overflow: hidden;
 }
 
-.featured-car-card .card-banner > img {
+.featured-car-card .card-banner>img {
   height: 100%;
   object-fit: cover;
 }
@@ -806,7 +850,7 @@ button, a {
   width: calc(100% - 60px);
 }
 
-.featured-car-card .card-title > a {
+.featured-car-card .card-title>a {
   color: inherit;
   width: 100%;
   white-space: nowrap;
@@ -814,7 +858,7 @@ button, a {
   text-overflow: ellipsis;
 }
 
-.featured-car-card .card-title > a:is(:hover, :focus) {
+.featured-car-card .card-title>a:is(:hover, :focus) {
   color: var(--carolina-blue);
 }
 
@@ -849,7 +893,8 @@ button, a {
 }
 
 .featured-car-card .card-item-text {
-  color: var(--text-secondary-dark); /* Adjust featured car item text color */
+  color: var(--text-secondary-dark);
+  /* Adjust featured car item text color */
   font-size: var(--fs-6);
 }
 
@@ -952,14 +997,16 @@ button, a {
 }
 
 .get-start-card .card-title {
-  color: var(--text-primary-dark); /* Card titles should be very dark */
+  color: var(--text-primary-dark);
+  /* Card titles should be very dark */
   font-family: var(--ff-nunito);
   font-weight: var(--fw-400);
   margin-bottom: 15px;
 }
 
 .get-start-card .card-text {
-  color: var(--text-secondary-dark); /* Adjust get-start card text color */
+  color: var(--text-secondary-dark);
+  /* Adjust get-start card text color */
 }
 
 .get-start-card .card-link {
@@ -988,12 +1035,14 @@ button, a {
 \*-----------------------------------*/
 
 @import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600&display=swap');
+
 .reviews {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: var(--ff-nunito);
 }
+
 .reviews .contain h2 {
   font-family: var(--ff-nunito);
   color: #32324e;
@@ -1004,6 +1053,7 @@ button, a {
   font-weight: var(--fw-400);
   margin-inline-end: 120px;
 }
+
 .outerdiv {
   width: 100%;
   background: var(--alice-blue-1);
@@ -1011,16 +1061,19 @@ button, a {
   align-items: center;
   margin-left: -10px;
 }
+
 .innerdiv {
   margin: 1rem;
   display: grid;
   grid-gap: 1.5rem;
 }
+
 .eachdiv {
   padding: 1rem 1rem;
   border-radius: 0.8rem;
   color: white;
 }
+
 .div1 {
   background: #18202d;
   grid-column: 1/3;
@@ -1029,64 +1082,78 @@ button, a {
   background-repeat: no-repeat;
   background-position-x: 25rem;
 }
+
 .div2 {
   background: #49556b;
   grid-column: 3/4;
   grid-row: 1/2;
 }
+
 .div3 {
   background: white;
   grid-column: 4/5;
   grid-row: 1/3;
   color: black;
 }
+
 .div4 {
   background: white;
   grid-column: 1/2;
   grid-row: 2/3;
   color: black;
 }
+
 .div5 {
   background: #18202d;
   grid-column: 2/4;
   grid-row: 2/3;
 }
+
 .userdetails {
   display: flex;
 }
+
 .imgbox {
   margin-right: 1rem;
 }
+
 .imgbox img {
   border-radius: 100%;
   width: 2rem;
   border: 2px solid #cec5c5;
 }
+
 .detbox {
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
+
 .detbox p {
   margin: 0;
 }
+
 .detbox .name {
   color: hsl(0, 0%, 81%);
   font-size: 0.9rem;
   margin-bottom: 0.1rem;
   font-weight: 600;
 }
+
 .detbox .name.dark {
   color: #49505a;
 }
+
 .detbox .designation {
   color: hsl(0, 0%, 81%);
   opacity: 50%;
   font-size: 0.8rem;
 }
+
 .detbox .designation.dark {
   color: #49505a;
 }
+
 .review h4 {
   font-size: 1.4rem;
   color: #f3deff;
@@ -1094,9 +1161,11 @@ button, a {
   line-height: 1.5;
   margin-bottom: 0.8rem;
 }
+
 .review.dark h4 {
   color: #4b5258;
 }
+
 .review p {
   font-size: 0.95rem;
   color: #f3deff;
@@ -1104,9 +1173,11 @@ button, a {
   opacity: 50%;
   line-height: 1.5;
 }
+
 .review.dark p {
   color: #0e0e0e;
 }
+
 .attribution {
   font-size: 1rem;
   line-height: 1.5;
@@ -1115,6 +1186,7 @@ button, a {
   right: 1rem;
   text-align: right;
 }
+
 .attribution a {
   text-decoration: none;
 }
@@ -1130,9 +1202,11 @@ button, a {
     font-weight: var(--fw-400);
     margin-inline-end: 120px;
   }
+
   .div1 {
     background-position-x: 10rem;
   }
+
   .innerdiv {
     display: flex;
     flex-direction: column;
@@ -1140,6 +1214,7 @@ button, a {
 
     margin-bottom: 50px;
   }
+
   .attribution {
     position: relative;
   }
@@ -1159,6 +1234,7 @@ button, a {
   border: 1px solid var(--white);
   box-shadow: var(--shadow-1);
   overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .blog-card .card-banner {
@@ -1192,11 +1268,11 @@ button, a {
   margin-bottom: 20px;
 }
 
-.blog-card .card-title > a {
+.blog-card .card-title>a {
   color: inherit;
 }
 
-.blog-card .card-title > a:is(:hover, :focus) {
+.blog-card .card-title>a:is(:hover, :focus) {
   color: var(--carolina-blue);
 }
 
@@ -1284,7 +1360,7 @@ button, a {
   padding-bottom: 20px;
 }
 
-.blog .has-scrollbar > li {
+.blog .has-scrollbar>li {
   flex-shrink: 0;
   max-width: 330px;
   width: 100%;
@@ -1344,8 +1420,8 @@ button, a {
 .footer-list {
   font-family: var(--ff-nunito);
   list-style: none;
-   padding: 0;
-    flex: 1 1 200px;
+  padding: 0;
+  flex: 1 1 200px;
 }
 
 .footer-list:not(:last-of-type) {
@@ -1368,11 +1444,11 @@ button, a {
   margin-bottom: 0.5rem;
 }
 
-.footer-link:hover{
+.footer-link:hover {
   color: rgb(42, 21, 231);
 }
 
-.footer-list:last-child > li:first-child {
+.footer-list:last-child>li:first-child {
   column-span: all;
 }
 
@@ -1405,11 +1481,11 @@ button, a {
   font-size: var(--fs-6);
 }
 
-.copyright > a {
+.copyright>a {
   display: inline-block;
 }
 
-.copyright > a:is(:hover, :focus) {
+.copyright>a:is(:hover, :focus) {
   color: var(--carolina-blue);
 }
 
@@ -1451,7 +1527,8 @@ button, a {
 
   .container {
     /* Removed max-width and margin-inline: auto to allow it to be flexible */
-    padding-inline: 30px; /* Increase padding for larger screens */
+    padding-inline: 30px;
+    /* Increase padding for larger screens */
   }
 
 
@@ -1493,7 +1570,8 @@ button, a {
    */
 
   .container {
-    padding-inline: 50px; /* Adjust padding for larger screens */
+    padding-inline: 50px;
+    /* Adjust padding for larger screens */
   }
 
 
@@ -1539,13 +1617,15 @@ button, a {
   }
 
   .hero-content {
-      width: 100%;
+    width: 100%;
   }
 
   .hero-form {
     grid-template-columns: 1fr 1fr;
-    max-width: 600px; /* Keep it narrower as per image */
-    margin-inline: 0; /* Align left */
+    max-width: 600px;
+    /* Keep it narrower as per image */
+    margin-inline: 0;
+    /* Align left */
     justify-self: start;
     padding: 30px;
     gap: 30px;
@@ -1558,11 +1638,11 @@ button, a {
 
   .hero-form .input-wrapper:nth-child(2),
   .hero-form .input-wrapper:nth-child(even) {
-      border-right: none;
+    border-right: none;
   }
 
   .hero-form .input-wrapper:nth-child(odd) {
-      border-right: 1px solid hsla(0, 0%, 0%, 0.08);
+    border-right: 1px solid hsla(0, 0%, 0%, 0.08);
   }
 
   .hero-form .input-wrapper:nth-child(3),
@@ -1571,7 +1651,7 @@ button, a {
   }
 
   .hero-form .input-wrapper:nth-child(4) {
-      border-right: none;
+    border-right: none;
   }
 
   .hero-form .input-wrapper:nth-child(5) {
@@ -1599,6 +1679,7 @@ button, a {
     border-radius: 30px;
     z-index: -1;
   }
+
   .hero-form .btn {
     grid-column: 1 / -1;
     width: 100%;
@@ -1663,7 +1744,8 @@ button, a {
    */
 
   .container {
-    padding-inline: 80px; /* Adjust padding for larger screens */
+    padding-inline: 80px;
+    /* Adjust padding for larger screens */
   }
 
   /**
@@ -1696,7 +1778,7 @@ button, a {
 
   .hero-form .input-wrapper:nth-child(3),
   .hero-form .input-wrapper:nth-child(4) {
-      border-bottom: 1px solid hsla(0, 0%, 0%, 0.08);
+    border-bottom: 1px solid hsla(0, 0%, 0%, 0.08);
   }
 
   .hero-form .input-wrapper:nth-child(5) {
@@ -1722,7 +1804,7 @@ button, a {
     padding-bottom: 50px;
   }
 
-  .blog .has-scrollbar > li {
+  .blog .has-scrollbar>li {
     max-width: 450px;
   }
 
@@ -1822,7 +1904,7 @@ button, a {
   }
 
   .hero-form .input-wrapper:nth-child(4) {
-      border-bottom: 1px solid hsla(0, 0%, 0%, 0.08);
+    border-bottom: 1px solid hsla(0, 0%, 0%, 0.08);
   }
 
   .hero-form .input-wrapper:nth-child(5) {
@@ -1860,7 +1942,7 @@ button, a {
    * BLOG
    */
 
-  .blog .has-scrollbar > li {
+  .blog .has-scrollbar>li {
     max-width: 340px;
     scroll-snap-align: center;
   }
@@ -1922,16 +2004,16 @@ select.error-border {
     height: 25px;
     margin-left: 10px;
   }
-  
+
   .slider:before {
     height: 18px;
     width: 18px;
   }
-  
-  input:checked + .slider:before {
+
+  input:checked+.slider:before {
     transform: translateX(25px);
   }
-  
+
   .slider .icon svg {
     width: 16px;
     height: 16px;
@@ -1942,7 +2024,7 @@ select.error-border {
   .header-actions {
     gap: 5px;
   }
-  
+
   .theme-switch {
     margin-left: 5px;
   }

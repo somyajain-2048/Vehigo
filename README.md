@@ -82,6 +82,7 @@ VehiGo's files are organized to keep things tidy. Here's a glimpse:
 ├── styles/ # Additional or modular stylesheets
 ├── vehigo-backend/ # Backend-related files (e.g., environment config)
 ├── index.html # The main entry point of the application
+|── Contact.html # The contact file
 ├── LICENSE # Project license information
 ├── README.md # This documentation file
 ├── PULL_REQUEST_TEMPLATE.md # Template for pull requests

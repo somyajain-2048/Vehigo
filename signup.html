@@ -619,6 +619,24 @@
   height: 30px;
   border-radius: 100%;
 }
+
+#error, .error {
+  color: red;
+  background-color: #ffe0e0;
+  padding: 8px;
+  margin-top: 10px;
+  border: 1px solid red;
+}
+
+.success {
+  color: green;
+  background-color: #e0ffe0;
+  padding: 8px;
+  margin-top: 10px;
+  border: 1px solid green;
+  text-align: center;
+}
+
   </style>
 </head>
 <body>
@@ -846,12 +864,12 @@
           </div>
 
           <!-- Success Message -->
-          <div id="successMessage" class="success-message">
+          <!-- <div id="successMessage" class="success-message">
             <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
               <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
             </svg>
             <span></span>
-          </div>
+          </div> -->
 
           <!-- Signup Button -->
           <div class="field">
@@ -871,11 +889,109 @@
         <div class="form-link">
           <span>Already have an account? <a href="login.html">Sign In</a></span>
         </div>
+
+        <div id="message"></div>
       </div>
     </div>
   </main>
+  <script>
+    
+        document.getElementById("signupForm").addEventListener("submit" , function(e) {
+            e.preventDefault();
 
-  <script type="module">
+            const email = document.getElementById("email").value.trim();
+            const password = document.getElementById("password").value.trim();
+            const messageDiv = document.getElementById("message");
+
+            messageDiv.textContent = ""
+            messageDiv.className = ""
+
+            // email check
+            if (!email.includes("@")) {
+                messageDiv.textContent = "Please enter a valid email.";
+                messageDiv.classList.add("error");
+                return;
+            }
+
+            // Validatoin
+            if (email === "" || password === "") {
+                messageDiv.textContent = "All fields are required!";
+                messageDiv.classList.add("error");
+                return;
+            }
+
+            // if everthing is fine
+            messageDiv.textContent = "SignUp Successfully!";
+            messageDiv.classList.add("success");
+
+            // to reset the form
+            document.getElementById("signupForm").reset();
+
+        });
+
+  </script>
+
+  <!-- <script type="module">
+  const signupForm = document.getElementById('signupForm');
+  const signupBtn = document.getElementById('signupBtn');
+  const successMessage = document.getElementById('successMessage');
+  // validation and showLoading/showSuccessMessage functions as needed...
+
+  signupForm.addEventListener('submit', async function(e) {
+    e.preventDefault();
+
+    // Basic required field check
+    const name = form.name.value.trim();
+    const email = form.email.value.trim();
+    const phone = form.phone.value.trim();
+    const address = form.address.value.trim();
+    const password = form.password ? form.password.value.trim() : null;
+
+    // TODO: run validation functions here. If they fail, return early.
+
+    // Show spinner
+    signupBtn.disabled = true;
+    signupBtn.classList.add('loading');
+
+    try {
+      const body = { name, email, phone_number: phone, address };
+      if (password) body.password = password;
+
+      const response = await fetch('http://localhost:5001/api/auth/signup', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(body),
+      });
+
+      const data = await response.json();
+      if (!response.ok) {
+        throw new Error(data.message || 'Signup failed');
+      }
+
+      signupBtn.classList.remove('loading');
+      signupBtn.disabled = false;
+      successMessage.querySelector('span').textContent = 'Account created successfully!';
+      successMessage.classList.add('show');
+
+      setTimeout(() => {
+        signupForm.reset();
+        window.location.href = 'login.html';
+      }, 1500);
+
+    } catch (err) {
+      signupBtn.classList.remove('loading');
+      signupBtn.disabled = false;
+      // show error UI logic: you can display err.message somewhere
+      alert(err.message || 'Error during signup');
+    }
+  });
+</script> -->
+
+
+  <!-- <script type="module">
+  const form = document.getElementById("signupForm");
+  form.submit(); // This submits the form
+
     let auth_provider;
     let isGoogleSignup = false;
     // Form elements
@@ -1278,7 +1394,7 @@
         console.log(error)
       }
     })
-  </script>
+  </script> -->
   
   <!-- JavaScript files for navbar functionality -->
   <script src="./assets/js/script.js"></script>

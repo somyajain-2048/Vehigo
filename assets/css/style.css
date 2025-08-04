@@ -623,9 +623,15 @@ opacity: 0.7;
 pointer-events: all;
 }
 
+
+contact-time {
+  color: #4c4f6a; /* light mode color */
+}
+
 /-----------------------------------
 #HERO
 *-----------------------------------*/
+
 
 .hero {
 padding-top: 120px;
@@ -1561,6 +1567,201 @@ responsive for large than 768px screen
 */
 
 @media (min-width: 768px) {
+  /**
+   * CUSTOM PROPERTY
+   */
+
+  :root {
+    /**
+     * typography
+     */
+
+    --fs-1: 2.625rem;
+  }
+
+  /**
+   * REUSED STYLE
+   */
+
+  .container {
+    /* Removed max-width and margin-inline: auto */
+    padding-inline: 50px; /* Adjust padding for larger screens */
+  }
+
+
+  /**
+   * HEADER
+   */
+
+  .header-actions {
+    gap: 30px;
+  }
+
+  .header-contact {
+    display: block;
+    text-align: center;
+  }
+
+  .header-contact .contact-link,
+  .header-contact .contact-time {
+    /* color: var(--space-cadet); */
+    font-family: var(--ff-nunito);
+    font-size: var(--fs-5);
+    line-height: 1.3;
+  }
+
+  .header-contact .contact-link:is(:hover, :focus) {
+    color: var(--carolina-blue);
+  }
+
+  .header-contact .contact-time {
+    font-size: var(--fs-7);
+  }
+
+  /**
+   * HERO
+   */
+
+  .hero {
+    position: relative;
+    min-height: 85vh;
+    display: flex;
+    align-items: center;
+    /* Hero section's padding-left is handled by its child .container */
+    z-index: 1;
+  }
+
+  .hero-content {
+      /* Keep hero-content aligned with the left edge of its container */
+      width: 100%; /* Ensure it takes full width of its container */
+  }
+
+  .hero-form {
+    grid-template-columns: 1fr 1fr;
+    max-width: 600px; /* Keep it narrower as per image */
+    margin-inline: 0; /* Align left */
+    justify-self: start;
+    padding: 30px;
+    gap: 30px;
+  }
+
+  .input-wrapper:not(:last-of-type) {
+    border-bottom: none;
+    border-right: 1px solid hsla(0, 0%, 0%, 0.08);
+  }
+
+  /* Specific border adjustments for 768px breakpoint */
+  .hero-form .input-wrapper:nth-child(2) {
+    border-right: none;
+  }
+
+  .hero-form .input-wrapper:nth-child(even) {
+      border-right: none;
+  }
+
+  .hero-form .input-wrapper:nth-child(odd) {
+      border-right: 1px solid hsla(0, 0%, 0%, 0.08);
+  }
+
+
+  /* Force 'Car Type' to have a bottom border if it's the last in its row before the wrap */
+  .hero-form .input-wrapper:nth-child(3), /* Car Type */
+  .hero-form .input-wrapper:nth-child(4) { /* Transmission */
+    border-bottom: 1px solid hsla(0, 0%, 0%, 0.08);
+  }
+
+  /* Remove right border for 'Transmission' */
+  .hero-form .input-wrapper:nth-child(4) {
+      border-right: none;
+  }
+
+
+  /* Force 'Fuel Type' to start on a new row and span both columns */
+  .hero-form .input-wrapper:nth-child(5) {
+    grid-column: 1 / -1;
+    border-right: none;
+    border-bottom: none;
+  }
+
+  .input-label {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .hero-banner {
+    display: block;
+    background: url("../images/hero_banner_mustang.png") no-repeat;
+    background-size: cover;
+    background-position: left;
+    position: absolute;
+    top: 100px;
+    bottom: 50px;
+    left: 65%;
+    width: 40%;
+    border-radius: 30px;
+    z-index: -1;
+  }
+  .hero-form .btn {
+    grid-column: 1 / -1;
+    width: 100%;
+    margin: 20px auto;
+    text-transform: uppercase;
+  }
+
+  /**
+   * FEATURED CAR
+   */
+
+  .featured-car-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  /**
+   * GET START
+   */
+
+  .get-start-list {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  /**
+   * FOOTER
+   */
+
+  .footer-brand {
+    width: 100%;
+  }
+
+  .footer-text {
+    max-width: 100%;
+  }
+
+  .footer-bottom {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: center;
+    padding-block: 30px;
+    box-shadow: var(--shadow-1);
+  }
+
+  .social-list {
+    margin-bottom: 0;
+  }
+
+  .copyright {
+    font-size: var(--fs-6);
+  }
+
+  .copyright > a {
+    display: inline-block;
+  }
+
+  .copyright > a:is(:hover, :focus) {
+    color: var(--carolina-blue);
+  }
+
 /**
 
 CUSTOM PROPERTY

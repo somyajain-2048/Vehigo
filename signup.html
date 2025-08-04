@@ -274,8 +274,10 @@
     .signup-form-container {
       background: rgba(255, 255, 255, 0.95);
       border-radius: 20px;
+      border-collapse: separate; /* Important for border-radius to work */
+      border-spacing: 0;
+      overflow: hidden; /* Ensures rounded corners apply to contents */
       box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
-      overflow: visible;
       width: 100%;
       max-width: 520px;
       min-height: 700px;

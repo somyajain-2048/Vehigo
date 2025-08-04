@@ -83,7 +83,7 @@
         <div class="form login" id="loginForm">
             <div class="form-content">
                 <header>Login</header>
-                <form action="" method="GET">
+                <form action="" method="GET" id="loginForm">
                     <div class="field input-field">
                         <input id="email" name="login_email"  type="email" placeholder="Email" class="input" required >
                     </div>
@@ -92,8 +92,6 @@
                         <input id="password" type="password" placeholder="Password" class="password" required>
                         <i class='bx bx-hide eye-icon'></i>
                     </div>
-
-                    <div id="errorMessage"></div>
                     <!-- <div class="form-link">
                         <a href="#" class="forgot-pass">Forgot password?</a>
                     </div> -->
@@ -107,6 +105,8 @@
                     <span>Don't have an account? <a href="#" class="link signup-link">Signup</a></span>
                 </div>
             </div>
+
+            <div id="loginMessage"></div>
 
             <!-- <div class="line"></div>
 
@@ -154,12 +154,14 @@
                         <button type="submit">Signup</button>
                     <div id="errorMessage"></div>
 
-                    <div id="successMessage"></div>
+                    <!-- <div id="successMessage"></div> -->
 
                     <div class="form-link">
                         <span>Already have an account? <a href="#" class="link login-link">Login</a></span>
                     </div>
                 </form>
+
+                <div id="signinMessage"></div>
 
 
             </div>
@@ -199,6 +201,8 @@
     <!-- JavaScript -->
     <script src="../assets/js/login.js"></script>
     <script>
+
+        
         const form = document.getElementById('signupForm');
         form.addEventListener('submit', function (e) {
             if (!form.checkValidity()) {

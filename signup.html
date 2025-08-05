@@ -7,6 +7,24 @@
   <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
   <title>Vehigo - Signup</title>
   
+  <!-- CSS files for navbar functionality -->
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="assets/css/dark.css" />
+  
+  <!-- Font Awesome for icons -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+  />
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600&family=Open+Sans&display=swap"
+    rel="stylesheet"
+  />
+  
   <style>
     * {
       margin: 0;
@@ -105,66 +123,164 @@
       50% { transform: translateY(-20px) rotate(180deg); }
     }
 
-    /* Header */
-    .header {
-      position: relative;
-      z-index: 10;
-      padding: 10px 0;
-      background: rgba(255, 255, 255, 0.1);
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-    }
-
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 20px;
-    }
-
-    .logo {
-      display: flex;
-      align-items: center;
-      text-decoration: none;
-      color: white;
-      font-size: 28px;
-      font-weight: bold;
-      transition: transform 0.3s ease;
-    }
-
-    .logo:hover {
-      transform: scale(1.05);
-    }
-
-    .logo-icon {
-      width: 40px;
-      height: 40px;
-      background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
-      border-radius: 12px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-right: 12px;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-    }
+    /* Signup specific styles - navbar styles are handled by style.css */
+    /* Removed conflicting navbar styles to use the same navbar CSS as home page */
 
     /* Main Content */
-    .main-content {
+    .signup-main-content {
       flex: 1;
       display: flex;
       align-items: center;
       justify-content: center;
       padding: 40px 20px;
+      padding-top: 120px; /* Add top padding to account for fixed navbar */
       position: relative;
-      z-index: 10;
+      z-index: 1; /* Reduced z-index to allow navbar to be clickable */
     }
 
-    .signup-container {
+    /* Responsive adjustments for smaller screens */
+    @media (max-width: 768px) {
+      .signup-main-content {
+        padding-top: 100px; /* Slightly less padding on mobile */
+        padding: 20px 15px;
+      }
+      
+      .signup-form-container {
+        max-width: 95%;
+        min-height: 650px;
+      }
+      
+      .form-content {
+        padding: 40px 30px 30px;
+      }
+      
+      .signup-header {
+        padding: 40px 30px;
+      }
+    }
+
+    /* Ensure navbar is accessible */
+    .header {
+      z-index: 1000 !important;
+    }
+
+    .navbar {
+      z-index: 1001 !important;
+    }
+
+    .overlay {
+      z-index: 999 !important;
+    }
+
+    .nav-toggle-btn {
+      z-index: 1002 !important;
+    }
+
+    /* Dark mode styles for signup page */
+    body.dark-mode .signup-form-container {
+      background: rgba(45, 45, 45, 0.95) !important;
+      border: 1px solid rgba(255, 255, 255, 0.2) !important;
+      color: #ffffff !important;
+      backdrop-filter: blur(20px) !important;
+    }
+
+    body.dark-mode .signup-header {
+      background: linear-gradient(135deg, #4a5568 0%, #2d3748 100%) !important;
+      color: #ffffff !important;
+    }
+
+    body.dark-mode .signup-header::before {
+      background: none !important;
+    }
+
+    body.dark-mode .signup-header h2 {
+      color: #ffffff !important;
+    }
+
+    body.dark-mode .signup-header p {
+      color: #e2e8f0 !important;
+    }
+
+    body.dark-mode .field label {
+      color: #e2e8f0 !important;
+    }
+
+    body.dark-mode .input {
+      background: rgba(55, 55, 55, 0.8) !important;
+      border: 1px solid rgba(255, 255, 255, 0.2) !important;
+      color: #ffffff !important;
+    }
+
+    body.dark-mode .input:focus {
+      border-color: #4299e1 !important;
+      background: rgba(55, 55, 55, 0.9) !important;
+    }
+
+    body.dark-mode .input::placeholder {
+      color: #a0aec0 !important;
+    }
+
+    body.dark-mode .signup-btn {
+      background: linear-gradient(135deg, #4299e1 0%, #3182ce 100%) !important;
+      color: #ffffff !important;
+    }
+
+    body.dark-mode .signup-btn:hover {
+      background: linear-gradient(135deg, #3182ce 0%, #2c5282 100%) !important;
+    }
+
+    body.dark-mode .form-link a {
+      color: #4299e1 !important;
+    }
+
+    body.dark-mode .form-link a:hover {
+      color: #3182ce !important;
+    }
+
+    body.dark-mode .input.error {
+      border-color: #fc8181 !important;
+      background: rgba(252, 129, 129, 0.1) !important;
+    }
+
+    body.dark-mode .input.success {
+      border-color: #68d391 !important;
+      background: rgba(104, 211, 145, 0.1) !important;
+    }
+
+    body.dark-mode .error-message {
+      color: #fc8181 !important;
+    }
+
+    body.dark-mode .success-message {
+      color: #68d391 !important;
+    }
+
+    body.dark-mode .password-toggle {
+      color: #a0aec0 !important;
+    }
+
+    body.dark-mode .password-toggle:hover {
+      color: #4299e1 !important;
+    }
+
+    body.dark-mode .icon {
+      color: #a0aec0 !important;
+    }
+
+    body.dark-mode .field label svg {
+      color: #a0aec0 !important;
+    }
+
+    .signup-form-container {
       background: rgba(255, 255, 255, 0.95);
       border-radius: 20px;
+      border-collapse: separate; /* Important for border-radius to work */
+      border-spacing: 0;
+      overflow: hidden; /* Ensures rounded corners apply to contents */
       box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
-      overflow: hidden;
       width: 100%;
-      max-width: 480px;
+      max-width: 520px;
+      min-height: 700px;
       backdrop-filter: blur(20px);
       border: 1px solid rgba(255, 255, 255, 0.3);
       animation: slideUp 0.8s ease-out;
@@ -185,7 +301,7 @@
       background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
       color: white;
       text-align: center;
-      padding: 40px 30px;
+      padding: 50px 40px;
       position: relative;
     }
 
@@ -227,23 +343,7 @@
     }
 
     .form-content {
-      padding: 40px 30px 30px;
-      max-height: 70vh;
-      overflow-y: auto;
-    }
-
-    .form-content::-webkit-scrollbar {
-      width: 6px;
-    }
-
-    .form-content::-webkit-scrollbar-track {
-      background: #f1f1f1;
-      border-radius: 10px;
-    }
-
-    .form-content::-webkit-scrollbar-thumb {
-      background: #667eea;
-      border-radius: 10px;
+      padding: 50px 40px 40px;
     }
 
     .form-row {
@@ -364,7 +464,7 @@
       transition: all 0.3s ease;
       position: relative;
       overflow: hidden;
-      margin-top: 10px;
+      margin-top:10px;
     }
 
     .signup-btn:hover:not(:disabled) {
@@ -494,6 +594,52 @@
       height: 32px;
       fill: white;
     }
+
+  .google-btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background-color: #ffffff;
+  color: #444;
+  border: 1px solid #ccc;
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+}
+
+
+.google-btn:hover {
+  background-color: #f7f7f7;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.15);
+}
+
+.google-btn-img{
+  width: 30px;
+  height: 30px;
+  border-radius: 100%;
+}
+
+#error, .error {
+  color: red;
+  background-color: #ffe0e0;
+  padding: 8px;
+  margin-top: 10px;
+  border: 1px solid red;
+}
+
+.success {
+  color: green;
+  background-color: #e0ffe0;
+  padding: 8px;
+  margin-top: 10px;
+  border: 1px solid green;
+  text-align: center;
+}
+
   </style>
 </head>
 <body>
@@ -509,15 +655,92 @@
    <!-- Header -->
   <header class="header" data-header>
     <div class="container">
+      <div class="overlay" data-overlay></div>
+
       <a href="index.html" class="logo">
-        <img src="./assets/images/vehigologo.png" alt="VehiGo logo" loading="eager" width="120" />
+        <img src="./assets/images/vehigologo.png" alt="VehiGo logo" />
       </a>
+
+      <nav class="navbar" data-navbar>
+        <ul class="navbar-list">
+          <li>
+            <a href="index.html" class="navbar-link" data-nav-link>Home</a>
+          </li>
+
+          <li>
+            <a href="#featured-car" class="navbar-link" data-nav-link
+              >Explore cars</a
+            >
+          </li>
+
+          <li>
+            <a href="#" class="navbar-link" data-nav-link>About us</a>
+          </li>
+
+          <li>
+            <a href="#blog" class="navbar-link" data-nav-link>Blog</a>
+          </li>
+
+          <li>
+            <a href="offline.html" class="navbar-link" data-nav-link
+              >Offline Centers</a
+            >
+          </li>
+
+           <li>
+            <a href="rentcar.html" class="navbar-link" data-nav-link>Rent Your Car</a>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <div class="header-contact">
+          <a href="tel:1800100100" class="contact-link">1800-100-100</a>
+
+          <span class="contact-time">Mon - Sat: 9:00 am - 6:00 pm</span>
+        </div>
+        <!-- Theme Toggle Switch with SVG icons -->
+        <label class="theme-switch" for="theme-toggle">
+          <input type="checkbox" id="theme-toggle" />
+          <span class="slider">
+            <span class="icon sun" aria-label="Light mode">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="orange" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+            </span>
+            <span class="icon moon" aria-label="Dark mode">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#f5f5f5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z"/></svg>
+            </span>
+          </span>
+        </label>
+
+        <!-- home.html -->
+        <button id="logoutBtn" style="display: none">Logout</button>
+
+        <a href="#featured-car" class="btn" aria-labelledby="aria-label-txt">
+          <ion-icon name="car-outline"></ion-icon>
+
+          <span id="aria-label-txt">Explore cars</span>
+        </a>
+
+        <a href="./login.html" class="btn user-btn" aria-label="Profile">
+          <ion-icon name="person-outline"></ion-icon>
+        </a>
+
+        <button
+          class="nav-toggle-btn"
+          data-nav-toggle-btn
+          aria-label="Toggle Menu"
+        >
+          <span class="one"></span>
+          <span class="two"></span>
+          <span class="three"></span>
+        </button>
+      </div>
     </div>
   </header>
 
   <!-- Main Content -->
-  <main class="main-content">
-    <div class="signup-container">
+  <main class="signup-main-content">
+    <div class="signup-form-container">
       <!-- Signup Header -->
       <div class="signup-header">
         <div class="signup-icon">
@@ -533,7 +756,7 @@
       <div class="form-content">
         <form id="signupForm">
           <!-- Name Field -->
-          <div class="field">
+          <div class="field" id="fullName">
             <label for="name">
               <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
                 <path d="M12 12C14.7614 12 17 9.76142 17 7C17 4.23858 14.7614 2 12 2C9.23858 2 7 4.23858 7 7C7 9.76142 9.23858 12 12 12ZM12 14C8.13401 14 1 15.934 1 19.5V22H23V19.5C23 15.934 15.866 14 12 14Z"/>
@@ -552,8 +775,8 @@
           </div>
 
           <!-- Email and Phone Row -->
-          <div class="form-row">
-            <div class="field">
+          <div class="form-row" >
+            <div class="field" id="emailField">
               <label for="email">
                 <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
                   <path d="M12 12.713L.015 3H24L12 12.713zm0 2.574L0 6.713V21h24V6.713L12 15.287z"/>
@@ -591,7 +814,7 @@
           </div>
 
           <!-- Password Field -->
-          <div class="field">
+          <div class="field" id="passwordField">
             <label for="password">
               <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
                 <path d="M12 1C8.676 1 6 3.676 6 7V8C4.343 8 3 9.343 3 11V20C3 21.657 4.343 23 6 23H18C19.657 23 21 21.657 21 20V11C21 9.343 19.657 8 18 8V7C18 3.676 15.324 1 12 1ZM12 3C14.324 3 16 4.676 16 7V8H8V7C8 4.676 9.676 3 12 3Z"/>
@@ -619,8 +842,15 @@
               </svg>
               <span></span>
             </div>
+
           </div> -->
 
+
+          </div>
+          <!-- UID input box -->
+          <div>
+            <input type="hidden" id="uid" name="uid" />
+          </div>
           <!-- Address Field -->
           <div class="field address ">
             <label for="address">
@@ -641,12 +871,12 @@
           </div>
 
           <!-- Success Message -->
-          <div id="successMessage" class="success-message">
+          <!-- <div id="successMessage" class="success-message">
             <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
               <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
             </svg>
             <span></span>
-          </div>
+          </div> -->
 
           <!-- Signup Button -->
           <div class="field">
@@ -656,22 +886,128 @@
             </button>
           </div>
         </form>
-
+        <div class="google-sign">
+          <button class="google-btn" id="googleBtn">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSvlNehus3-SKgIVt5GaHVwMmJ0OdypTEqDAw&s" alt="google icon" class="google-btn-img">
+           <span>Sign in with Google</span>
+          </button>
+        </div>
         <!-- Form Link -->
         <div class="form-link">
           <span>Already have an account? <a href="login.html">Sign In</a></span>
         </div>
+
+        <div id="message"></div>
       </div>
     </div>
   </main>
-
   <script>
+    
+        document.getElementById("signupForm").addEventListener("submit" , function(e) {
+            e.preventDefault();
+
+            const email = document.getElementById("email").value.trim();
+            const password = document.getElementById("password").value.trim();
+            const messageDiv = document.getElementById("message");
+
+            messageDiv.textContent = ""
+            messageDiv.className = ""
+
+            // email check
+            if (!email.includes("@")) {
+                messageDiv.textContent = "Please enter a valid email.";
+                messageDiv.classList.add("error");
+                return;
+            }
+
+            // Validatoin
+            if (email === "" || password === "") {
+                messageDiv.textContent = "All fields are required!";
+                messageDiv.classList.add("error");
+                return;
+            }
+
+            // if everthing is fine
+            messageDiv.textContent = "SignUp Successfully!";
+            messageDiv.classList.add("success");
+
+            // to reset the form
+            document.getElementById("signupForm").reset();
+
+        });
+
+  </script>
+
+  <!-- <script type="module">
+  const signupForm = document.getElementById('signupForm');
+  const signupBtn = document.getElementById('signupBtn');
+  const successMessage = document.getElementById('successMessage');
+  // validation and showLoading/showSuccessMessage functions as needed...
+
+  signupForm.addEventListener('submit', async function(e) {
+    e.preventDefault();
+
+    // Basic required field check
+    const name = form.name.value.trim();
+    const email = form.email.value.trim();
+    const phone = form.phone.value.trim();
+    const address = form.address.value.trim();
+    const password = form.password ? form.password.value.trim() : null;
+
+    // TODO: run validation functions here. If they fail, return early.
+
+    // Show spinner
+    signupBtn.disabled = true;
+    signupBtn.classList.add('loading');
+
+    try {
+      const body = { name, email, phone_number: phone, address };
+      if (password) body.password = password;
+
+      const response = await fetch('http://localhost:5001/api/auth/signup', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(body),
+      });
+
+      const data = await response.json();
+      if (!response.ok) {
+        throw new Error(data.message || 'Signup failed');
+      }
+
+      signupBtn.classList.remove('loading');
+      signupBtn.disabled = false;
+      successMessage.querySelector('span').textContent = 'Account created successfully!';
+      successMessage.classList.add('show');
+
+      setTimeout(() => {
+        signupForm.reset();
+        window.location.href = 'login.html';
+      }, 1500);
+
+    } catch (err) {
+      signupBtn.classList.remove('loading');
+      signupBtn.disabled = false;
+      // show error UI logic: you can display err.message somewhere
+      alert(err.message || 'Error during signup');
+    }
+  });
+</script> -->
+
+
+  <!-- <script type="module">
+  const form = document.getElementById("signupForm");
+  form.submit(); // This submits the form
+
+    let auth_provider;
+    let isGoogleSignup = false;
     // Form elements
     const signupForm = document.getElementById('signupForm');
     const nameInput = document.getElementById('name');
     const emailInput = document.getElementById('email');
     const phoneInput = document.getElementById('phone');
     const passwordInput = document.getElementById('password');
+    const uidInput=document.getElementById('uid')
     const addressInput = document.getElementById('address');
     const togglePasswordBtn = document.getElementById('togglePassword');
     const eyeIcon = document.getElementById('eyeIcon');
@@ -726,13 +1062,13 @@
     });
 
     // Form submission
-    signupForm.addEventListener('submit', function(e) {
+    signupForm.addEventListener('submit',async function(e) {
       e.preventDefault();
-      
+      auth_provider='email'
+
       const name = nameInput.value.trim();
       const email = emailInput.value.trim();
-      const phone = phoneInput.value.trim();
-      const password = passwordInput.value.trim();
+      const phone_number = phoneInput.value.trim();
       const address = addressInput.value.trim();
       
       // Clear previous messages
@@ -741,29 +1077,93 @@
       // Validate inputs
       const isNameValid = validateName(name, true);
       const isEmailValid = validateEmail(email, true);
-      const isPhoneValid = validatePhone(phone, true);
-      const isPasswordValid = validatePassword(password, true);
+      const isPhoneValid = validatePhone(phone_number, true);
       const isAddressValid = validateAddress(address, true);
+
+      let password=''
+      let firebase_uid=''
+
+      if(!isGoogleSignup){
+          password = passwordInput.value.trim();
+         const isPasswordValid = validatePassword(password, true);
+         if(!isPasswordValid) return;
+         auth_provider = 'email';
+      }else{
+         firebase_uid=uidInput.value.trim()
+         if(!firebase_uid) return;
+        auth_provider = 'google';
+      }
       
-      if (!isNameValid || !isEmailValid || !isPhoneValid || !isPasswordValid || !isAddressValid) {
+      if (!isNameValid || !isEmailValid || !isPhoneValid  || !isAddressValid || !auth_provider) {
         return;
       }
       
       // Show loading state
       showLoading(true);
       
-      // Simulate API call
-      setTimeout(() => {
+
+      try {
+       const requestBody =
+      auth_provider === 'email'
+        ? {
+            name,
+            email,
+            phone_number,
+            address,
+            password,
+            auth_provider,
+          }
+        : {
+            name,
+            email,
+            phone_number,
+            address,
+            firebase_uid,
+            auth_provider,
+          };
+
+    const resp = await fetch('http://localhost:5001/api/auth/signup', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(requestBody),
+    });
+
+    const data = await resp.json();
+
+    if (!resp.ok) {
+      throw new Error(data.message || 'Signup failed');
+    }
+
+    showLoading(false);
+    showSuccessMessage('Account created successfully! Welcome to VehiGo!');
+
+    setTimeout(() => {
+      signupForm.reset();
+      updatePasswordStrength({ score: 0, text: '', color: '' });
+      clearAllMessages();
+       window.location.href = "login.html";
+    }, 1500);
+      } catch (error) {
         showLoading(false);
-        showSuccess('Account created successfully! Welcome to VehiGo!');
+         showError(error.message || 'An error occurred during signup');
+       
+      }
+      
+      // Simulate API call
+      //add auth_provider in the fetch request 
+      // setTimeout(() => {
+      //   showLoading(false);
+      //   showSuccessMessage('Account created successfully! Welcome to VehiGo!');
         
-        // Reset form after success
-        setTimeout(() => {
-          signupForm.reset();
-          updatePasswordStrength({ score: 0, text: '', color: '' });
-          clearAllMessages();
-        }, 3000);
-      }, 2000);
+      //   // Reset form after success
+      //   setTimeout(() => {
+      //     signupForm.reset();
+      //     updatePasswordStrength({ score: 0, text: '', color: '' });
+      //     clearAllMessages();
+      //   }, 3000);
+      // }, 2000);
     });
 
     // Validation functions
@@ -921,7 +1321,7 @@
       successMessage.classList.remove('show');
     }
 
-    function showSuccess(message) {
+    function showSuccessMessage(message) {
       successMessage.querySelector('span').textContent = message;
       successMessage.classList.add('show');
     }
@@ -948,6 +1348,71 @@
     window.addEventListener('load', function() {
       document.body.style.opacity = '1';
     });
-  </script>
+  
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-app.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-analytics.js";
+    import { GoogleAuthProvider, getAuth, signInWithPopup } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-auth.js";
+
+
+    const firebaseConfig = {
+    apiKey: "",
+    authDomain: "",
+    projectId: "",
+    storageBucket: "",
+    messagingSenderId: "",
+    appId: "",
+    measurementId: ""
+    };
+
+
+    const app = initializeApp(firebaseConfig);
+    const auth =getAuth(app)
+    const provider = new GoogleAuthProvider();
+
+    provider.setCustomParameters({
+    prompt: 'consent' 
+     });
+
+    document.getElementById('googleBtn').addEventListener('click', async function (e) {
+      e.preventDefault(); 
+      try {
+    const result = await signInWithPopup(auth, provider);
+    const user = result.user;
+    if (user){
+    isGoogleSignup=true
+    const name = user.displayName;
+    const email = user.email;
+    const uid = user.uid;
+    uidInput.value=uid
+
+    nameInput.value = name;
+    nameInput.readOnly =true;
+    emailInput.value = email;
+    emailInput.readOnly=true;
+    
+    nameInput.style.display = 'block';
+    document.getElementById("emailField").style.display = 'block';
+    phoneInput.parentElement.parentElement.style.display = 'block'; // Phone
+    addressInput.parentElement.parentElement.style.display = 'block'; // Address
+    document.getElementById("passwordField").style.display = 'none';
+    passwordInput.required=false;
+    document.getElementById("googleBtn").style.display = 'none';
+      }} catch (error) {
+        console.log(error)
+      }
+    })
+  </script> -->
+  
+  <!-- JavaScript files for navbar functionality -->
+  <script src="./assets/js/script.js"></script>
+  <script src="./scripts/logout.js"></script>
+  <script
+    type="module"
+    src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+  ></script>
+  <script
+    nomodule
+    src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+  ></script>
 </body>
 </html>

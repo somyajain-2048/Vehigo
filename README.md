@@ -18,12 +18,13 @@
 
 ## 📑 Table of Contents
 
+- [📌 Introduction](#-introduction)
 - [✨ Features](#-features)
 - [🛠️ Technologies Used](#-technologies-used)
-- [🚀 Getting Started](#-getting-started)
+- [📄 License](#-license)
+- [📁 Project Structure](#-project-structure)
 - [💡 Usage](#-usage)
 - [🤝 Contributing](#-contributing)
-- [📄 License](#-license)
 
 ---
 
@@ -64,11 +65,46 @@ You’re free to use, modify, and share this software under the license terms.
 
 ---
 
-## 🚀 Getting Started
+### 📁 Project Structure
 
-Follow these steps to run VehiGo locally:
+VehiGo's files are organized to keep things tidy. Here's a glimpse:
 
-### 1. Clone the repository
+```
+📦 VehiGo/
+├── .vscode/ # VS Code specific settings
+├── assets/ # General assets (e.g., fonts, icons)
+├── blogs/ # Content and files for the blog section
+├── images/ # Core images for the website
+├── public/ # Publicly accessible assets
+├── readme-images/ # Images specifically for the README
+├── scripts/ # Utility scripts (e.g., for data, build)
+├── src/ # Source code (often contains core logic/components)
+├── styles/ # Additional or modular stylesheets
+├── vehigo-backend/ # Backend-related files (e.g., environment config)
+├── index.html # The main entry point of the application
+|── Contact.html # The contact file
+├── LICENSE # Project license information
+├── README.md # This documentation file
+├── PULL_REQUEST_TEMPLATE.md # Template for pull requests
+├── CODE_OF_CONDUCT.md # Guidelines for community behavior
+├── ... (other HTML, CSS, JS files like accountpage.html, buy.html, etc.)
+```
 
-```bash
-git clone https://github.com/InnoWebLabs/Vehigo.git
+---
+
+### 💡 Usage
+
+Your journey with VehiGo is seamless!
+
+- **Find Your Perfect Ride:** Effortlessly browse our diverse catalog of cars from the homepage, using smart search filters for location and budget, or exploring our "Featured cars."
+- **Detailed Look & Book:** Click any listing for a deep dive into specs, features, and pricing. Ready? Our intuitive booking flow gets you on the road in just a few clicks.
+- **Guided Experience:** Follow our "4 simple steps" to easily navigate from profile creation to securing your rental.
+- **Beyond the Drive:** Check out authentic customer "Reviews" and explore our "Blog" for insights and updates.
+- **Always Connected:** Access support, company info, and contact options conveniently from the footer, or through our responsive navigation, tailored for any device.
+
+---
+## 🤝 Contributing
+
+We welcome and encourage contributions from the community to help improve VehiGo. Whether you wish to report a bug, suggest a new feature, or submit a pull request, your input is highly valued and appreciated.
+
+Before contributing, please take a moment to review our [Contributing Guidelines](CONTRIBUTING.md). These guidelines outline the process for submitting issues and pull requests, as well as the standards we strive to maintain for code quality and collaboration.by contributing to VehiGo, you help us build a better, more robust platform for everyone. Thank you for your interest and support!

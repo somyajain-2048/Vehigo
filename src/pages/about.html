@@ -16,6 +16,7 @@
     <!-- custom css link -->
     <link rel="stylesheet" href="../assets/styles/style.css" />
     <link rel="stylesheet" href="../assets/styles/about.css" />
+    <link rel="stylesheet" href="../assets/styles/style.css" />
 
     <!-- google font link -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -24,8 +25,11 @@
       href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600&family=Open+Sans&display=swap"
       rel="stylesheet"
     />
-
     <!-- ionicon link -->
+     <script>document.getElementById('theme-toggle').addEventListener('change', (e) => {
+  document.documentElement.classList.toggle('dark-mode', e.target.checked);
+});
+</script>
     <script
       type="module"
       src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
@@ -39,52 +43,53 @@
     <header class="header" data-header>
       <div class="container">
         <div class="overlay" data-overlay></div>
-        <a href="../index.html" class="logo">
+
+        <a href="index.html" class="logo">
           <img src="../assets/images/vehigologo.png" alt="VehiGo logo" />
         </a>
+
         <nav class="navbar" data-navbar>
           <ul class="navbar-list">
             <li>
               <a href="../index.html" class="navbar-link" data-nav-link>Home</a>
             </li>
+
             <li>
-              <a
-                href="../index.html#featured-car"
-                class="navbar-link"
-                data-nav-link
+              <a href="#featured-car" class="navbar-link" data-nav-link
                 >Explore cars</a
               >
             </li>
+
             <li>
-              <a href="./about.html" class="navbar-link active" data-nav-link
-                >About us</a
+              <a href="about.html" class="navbar-link" data-nav-link>About us</a>
+            </li>
+
+            <li>
+              <a href="#blog" class="navbar-link" data-nav-link>Blog</a>
+            </li>
+
+            <li>
+              <a href="../../offline.html" class="navbar-link" data-nav-link
+                >Offline Centers</a
               >
             </li>
-            <li>
-              <a href="../index.html#blog" class="navbar-link" data-nav-link
-                >Blog</a
-              >
+
+             <li>
+              <a href="../../rentcar.html" class="navbar-link" data-nav-link>Rent Your Car</a>
             </li>
+
+            
           </ul>
         </nav>
+
         <div class="header-actions">
           <div class="header-contact">
             <a href="tel:1800100100" class="contact-link">1800-100-100</a>
+
             <span class="contact-time">Mon - Sat: 9:00 am - 6:00 pm</span>
           </div>
-          <a
-            href="../index.html#featured-car"
-            class="btn"
-            aria-labelledby="aria-label-txt"
-          >
-            <ion-icon name="car-outline"></ion-icon>
-            <span id="aria-label-txt">Explore cars</span>
-          </a>
-          <a href="./login.html" class="btn user-btn1" aria-label="Profile">
-            <ion-icon name="person-outline"></ion-icon>
-          </a>
           <!-- Theme Toggle Switch with SVG icons -->
-          <label class="theme-switch" for="theme-toggle">
+           <label class="theme-switch" for="theme-toggle">
             <input type="checkbox" id="theme-toggle" />
             <span class="slider">
               <span class="icon sun" aria-label="Light mode">
@@ -95,6 +100,21 @@
               </span>
             </span>
           </label>
+
+          <!-- home.html -->
+          <button id="logoutBtn" style="display: none">Logout</button>
+
+
+          <a href="#featured-car" class="btn" aria-labelledby="aria-label-txt">
+            <ion-icon name="car-outline"></ion-icon>
+
+            <span id="aria-label-txt">Explore cars</span>
+          </a>
+
+          <a href="./login.html" class="btn user-btn" aria-label="Profile">
+            <ion-icon name="person-outline"></ion-icon>
+          </a>
+
           <button
             class="nav-toggle-btn"
             data-nav-toggle-btn
@@ -107,7 +127,6 @@
         </div>
       </div>
     </header>
-
     <main class="aboutus-container">
       <article>
         <!-- ABOUT SECTION -->
@@ -350,8 +369,8 @@
                     alt="Name Placeholder"
                     class="team-img w-100"
                   />
-                  <h3 class="h3 card-title">Name Placeholder</h3>
-                  <p>Role Placeholder</p>
+                  <h3 class="h3 card-title">John</h3>
+                  <p>Financial Head</p>
                   <p class="team-bio">
                     With a passion for travel and innovation, John founded
                     VehiGo to make car rentals accessible and seamless.
@@ -361,14 +380,14 @@
               <li>
                 <div class="team-member">
                   <img
-                    src="../assets/images/guy1.jpg"
+                    src="../assets/images/girl1.jpg"
                     alt="Name Placeholder"
                     class="team-img w-100"
                   />
-                  <h3 class="h3 card-title">Name Placeholder</h3>
-                  <p>Role Placeholder</p>
+                  <h3 class="h3 card-title">Janice</h3>
+                  <p>Excecutive Head</p>
                   <p class="team-bio">
-                    Jane ensures our fleet is ready and our operations run
+                    Janice ensures our fleet is ready and our operations run
                     smoothly, delivering top-quality service.
                   </p>
                 </div>
@@ -376,20 +395,20 @@
               <li>
                 <div class="team-member">
                   <img
-                    src="../assets/images/guy1.jpg"
+                    src="../assets/images/girl2.jpg"
                     alt="Name Placeholder"
                     class="team-img w-100"
                   />
-                  <h3 class="h3 card-title">Name Placeholder</h3>
-                  <p>Role Placeholder</p>
+                  <h3 class="h3 card-title">Amrita</h3>
+                  <p>Team Manager</p>
                   <p class="team-bio">
-                    Amit leads our support team, ensuring every customer has a
+                    Amrita leads our support team, ensuring every customer has a
                     hassle-free experience.
                   </p>
                 </div>
               </li>
               <!-- Additional team members -->
-              <li>
+              <!-- <li>
                 <div class="team-member">
                   <img
                     src="../assets/images/guy1.jpg"
@@ -418,7 +437,7 @@
                     smoothly, delivering top-quality service.
                   </p>
                 </div>
-              </li>
+              </li> -->
             </ul>
           </div>
         </section>
@@ -462,6 +481,26 @@
           </div>
         </section>
       </article>
+        <a href="./about.html" style="
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background-color: #007BFF;
+  color: white;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  z-index: 999;
+  transition: background-color 0.3s;
+" onmouseover="this.style.backgroundColor='#0056b3'" onmouseout="this.style.backgroundColor='#007BFF'">
+  <ion-icon name="chevron-up-outline" style="font-size: 24px;"></ion-icon>
+</a>
+
     </main>
 
     <footer class="footer">
@@ -529,6 +568,47 @@
         </div>
       </div>
     </footer>
+    <script>
+  document.addEventListener('DOMContentLoaded', function () {
+  const themeToggle = document.getElementById('theme-toggle');
+  if (themeToggle) {
+    // Load theme from localStorage
+    if (localStorage.getItem('theme') === 'dark') {
+      document.body.classList.add('dark-mode');
+      themeToggle.checked = true;
+    }
+    
+    // Add event listener with proper event handling
+    themeToggle.addEventListener('change', function (e) {
+      // Prevent event bubbling to avoid interference with navbar
+      e.stopPropagation();
+      
+      if (this.checked) {
+        document.body.classList.add('dark-mode');
+        localStorage.setItem('theme', 'dark');
+      } else {
+        document.body.classList.remove('dark-mode');
+        localStorage.setItem('theme', 'light');
+      }
+    });
+    
+    // Prevent clicks on the theme switch from triggering navbar events
+    const themeSwitch = document.querySelector('.theme-switch');
+    if (themeSwitch) {
+      themeSwitch.addEventListener('click', function(e) {
+        e.stopPropagation();
+      });
+    }
+  } else {
+    // Apply theme if toggle is not present (for pages without header)
+    if (localStorage.getItem('theme') === 'dark') {
+      document.body.classList.add('dark-mode');
+    } else {
+      document.body.classList.remove('dark-mode');
+    }
+  }
+});
+</script>
 
     <script src="../assets/js/script.js"></script>
   </body>

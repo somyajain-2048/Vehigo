@@ -1061,17 +1061,27 @@ button, a { transition: var(--transition); }
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: flex-start;
-  row-gap: 50px;
+  row-gap: 40px;
+
 }
+.footer-brand{
+ padding-left: 50px;
+ 
+}
+
 
 .footer-top .logo { margin-bottom: 20px; }
 
 .footer-text {
   font-size: var(--fs-6);
   line-height: 1.8;
+  
 }
 
-.footer-list { font-family: var(--ff-nunito); }
+.footer-list { font-family: var(--ff-nunito);
+    text-align: center;
+   
+ }
 
 .footer-list:not(:last-of-type) { width: 50%; }
 

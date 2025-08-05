@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Ask a Question - Car Rental</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <style>
     /* Global Reset & Base */
     * {
@@ -178,8 +179,61 @@
     </section>
   </main>
 
-  <footer>
-    &copy; 2025 Vehigo Car Rentals. All rights reserved.
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container" style="max-width: 1200px; margin: auto;">
+      <!-- Top Section -->
+      <div class="footer-top" style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 2.5rem;">
+        <!-- Brand Section -->
+        <div class="footer-brand" style="flex: 1 1 300px;">
+          <a href="../index.html" class="logo">
+            <img src="../assets/images/vehigologo.png" alt="VehiGo logo" style="width: 160px;" />
+          </a>
+          <p class="footer-text" style="margin-top: 1rem; line-height: 1.6;">
+            🚗 <strong>Find affordable rental cars across Madhya Pradesh!</strong><br>
+            Choose from a wide range of vehicles, or rent out your own when not in use. We make car rental easy, accessible, and efficient for everyone.
+          </p>
+        </div>
+
+        <!-- Company Section -->
+        <ul class="footer-list">
+          <li><p class="footer-list-title">Company</p></li>
+          <li><a href="about.html" class="footer-link">About us</a></li>
+          <li><a href="pricing.html" class="footer-link">Pricing plans</a></li>
+          <li><a href="../blog.html" class="footer-link">Our blog</a></li>
+          <li><a href="../ContactUs.html" class="footer-link">Contact us</a></li>
+        </ul>
+
+        <!-- Support Section -->
+        <ul class="footer-list">
+          <li><p class="footer-list-title">Support</p></li>
+          <li><a href="help-center.html" class="footer-link">Help center</a></li>
+          <li><a href="Askaques.html" class="footer-link">Ask a question</a></li>
+          <li><a href="../privacypolicy.html" class="footer-link">Privacy policy</a></li>
+          <li><a href="tandc.html" class="footer-link">Terms & conditions</a></li>
+        </ul>
+      </div>
+
+      <!-- Bottom Section -->
+      <div class="footer-bottom">
+        <div class="social-icons" style="text-align: center; margin-bottom: 10px;">
+          <a href="https://www.linkedin.com" target="_blank" style="margin: 0 10px; font-size: 24px; color: #0077b5;"><i class="fab fa-linkedin"></i></a>
+          <a href="https://www.twitter.com" target="_blank" style="margin: 0 10px; font-size: 24px; color: #1da1f2;"><i class="fab fa-twitter"></i></a>
+          <a href="https://www.instagram.com" target="_blank" style="margin: 0 10px; font-size: 24px; color: #e1306c;"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.facebook.com" target="_blank" style="margin: 0 10px; font-size: 24px; color: #3b5998;"><i class="fab fa-facebook"></i></a>
+        </div>
+        <p style="text-align: center; font-size: 14px; color: #333;">© <span id="copyright-year">2023</span> Vehigo — All rights reserved.</p>
+      </div>
+    </div>
   </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var yearSpan = document.getElementById('copyright-year');
+      if (yearSpan) {
+        yearSpan.textContent = new Date().getFullYear();
+      }
+    });
+  </script>
 </body>
 </html>

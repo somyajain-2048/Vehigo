@@ -221,6 +221,8 @@ body.dark-mode .form-link a:hover {
   position: relative;
   z-index: 1002;
   pointer-events: auto;
+  padding-left : 60px;
+  padding-top : 10px;
 }
 
 .theme-switch:hover {

@@ -1527,3 +1527,8 @@ button, a { transition: var(--transition); }
   opacity: 1 !important;
   visibility: visible !important;
 }
+
+.social-list{
+ 
+  margin-right: 40px;
+}

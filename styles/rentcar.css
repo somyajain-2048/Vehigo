@@ -11,7 +11,7 @@ h1, h2 {
 
 form {
   max-width: 500px;
-  margin: auto;
+  margin: 30px auto;
   background: #fff;
   padding: 50px;
   border-radius: 10px;
@@ -63,7 +63,7 @@ button:hover {
 }
 
 .btn {
-  background-color: #28a745;
+  background-color: #007BFF;
   border-radius: 50px;
   color: white;
   border: none;

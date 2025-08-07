@@ -222,7 +222,7 @@ body.dark-mode .form-link a:hover {
   z-index: 1002;
   pointer-events: auto;
   padding-left : 60px;
-  padding-top : 10px;
+  padding-top : 30px;
 }
 
 .theme-switch:hover {

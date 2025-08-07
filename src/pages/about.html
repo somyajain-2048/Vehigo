@@ -16,7 +16,8 @@
     <!-- custom css link -->
     <link rel="stylesheet" href="../assets/styles/style.css" />
     <link rel="stylesheet" href="../assets/styles/about.css" />
-    <link rel="stylesheet" href="../assets/styles/style.css" />
+    <link rel="stylesheet" href="../../modern-improvements.css" />
+    <link rel="stylesheet" href="../../about-animations.css" />
 
     <!-- google font link -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -130,10 +131,10 @@
     <main class="aboutus-container">
       <article>
         <!-- ABOUT SECTION -->
-        <section class="section about-section">
+        <section class="section about-section modern-section animate-section">
           <div class="container1">
-            <div class="about-content">
-              <h1 class="h1">About VehiGo</h1>
+            <div class="about-content animate-card">
+              <h1 class="h1 gradient-text">About VehiGo</h1>
               <p class="hero-text">Seamless Rentals, Endless Adventures!</p>
               <p>
                 Founded in 2020, VehiGo is a premier car rental service in
@@ -161,11 +162,11 @@
         </section>
 
         <!-- WHY SECTION -->
-        <section class="section why-section">
+        <section class="section why-section modern-section">
           <div class="container">
-            <h2 class="h2 section-title">Why Choose VehiGo?</h2>
+            <h2 class="h2 section-title gradient-text">🚗 Why Choose VehiGo?</h2>
             <ul class="why-list">
-              <li class="why-card">
+              <li class="why-card modern-card animate-card">
                 <div class="card-icon">
                   <ion-icon name="car-outline"></ion-icon>
                 </div>
@@ -175,7 +176,7 @@
                   from a wide range of vehicles.
                 </p>
               </li>
-              <li class="why-card">
+              <li class="why-card modern-card animate-card">
                 <div class="card-icon">
                   <ion-icon name="cash-outline"></ion-icon>
                 </div>
@@ -185,7 +186,7 @@
                   competitive rates.
                 </p>
               </li>
-              <li class="why-card">
+              <li class="why-card modern-card animate-card">
                 <div class="card-icon">
                   <ion-icon name="location-outline"></ion-icon>
                 </div>
@@ -195,7 +196,7 @@
                   and Ujjain.
                 </p>
               </li>
-              <li class="why-card">
+              <li class="why-card modern-card animate-card">
                 <div class="card-icon">
                   <ion-icon name="headset-outline"></ion-icon>
                 </div>
@@ -210,20 +211,103 @@
         </section>
 
         <!-- TESTIMONIALS SECTION -->
-        <section class="section reviews" id="reviews">
-          <div class="contain container">
-            <h2 class="h2 section-title1">Testimonials</h2>
-            <div class="outerdiv">
-              <div class="innerdiv">
-                <div class="div1 eachdiv">
+        <section class="section reviews modern-section" id="reviews">
+          <div class="container">
+            <h2 class="h2 section-title gradient-text">💬 What Our Customers Say</h2>
+            <div class="testimonials-carousel">
+              <button class="carousel-btn prev-btn" id="prevBtn">
+                <ion-icon name="chevron-back-outline"></ion-icon>
+              </button>
+              <div class="testimonials-container">
+                <div class="testimonial-card modern-card animate-card">
+                  <div class="testimonial-header">
+                    <div class="customer-avatar">
+                      <img src="https://placehold.co/60x60/007BFF/white?text=RS" alt="Rahul Sharma" />
+                    </div>
+                    <div class="customer-info">
+                      <h4 class="customer-name">Rahul Sharma</h4>
+                      <p class="customer-role">Verified Customer</p>
+                      <div class="rating">⭐⭐⭐⭐⭐</div>
+                    </div>
+                  </div>
+                  <div class="testimonial-content">
+                    <p>"I recently rented a car from Vehigo, and I couldn't be happier with the experience. The staff was incredibly friendly and helpful."</p>
+                  </div>
+                </div>
+                <div class="testimonial-card modern-card animate-card">
+                  <div class="testimonial-header">
+                    <div class="customer-avatar">
+                      <img src="https://placehold.co/60x60/28a745/white?text=AP" alt="Alok Patel" />
+                    </div>
+                    <div class="customer-info">
+                      <h4 class="customer-name">Alok Patel</h4>
+                      <p class="customer-role">Verified Customer</p>
+                      <div class="rating">⭐⭐⭐⭐⭐</div>
+                    </div>
+                  </div>
+                  <div class="testimonial-content">
+                    <p>"Renting a car from Vehigo was a breeze! The staff was friendly, the car was clean and well-maintained."</p>
+                  </div>
+                </div>
+                <div class="testimonial-card modern-card animate-card">
+                  <div class="testimonial-header">
+                    <div class="customer-avatar">
+                      <img src="https://placehold.co/60x60/ffc107/black?text=AG" alt="Aaru Gupta" />
+                    </div>
+                    <div class="customer-info">
+                      <h4 class="customer-name">Aaru Gupta</h4>
+                      <p class="customer-role">Verified Customer</p>
+                      <div class="rating">⭐⭐⭐⭐⭐</div>
+                    </div>
+                  </div>
+                  <div class="testimonial-content">
+                    <p>"Vehigo is my top choice for renting a car. Their service is consistently outstanding and professional."</p>
+                  </div>
+                </div>
+                <div class="testimonial-card modern-card animate-card">
+                  <div class="testimonial-header">
+                    <div class="customer-avatar">
+                      <img src="https://placehold.co/60x60/dc3545/white?text=PJ" alt="Prateeksha Joshi" />
+                    </div>
+                    <div class="customer-info">
+                      <h4 class="customer-name">Prateeksha Joshi</h4>
+                      <p class="customer-role">Verified Customer</p>
+                      <div class="rating">⭐⭐⭐⭐⭐</div>
+                    </div>
+                  </div>
+                  <div class="testimonial-content">
+                    <p>"Overall a wonderful experience! The car was spacious, comfortable, and fuel-efficient. Highly recommended!"</p>
+                  </div>
+                </div>
+                <div class="testimonial-card modern-card animate-card">
+                  <div class="testimonial-header">
+                    <div class="customer-avatar">
+                      <img src="https://placehold.co/60x60/6f42c1/white?text=RM" alt="Rohit Mehta" />
+                    </div>
+                    <div class="customer-info">
+                      <h4 class="customer-name">Rohit Mehta</h4>
+                      <p class="customer-role">Verified Customer</p>
+                      <div class="rating">⭐⭐⭐⭐⭐</div>
+                    </div>
+                  </div>
+                  <div class="testimonial-content">
+                    <p>"I have been a loyal customer for several years. Their diverse fleet and exceptional customer service are unmatched."</p>
+                  </div>
+                </div>
+              </div>
+              <button class="carousel-btn next-btn" id="nextBtn">
+                <ion-icon name="chevron-forward-outline"></ion-icon>
+              </button>
+            </div>
+                <!-- <div class="div1 eachdiv">
                   <div class="userdetails">
                     <div class="imgbox">
                       <img
                         src="https://placehold.co/32x32?text=Rahul"
                         alt="Rahul Sharma"
                       />
-                    </div>
-                    <div class="detbox">
+                    </div> -->
+                    <!-- <div class="detbox">
                       <p class="name">Rahul Sharma</p>
                       <p class="designation">Verified Customer</p>
                     </div>
@@ -242,8 +326,8 @@
                       rental service.”
                     </p>
                   </div>
-                </div>
-                <div class="div2 eachdiv">
+                </div> -->
+                <!-- <div class="div2 eachdiv">
                   <div class="userdetails">
                     <div class="imgbox">
                       <img
@@ -354,16 +438,16 @@
                 </div>
               </div>
             </div>
-          </div>
+          </div> -->
         </section>
 
         <!-- TEAM SECTION -->
-       <section class="section team-section">
+       <section class="section team-section modern-section">
           <div class="container">
-            <h2 class="h2 section-title">Meet Our Team</h2>
+            <h2 class="h2 section-title gradient-text">👥 Meet Our Team</h2>
             <ul class="team-list has-scrollbar">
               <li>
-                <div class="team-member">
+                <div class="team-member modern-card animate-card">
                   <img
                     src="../assets/images/guy1.jpg"
                     alt="Name Placeholder"
@@ -378,14 +462,14 @@
                 </div>
               </li>
               <li>
-                <div class="team-member">
+                <div class="team-member modern-card animate-card">
                   <img
                     src="../assets/images/girl1.jpg"
                     alt="Name Placeholder"
                     class="team-img w-100"
                   />
                   <h3 class="h3 card-title">Janice</h3>
-                  <p>Excecutive Head</p>
+                  <p>Executive Head</p>
                   <p class="team-bio">
                     Janice ensures our fleet is ready and our operations run
                     smoothly, delivering top-quality service.
@@ -393,7 +477,7 @@
                 </div>
               </li>
               <li>
-                <div class="team-member">
+                <div class="team-member modern-card animate-card">
                   <img
                     src="../assets/images/girl2.jpg"
                     alt="Name Placeholder"
@@ -443,38 +527,38 @@
         </section>
 
         <!-- LOCATIONS SECTION -->
-        <section class="section locations-section">
+        <section class="section locations-section modern-section">
           <div class="container">
-            <h2 class="h2 section-title">Where We Operate</h2>
+            <h2 class="h2 section-title gradient-text">🗺️ Where We Operate</h2>
             <div class="locations-list">
-              <a href="../index.html#home" class="location-card">
+              <a href="../index.html#home" class="location-card modern-card animate-card">
                 <div class="location-card-content">
                   <h3 class="h3 card-title">Bhopal</h3>
                   <p>
                     Explore the city of lakes with our reliable rental cars,
                     perfect for urban adventures.
                   </p>
-                  <span class="card-link">Rent in Bhopal</span>
+                  <span class="card-link modern-btn">Rent in Bhopal</span>
                 </div>
               </a>
-              <a href="../index.html#home" class="location-card">
+              <a href="../index.html#home" class="location-card modern-card animate-card">
                 <div class="location-card-content">
                   <h3 class="h3 card-title">Indore</h3>
                   <p>
                     Navigate Indore’s vibrant streets with our diverse fleet,
                     from compact to luxury vehicles.
                   </p>
-                  <span class="card-link">Rent in Indore</span>
+                  <span class="card-link modern-btn">Rent in Indore</span>
                 </div>
               </a>
-              <a href="../index.html#home" class="location-card">
+              <a href="../index.html#home" class="location-card modern-card animate-card">
                 <div class="location-card-content">
                   <h3 class="h3 card-title">Ujjain</h3>
                   <p>
                     Discover Ujjain’s spiritual and cultural heritage with our
                     convenient rental options.
                   </p>
-                  <span class="card-link">Rent in Ujjain</span>
+                  <span class="card-link modern-btn">Rent in Ujjain</span>
                 </div>
               </a>
             </div>
@@ -610,6 +694,53 @@
       document.body.classList.remove('dark-mode');
     }
   }
+
+  // Testimonials Carousel Functionality
+  const prevBtn = document.getElementById('prevBtn');
+  const nextBtn = document.getElementById('nextBtn');
+  const testimonialsContainer = document.querySelector('.testimonials-container');
+  
+  if (prevBtn && nextBtn && testimonialsContainer) {
+    let scrollAmount = 0;
+    const cardWidth = 370; // Width of each card including gap
+    
+    nextBtn.addEventListener('click', () => {
+      const maxScroll = testimonialsContainer.scrollWidth - testimonialsContainer.clientWidth;
+      if (scrollAmount < maxScroll) {
+        scrollAmount += cardWidth;
+        if (scrollAmount > maxScroll) scrollAmount = maxScroll;
+        testimonialsContainer.style.transform = `translateX(-${scrollAmount}px)`;
+      }
+    });
+    
+    prevBtn.addEventListener('click', () => {
+      if (scrollAmount > 0) {
+        scrollAmount -= cardWidth;
+        if (scrollAmount < 0) scrollAmount = 0;
+        testimonialsContainer.style.transform = `translateX(-${scrollAmount}px)`;
+      }
+    });
+  }
+
+  // Smooth animation trigger on scroll
+  const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.animation = entry.target.dataset.animation || 'fadeInScale 0.6s ease-out forwards';
+        entry.target.style.opacity = '1';
+      }
+    });
+  }, observerOptions);
+
+  // Observe all animated elements
+  document.querySelectorAll('.animate-card, .animate-section').forEach(el => {
+    observer.observe(el);
+  });
 });
 </script>
 

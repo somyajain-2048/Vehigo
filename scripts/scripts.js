@@ -5,6 +5,12 @@ loginButton.addEventListener("click", function() {
   // Redirect to the login page
   window.location.href = "login.html";
 });
+
+
+
+
+
+
 //  Function to handle login
 // async function login(email, password) {
 //   const loginData = {

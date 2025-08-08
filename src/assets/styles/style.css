@@ -729,15 +729,15 @@ button, a { transition: var(--transition); }
     font-weight: var(--fw-400);
     margin-inline-end: 120px;
 }
-.eachdiv
+.eachdiv 
 {
   width: fit-content;
   height: 500px;
-	padding: 1rem 1rem;
-    border-radius: 0.8rem;
-    box-shadow: 5px 5px 20px #6d6b6b6b; 
-    color: white;
-    margin: 1.5rem;
+	padding: 1rem 1.5rem;
+  border-radius: 0.8rem;
+  box-shadow: 5px 5px 20px #6d6b6b6b; 
+  color: white;
+  margin: 0rem 1rem;
 }
 .div1
 {
@@ -1061,17 +1061,27 @@ button, a { transition: var(--transition); }
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: flex-start;
-  row-gap: 50px;
+  row-gap: 40px;
+
 }
+.footer-brand{
+ padding-left: 50px;
+ 
+}
+
 
 .footer-top .logo { margin-bottom: 20px; }
 
 .footer-text {
   font-size: var(--fs-6);
   line-height: 1.8;
+  
 }
 
-.footer-list { font-family: var(--ff-nunito); }
+.footer-list { font-family: var(--ff-nunito);
+    text-align: center;
+   
+ }
 
 .footer-list:not(:last-of-type) { width: 50%; }
 
@@ -1526,4 +1536,9 @@ button, a { transition: var(--transition); }
   color: white; /* change to #fff if your header is dark */
   opacity: 1 !important;
   visibility: visible !important;
+}
+
+.social-list{
+ 
+  margin-right: 40px;
 }

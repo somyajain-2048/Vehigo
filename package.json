@@ -1,6 +1,29 @@
 {
-    "scripts": {
-        "start": "npm start"
-
-    }
+  "name": "vehigo",
+  "version": "1.0.0",
+  "description": "A fully responsive and intuitive car rental platform",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx http-server -p 3000 -o",
+    "dev": "npx live-server --port=3000 --open=/index.html",
+    "serve": "python -m http.server 8000"
+  },
+  "keywords": [
+    "car-rental",
+    "responsive",
+    "html",
+    "css",
+    "javascript"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^3.0.2",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.1",
+    "express": "^5.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.17.0",
+    "zod": "^4.0.15"
+  }
 }

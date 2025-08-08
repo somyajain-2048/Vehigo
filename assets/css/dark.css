@@ -35,9 +35,18 @@ body.dark-mode .card-title{
     color: #000000;
 }
 
-body.dark-mode .contact-link{
-    color: white;
+/* body.dark-mode .contact-link{
+    color: white !important;
+} */
+
+/* body.dark-mode .contact-link {
+  color: #fff !important; /* white (readable) color on dark background */
+
+body.dark-mode .contact-link {
+  color: #ffffff !important;
 }
+
+
 
 /* Dark mode styles for signup page */
 body.dark-mode .signup-form-container {
@@ -212,6 +221,8 @@ body.dark-mode .form-link a:hover {
   position: relative;
   z-index: 1002;
   pointer-events: auto;
+  padding-left : 60px;
+  padding-top : 30px;
 }
 
 .theme-switch:hover {

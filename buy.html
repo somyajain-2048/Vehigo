@@ -3,22 +3,76 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <link rel="icon" href="favicon.svg">
   <title>Buy Car | Vehigo</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
   <link rel="stylesheet" href="./assets/css/buy.css"/>
+  <link rel="stylesheet" href="src/assets/styles/style.css">
 
 </head>
 <body>
-  <nav class="navbar" data-navbar>
-    <ul class="navbar-list">
-      <li><a href="index.html" class="navbar-link" data-nav-link>Home</a></li>
-      <li><a href="ContactUs.html" class="navbar-link" data-nav-link>Contact Us</a></li>
-      <li><a href="login.html" class="navbar-link" data-nav-link>Login</a></li>
-      <li><a href="tandc.html" class="navbar-link" data-nav-link>Terms & Conditions</a></li>
-      <li><a href="offline.html" class="navbar-link" data-nav-link>Offline Centers</a></li>
-      <li><a href="rentcar.html" class="navbar-link" data-nav-link>Rent Your Car</a></li>
-    </ul>
-  </nav>
+   <header class="header" data-header>
+    <div class="container">
+
+      <a href="index.html" class="logo">
+        <img src="./assets/images/vehigologo.png" alt="VehiGo logo">
+      </a>
+
+<nav class="navbar" data-navbar>
+  <ul class="navbar-list">
+
+       <li>
+        <a href="src/index.html" class="navbar-link" data-nav-link>Home</a>
+      </li>
+
+      <li>
+        <a href="ContactUs.html" class="navbar-link" data-nav-link>Contact Us</a>
+      </li>
+
+      <li>
+        <a href="login.html" class="navbar-link" data-nav-link>Login</a>
+      </li>
+
+      <li>
+        <a href="tandc.html" class="navbar-link" data-nav-link>Terms & Conditions</a>
+      </li>
+
+      <li>
+        <a href="offline.html" class="navbar-link" data-nav-link>Offline Centers</a>
+      </li>
+
+      <li>
+        <a href="rentcar.html" class="navbar-link" data-nav-link>Rent Your Car</a>
+      </li>
+    
+
+  </ul>
+</nav>
+
+
+      <div class="header-actions">
+
+        <div class="header-contact">
+          <a href="tel:1800100100" class="contact-link">1800-100-100</a>
+
+          <span class="contact-time">Mon - Sat: 9:00 am - 6:00 pm</span>
+        </div>
+
+        <a href="src/pages/login.html" class="btn user-btn" aria-label="Profile">
+          <ion-icon name="person-outline"></ion-icon>
+        </a>
+
+        <button class="nav-toggle-btn" data-nav-toggle-btn aria-label="Toggle Menu">
+          <span class="one"></span>
+          <span class="two"></span>
+          <span class="three"></span>
+        </button>
+
+      </div>
+
+    </div>
+  </header>
 
   <section class="featured-section">
     <div class="section-header">
@@ -39,7 +93,8 @@
           <div class="price">Original: <strike>₹8,30,000</strike><br>Sale Price: ₹7,30,000</div>
         </div>
         <div class="buttons">
-          <button class="rent-btn" data-car="Hyundai Creta">Rent now</button>
+          <!-- Changes -->
+          <button class="rent-btn" data-car="Hyundai Creta">Rent Now</button>
           <button class="buy-btn" data-car="Hyundai Creta">Buy Car</button>
         </div>
       </div>
@@ -56,7 +111,7 @@
           <div class="price">Original: <strike>₹10,30,000</strike><br>Sale Price: ₹8,93,000</div>
         </div>
         <div class="buttons">
-          <button class="rent-btn" data-car="Tata Nexon">Rent now</button>
+          <button class="rent-btn" data-car="Tata Nexon">Rent Now</button>
           <button class="buy-btn" data-car="Tata Nexon">Buy Car</button>
         </div>
       </div>
@@ -73,7 +128,7 @@
           <div class="price">Original: <strike>₹12,00,000</strike><br>Sale Price: ₹9,00,000</div>
         </div>
         <div class="buttons">
-          <button class="rent-btn" data-car="Swift Desire">Rent now</button>
+          <button class="rent-btn" data-car="Swift Desire">Rent Now</button>
           <button class="buy-btn" data-car="Swift Desire">Buy Car</button>
         </div>
       </div>

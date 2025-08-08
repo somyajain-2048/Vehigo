@@ -1,786 +1,906 @@
+Of course. I can help you resolve the merge conflicts in your HTML file.
+
+It appears the conflicts are mainly in the "Featured Cars" section and the scripts at the end of the document. One branch introduced dynamic loading of car data from a database (Supabase), while the other had a static list. The best approach is to combine viewBox='0 0 24 24' width='20' xmlns='http://www.w these, using the dynamic loading functionality for a more scalable solution while retaining other features like the "Back to Top" button3.org/2000/svg'><path d='M7 10l5 5 .
+
+Here is the corrected and merged code:
+
+code
+Html
+download
+content_copy
+expand_less
+
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+5-5z'/></svg>");
+        background-repeat: no-repeat;
+        background-position:  <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width= right 1rem center;
+        background-size: 1rem;
+      }
+
+      /* Hero formdevice-width, initial-scale=1.0" />
     <link
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+ layout - make components inline */
+      .hero-form {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
+    <link rel="icon" href=": 1rem;
+        align-items: end;
+      }
 
+      .hero-form .inputfavicon.svg">
     <title>Vehigo - Rent your favourite car</title>
 
+    <style>-wrapper {
+        display: flex;
+        flex-direction: column;
+      }
 
-    <!-- 
-    - favicon
-  -->
-    <link rel="shortcut icon" href="./public/favicon.svg" type="image/svg+xml" />
+      .hero-form .btn {
+        height: fit-content;
+        align-self: end;
+        padding
+      /* ======= Custom Style for Select Dropdown ======= */
+      select {
+        appearance: none;
+        -webkit-: 0.8rem 1.5rem;
+      }
 
-    <!-- 
+      @media (max-width:appearance: none;
+        -moz-appearance: none;
+        background-color: #fff;
+        border: 2px solid #dcdcdc;
+        border-radius: 8px;
+        padding 768px) {
+        .hero-form {
+          grid-template-columns: 1: 0.8rem 1rem;
+        font-size: 1rem;
+        font-fr;
+        }
+      }
+    </style>
+
+    <!--
     - custom css link
   -->
-    <link rel="stylesheet" href="assets/css/style.css" />
+family: 'Open Sans', sans-serif;
+        color: #333;
+        margin:     <link rel="stylesheet" href="src/assets/styles/style.css" />
 
-     
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
+
+    <link rel="preconnect0.5rem 0;
+        width: 100%;
+        box-shadow: 0 2px" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600&family=Open+Sans&display=swap"
+      href="https://fonts.googleapis.com/ 6px rgba(0, 0, 0, 0.1);
+        transition: border-color 0css2?family=Nunito:wght@400;600&family=Open+Sans&.3s ease-in-out;
+      }
+
+      select:focus {
+        border-color: #00display=swap"
       rel="stylesheet"
     />
   </head>
 
+
   <body>
-    <header class="header" data-header>
+    <header class="7bff;
+        outline: none;
+      }
+
+      select {
+        background-image: url("data:image/svg+xml;utf8,<svg fill='gray' height='20' viewBox='0header" data-header>
+
       <div class="container">
-        <div class="overlay" data-overlay></div>
+        <div class="overlay" data-overlay></div> 0 24 24' width='20' xmlns='http://www.w3.org
 
         <a href="index.html" class="logo">
-          <img src="./assets/images/vehigologo.png" alt="VehiGo logo" />
+          <img src="./assets/images//2000/svg'><path d='M7 10l5 5 5-5vehigologo.png" alt="VehiGo logo" />
         </a>
 
-        <nav class="navbar" data-navbar>
+        <nav class="navbarz'/></svg>");
+        background-repeat: no-repeat;
+        background-position: right 1rem center" data-navbar>
           <ul class="navbar-list">
             <li>
-              <a href="index.html" class="navbar-link" data-nav-link>Home</a>
+              <a href="index.;
+        background-size: 1rem;
+      }
+
+      /* Hero form layout - make components inlinehtml" class="navbar-link" data-nav-link>Home</a>
             </li>
 
             <li>
-              <a href="#featured-car" class="navbar-link" data-nav-link
+               */
+      .hero-form {
+        display: grid;
+        grid-template-columns: repeat(<a href="#featured-car" class="navbar-link" data-nav-link
                 >Explore cars</a
               >
             </li>
 
             <li>
-              <a href="./src/pages/about.html" class="navbar-link" data-nav-link>About us</a>
+              <a href="src/pages/about.htmlauto-fit, minmax(200px, 1fr));
+        gap: 1rem;
+        align" class="navbar-link" data-nav-link>About us</a>
             </li>
 
             <li>
-              <a href="#blog" class="navbar-link" data-nav-link>Blog</a>
-            </li>
+              -items: end;
+      }
+
+      .hero-form .input-wrapper {
+        display: flex<a href="blog.html" class="navbar-link" data-nav-link>Blog</a>
+            ;
+        flex-direction: column;
+      }
+
+      .hero-form .btn {
+        height</li>
 
             <li>
-              <a href="offline.html" class="navbar-link" data-nav-link
-                >Offline Centers</a
-              >
-            </li>
+              <a href="src/pages/bill.html" class="navbar-link" data-nav: fit-content;
+        align-self: end;
+        padding: 0.8rem 1.5rem;
+      }
 
-             <li>
-              <a href="rentcar.html" class="navbar-link" data-nav-link>Rent Your Car</a>
+      @media (max-width: 768px) {
+-link>Fare Calculator</a>
             </li>
-
-            <!-- 🌙 Dark Mode Toggle Button -->
-            <!-- Removed dark mode toggle button -->
           </ul>
         </nav>
 
-        <div class="header-actions">
+        <div class="header-actions        .hero-form {
+          grid-template-columns: 1fr;
+        }
+      }">
           <div class="header-contact">
-            <a href="tel:1800100100" class="contact-link">1800-100-100</a>
+            <a href="tel:18001
+    </style>
 
-            <span class="contact-time">Mon - Sat: 9:00 am - 6:00 pm</span>
+    <!--
+    - custom css link
+    -->
+    <link rel="stylesheet00100" class="contact-link">1800-100-100" href="src/assets/styles/style.css" />
+
+    <link rel="preconnect" href="https://fonts</a>
+            <span class="contact-time">Mon - Sat: 9:00 am - 6.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com":00 pm</span>
           </div>
-          <!-- Theme Toggle Switch with SVG icons -->
-          <label class="theme-switch" for="theme-toggle">
-            <input type="checkbox" id="theme-toggle" />
-            <span class="slider">
-              <span class="icon sun" aria-label="Light mode">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="orange" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
-              </span>
-              <span class="icon moon" aria-label="Dark mode">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#f5f5f5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z"/></svg>
-              </span>
-            </span>
-          </label>
 
-
-          <!-- home.html -->
-          <button id="logoutBtn" style="display: none">Logout</button>
-
-
-          <a href="#featured-car" class="btn" aria-labelledby="aria-label-txt">
-            <ion-icon name="car-outline"></ion-icon>
-
-            <span id="aria-label-txt">Explore cars</span>
-          </a>
-
-          <a href="./login.html" class="btn user-btn" aria-label="Profile">
-            <ion-icon name="person-outline"></ion-icon>
+          <a href="src/pages/login.html" class=" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunbtn user-btn" aria-label="Profile">
+            <ion-icon name="person-outline"></ionito:wght@400;600&family=Open+Sans&display=swap"
+      -icon>
           </a>
 
           <button
             class="nav-toggle-btn"
-            data-nav-toggle-btn
+            data-rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <header class="header" datanav-toggle-btn
             aria-label="Toggle Menu"
           >
             <span class="one"></span>
             <span class="two"></span>
             <span class="three"></span>
-          </button>
+          </button-header>
+      <div class="container">
+        <div class="overlay" data-overlay></div>>
         </div>
       </div>
-    </header>
+</header>
 
     <main>
       <article>
+        <!--
 
-        <!-- 
+        <a href="index.html" class="logo">
+          <img src="./assets/images/vehigologo.png" alt="VehiGo logo" />
+        </a>
+
+        <nav class="navbar
         -!= #HERO
-      -->
-
-        <section class="hero section" id="home" style="padding-left: 40px">
-
+        -->
+        <section class="section hero" id="home">
           <div class="container">
             <div class="hero-content">
-              <div class="curr-hero">
-                <h2 class="h1 hero-title first">Seamless rentals</h2>
-                <h2 class="h1 hero-title second">Endless Adventures!</h2>
-              </div>
+              <h2 class="" data-navbar>
+          <ul class="navbar-list">
+            <li>
+              <a href="index.h1 hero-title">SEAMLESS RENTALS,<br>Endless Adventures!</h2>
 
-              <p class="hero-text">Live in Bhopal, Indore and Ujjain!</p>
+              <phtml" class="navbar-link" data-nav-link>Home</a>
+            </li>
+            <li>
+               class="hero-text">
+                Live in Bhopal, Indore and Ujjain!
+              </p>
+<a href="#featured-car" class="navbar-link" data-nav-link>Explore cars</a>
+            </li>
             </div>
 
             <div class="hero-banner"></div>
 
-            <form action="" id="searchForm" class="hero-form">
+            <form action="" class="hero-form            <li>
+              <a href="src/pages/about.html" class="navbar-link" data-">
               <div class="input-wrapper">
-                <label for="input-1" class="input-label">Location</label>
+                <label for="input-1" class="inputnav-link>About us</a>
+            </li>
+            <li>
+              <a href="blog.html" class="navbar-label">Location</label>
+                <input type="text" name="car-model" id="input-link" data-nav-link>Blog</a>
+            </li>
+            <li>
+              <a href="src-1" class="input-field" placeholder="e.g., Bhopal">
+              </div>
 
-                <input
-                  type="text"
-                  name="car-model"
-                  id="input-1"
-                  class="input-field"
-                  placeholder="Enter your Location"
-                />
-                <span id="location-error" class="error-message"></span>
+              <div/pages/bill.html" class="navbar-link" data-nav-link>Fare Calculator</a>
+            </li>
+ class="input-wrapper">
+                <label for="input-2" class="input-label">Max.          </ul>
+        </nav>
+
+        <div class="header-actions">
+          <div class="header Rent payment</label>
+                <input type="text" name="monthly-pay" id="input-2-contact">
+            <a href="tel:1800100100" class="" class="input-field" placeholder="Max Budget (₹)">
+              </div>
+
+              <div class="inputcontact-link">1800-100-100</a>
+            <span class="contact-wrapper">
+                <label for="car-type" class="input-label">Car Type</label>-time">Mon - Sat: 9:00 am - 6:00 pm</span>
+          </div>
+                <select name="car-type" id="car-type">
+                  <option>SUV</option
+
+          <a href="src/pages/login.html" class="btn user-btn" aria-label>
+                  <option>Sedan</option>
+                  <option>Hatchback</option>
+                ="Profile">
+            <ion-icon name="person-outline"></ion-icon>
+          </a>
+
+          <button
+</select>
               </div>
 
               <div class="input-wrapper">
-                <label for="input-2" class="input-label"
-                  >Max. Rent payment</label
-                >
-
-                <input
-                  type="text"
-                  name="monthly-pay"
-                  id="input-2"
-                  class="input-field"
-                  placeholder="Add an amount "
-                />
-                <span id="rent-error" class="error-message"></span>
-              </div>
-
-              <div class="input-wrapper">
-                <label for="car-type" class="input-label">Car Type</label>
-                <select name="car-type" id="car-type" class="input-field">
-                  <option value="">Select Car Type</option>
-                  <option value="suv">SUV</option>
-                  <option value="sedan">Sedan</option>
-                  <option value="hatchback">Hatchback</option>
-                  <option value="mpv">MPV</option>
-                  <option value="luxury">Luxury</option>
+                <label for="transmission"            class="nav-toggle-btn"
+            data-nav-toggle-btn
+            aria-label=" class="input-label">Transmission</label>
+                <select name="transmission" id="transmission">
+                  Toggle Menu"
+          >
+            <span class="one"></span>
+            <span class="two"></span><option>Manual</option>
+                  <option>Automatic</option>
                 </select>
-                <span class="error-msg" id="carType-error"></span>
+              </div>
+            <span class="three"></span>
+          </button>
+        </div>
+      </div>
+    </header
 
+              <div class="input-wrapper">
+                <label for="fuel-type" class="input->
+
+    <main>
+      <article>
+        <!--
+        - #HERO
+        -->
+        <sectionlabel">Fuel Type</label>
+                <select name="fuel-type" id="fuel-type">
+ class="section hero" id="home">
+          <div class="container">
+            <div class="hero                  <option>Petrol</option>
+                  <option>Diesel</option>
+                  <option>Electric</-content">
+              <h2 class="h1 hero-title">SEAMLESS RENTALS,<broption>
+                  <option>Hybrid</option>
+                </select>
+              </div>
+              <button type>Endless Adventures!</h2>
+              <p class="hero-text">Live in Bhopal, Indore and Ujj="submit" class="btn">Search</button>
+            </form>
+          </div>
+        </section>ain!</p>
+            </div>
+
+            <div class="hero-banner"></div>
+
+            <form action=""
+
+        <!--Featured car-->
+        <section class="section featured-car" id="featured-car">
+           class="hero-form">
+              <div class="input-wrapper">
+                <label for="input-<div class="container">
+            <div class="title-wrapper">
+              <h2 class="h1" class="input-label">Location</label>
+                <input type="text" name="car-2 section-title">Featured cars</h2>
+            </div>
+
+            <ul class="featured-car-list" idmodel" id="input-1" class="input-field" placeholder="e.g., Bhopal">
+              ="featured-car-list">
+              <!-- Dynamic content will be injected here by Supabase script -->
+            </ul></div>
+
+              <div class="input-wrapper">
+                <label for="input-2" class="input
+          </div>
+        </section>
+
+        <!-- Load Supabase client -->
+        <script src="https://-label">Max. Rent payment</label>
+                <input type="text" name="monthly-pay"cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+
+        <script>
+          document id="input-2" class="input-field" placeholder="Max Budget (₹)">
+              </div>
+
+              .addEventListener('DOMContentLoaded', async () => {
+            const { createClient } = supabase;
+            
+            const SUPABASE<div class="input-wrapper">
+                <label for="car-type" class="input-label">_URL = 'https://lpqxhwvjafhoxlhldmad.supabase.co';
+            constCar Type</label>
+                <select name="car-type" id="car-type">
+                  < SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6Ikpoption>SUV</option>
+                  <option>Sedan</option>
+                  <option>HatchbackXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6</option>
+                </select>
               </div>
 
               <div class="input-wrapper">
-                <label for="transmission" class="input-label"
-                  >Transmission</label
-                >
-                <select name="transmission" id="transmission" class="input-field">
-                  <option value="">Select Transmission</option>
-                  <option value="automatic">Automatic</option>
-                  <option value="manual">Manual</option>
-                </select>
-                <span class="error-msg" id="transmission-error"></span>
-
+                <label for="transmission" class="input-label">Transmission</label>
+                <select name="transmission" idImxwcXhod3ZqYWZob3hsaGxkbWFkIiwicm9sZSI6="transmission">
+                  <option>Manual</option>
+                  <option>Automatic</option>
+                </ImFub24iLCJpYXQiOjE3NDUzOTEwOTUsImV4cselect>
               </div>
 
               <div class="input-wrapper">
-                <label for="fuel-type" class="input-label">Fuel Type</label>
-                <select name="fuel-type" id="fuel-type" class="input-field">
-                  <option value="">Select Fuel Type</option>
-                  <option value="petrol">Petrol</option>
-                  <option value="diesel">Diesel</option>
-                  <option value="ev">EV</option>
-                  <option value="cng">CNG</option>
-                </select>
-                <span class="error-msg" id="fuelType-error"></span>
-              </div>
+                <label for="fuel-typeCI6MjA2MDk2NzA5NX0.76inH5xouMvUl4" class="input-label">Fuel Type</label>
+                <select name="fuel-type" id="fuel-type">
+                  <option>Petrol</option>
+                  <option>Diesel</option>
+                  jaUJH_1OI7Kesc9DFpeHpKHoIt2As';
 
+            const supabaseClient<option>Electric</option>
+                  <option>Hybrid</option>
+                </select>
+              </div> = createClient(SUPABASE_URL, SUPABASE_KEY);
+
+            try {
+              const { data:
               <button type="submit" class="btn">Search</button>
             </form>
           </div>
-        </section>
+ cars, error } = await supabaseClient
+                .from('Cars')
+                .select('*');
 
-        <section class="section featured-car" id="featured-car">
+              if (error) {
+                console.error('Error fetching cars:', error.message);
+                return;
+                      </section>
+
+        <!--
+        - #FEATURED CAR
+        -->
+        <section class="section featured-car}
+
+              const featuredCarList = document.getElementById('featured-car-list');
+              featuredCarList." id="featured-car">
           <div class="container">
             <div class="title-wrapper">
               <h2 class="h2 section-title">Featured cars</h2>
+              <a href="#" classinnerHTML = '';
 
-              <!-- <a href="#" class="featured-car-link">
+              cars.forEach(car => {
+                const carCard = document.createElement('li');="featured-car-link">
                 <span>View more</span>
-
-                <ion-icon name="arrow-forward-outline"></ion-icon>
-              </a> -->
+                <ion-icon name="arrow-forward
+                carCard.innerHTML = `
+                  <div class="featured-car-card">
+                    <figure-outline"></ion-icon>
+              </a>
             </div>
-
-            <ul class="featured-car-list">
-              <li>
-                <div class="featured-car-card">
-                  <figure class="card-banner">
-                    <img
-                      src="./assets/images/creta.jpeg"
-                      alt="Hyundai Creta"
-                      loading="lazy"
-                      width="440"
-                      height="300"
-                      class="w-100"
-                    />
-                  </figure>
-
-                  <div class="card-content">
-                    <div class="card-title-wrapper">
-                      <h3 class="h3 card-title">
-                        <a href="#">Hyundai Creta</a>
-                      </h3>
-
-                      <data class="year" value="2021">2022</data>
-                    </div>
-
-                    <ul class="card-list">
-                      <li class="card-list-item">
-                        <ion-icon name="people-outline"></ion-icon>
-
-                        <span class="card-item-text">5 People</span>
-                      </li>
-
-                      <li class="card-list-item">
-                        <ion-icon name="flash-outline"></ion-icon>
-
-                        <span class="card-item-text">Petrol</span>
-                      </li>
-
-                      <li class="card-list-item">
-                        <ion-icon name="speedometer-outline"></ion-icon>
-
-                        <span class="card-item-text">17.2km / 1-litre</span>
-                      </li>
-
-                      <li class="card-list-item">
-                        <ion-icon name="hardware-chip-outline"></ion-icon>
-
-                        <span class="card-item-text">Manual</span>
-                      </li>
-                    </ul>
-
-                    <div class="card-price-wrapper">
-                      <p class="card-price"><strong>₹283</strong> / hour</p>
-
-                      <button class="btn">Rent now</button>
-                    </div>
-                  </div>
-                </div>
-              </li>
-
-              <li>
-                <div class="featured-car-card">
-                  <figure class="card-banner">
-                    <img
-                      src="./assets/images/nexon.jpg"
-                      alt="nexon"
-                      loading="lazy"
-                      width="440"
-                      height="300"
-                      class="w-100"
-                    />
-                  </figure>
-
-                  <div class="card-content">
-                    <div class="card-title-wrapper">
-                      <h3 class="h3 card-title">
-                        <a href="#">Tata Nexon</a>
-                      </h3>
-
-                      <data class="year" value="2019">2019</data>
-                    </div>
-
-                    <ul class="card-list">
-                      <li class="card-list-item">
-                        <ion-icon name="people-outline"></ion-icon>
-
-                        <span class="card-item-text">5 People</span>
-                      </li>
-
-                      <li class="card-list-item">
-                        <ion-icon name="flash-outline"></ion-icon>
-
-                        <span class="card-item-text">Petrol</span>
-                      </li>
-
-                      <li class="card-list-item">
-                        <ion-icon name="speedometer-outline"></ion-icon>
-
-                        <span class="card-item-text">17.4km / 1-litre</span>
-                      </li>
-
-                      <li class="card-list-item">
-                        <ion-icon name="hardware-chip-outline"></ion-icon>
-
-                        <span class="card-item-text">Manual</span>
-                      </li>
-                    </ul>
-
-                    <div class="card-price-wrapper">
-                      <p class="card-price"><strong>₹210</strong> / hour</p>
-
-                      <button class="btn">Rent now</button>
-                    </div>
-                  </div>
-                </div>
-              </li>
-
-              <li>
-                <div class="featured-car-card">
-                  <figure class="card-banner">
-                    <img
-                      src="./assets/images/swift desire.jpg"
-                      alt="Swift desire"
-                      loading="lazy"
-                      width="440"
-                      height="300"
-                      class="w-100"
-                    />
-                  </figure>
-
-                  <div class="card-content">
-                    <div class="card-title-wrapper">
-                      <h3 class="h3 card-title">
-                        <a href="#">Swift Desire</a>
-                      </h3>
-
-                      <data class="year" value="2020">2018</data>
-                    </div>
-
-                    <ul class="card-list">
-                      <li class="card-list-item">
-                        <ion-icon name="people-outline"></ion-icon>
-
-                        <span class="card-item-text">5 People</span>
-                      </li>
-
-                      <li class="card-list-item">
-                        <ion-icon name="flash-outline"></ion-icon>
-
-                        <span class="card-item-text">Petrol</span>
-                      </li>
-
-                      <li class="card-list-item">
-                        <ion-icon name="speedometer-outline"></ion-icon>
-
-                        <span class="card-item-text">23.3km / 1-litre</span>
-                      </li>
-
-                      <li class="card-list-item">
-                        <ion-icon name="hardware-chip-outline"></ion-icon>
-
-                        <span class="card-item-text">Automatic</span>
-                      </li>
-                    </ul>
-
-                    <div class="card-price-wrapper">
-                      <p class="card-price"><strong>₹180</strong> / hour</p>
-
-                      <button class="btn">Rent now</button>
-                    </div>
-                  </div>
-                </div>
-              </li>
-
-              <li>
-                <div class="featured-car-card">
-                  <figure class="card-banner">
-                    <img
-                      src="./assets/images/fortuner.jpg"
-                      alt="Toyota Fortuner"
-                      loading="lazy"
-                      width="440"
-                      height="300"
-                      class="w-100"
-                    />
-                  </figure>
-
-                  <div class="card-content">
-                    <div class="card-title-wrapper">
-                      <h3 class="h3 card-title">
-                        <a href="#">Toyota Fortuner</a>
-                      </h3>
-
-                      <data class="year" value="2020">2020</data>
-                    </div>
-
-                    <ul class="card-list">
-                      <li class="card-list-item">
-                        <ion-icon name="people-outline"></ion-icon>
-
-                        <span class="card-item-text">7 People</span>
-                      </li>
-
-                      <li class="card-list-item">
-                        <ion-icon name="flash-outline"></ion-icon>
-
-                        <span class="card-item-text">Diesel</span>
-                      </li>
-
-                      <li class="card-list-item">
-                        <ion-icon name="speedometer-outline"></ion-icon>
-
-                        <span class="card-item-text">12.9km / 1-litre</span>
-                      </li>
-
-                      <li class="card-list-item">
-                        <ion-icon name="hardware-chip-outline"></ion-icon>
-
-                        <span class="card-item-text">Automatic</span>
-                      </li>
-                    </ul>
-
-                    <div class="card-price-wrapper">
-                      <p class="card-price"><strong>₹490</strong> / hour</p>
-
-                      <button class="btn">Rent now</button>
-                    </div>
-                  </div>
-                </div>
-              </li>
-
-              <li>
-                <div class="featured-car-card">
-                  <figure class="card-banner">
-                    <img
-                      src="./assets/images/innova.jpeg"
-                      alt="Toyota Innova Crysta"
-                      loading="lazy"
-                      width="440"
-                      height="300"
-                      class="w-100"
-                    />
-                  </figure>
-
-                  <div class="card-content">
-                    <div class="card-title-wrapper">
-                      <h3 class="h3 card-title">
-                        <a href="#">Toyota Innova Crsyta</a>
-                      </h3>
-
-                      <data class="year" value="2021">2021</data>
-                    </div>
-
-                    <ul class="card-list">
-                      <li class="card-list-item">
-                        <ion-icon name="people-outline"></ion-icon>
-
-                        <span class="card-item-text">7 People</span>
-                      </li>
-
-                      <li class="card-list-item">
-                        <ion-icon name="flash-outline"></ion-icon>
-
-                        <span class="card-item-text">Diesel</span>
-                      </li>
-
-                      <li class="card-list-item">
-                        <ion-icon name="speedometer-outline"></ion-icon>
-
-                        <span class="card-item-text">14.3km / 1-litre</span>
-                      </li>
-
-                      <li class="card-list-item">
-                        <ion-icon name="hardware-chip-outline"></ion-icon>
-
-                        <span class="card-item-text">Automatic</span>
-                      </li>
-                    </ul>
-
-                    <div class="card-price-wrapper">
-                      <p class="card-price"><strong>₹355</strong> / hour</p>
-
-                      <button class="btn">Rent now</button>
-                    </div>
-                  </div>
-                </div>
-              </li>
-
-              <li>
-                <div class="featured-car-card">
-                  <figure class="card-banner">
-                    <img
-                      src="./assets/images/mahindra-scorpio.jpg"
-                      alt="Mahindra Scorpio"
-                      loading="lazy"
-                      width="440"
-                      height="300"
-                      class="w-100"
-                    />
-                  </figure>
-
-                  <div class="card-content">
-                    <div class="card-title-wrapper">
-                      <h3 class="h3 card-title">
-                        <a href="#">Mahindra Scorpio</a>
-                      </h3>
-
-                      <data class="year" value="2019">2019</data>
-                    </div>
-
-                    <ul class="card-list">
-                      <li class="card-list-item">
-                        <ion-icon name="people-outline"></ion-icon>
-
-                        <span class="card-item-text">7 People</span>
-                      </li>
-
-                      <li class="card-list-item">
-                        <ion-icon name="flash-outline"></ion-icon>
-
-                        <span class="card-item-text">Diesel</span>
-                      </li>
-
-                      <li class="card-list-item">
-                        <ion-icon name="speedometer-outline"></ion-icon>
-
-                        <span class="card-item-text">14.6km / 1-litre</span>
-                      </li>
-
-                      <li class="card-list-item">
-                        <ion-icon name="hardware-chip-outline"></ion-icon>
-
-                        <span class="card-item-text">Manual</span>
-                      </li>
-                    </ul>
-
-                    <div class="card-price-wrapper">
-                      <p class="card-price"><strong>₹315</strong> / hour</p>
-
-                      <button class="btn">Rent now</button>
-                    </div>
-                  </div>
-                </div>
-              </li>
-            </ul>
+            <ul class="featured-car-list class="card-banner">
+                      <img src="${car.picture}" alt="${car.Car}" loading="lazy" width="440" height="300" class="w-100" onerror="" id="featured-car-list">
+              <!-- Dynamic content will be injected here by Supabase script -->
+            </ul>this.onerror=null; this.src='https://via.placeholder.com/440x30
           </div>
         </section>
 
+        <!-- Load Supabase client -->
+        <script src="https://0?text=No+Image';">
+                    </figure>
+                    <div class="card-content">cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+
+        <!--
+        - #GET
+                      <div class="card-title-wrapper">
+                        <h3 class="h3 card-title STARTED
+        -->
         <section class="section get-start">
           <div class="container">
-            <h2 class="h2 section-title">Get started with 4 simple steps</h2>
-
-            <ul class="get-start-list">
+            "><a href="#">${car.Car}</a></h3>
+                      </div>
+                      <ul class="card-list"><h2 class="h2 section-title">Get started with 4 simple steps</h2>
+            <ul class
+                        <li class="card-list-item">
+                          <ion-icon name="people-outline"></="get-start-list">
               <li>
                 <div class="get-start-card">
-                  <div class="card-icon icon-1">
-                    <ion-icon name="person-add-outline"></ion-icon>
+                  ion-icon>
+                          <span class="card-item-text">${car["Number of people"]} People</span>
+                        <div class="card-icon icon-1">
+                    <ion-icon name="person-add-outline</li>
+                        <li class="card-list-item">
+                          <ion-icon name="flash-outline"></ion-icon>
                   </div>
-
                   <h3 class="card-title">Create a profile</h3>
-
-                  <p class="card-text">
-                    If you are going to use a passage of Lorem Ipsum, you need
-                    to be sure.
+"></ion-icon>
+                          <span class="card-item-text">${car.Fuel}</span>
+                                          <p class="card-text">
+                    If you are going to use a passage of Lorem Ipsum, you need to be</li>
+                        <li class="card-list-item">
+                          <ion-icon name="speedometer- sure.
                   </p>
-
-                  <a href="./login.html" class="card-link">Get started</a>
+                  <a href="src/pages/login.html" class="cardoutline"></ion-icon>
+                          <span class="card-item-text">${car.Mileage}</span>
+-link">Get started</a>
                 </div>
               </li>
-
               <li>
-                <div class="get-start-card">
+                <div class="get-start                        </li>
+                        <li class="card-list-item">
+                          <ion-icon name="hardware--card">
                   <div class="card-icon icon-2">
-                    <ion-icon name="car-outline"></ion-icon>
+                    <ion-icon name="chip-outline"></ion-icon>
+                          <span class="card-item-text">${car["Gear Type"]}</span>car-outline"></ion-icon>
                   </div>
-
                   <h3 class="card-title">Tell us your location</h3>
-
+                        </li>
+                      </ul>
+                      <div class="card-price-wrapper">
+                        <p class="
                   <p class="card-text">
-                    Just enter your location with one click from the comfort of
-                    your home and we will do the rest.
+                    Just enter your location with one click from the comfort of yourcard-price"><strong>₹${car.Price}</strong> / hour</p>
+                        <button class="btn" data home and we will do the rest.
                   </p>
                 </div>
               </li>
-
               <li>
-                <div class="get-start-card">
+                <-car-id="${car.id}">Rent Now</button>
+                      </div>
+                    </div>
+                  </div>
+div class="get-start-card">
                   <div class="card-icon icon-3">
-                    <ion-icon name="person-outline"></ion-icon>
+                                    `;
+                featuredCarList.appendChild(carCard);
+              });
+            } catch (err) {<ion-icon name="person-outline"></ion-icon>
                   </div>
+                  <h3 class="card-title
+              console.error('Unexpected error:', err);
+            }
+          });
+        </script>
 
-                  <h3 class="card-title">Match with seller</h3>
-
+        <!--get start">Match with seller</h3>
                   <p class="card-text">
-                    It to make a type specimen book. It has survived not only
-                    five centuries, but also the leap into electronic
+                    It to make a type specimen book cards-->
+        <section class="section get-start">
+          <div class="container">
+            <. It has survived not only five centuries, but also the leap into electronic.
                   </p>
-                </div>
-              </li>
+                </div>h2 class="h2 section-title">Get started with 4 simple steps</h2>
 
+            <ul class="
+              </li>
               <li>
                 <div class="get-start-card">
-                  <div class="card-icon icon-4">
+                  <div class="get-start-list">
+              <li>
+                <div class="get-start-card">
+                  <card-icon icon-4">
                     <ion-icon name="card-outline"></ion-icon>
-                  </div>
-
+div class="card-icon icon-1">
+                    <ion-icon name="person-add-outline"></ion-icon                  </div>
                   <h3 class="card-title">Make a deal</h3>
-
                   <p class="card-text">
-                    There are many variations of passages of Lorem available,
-                    but the majority have suffered alteration
-                  </p>
+                    There are many variations of passages of Lorem available, but the majority have suffered alteration.
+                  >
+                  </div>
+                  <h3 class="card-title">Create a profile</h3>
+                  <p class</p>
                 </div>
               </li>
             </ul>
           </div>
         </section>
 
+        <!--
+="card-text">
+                    If you are going to use a passage of Lorem Ipsum, you need to be sure.
+                          - #REVIEWS
+        -->
         <section class="reviews" id="reviews">
+            <div class="</p>
+                  <a href="src/pages/login.html" class="card-link">Getcontain container">
+              <h2>Reviews</h2>
+              <div class="outerdiv">
+                <div class="inner started</a>
+                </div>
+              </li>
+              <li>
+                <div class="get-start-card">
+                  div">
+                  <div class="div1 eachdiv">
+                    <div class="userdetails">
+                      <<div class="card-icon icon-2">
+                    <ion-icon name="car-outline"></iondiv class="imgbox">
+                        <img
+                          src="https://raw.githubusercontent.com/Rahul-icon>
+                  </div>
+                  <h3 class="card-title">Tell us your location</h3>
+                  <pSahOfficial/testimonials_grid_section/5532c958b7d3c9b class="card-text">
+                    Just enter your location with one click from the comfort of your home and we will910a216b198fdd21c73112d84
+                    do the rest.
+                  </p>
+                </div>
+              </li>
+              <li>
+                <div/images/image-daniel.jpg"
+                          alt=""
+                        />
+                      </div>
+                      <div class class="get-start-card">
+                  <div class="card-icon icon-3">
+                    <="detbox">
+                        <p class="name">Rahul Sharma</p>
+                        <p class="designion-icon name="person-outline"></ion-icon>
+                  </div>
+                  <h3 class="card-titleation">Verified Customer</p>
+                      </div>
+                    </div>
+                    <div class="review">
+                      <h4>">Match with seller</h3>
+                  <p class="card-text">
+                    It to make a type specimen book. It
+                        "I recently rented a car from Vehigo, and I couldn't be
+                        happier with the has survived not only five centuries, but also the leap into
+                    electronic
+                  </p>
+                </div>
+               experience. The staff was incredibly
+                        friendly and helpful, guiding me through the rental
+                        process and answering all of my questions.</li>
+              <li>
+                <div class="get-start-card">
+                  <div class="card- "
+                      </h4>
+                      <p>
+                        “The car I rented was in excellent condition and drove
+                        icon icon-4">
+                    <ion-icon name="card-outline"></ion-icon>
+                  </div>smoothly throughout my entire trip. I highly recommend
+                        Vehigo to anyone in need of a reliable and hassle-
+                  <h3 class="card-title">Make a deal</h3>
+                  <p class="card-textfree car
+                        rental service.”
+                      </p>
+                    </div>
+                  </div>
+                  <div class="">
+                    There are many variations of passages of Lorem available, but the majority have suffered alteration
+                  </p>div2 eachdiv">
+                    <div class="userdetails">
+                      <div class="imgbox">
+                        
+                </div>
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <section class="reviews<img
+                          src="https://raw.githubusercontent.com/RahulSahOfficial/testimonials_grid_section" id="reviews">
           <div class="contain container">
             <h2>Reviews</h2>
-            <div class="outerdiv">
+            <div class/5532c958b7d3c9b910a216b="outerdiv">
               <div class="innerdiv">
-                <div class="div1 eachdiv">
+                <div class="div1 eachdiv">198fdd21c73112d84/images/image-jonathan.
                   <div class="userdetails">
                     <div class="imgbox">
                       <img
-                        src="https://raw.githubusercontent.com/RahulSahOfficial/testimonials_grid_section/5532c958b7d3c9b910a216b198fdd21c73112d84/images/image-daniel.jpg"
-                        alt=""
+                        srcjpg"
+                          alt=""
+                        />
+                      </div>
+                      <div class="detbox">
+                        <="https://raw.githubusercontent.com/RahulSahOfficial/testimonials_grid_section/5532p class="name">Alok Patel</p>
+                        <p class="designation">Verified Customer</pc958b7d3c9b910a216b198fdd>
+                      </div>
+                    </div>
+                    <div class="review">
+                      <h4>Renting a car from Veh21c73112d84/images/image-daniel.jpg"
+                        alt=""igo was a breeze!</h4>
+                      <p>
+                        “ The staff was friendly, the car was clean and
                       />
                     </div>
                     <div class="detbox">
-                      <p class="name">Rahul Sharma</p>
+                      <p class="name">Rahul
+                        well-maintained, and the whole process was quick and
+                        hassle-free. I'll definitely Sharma</p>
                       <p class="designation">Verified Customer</p>
+                    </div>
+                  </div> be renting from Vehigo again
+                        in the future. ”
+                      </p>
                     </div>
                   </div>
                   <div class="review">
                     <h4>
-                      "I recently rented a car from Vehigo, and I couldn't be
+                      "I recently rented a car from Vehigo, and
+                  <div class="div3 eachdiv">
+                    <div class="userdetails">
+                      <div class I couldn't be
                       happier with the experience. The staff was incredibly
-                      friendly and helpful, guiding me through the rental
+                      friendly and helpful, guiding="imgbox">
+                        <img
+                          src="https://raw.githubusercontent.com/RahulSahOfficial me through the rental
                       process and answering all of my questions. "
                     </h4>
                     <p>
-                      “The car I rented was in excellent condition and drove
+                      “The/testimonials_grid_section/5532c958b7d3c9b91 car I rented was in excellent condition and drove
                       smoothly throughout my entire trip. I highly recommend
-                      Vehigo to anyone in need of a reliable and hassle-free car
+                      Veh0a216b198fdd21c73112d84/imagesigo to anyone in need of a reliable and hassle-free car
                       rental service.”
                     </p>
-                  </div>
+/image-kira.jpg"
+                          alt=""
+                        />
+                      </div>
+                      <div class="det                  </div>
                 </div>
                 <div class="div2 eachdiv">
-                  <div class="userdetails">
+                  <div class="userdetails">box">
+                        <p class="name dark">Aaru Gupta</p>
+                        <p class="design
                     <div class="imgbox">
                       <img
-                        src="https://raw.githubusercontent.com/RahulSahOfficial/testimonials_grid_section/5532c958b7d3c9b910a216b198fdd21c73112d84/images/image-jonathan.jpg"
+                        src="https://raw.githubusercontent.ation dark">Verified Customer</p>
+                      </div>
+                    </div>
+                    <div class="review dark">
+com/RahulSahOfficial/testimonials_grid_section/5532c958b7d3                      <h4>
+                        Vehigo is my top choice for renting a car whenever I
+                        travel.
+                      </h4>
+c9b910a216b198fdd21c73112                      <p>
+                        “ Their service is consistently outstanding, and I
+                        appreciate their attention to detail.d84/images/image-jonathan.jpg"
                         alt=""
                       />
                     </div>
-                    <div class="detbox">
+ The vehicles are
+                        always clean, and the rental process is quick and
+                        hassle-free. Vehigo                    <div class="detbox">
                       <p class="name">Alok Patel</p>
-                      <p class="designation">Verified Customer</p>
+                       goes above and beyond to ensure
+                        customer satisfaction, and their flexible pickup and
+                        drop-off options make it incredibly convenient<p class="designation">Verified Customer</p>
                     </div>
                   </div>
-                  <div class="review">
+                  <div class=". The
+                        efficiency and professionalism of their staff have saved
+                        me valuable time, enabling me to focus on my work withoutreview">
                     <h4>Renting a car from Vehigo was a breeze!</h4>
                     <p>
-                      “ The staff was friendly, the car was clean and
+                      “ The
+                        any worries about transportation. I highly recommend
+                        Vehigo for corporate travelers. I've recommended Vehigo staff was friendly, the car was clean and
                       well-maintained, and the whole process was quick and
-                      hassle-free. I'll definitely be renting from Vehigo again
+                       to
+                        friends and family, and they have all been impressed with
+                        the quality of service. 100%hassle-free. I'll definitely be renting from Vehigo again
                       in the future. ”
-                    </p>
+                    </p> recommend! ”
+                      </p>
+                    </div>
+                  </div>
+                  <div class="div4 eachdiv
                   </div>
                 </div>
                 <div class="div3 eachdiv">
                   <div class="userdetails">
+                    <div class="userdetails">
+                      <div class="imgbox">
+                        <img
+                          ">
                     <div class="imgbox">
                       <img
-                        src="https://raw.githubusercontent.com/RahulSahOfficial/testimonials_grid_section/5532c958b7d3c9b910a216b198fdd21c73112d84/images/image-kira.jpg"
+                        src="https://raw.githubusercontentsrc="https://raw.githubusercontent.com/RahulSahOfficial/testimonials_grid_section/553.com/RahulSahOfficial/testimonials_grid_section/5532c958b7d2c958b7d3c9b910a216b198f3c9b910a216b198fdd21c7311dd21c73112d84/images/image-jeanette.jpg"
+                          2d84/images/image-kira.jpg"
                         alt=""
                       />
                     </div>
-                    <div class="detbox">
+alt=""
+                        />
+                      </div>
+                      <div class="detbox">
+                        <p class="name                    <div class="detbox">
                       <p class="name dark">Aaru Gupta</p>
-                      <p class="designation dark">Verified Customer</p>
+ dark">Prateeksha Joshi</p>
+                        <p class="designation dark">Verified Customer</p                      <p class="designation dark">Verified Customer</p>
                     </div>
                   </div>
-                  <div class="review dark">
+                  <div>
+                      </div>
+                    </div>
+                    <div class="review dark">
+                      <h4>Overall a wonderful & rewarding class="review dark">
                     <h4>
                       Vehigo is my top choice for renting a car whenever I
-                      travel.
+                      travel. experience</h4>
+                      <p>
+                        “ Thank you for the wonderful experience! The car we
+                        rented
                     </h4>
                     <p>
                       “ Their service is consistently outstanding, and I
-                      appreciate their attention to detail. The vehicles are
+                      appreciate their was spacious, comfortable, and fuel-efficient,
+                        making our journey enjoyable. The team at Vehigo was
+                        friendly and attention to detail. The vehicles are
                       always clean, and the rental process is quick and
-                      hassle-free. Vehigo goes above and beyond to ensure
+                      hassle- accommodating, making sure we had everything
+                        we needed. Highly Recommended! ”
+                      </p>
+                    </div>
+                  </div>
+                  <div class="div5 eachdiv">
+                    <div class="userdetails">
+                      free. Vehigo goes above and beyond to ensure
                       customer satisfaction, and their flexible pickup and
                       drop-off options make it incredibly convenient. The
                       efficiency and professionalism of their staff have saved
-                      me valuable time, enabling me to focus on my work without
+                      me valuable time, enabling me to focus on<div class="imgbox">
+                        <img
+                          src="https://raw.githubusercontent.com/RahulSahOfficial/testimonials_grid_section/5532c958b7d3c9 my work without
                       any worries about transportation. I highly recommend
                       Vehigo for corporate travelers. I've recommended Vehigo to
                       friends and family, and they have all been impressed with
-                      the quality of service. 100% recommend! ”
+                      the quality of service.b910a216b198fdd21c73112d8 100% recommend! ”
                     </p>
                   </div>
                 </div>
-                <div class="div4 eachdiv">
+                <div class4/images/image-patrick.jpg"
+                          alt=""
+                        />
+                      </div>
+                      <div="div4 eachdiv">
                   <div class="userdetails">
                     <div class="imgbox">
-                      <img
-                        src="https://raw.githubusercontent.com/RahulSahOfficial/testimonials_grid_section/5532c958b7d3c9b910a216b198fdd21c73112d84/images/image-jeanette.jpg"
+ class="detbox">
+                        <p class="name">Rohit Mehta</p>
+                        <p class="design                      <img
+                        src="https://raw.githubusercontent.com/RahulSahOfficial/testimonials_grid_ation">Verified Customer</p>
+                      </div>
+                    </div>
+                    <div class="review">
+                      <h4>section/5532c958b7d3c9b910a216
+                        I have been a loyal customer of Vehigo for several years
+                        now, and they have consistently exceeded myb198fdd21c73112d84/images/image-jeanette expectations.
+                      </h4>
+                      <p>
+                        “ Their rental fleet is diverse, offering a wide range of.jpg"
                         alt=""
                       />
                     </div>
                     <div class="detbox">
-                      <p class="name dark">Prateeksha Joshi</p>
-                      <p class="designation dark">Verified Customer</p>
+                      
+                        vehicles to choose from, whether I need a compact car for
+                        a city trip or a spacious SUV for<p class="name dark">Prateeksha Joshi</p>
+                      <p class="designation dark a family vacation. The
+                        prices are competitive, and the customer service is
+                        exceptional. Vehigo has become">Verified Customer</p>
                     </div>
                   </div>
                   <div class="review dark">
-                    <h4>Overall a wonderful & rewarding experience</h4>
+                    <h4> my go-to choice for all my
+                        car rental needs.”
+                      </p>
+                    </div>
+                  </div>
+                Overall a wonderful & rewarding experience</h4>
                     <p>
-                      “ Thank you for the wonderful experience! The car we
+                      “ Thank you for the wonderful experience! The car</div>
+              </div>
+            </div>
+        </section>
+
+        <!--
+        - #BLOG
+        -->
+ we
                       rented was spacious, comfortable, and fuel-efficient,
-                      making our journey enjoyable. The team at Vehigo was
+                      making our journey enjoyable. The team        <section class="section blog" id="blog">
+            <div class="container">
+              <div class=" at Vehigo was
                       friendly and accommodating, making sure we had everything
-                      we needed. Highly Recommended! ”
+                      we needed. Highly Recommended! ”blog-wrapper">
+                <h2 class="h2 section-title">Our Blog</h2>
+                <button class="
                     </p>
                   </div>
                 </div>
                 <div class="div5 eachdiv">
-                  <div class="userdetails">
+                  left-arrow">&#10094;</button>
+                <ul class="blog-list has-scrollbar">
+<div class="userdetails">
                     <div class="imgbox">
                       <img
-                        src="https://raw.githubusercontent.com/RahulSahOfficial/testimonials_grid_section/5532c958b7d3c9b910a216b198fdd21c73112d84/images/image-patrick.jpg"
+                        src="https                  <!-- BLOG 1 -->
+                  <li>
+                    <div class="blog-card">
+                      <figure class://raw.githubusercontent.com/RahulSahOfficial/testimonials_grid_section/5532c9="card-banner">
+                        <a href="blogs/blog1.html">
+                          <img
+                            58b7d3c9b910a216b198fdd21src="./assets/images/blog-1.jpg"
+                            alt="Opening of new offices of the company"c73112d84/images/image-patrick.jpg"
                         alt=""
-                      />
+                      
+                            loading="lazy"
+                            class="w-100"
+                          />
+                        </a>
+                        />
                     </div>
                     <div class="detbox">
                       <p class="name">Rohit Mehta</p>
                       <p class="designation">Verified Customer</p>
                     </div>
                   </div>
-                  <div class="review">
+<a href="blogs/blog1.html" class="btn card-badge">Company</a>
+                      </figure>
+                      <div class="card-content">
+                        <h3 class="h3 card-title">
+                          <                  <div class="review">
                     <h4>
-                      I have been a loyal customer of Vehigo for several years
+                      I have been a loyal customer of Vehigo for several yearsa href="blogs/blog1.html">Opening of new offices of the company</a>
+                        </h3>
+                        <
                       now, and they have consistently exceeded my expectations.
                     </h4>
                     <p>
-                      “ Their rental fleet is diverse, offering a wide range of
-                      vehicles to choose from, whether I need a compact car for
+                      “ Theirdiv class="card-meta">
+                          <div class="publish-date">
+                            <ion-icon name rental fleet is diverse, offering a wide range of
+                      vehicles to choose from, whether I need a compact car for="time-outline"></ion-icon>
+                            <time datetime="2022-01-1
                       a city trip or a spacious SUV for a family vacation. The
-                      prices are competitive, and the customer service is
+                      prices are competitive, and the customer4">January 14, 2022</time>
+                          </div>
+                          <div class=" service is
                       exceptional. Vehigo has become my go-to choice for all my
                       car rental needs.”
                     </p>
@@ -789,116 +909,204 @@
               </div>
             </div>
           </div>
-        </section>
+        </sectioncomments">
+                            <ion-icon name="chatbubble-ellipses-outline"></ion-icon>
+                            <data value="114">114</data>
+                          </div>
+                        </div>
+                        <div class=">
 
 
-        <!-- 
+        <!--
         - #BLOG
       -->
-
-
         <section class="section blog" id="blog">
           <div class="container">
             <div class="blog-wrapper">
-              <h2 class="h2 section-title">Our Blog</h2>
+              <h2 class="card-author">
+                          <img src="./assets/images/author.jpg" class="author-img" />
+                          <div class="author-name">Benialla Dsouza</div>
+                        </div>
+                      </div>h2 section-title">Our Blog</h2>
 
-              <button class="left-arrow">&#10094;</button>
+              <button class="left-arrow">
+                &#10094
+                    </div>
+                  </li>
+                  <!-- BLOG 2 -->
+                  <li>
+                    <div class="blog-;
+              </button>
 
               <ul class="blog-list has-scrollbar">
 
-                <!-- BLOG 1 -->
+                <!-- BLOG card">
+                      <figure class="card-banner">
+                        <a href="blogs/blog2.html1 -->
 
                 <li>
                   <div class="blog-card">
                     <figure class="card-banner">
+                          <img
+                            src="./assets/images/blog-2.jpg"
+                            alt="What">
                       <a href="blogs/blog1.html">
                         <img
-                          src="./assets/images/blog-1.jpg"
+                          src="./assets/ cars are most vulnerable"
+                            loading="lazy"
+                            class="w-100"
+                          />images/blog-1.jpg"
                           alt="Opening of new offices of the company"
-                          loading="lazy"
+                          loading="
+                        </a>
+                        <a href="blogs/blog2.html" class="btn card-badge">Repairlazy"
                           class="w-100"
                         />
                       </a>
-                      <a href="blogs/blog1.html" class="btn card-badge"
+                      <a href="</a>
+                      </figure>
+                      <div class="card-content">
+                        <h3 class="hblogs/blog1.html" class="btn card-badge"
                         >Company</a
                       >
-                    </figure>
+3 card-title">
+                          <a href="blogs/blog2.html">What cars are most vulnerable</a>                    </figure>
 
                     <div class="card-content">
-                      <h3 class="h3 card-title">
+                      <h3 class="h3 card
+                        </h3>
+                        <div class="card-meta">
+                          <div class="publish-date">
+-title">
                         <a href="blogs/blog1.html"
-                          >Opening of new offices of the company</a
+                          >Opening of new offices of                            <ion-icon name="time-outline"></ion-icon>
+                            <time datetime="202 the company</a
                         >
                       </h3>
                       <div class="card-meta">
-                        <div class="publish-date">
+                        <div2-01-14">January 14, 2022</time>
+                          </div> class="publish-date">
                           <ion-icon name="time-outline"></ion-icon>
-                          <time datetime="2022-01-14">January 14, 2022</time>
+                          
+                          <div class="comments">
+                            <ion-icon name="chatbubble-ellipses-outline<time datetime="2022-01-14">January 14, 202"></ion-icon>
+                            <data value="114">114</data>
+                          </div>2</time>
                         </div>
                         <div class="comments">
 
-                          <ion-icon name="chatbubble-ellipses-outline"></ion-icon>
+                          <ion-icon name="chat
+                        </div>
+                        <div class="card-author">
+                          <img src="./assets/images/authorbubble-ellipses-outline"></ion-icon>
 
-                          <data value="114">114</data>
+                          <data value="114">11.jpg" class="author-img" />
+                          <div class="author-name">Siddharth Menon4</data>
                         </div>
                       </div>
                       <div class="card-author">
 
-                        <img
+                        <img</div>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  <!-- BLOG 3 -->
+                  <li>
+
                           src="./assets/images/author.jpg"
                           class="author-img"
                         />
 
-                        <div class="author-name">Benialla Dsouza</div>
+                    <div class="blog-card">
+                      <figure class="card-banner">
+                        <a href                        <div class="author-name">Benialla Dsouza</div>
                       </div>
                     </div>
                   </div>
-                </li>
+="blogs/blog3.html">
+                          <img
+                            src="./assets/images/blog-3.                </li>
 
 
                 <!-- BLOG 2 -->
 
                 <li>
                   <div class="blog-card">
-                    <figure class="card-banner">
+                    <figure classjpg"
+                            alt="Statistics showed which average age"
+                            loading="lazy"
+                            class="w-="card-banner">
                       <a href="blogs/blog2.html">
                         <img
-                          src="./assets/images/blog-2.jpg"
+                          100"
+                          />
+                        </a>
+                        <a href="blogs/blog3.html" classsrc="./assets/images/blog-2.jpg"
                           alt="What cars are most vulnerable"
-                          loading="lazy"
+                          ="btn card-badge">Cars</a>
+                      </figure>
+                      <div class="card-content">
+                        <hloading="lazy"
                           class="w-100"
                         />
                       </a>
-                      <a href="blogs/blog2.html" class="btn card-badge"
+                      <a3 class="h3 card-title">
+                          <a href="blogs/blog3.html">Statistics showed href="blogs/blog2.html" class="btn card-badge"
                         >Repair</a
-                      >
+                       which average age</a>
+                        </h3>
+                        <div class="card-meta">
+                          <div class="publish>
                     </figure>
 
                     <div class="card-content">
-                      <h3 class="h3 card-title">
+                      <h3 class="h-date">
+                            <ion-icon name="time-outline"></ion-icon>
+                            <time datetime3 card-title">
 
-                        <a href="blogs/blog2.html">What cars are most vulnerable</a>
+                        <a href="blogs/blog2.html">What cars are most vulnerable</a>="2022-01-14">January 14, 2022</time
 
                       </h3>
                       <div class="card-meta">
                         <div class="publish-date">
-                          <ion-icon name="time-outline"></ion-icon>
-                          <time datetime="2022-01-14">January 14, 2022</time>
+>
+                          </div>
+                          <div class="comments">
+                            <ion-icon name="chatbubble-ell                          <ion-icon name="time-outline"></ion-icon>
+                          <time datetime="202ipses-outline"></ion-icon>
+                            <data value="114">114</data2-01-14">January 14, 2022</time>
+                        </div>>
+                          </div>
                         </div>
+                        <div class="card-author">
+                          <img src="./assets
                         <div class="comments">
 
                           <ion-icon
-                            name="chatbubble-ellipses-outline"
+                            name="chatbubble-ellipses-outline"/images/author.jpg" class="author-img" />
+                          <div class="author-name">
                           ></ion-icon>
 
                           <data value="114">114</data>
+Priya Deshmukh</div>
                         </div>
+                      </div>
+                    </div>
+                  </li>
+                  <!-- BLOG 4                        </div>
                       </div>
                       <div class="card-author">
 
-                        <img src="./assets/images/author.jpg" class="author-img" />
+                        <img src="./assets/images -->
+                  <li>
+                    <div class="blog-card">
+                      <figure class="card-banner">/author.jpg" class="author-img" />
 
-                        <div class="author-name">Siddharth Menon</div>
+                        <div class="author-name">Sidd
+                        <a href="blogs/blog4.html">
+                          <img
+                            src="./assets/imagesharth Menon</div>
                       </div>
                     </div>
                   </div>
@@ -908,47 +1116,83 @@
 
                 <!-- BLOG 3 -->
 
-                <li>
+                /blog-4.jpg"
+                            alt="What's required when renting a car?"
+                            loading="lazy"<li>
                   <div class="blog-card">
                     <figure class="card-banner">
-                      <a href="blogs/blog3.html">
+                      <
+                            class="w-100"
+                          />
+                        </a>
+                        <a href="blogs/a href="blogs/blog3.html">
                         <img
-                          src="./assets/images/blog-3.jpg"
+                          src="./assets/images/blog-blog4.html" class="btn card-badge">Cars</a>
+                      </figure>
+                      <div class3.jpg"
                           alt="Statistics showed which average age"
                           loading="lazy"
-                          class="w-100"
+                          class="="card-content">
+                        <h3 class="h3 card-title">
+                          <a href="w-100"
                         />
                       </a>
-                      <a href="blogs/blog3.html" class="btn card-badge">Cars</a>
+                      <a href="blogs/blog3.htmlblogs/blog4.html">What's required when renting a car?</a>
+                        </h3>
+                        <div" class="btn card-badge">Cars</a>
                     </figure>
 
-                    <div class="card-content">
+                    <div class="card-content class="card-meta">
+                          <div class="publish-date">
+                            <ion-icon name="">
                       <h3 class="h3 card-title">
-                        <a href="blogs/blog3.html"
+                        <a href="blogs/blog3time-outline"></ion-icon>
+                            <time datetime="2022-01-14.html"
                           >Statistics showed which average age</a
                         >
                       </h3>
-                      <div class="card-meta">
+                      <div class">January 14, 2022</time>
+                          </div>
+                          <div class="comments="card-meta">
                         <div class="publish-date">
-                          <ion-icon name="time-outline"></ion-icon>
-                          <time datetime="2022-01-14">January 14, 2022</time>
+                          <ion-icon name="time">
+                            <ion-icon name="chatbubble-ellipses-outline"></ion-icon>
+                            -outline"></ion-icon>
+                          <time datetime="2022-01-14"><data value="114">114</data>
+                          </div>
                         </div>
-                        <div class="comments">
+                        <divJanuary 14, 2022</time>
+                        </div>
+                        <div class="comments"> class="card-author">
+                          <img src="./assets/images/author.jpg" class="author-
 
                           <ion-icon
                             name="chatbubble-ellipses-outline"
                           ></ion-icon>
+img" />
+                          <div class="author-name">Ravi Khanna</div>
+                        </div>
+                      </div>
                           <data value="114">114</data>
                         </div>
                       </div>
-                      <div class="card-author">
+                      <                    </div>
+                  </li>
+                  <!-- BLOG 5 -->
+                  <li>
+                    <div class="blog-carddiv class="card-author">
 
                         <img
                           src="./assets/images/author.jpg"
-                          class="author-img"
+">
+                      <figure class="card-banner">
+                        <a href="blogs/blog5.html">                          class="author-img"
                         />
 
-                        <div class="author-name">Priya Deshmukh</div>
+                        <div class="author-name">Priya Deshm
+                          <img
+                            src="./assets/images/blog-5.jpg"
+                            alt="New rulesukh</div>
                       </div>
                     </div>
                   </div>
@@ -956,220 +1200,701 @@
 
                 <!-- BLOG 4 -->
 
-                <li>
+                <li> for handling our cars"
+                            loading="lazy"
+                            class="w-100"
+                          />
                   <div class="blog-card">
                     <figure class="card-banner">
-                      <a href="blogs/blog4.html">
+                      <a
+                        </a>
+                        <a href="blogs/blog5.html" class="btn card-badge">Company href="blogs/blog4.html">
                         <img
-                          src="./assets/images/blog-4.jpg"
+                          src="./assets/images/blog-4</a>
+                      </figure>
+                      <div class="card-content">
+                        <h3 class="h.jpg"
                           alt="What's required when renting a car?"
                           loading="lazy"
-                          class="w-100"
+                          3 card-title">
+                          <a href="blogs/blog5.html">New rules for handling our carsclass="w-100"
                         />
                       </a>
-                      <a href="blogs/blog4.html" class="btn card-badge">Cars</a>
+                      <a href="blogs/blog4</a>
+                        </h3>
+                        <div class="card-meta">
+                          <div class="publish-date">.html" class="btn card-badge">Cars</a>
                     </figure>
 
-                    <div class="card-content">
+                    <div class="card
+                            <ion-icon name="time-outline"></ion-icon>
+                            <time datetime="20-content">
                       <h3 class="h3 card-title">
-                        <a href="blogs/blog4.html"
+                        <a href="blogs/22-01-14">January 14, 2022</time>
+                          blog4.html"
                           >What's required when renting a car?</a
                         >
-                      </h3>
+                      </h3></div>
+                          <div class="comments">
+                            <ion-icon name="chatbubble-ellipses-
                       <div class="card-meta">
                         <div class="publish-date">
-                          <ion-icon name="time-outline"></ion-icon>
-                          <time datetime="2022-01-14">January 14, 2022</time>
+                          <ionoutline"></ion-icon>
+                            <data value="114">114</data>
+                          -icon name="time-outline"></ion-icon>
+                          <time datetime="2022-0</div>
                         </div>
-                        <div class="comments">
+                        <div class="card-author">
+                          <img src="./assets/images/1-14">January 14, 2022</time>
+                        </div>
+                        <author.jpg" class="author-img" />
+                          <div class="author-name">Shruti Yadavdiv class="comments">
 
                           <ion-icon
-                            name="chatbubble-ellipses-outline"
+                            name="chatbubble-ellipses-outline"</div>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+                <button class="right-
                           ></ion-icon>
 
                           <data value="114">114</data>
-                        </div>
+arrow">&#10095;</button>
+              </div>
+            </div>
+        </section>
+
+        <!--                        </div>
                       </div>
                       <div class="card-author">
 
                         <img
-                          src="./assets/images/author.jpg"
+                          src="./assets
+        - #FILTER & SORT
+        -->
+        <section class="filter-sort-section">
+            /images/author.jpg"
                           class="author-img"
                         />
 
-                        <div class="author-name">Ravi Khanna</div>
+                        <div class="<div class="container">
+              <h2 class="h2 section-title">Filter and Sort Cars</h2>author-name">Ravi Khanna</div>
                       </div>
                     </div>
                   </div>
                 </li>
 
 
-                <!-- BLOG 5 -->
+                <!-- BLOG 
+              <form id="filter-sort-form">
+                <!-- Filter by Car Type -->
+                <div class="input5 -->
 
                 <li>
                   <div class="blog-card">
-                    <figure class="card-banner">
+                    <figure class="card-banner-wrapper">
+                  <label for="filter-car-type" class="input-label">Car Type</">
                       <a href="blogs/blog5.html">
                         <img
-                          src="./assets/images/blog-5.jpg"
+                          src="./assets/label>
+                  <select name="filter-car-type" id="filter-car-type">
+                    images/blog-5.jpg"
                           alt="New rules for handling our cars"
-                          loading="lazy"
+                          loading="lazy<option value="">All</option>
+                    <option value="SUV">SUV</option>
+                    <option"
                           class="w-100"
                         />
                       </a>
-                      <a href="blogs/blog5.html" class="btn card-badge"
+                      <a href="blogs value="Sedan">Sedan</option>
+                    <option value="Hatchback">Hatchback<//blog5.html" class="btn card-badge"
                         >Company</a
                       >
-                    </figure>
+                    option>
+                  </select>
+                </div>
+                <!-- Filter by Location -->
+                <div class="input</figure>
 
                     <div class="card-content">
-                      <h3 class="h3 card-title">
+                      <h3 class="h3 card--wrapper">
+                  <label for="filter-location" class="input-label">Location</label>
+title">
                         <a href="blogs/blog5.html"
-                          >New rules for handling our cars</a
+                          >New rules for handling our cars                  <select name="filter-location" id="filter-location">
+                    <option value="">All</option</a
                         >
                       </h3>
                       <div class="card-meta">
-                        <div class="publish-date">
+                        <div class=">
+                    <option value="Bhopal">Bhopal</option>
+                    <option value="Indpublish-date">
                           <ion-icon name="time-outline"></ion-icon>
-                          <time datetime="2022-01-14">January 14, 2022</time>
+                          <timeore">Indore</option>
+                    <option value="Ujjain">Ujjain</option>
+ datetime="2022-01-14">January 14, 2022</                  </select>
+                </div>
+                <!-- Sort by Price -->
+                <div class="input-wrapper">time>
                         </div>
                         <div class="comments">
 
                           <ion-icon
-                            name="chatbubble-ellipses-outline"
+                            name="chat
+                  <label for="sort-price" class="input-label">Sort by Price</label>
+                  bubble-ellipses-outline"
                           ></ion-icon>
 
-                          <data value="114">114</data>
+                          <data value="114<select name="sort-price" id="sort-price">
+                    <option value="">None</option>">114</data>
                         </div>
                       </div>
                       <div class="card-author">
 
-                        <img
+
+                    <option value="low-to-high">Low to High</option>
+                    <option value="                        <img
                           src="./assets/images/author.jpg"
                           class="author-img"
-                        />
+high-to-low">High to Low</option>
+                  </select>
+                </div>
+                <!-- Sort                        />
 
                         <div class="author-name">Shruti Yadav</div>
                       </div>
                     </div>
-                  </div>
+                   by Model Year -->
+                <div class="input-wrapper">
+                  <label for="sort-year" class="input</div>
                 </li>
               </ul>
 
-              <button class="right-arrow">&#10095;</button>
+              <button class="right-arrow">
+                &#1009-label">Sort by Model Year</label>
+                  <select name="sort-year" id="sort-5;
+              </button>
             </div>
           </div>
         </section>
+
+        <!-- Filtering and Sortingyear">
+                    <option value="">None</option>
+                    <option value="new-to-old"> Section -->
+        <section class="filter-sort-section">
+          <div class="container">
+            New to Old</option>
+                    <option value="old-to-new">Old to New</option><h2 class="h2 section-title">Filter and Sort Cars</h2>
+
+            <form id="filter-
+                  </select>
+                </div>
+                <!-- Sort by Ratings -->
+                <div class="input-wrappersort-form">
+              <!-- Filter by Car Type -->
+              <div class="input-wrapper">
+                ">
+                  <label for="sort-rating" class="input-label">Sort by Ratings</label>
+<label for="filter-car-type" class="input-label">Car Type</label>
+                <                  <select name="sort-rating" id="sort-rating">
+                    <option value="">None</optionselect name="filter-car-type" id="filter-car-type">
+                  <option value="">All</option>
+                  <option value="SUV">SUV</option>
+                  <option value="Sedan">>
+                    <option value="high-to-low">High to Low</option>
+                    <option valueSedan</option>
+                  <option value="Hatchback">Hatchback</option>
+                </="low-to-high">Low to High</option>
+                  </select>
+                </div>
+                <select>
+              </div>
+
+              <!-- Filter by Location -->
+              <div class="input-wrapper">
+                button type="submit" class="btn">Apply</button>
+              </form>
+            </div>
+        </<label for="filter-location" class="input-label">Location</label>
+                <select name="section>
+      </article>
+    </main>
+
+    <!--
+    - #FOOTER
+    -->filter-location" id="filter-location">
+                  <option value="">All</option>
+                  <option
+    <footer class="footer">
+        <div class="container">
+          <div class="footer-top"> value="Bhopal">Bhopal</option>
+                  <option value="Indore">Indore</
+            <div class="footer-brand">
+              <a href="#" class="logo">
+                <imgoption>
+                  <option value="Ujjain">Ujjain</option>
+                </select>
+ src="src/assets/images/vehigologo.png" alt="VehiGo logo">
+              </a>
+                            </div>
+
+              <!-- Sort by Price -->
+              <div class="input-wrapper">
+                <label for<p class="footer-text">
+                Search for cheap rental cars in Madhya Pradesh. We offers our
+                ="sort-price" class="input-label">Sort by Price</label>
+                <select name="sortcustomers an attractive and fun selection of vehicles as well as an opportunity to rent their cars when not in use.
+              -price" id="sort-price">
+                  <option value="">None</option>
+                  <option value</p>
+            </div>
+            <ul class="footer-list">
+              <li>
+                <p class="low-to-high">Low to High</option>
+                  <option value="high-to-low="footer-list-title">Company</p>
+              </li>
+              <li>
+                <a href="src/pages/">High to Low</option>
+                </select>
+              </div>
+
+              <!-- Sort by Model Year -->
+about.html" class="footer-link">About us</a>
+              </li>
+              <li>
+                <a href              <div class="input-wrapper">
+                <label for="sort-year" class="input-label="#" class="footer-link">Pricing plans</a>
+              </li>
+              <li>
+                <a href="blog.">Sort by Model Year</label>
+                <select name="sort-year" id="sort-year">html" class="footer-link">Our blog</a>
+              </li>
+              <li>
+                <a href="Contact
+                  <option value="">None</option>
+                  <option value="new-to-old">New toUs.html" class="footer-link">Contacts</a>
+              </li>
+            </ul>
+            <ul class="footer-list Old</option>
+                  <option value="old-to-new">Old to New</option>
+                ">
+              <li>
+                <p class="footer-list-title">Support</p>
+              </li>
+</select>
+              </div>
+
+              <!-- Sort by Ratings -->
+              <div class="input-wrapper">
+              <li>
+                <a href="#" class="footer-link">Help center</a>
+              </li>
+              <li>
+                <label for="sort-rating" class="input-label">Sort by Ratings</label>
+                <                <a href="src/pages/Askaques.html" class="footer-link">Ask a questionselect name="sort-rating" id="sort-rating">
+                  <option value="">None</option>
+</a>
+              </li>
+              <li>
+                <a href="privacypolicy.html" class="footer-                  <option value="high-to-low">High to Low</option>
+                  <option value="lowlink">Privacy policy</a>
+              </li>
+              <li>
+                <a href="tandc.html" class="-to-high">Low to High</option>
+                </select>
+              </div>
+
+              <button typefooter-link">Terms & conditions</a>
+              </li>
+            </ul>
+          </div>
+          <div class="footer-bottom">="submit" class="btn">Apply</button>
+            </form>
+          </div>
+        </section>
+            <ul class="social-list">
+              <li>
+                <a href="#" class="social-link
       </article>
     </main>
 
 
-    <!-- 
+    <!--
     - #FOOTER
   -->
 
+    <footer class"><ion-icon name="logo-facebook"></ion-icon></a>
+              </li>
+              <li>
+                <a="footer">
+      <div class="container">
+        <div class="footer-top">
+          < href="https://www.instagram.com/akashh_shelke/" class="social-link" target="_blankdiv class="footer-brand">
+            <a href="#" class="logo">
+              <img src="src/assets/"><ion-icon name="logo-instagram"></ion-icon></a>
+              </li>
+              <li>
+                <images/vehigologo.png" alt="VehiGo logo">
+            </a>
 
-<footer class="footer">
-  <div class="container" style="max-width: 1200px; margin: auto;">
-    
-    <!-- Top Section -->
-    <div class="footer-top" style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 2.5rem;">
-      
-      <!-- Brand Section -->
-      <div class="footer-brand" style="flex: 1 1 300px;">
-        <a href="#" class="logo">
-          <img src="./assets/images/vehigologo.png" alt="VehiGo logo" style="width: 160px;" />
-        </a>
-        <p class="footer-text" style="margin-top: 1rem; line-height: 1.6;">
-          🚗 <strong>Find affordable rental cars across Madhya Pradesh!</strong><br>
-          Choose from a wide range of vehicles, or rent out your own when not in use. We make car rental easy, accessible, and efficient for everyone.
-        </p>
-      </div>
+            <p class="a href="https://x.com/akashshelke07" class="social-link" target="_blank"><footer-text">
+              Search for cheap rental cars in Madhya Pradesh. We offers our
+              customers an attractive and fun selection ofion-icon name="logo-twitter"></ion-icon></a>
+              </li>
+              <li>
+                <a vehicles as well as an opportunity to rent their cars when not
+              in use.
+            </p>
+          </div>
 
-      <!-- Company Section -->
-      <ul class="footer-list">
-        <li><p class="footer-list-title">Company</p></li>
-        <li><a href="#" class="footer-link" >About Us</a></li>
-        <li><a href="#" class="footer-link" >Pricing Plans</a></li>
-        <li><a href="#" class="footer-link" >Our Blog</a></li>
-        <li><a href="./ContactUs.html" class="footer-link" >Contact Us</a></li>
-      </ul>
+          <ul class="footer-list">
+            <li>
+              <p class="footer-list-title">Company</p>
+            </li>
 
-      <!-- Support Section -->
-      <ul class="footer-list">
-        <li><p class="footer-list-title">Support</p></li>
-        <li><a href="#" class="footer-link" >Help Center</a></li>
-        <li><a href="./src/pages/Askaques.html" class="footer-link" >Ask a Question</a></li>
-        <li><a href="./privacypolicy.html" class="footer-link" >Privacy Policy</a></li>
-        <li><a href="./src/pages/tandc.html" class="footer-link">Terms & Conditions</a></li>
-      </ul>
-    </div>
+            <li>
+              <a href="src/pages/about.html" class="footer- href="https://www.linkedin.com/in/akash-shelke-5b152025link">About us</a>
+            </li>
 
-    <!-- Bottom Section -->
-    <div class="footer-bottom" >
-      
-      <!-- Social Icons -->
-<footer style="background-color: #e3f2fd; padding: 20px 0; text-align: center;">
-  <div class="social-icons" style="margin-bottom: 10px;">
-    <a href="https://www.linkedin.com" target="_blank" style="margin: 0 10px; font-size: 24px; color: #0077b5;"><i class="fab fa-linkedin"></i></a>
-    <a href="https://www.twitter.com" target="_blank" style="margin: 0 10px; font-size: 24px; color: #1da1f2;"><i class="fab fa-twitter"></i></a>
-    <a href="https://www.instagram.com" target="_blank" style="margin: 0 10px; font-size: 24px; color: #e1306c;"><i class="fab fa-instagram"></i></a>
-    <a href="https://www.facebook.com" target="_blank" style="margin: 0 10px; font-size: 24px; color: #3b5998;"><i class="fab fa-facebook"></i></a>
-  </div>
-  <p style="font-size: 14px; color: #333;">© 2023 Vehigo — All rights reserved.</p>
-</footer>
+            <li>
+              <a href="#" class="footer-link">Pricing9/?originalSubdomain=in" class="social-link" target="_blank"><ion-icon name="logo plans</a>
+            </li>
 
+            <li>
+              <a href="blog.html" class="footer-link">Our-linkedin"></ion-icon></a>
+              </li>
+              <li>
+                  <a href="https://github.com/InnoWebLabs/Vehigo?tab=readme-ov-file" class="social-link" target="_blank"><ion-icon name="logo-github"></ion-icon></a>
+              </li>
+              <li>
+                 blog</a>
+            </li>
 
+            <li>
+              <a href="ContactUs.html" class="footer-link">Contacts<a href="#" class="social-link"><ion-icon name="mail-outline"></ion-icon></a></a>
+            </li>
+          </ul>
 
+          <ul class="footer-list">
+            <li>
+              <p
+              </li>
+            </ul>
+            <p class="copyright">
+              &copy; 2023 class="footer-list-title">Support</p>
+            </li>
 
+            <li>
+              <a href="#" <a href="#">VehiGo</a>. All Rights Reserved.
+            </p>
+          </div>
+        </div>
+    </footer> class="footer-link">Help center</a>
+            </li>
 
-    <script src="./assets/js/script.js"></script>
-    <!-- Removed dark mode script -->
+            <li>
+              <a href="src/pages
 
+    <!-- Back to Top Button -->
+    <a href="#" style="
+      position: fixed;
+      /Askaques.html" class="footer-link">Ask a question</a>
+            </li>
+
+            <li>
+bottom: 30px;
+      right: 30px;
+      background-color: #0              <a href="privacypolicy.html" class="footer-link">Privacy policy</a>
+            </li>07BFF;
+      color: white;
+      border-radius: 50%;
+      width
+
+            <li>
+              <a href="tandc.html" class="footer-link">Terms & conditions</a>
+            </li>
+          </ul>
+
+          <ul class="footer-list">
+            <li>
+              <p class: 50px;
+      height: 50px;
+      display: flex;
+      align="footer-list-title"> </p>
+            </li>
+          </ul>
+        </div>
+
+        <div class="footer-bottom">
+          <ul class="social-list">
+            <li>
+              <a href="#"-items: center;
+      justify-content: center;
+      text-decoration: none;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0. class="social-link">
+                <ion-icon name="logo-facebook"></ion-icon>
+              </a>
+            </li>
+
+            <li>
+              <a href="https://www.instagram.com/akashh_3);
+      z-index: 999;
+      transition: background-color 0.3s;
+    " onmouseover="this.style.backgroundColor='#0056b3'" onmouseout="this.style.backgroundColor='#007BFF'">
+      <ion-icon name="chevron-up-shelke/" class="social-link" target="_blank">
+                <ion-icon name="logo-instagramoutline" style="font-size: 24px;"></ion-icon>
+    </a>
+
+    <!--"></ion-icon>
+              </a>
+            </li>
+
+            <li>
+              <a href="https://x.
+    - custom js link
+    -->
+    <script src="src/assets/js/script.jscom/akashshelke07" class="social-link" target="_blank">
+                <ion-icon name=""></script>
+    <script src="./scripts/logout.js"></script>
+
+    <!--
+    - ionlogo-twitter"></ion-icon>
+              </a>
+            </li>
+
+            <li>
+              <a href="httpsicon link
+    -->
+    <script type="module" src="https://unpkg.com/ionicons@5://www.linkedin.com/in/akash-shelke-5b1520259/?original.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule srcSubdomain=in" class="social-link" target="_blank">
+                <ion-icon name="logo="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script-linkedin"></ion-icon>
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class=">
+
+    <!--
+    - Custom Scripts for Dynamic Content and Filtering
+    -->
     <script>
-      // Dynamically set the copyright year
-      document.addEventListener('DOMContentLoaded', function() {
-        var yearSpan = document.getElementById('copyright-year');
-        if (yearSpan) {
-          yearSpan.textContent = new Date().getFullYear();
-        }
+      documentsocial-link">
+                <ion-icon name="logo-github"></ion-icon>
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class="social-link">
+                <ion-icon name.addEventListener('DOMContentLoaded', () => {
+        // ========== Supabase Car Data Loading ==========
+        const { createClient } =="mail-outline"></ion-icon>
+              </a>
+            </li>
+
+            <li>
+              <a href=" supabase;
+        const SUPABASE_URL = 'https://lpqxhwvjafhoxlhldmadhttps://github.com/InnoWebLabs/Vehigo?tab=readme-ov-file" class="social-link" target="_blank">
+                <ion-icon name="logo-github"></ion-icon>
+              .supabase.co';
+        const SUPABASE_KEY = 'eyJhbGciOiJIUzI1Ni</a>
+            </li>
+          </ul>
+
+          <p class="copyright">
+            &copy; 202IsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYm3 <a href="#">VehiGo</a> Contact us through
+          </p>
+        </div>
+      </div>
+    </footer>FzZSIsInJlZiI6ImxwcXhod3ZqYWZob3hsaGxkbWFkIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDUz
+
+    <!--
+    - custom js link
+  -->
+    <script src="src/assets/js/OTEwOTUsImV4cCI6MjA2MDk2NzA5NX0.76inHscript.js"></script>
+
+    <!--
+    - ionicon link
+  -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.5xouMvUl4jaUJH_1OI7Kesc9DFpeHpKHoIt2As';
+esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+    <!-- Ensure Images are Displayed Properly -->
+    <        const supabaseClient = createClient(SUPABASE_URL, SUPABASE_KEY);
+
+        const fetchAndDisplayscript>
+      document.addEventListener('DOMContentLoaded', () => {
+        const featuredCarImages = document.querySelectorAll('.Cars = async () => {
+          try {
+            const { data: cars, error } = await supabaseClientfeatured-car-card img');
+        featuredCarImages.forEach(img => {
+          if (!img..from('Cars').select('*');
+            if (error) {
+              console.error('Error fetching cars:',src) {
+            img.src = 'src/assets/images/default-car.jpg'; // Fallback image
+ error.message);
+              return;
+            }
+
+            const featuredCarList = document.getElementById('featured-          }
+        });
       });
     </script>
 
-    <script src="./scripts/logout.js"></script>
-    <script
-      type="module"
-      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
-    ></script>
-    <script
-      nomodule
-      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
-    ></script>
+    <!-- Filtering and Sorting JavaScript -->
+    <car-list');
+            featuredCarList.innerHTML = '';
 
+            cars.forEach(car => {
+              script>
+      document.getElementById('filter-sort-form').addEventListener('submit', function(event) {
+        event.preventDefault();
 
+        const carTypeFilter = document.getElementById('filter-car-type').value;
+        constconst carCard = document.createElement('li');
+              carCard.innerHTML = `
+                <div class="featured-car-card">
+                  <figure class="card-banner">
+                    <img src="${car. locationFilter = document.getElementById('filter-location').value;
+        const sortPrice = document.getElementById('sortpicture}" alt="${car.Car}" loading="lazy" width="440" height="300"-price').value;
+
+        const carCards = document.querySelectorAll('.featured-car-card');
+
+        car class="w-100" onerror="this.onerror=null; this.src='https://via.Cards.forEach(card => {
+          const cardType = card.querySelector('.card-item-text').textContentplaceholder.com/440x300?text=No+Image';">
+                  </figure>
+                  <div class="card-content">
+                    <div class="card-title-wrapper">
+                      ; // This is a simplification
+          const cardLocation = card.querySelector('.card-title a').textContent; // This<h3 class="h3 card-title"><a href="#">${car.Car}</a></h3>
+                    </div> is a simplification
+          const cardPrice = parseInt(card.querySelector('.card-price strong').textContent.replace('₹', ''));
+
+          let isVisible = true;
+
+          if (carTypeFilter && !cardType.
+                    <ul class="card-list">
+                      <li class="card-list-item">
+                        includes(carTypeFilter)) {
+            isVisible = false;
+          }
+
+          if (locationFilter && !<ion-icon name="people-outline"></ion-icon>
+                        <span class="card-item-cardLocation.includes(locationFilter)) {
+            isVisible = false;
+          }
+
+          card.parentElement.style.displaytext">${car["Number of people"]} People</span>
+                      </li>
+                      <li class="card-list-item">
+                        <ion-icon name="flash-outline"></ion-icon>
+                        <span class="card = isVisible ? 'block' : 'none';
+        });
+
+        if (sortPrice) {
+          const carList = document.querySelector('.featured-car-list');
+          const sortedCards = Array.from(carList-item-text">${car.Fuel}</span>
+                      </li>
+                      <li class="card-list-item">
+                        <ion-icon name="speedometer-outline"></ion-icon>
+                        <span class=".children).sort((a, b) => {
+            const priceA = parseInt(a.querySelector('.card-pricecard-item-text">${car.Mileage}</span>
+                      </li>
+                      <li class="card-list- strong').textContent.replace('₹', ''));
+            const priceB = parseInt(b.querySelector('.card-item">
+                        <ion-icon name="hardware-chip-outline"></ion-icon>
+                        <spanprice strong').textContent.replace('₹', ''));
+
+            return sortPrice === 'low-to-high' class="card-item-text">${car["Gear Type"]}</span>
+                      </li>
+                    </ul>
+                    <div class=" ? priceA - priceB : priceB - priceA;
+          });
+
+          
+          sortedCards.forEachcard-price-wrapper">
+                      <p class="card-price"><strong>₹${car.Price}</strong>(card => carList.appendChild(card));
+        }
+      });
+    </script>
+    
+ / hour</p>
+                      <button class="btn" data-car-id="${car.id}">Rent now    <script src="./scripts/logout.js"></script>
     
     <!-- Back to Top Button -->
-    <a href="./index.html" style="
-  position: fixed;
-  bottom: 30px;
-  right: 30px;
-  background-color: #007BFF;
-  color: white;
-  border-radius: 50%;
-  width: 50px;
-  height: 50px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-decoration: none;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-  z-index: 999;
-  transition: background-color 0.3s;
-" onmouseover="this.style.backgroundColor='#0056b3'" onmouseout="this.style.backgroundColor='#007BFF'">
-  <ion-icon name="chevron-up-outline" style="font-size: 24px;"></ion-icon>
-</a>
+</button>
+                    </div>
+                  </div>
+                </div>
+              `;
+              featuredCarList.appendChild(car    <a href="./index.html" style="
+      position: fixed;
+      bottom: 30Card);
+            });
+          } catch (err) {
+            console.error('Unexpected error:', err);px;
+      right: 30px;
+      background-color: #007BFF;
+          }
+        };
 
-    
+        fetchAndDisplayCars();
+
+        // ========== Filtering and Sorting Logic ==========
+        document
+      color: white;
+      border-radius: 50%;
+      width: 50px.getElementById('filter-sort-form').addEventListener('submit', function(event) {
+          event.preventDefault();;
+      height: 50px;
+      display: flex;
+      align-items: center;
+
+          const carTypeValue = document.getElementById('filter-car-type').value;
+          const locationValue = document
+      justify-content: center;
+      text-decoration: none;
+      box-shadow: 0.getElementById('filter-location').value;
+          const sortPriceValue = document.getElementById('sort-price').value;
+
+ 4px 8px rgba(0, 0, 0, 0.3);
+      z          const carCards = document.querySelectorAll('.featured-car-card');
+
+          carCards.forEach(card =>-index: 999;
+      transition: background-color 0.3s;
+    " {
+            const cardType = card.querySelector('.card-item-text').textContent;
+            const cardLocation onmouseover="this.style.backgroundColor='#0056b3'" onmouseout="this.style.backgroundColor='#007BFF'">
+      <ion-icon name="chevron-up-outline" style="font = card.querySelector('.card-title a').textContent;
+            
+            let isVisible = true;
+            if (car-size: 24px;"></ion-icon>
+    </a>
   </body>
 </html>
+TypeValue && !cardType.includes(carTypeValue)) {
+              isVisible = false;
+            }
+            if (locationValue && !cardLocation.includes(locationValue)) {
+              isVisible = false;
+            }
+            card.style.display = isVisible ? 'block' : 'none';
+          });
 
+          if (sortPriceValue) {
+            const carList = document.querySelector('.featured-car-list');
+            const sortedCards = Array.from(carList.children).sort((a, b) => {
+              const priceA = parseInt(a.querySelector('.card-price strong').textContent.replace('₹', ''));
+              const priceB = parseInt(b.querySelector('.card-price strong').textContent.replace('₹', ''));
+              return sortPriceValue === '```low-to-high' ? priceA - priceB : priceB - priceA;
+            });
+            carList.innerHTML = '';
+            sortedCards.forEach(card => carList.appendChild(card));
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

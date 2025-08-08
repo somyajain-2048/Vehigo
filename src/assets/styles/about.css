@@ -290,6 +290,16 @@ body.dark-mode .footer-link {
   text-align: start;
 }
 
+.testinomals-list {
+  display: flex;
+  gap: 20px;
+  scroll-snap-type: inline mandatory;
+  overflow-x: auto  ;
+  overflow-y: hidden;
+  padding: 20px 0px;
+  padding-bottom: 40px;
+}
+
 /*-----------------------------------*\
   #TEAM SECTION
 \*-----------------------------------*/

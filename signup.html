@@ -4,7 +4,8 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
+
+  <link rel="icon" href="favicon.svg">
   <title>Vehigo - Signup</title>
   
   <!-- CSS files for navbar functionality -->
@@ -274,8 +275,10 @@
     .signup-form-container {
       background: rgba(255, 255, 255, 0.95);
       border-radius: 20px;
+      border-collapse: separate; /* Important for border-radius to work */
+      border-spacing: 0;
+      overflow: hidden; /* Ensures rounded corners apply to contents */
       box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
-      overflow: visible;
       width: 100%;
       max-width: 520px;
       min-height: 700px;
@@ -346,16 +349,19 @@
 
     .form-row {
       display: flex;
-      gap: 15px;
-      margin-bottom: 10px;
+      gap: 8px;
+     
     }
 
     .field {
-      margin-bottom: 25px;
+      /* margin-bottom: 25px; */
       position: relative;
       flex: 1;
     }
-
+.address{
+ margin-top: 28px;
+ 
+}
     .field label {
       display: block;
       margin-bottom: 8px;
@@ -527,7 +533,7 @@
       color: #764ba2;
     }
 
-    .strength-meter {
+    /* .strength-meter {
       margin-top: 8px;
       height: 4px;
       background: #e1e5e9;
@@ -545,7 +551,7 @@
       font-size: 12px;
       margin-top: 4px;
       font-weight: 500;
-    }
+    } */
 
     /* Responsive */
     @media (max-width: 600px) {
@@ -750,115 +756,78 @@
       <!-- Form Content -->
       <div class="form-content">
         <form id="signupForm">
-          <!-- Name Field -->
-          <div class="field" id="fullName">
-            <label for="name">
-              <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M12 12C14.7614 12 17 9.76142 17 7C17 4.23858 14.7614 2 12 2C9.23858 2 7 4.23858 7 7C7 9.76142 9.23858 12 12 12ZM12 14C8.13401 14 1 15.934 1 19.5V22H23V19.5C23 15.934 15.866 14 12 14Z"/>
-              </svg>
-              Full Name
-            </label>
-            <div class="input-group">
-              <input id="name" type="text" class="input" placeholder="Enter your full name" required>
+          <!-- Name Fields -->
+          <div class="form-row">
+            <div class="field" id="firstNameField">
+              <label for="firstName">First Name<span style="color:red">*</span></label>
+              <div class="input-group">
+                <input id="firstName" type="text" class="input" placeholder="Enter your first name" required>
+              </div>
+              <div id="firstNameError" class="error-message"><span></span></div>
             </div>
-            <div id="nameError" class="error-message">
-              <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
-              </svg>
-              <span></span>
+            <div class="field" id="lastNameField">
+              <label for="lastName">Last Name<span style="color:red">*</span></label>
+              <div class="input-group">
+                <input id="lastName" type="text" class="input" placeholder="Enter your last name" required>
+              </div>
+              <div id="lastNameError" class="error-message"><span></span></div>
             </div>
           </div>
 
           <!-- Email and Phone Row -->
-          <div class="form-row" >
+          <div class="form-row">
             <div class="field" id="emailField">
-              <label for="email">
-                <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M12 12.713L.015 3H24L12 12.713zm0 2.574L0 6.713V21h24V6.713L12 15.287z"/>
-                </svg>
-                Email
-              </label>
+              <label for="email">Email<span style="color:red">*</span></label>
               <div class="input-group">
                 <input id="email" type="email" class="input" placeholder="Enter your email" required>
               </div>
-              <div id="emailError" class="error-message">
-                <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
-                </svg>
-                <span></span>
-              </div>
+              <div id="emailError" class="error-message"><span></span></div>
             </div>
+            <div class="field" id="phoneField">
+              <label for="countryCode">Country Code<span style="color:red">*</span></label>
+              <div class="input-group" style="display:flex;gap:4px;">
+                <select id="countryCode" class="input" style="max-width:90px;">
+                  <option value="IN" data-code="91" data-length="10">+91 (IN)</option>
+                  <option value="US" data-code="1" data-length="10">+1 (US)</option>
+                  <option value="UK" data-code="44" data-length="10">+44 (UK)</option>
+                  <option value="AU" data-code="61" data-length="9">+61 (AU)</option>
+                  <option value="CA" data-code="1" data-length="10">+1 (CA)</option>
+                  <option value="DE" data-code="49" data-length="11">+49 (DE)</option>
+                  <option value="FR" data-code="33" data-length="9">+33 (FR)</option>
+                  <option value="SG" data-code="65" data-length="8">+65 (SG)</option>
+                  <!-- Add more as needed -->
+                </select>
+                <input id="phone" type="tel" class="input" placeholder="Phone number" required style="flex:1;">
+              </div>
+              <div id="phoneError" class="error-message"><span></span></div>
+            </div>
+          </div>
 
-            <div class="field">
-              <label for="phone">
-                <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M6.62 10.79C8.06 13.62 10.38 15.94 13.21 17.38L15.41 15.18C15.69 14.9 16.08 14.82 16.43 14.93C17.55 15.3 18.75 15.5 20 15.5C20.55 15.5 21 15.95 21 16.5V20C21 20.55 20.55 21 20 21C10.61 21 3 13.39 3 4C3 3.45 3.45 3 4 3H7.5C8.05 3 8.5 3.45 8.5 4C8.5 5.25 8.7 6.45 9.07 7.57C9.18 7.92 9.1 8.31 8.82 8.59L6.62 10.79Z"/>
-                </svg>
-                Phone
-              </label>
+          <!-- Password Fields -->
+          <div class="form-row">
+            <div class="field" id="passwordField">
+              <label for="password">Password<span style="color:red">*</span></label>
               <div class="input-group">
-                <input id="phone" type="tel" class="input" placeholder="Phone number" required>
+                <input id="password" type="password" class="input" placeholder="Create a strong password" required>
               </div>
-              <div id="phoneError" class="error-message">
-                <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
-                </svg>
-                <span></span>
+              <div id="passwordError" class="error-message"><span></span></div>
+            </div>
+            <div class="field" id="confirmPasswordField">
+              <label for="confirmPassword">Confirm Password<span style="color:red">*</span></label>
+              <div class="input-group">
+                <input id="confirmPassword" type="password" class="input" placeholder="Re-enter your password" required>
               </div>
+              <div id="confirmPasswordError" class="error-message"><span></span></div>
             </div>
           </div>
 
-          <!-- Password Field -->
-          <div class="field" id="passwordField">
-            <label for="password">
-              <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M12 1C8.676 1 6 3.676 6 7V8C4.343 8 3 9.343 3 11V20C3 21.657 4.343 23 6 23H18C19.657 23 21 21.657 21 20V11C21 9.343 19.657 8 18 8V7C18 3.676 15.324 1 12 1ZM12 3C14.324 3 16 4.676 16 7V8H8V7C8 4.676 9.676 3 12 3Z"/>
-              </svg>
-              Password
-            </label>
+          <!-- Address Field (Optional) -->
+          <div class="field address">
+            <label for="address">Address</label>
             <div class="input-group">
-              <input id="password" type="password" class="input" placeholder="Create a strong password" required>
-              <button type="button" class="password-toggle" id="togglePassword">
-                <svg id="eyeIcon" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" style="display: block;">
-                  <path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/>
-                </svg>
-                <svg id="eyeOffIcon" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" style="display: none;">
-                  <path d="M12 7c2.76 0 5 2.24 5 5 0 .65-.13 1.26-.36 1.83l2.92 2.92c1.51-1.26 2.7-2.89 3.43-4.75-1.73-4.39-6-7.5-11-7.5-1.4 0-2.74.25-3.98.7l2.16 2.16C10.74 7.13 11.35 7 12 7zM2 4.27l2.28 2.28.46.46C3.08 8.3 1.78 10.02 1 12c1.73 4.39 6 7.5 11 7.5 1.55 0 3.03-.3 4.38-.84l.42.42L19.73 22 21 20.73 3.27 3 2 4.27zM7.53 9.8l1.55 1.55c-.05.21-.08.43-.08.65 0 1.66 1.34 3 3 3 .22 0 .44-.03.65-.08l1.55 1.55c-.67.33-1.41.53-2.2.53-2.76 0-5-2.24-5-5 0-.79.2-1.53.53-2.2zm4.31-.78l3.15 3.15.02-.16c0-1.66-1.34-3-3-3l-.17.01z"/>
-                </svg>
-              </button>
+              <input id="address" type="text" class="input" placeholder="Enter your address">
             </div>
-            <div class="strength-meter">
-              <div id="strengthFill" class="strength-fill"></div>
-            </div>
-            <div id="strengthText" class="strength-text"></div>
-            <div id="passwordError" class="error-message">
-              <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
-              </svg>
-              <span></span>
-            </div>
-          </div>
-          <!-- UID input box -->
-          <div>
-            <input type="hidden" id="uid" name="uid" />
-          </div>
-          <!-- Address Field -->
-          <div class="field">
-            <label for="address">
-              <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M12 2C8.13 2 5 5.13 5 9C5 14.25 12 22 12 22S19 14.25 19 9C19 5.13 15.87 2 12 2ZM12 11.5C10.62 11.5 9.5 10.38 9.5 9S10.62 6.5 12 6.5S14.5 7.62 14.5 9S13.38 11.5 12 11.5Z"/>
-              </svg>
-              Address
-            </label>
-            <div class="input-group">
-              <input id="address" type="text" class="input" placeholder="Enter your address" required>
-            </div>
-            <div id="addressError" class="error-message">
-              <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
-              </svg>
-              <span></span>
-            </div>
+            <div id="addressError" class="error-message"><span></span></div>
           </div>
 
           <!-- Success Message -->
@@ -893,40 +862,158 @@
     </div>
   </main>
   <script>
-    
-        document.getElementById("signupForm").addEventListener("submit" , function(e) {
-            e.preventDefault();
-
-            const email = document.getElementById("email").value.trim();
-            const password = document.getElementById("password").value.trim();
-            const messageDiv = document.getElementById("message");
-
-            messageDiv.textContent = ""
-            messageDiv.className = ""
-
-            // email check
-            if (!email.includes("@")) {
-                messageDiv.textContent = "Please enter a valid email.";
-                messageDiv.classList.add("error");
-                return;
-            }
-
-            // Validatoin
-            if (email === "" || password === "") {
-                messageDiv.textContent = "All fields are required!";
-                messageDiv.classList.add("error");
-                return;
-            }
-
-            // if everthing is fine
-            messageDiv.textContent = "SignUp Successfully!";
-            messageDiv.classList.add("success");
-
-            // to reset the form
-            document.getElementById("signupForm").reset();
-
-        });
-
+    // Helper: country code and phone length map
+    const countryPhoneLengths = {
+      IN: 10, US: 10, UK: 10, AU: 9, CA: 10, DE: 11, FR: 9, SG: 8
+    };
+    // Form elements
+    const signupForm = document.getElementById('signupForm');
+    const firstNameInput = document.getElementById('firstName');
+    const lastNameInput = document.getElementById('lastName');
+    const emailInput = document.getElementById('email');
+    const countryCodeInput = document.getElementById('countryCode');
+    const phoneInput = document.getElementById('phone');
+    const passwordInput = document.getElementById('password');
+    const confirmPasswordInput = document.getElementById('confirmPassword');
+    const addressInput = document.getElementById('address');
+    // Error elements
+    const firstNameError = document.getElementById('firstNameError');
+    const lastNameError = document.getElementById('lastNameError');
+    const emailError = document.getElementById('emailError');
+    const phoneError = document.getElementById('phoneError');
+    const passwordError = document.getElementById('passwordError');
+    const confirmPasswordError = document.getElementById('confirmPasswordError');
+    // Validation functions
+    function validateFirstName(show = true) {
+      const value = firstNameInput.value.trim();
+      if (!value) {
+        if (show) showError(firstNameInput, firstNameError, 'Enter the first name');
+        return false;
+      }
+      if (!/^[a-zA-Z]+$/.test(value)) {
+        if (show) showError(firstNameInput, firstNameError, 'Enter a correct first name');
+        return false;
+      }
+      if (show) showSuccess(firstNameInput, firstNameError);
+      return true;
+    }
+    function validateLastName(show = true) {
+      const value = lastNameInput.value.trim();
+      if (!value) {
+        if (show) showError(lastNameInput, lastNameError, 'Enter the last name');
+        return false;
+      }
+      if (!/^[a-zA-Z]+$/.test(value)) {
+        if (show) showError(lastNameInput, lastNameError, 'Enter a correct last name');
+        return false;
+      }
+      if (show) showSuccess(lastNameInput, lastNameError);
+      return true;
+    }
+    function validateEmail(show = true) {
+      const value = emailInput.value.trim();
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!value) {
+        if (show) showError(emailInput, emailError, 'Enter the email');
+        return false;
+      }
+      if (!emailRegex.test(value)) {
+        if (show) showError(emailInput, emailError, 'Enter a valid email address');
+        return false;
+      }
+      if (show) showSuccess(emailInput, emailError);
+      return true;
+    }
+    function validatePhone(show = true) {
+      const value = phoneInput.value.trim();
+      const country = countryCodeInput.value;
+      const expectedLength = countryPhoneLengths[country] || 10;
+      if (!value) {
+        if (show) showError(phoneInput, phoneError, 'Enter the mobile number');
+        return false;
+      }
+      if (!/^[0-9]+$/.test(value)) {
+        if (show) showError(phoneInput, phoneError, 'Enter a valid mobile number');
+        return false;
+      }
+      if (value.length !== expectedLength) {
+        if (show) showError(phoneInput, phoneError, `Enter a valid mobile number (${expectedLength} digits)`);
+        return false;
+      }
+      if (show) showSuccess(phoneInput, phoneError);
+      return true;
+    }
+    function validatePassword(show = true) {
+      const value = passwordInput.value;
+      if (!value) {
+        if (show) showError(passwordInput, passwordError, 'Enter the password');
+        return false;
+      }
+      if (value.length < 8) {
+        if (show) showError(passwordInput, passwordError, 'Password must be at least 8 characters');
+        return false;
+      }
+      if (!/(?=.*[a-z])(?=.*[A-Z])(?=.*\d)/.test(value)) {
+        if (show) showError(passwordInput, passwordError, 'Password must contain uppercase, lowercase, and number');
+        return false;
+      }
+      if (show) showSuccess(passwordInput, passwordError);
+      return true;
+    }
+    function validateConfirmPassword(show = true) {
+      const value = confirmPasswordInput.value;
+      if (!value) {
+        if (show) showError(confirmPasswordInput, confirmPasswordError, 'Confirm your password');
+        return false;
+      }
+      if (value !== passwordInput.value) {
+        if (show) showError(confirmPasswordInput, confirmPasswordError, 'Both passwords do not match');
+        return false;
+      }
+      if (show) showSuccess(confirmPasswordInput, confirmPasswordError);
+      return true;
+    }
+    // Show/clear error helpers
+    function showError(input, errorElement, message) {
+      input.classList.add('error');
+      input.classList.remove('success');
+      errorElement.querySelector('span').textContent = message;
+      errorElement.classList.add('show');
+    }
+    function showSuccess(input, errorElement) {
+      input.classList.remove('error');
+      input.classList.add('success');
+      errorElement.classList.remove('show');
+    }
+    function clearError(input, errorElement) {
+      input.classList.remove('error', 'success');
+      errorElement.classList.remove('show');
+    }
+    // Real-time validation
+    firstNameInput.addEventListener('input', () => validateFirstName(false));
+    lastNameInput.addEventListener('input', () => validateLastName(false));
+    emailInput.addEventListener('input', () => validateEmail(false));
+    countryCodeInput.addEventListener('change', () => validatePhone(false));
+    phoneInput.addEventListener('input', () => validatePhone(false));
+    passwordInput.addEventListener('input', () => validatePassword(false));
+    confirmPasswordInput.addEventListener('input', () => validateConfirmPassword(false));
+    // Form submission
+    signupForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      let valid = true;
+      if (!validateFirstName()) valid = false;
+      if (!validateLastName()) valid = false;
+      if (!validateEmail()) valid = false;
+      if (!validatePhone()) valid = false;
+      if (!validatePassword()) valid = false;
+      if (!validateConfirmPassword()) valid = false;
+      if (!valid) return;
+      // If all valid, show success (replace with actual registration logic)
+      alert('Registration successful!');
+      signupForm.reset();
+      // Remove success classes
+      [firstNameInput, lastNameInput, emailInput, phoneInput, passwordInput, confirmPasswordInput].forEach(i => i.classList.remove('success'));
+    });
   </script>
 
   <!-- <script type="module">

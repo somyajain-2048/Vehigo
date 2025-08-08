@@ -8,16 +8,21 @@
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
   />
+  <link rel="icon" href="favicon.svg">
   <title>Add Your Car for Rent - Vehigo</title>
   
-  <!-- favicon -->
-  <link rel="shortcut icon" href="./public/favicon.svg" type="image/svg+xml" />
-  
+    
   <!-- custom css links -->
   <link rel="stylesheet" href="assets/css/style.css" />
   <link rel="stylesheet" href="assets/css/dark.css" />
+  <link rel="stylesheet" href="src/assets/styles/style.css">
   <link rel="stylesheet" href="./styles/rentcar.css">
-  
+  <link rel="stylesheet" href="./styles/rentcar-modern.css">
+
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
@@ -37,7 +42,7 @@
       <nav class="navbar" data-navbar>
         <ul class="navbar-list">
           <li>
-            <a href="index.html" class="navbar-link" data-nav-link>Home</a>
+            <a href="src/index.html" class="navbar-link" data-nav-link>Home</a>
           </li>
 
           <li>
@@ -88,12 +93,6 @@
         <!-- home.html -->
         <button id="logoutBtn" style="display: none">Logout</button>
 
-        <a href="#featured-car" class="btn" aria-labelledby="aria-label-txt">
-          <ion-icon name="car-outline"></ion-icon>
-
-          <span id="aria-label-txt">Explore cars</span>
-        </a>
-
         <a href="./login.html" class="btn user-btn" aria-label="Profile">
           <ion-icon name="person-outline"></ion-icon>
         </a>
@@ -114,60 +113,50 @@
   <main class="rentcar-main-content">
     <div class="container">
       <h1>🚗 Add Your Car for Rent</h1>
-      <hr>
+      
       <div id="message" class="message">
-        <h3><b>!! BEFORE ADDING CAR PLEASE SEE AVAIBILITY OF OUR OFFLINE CENTERS</b></h3>
-        <button class="btn" onclick="window.location.href='offline.html'">Check Availability</button>
+        <h3><b>⚠️ BEFORE ADDING CAR PLEASE CHECK AVAILABILITY OF OUR OFFLINE CENTERS</b></h3>
+        <button class="btn pulse" onclick="window.location.href='offline.html'">🏢 Check Availability</button>
       </div>
-      <hr>
+      
       <form id="carForm">
-        <input type="text" id="carName" placeholder="Car Make & Model" required />
-        <input type="text" id="year" placeholder="Year of Registration" required />
-        <input type="text" id="price" placeholder="Rental Price per Day (₹)" required />
-        <input type="text" id="location" placeholder="Pickup Location" required />
-        <input type="url" id="imageUrl" placeholder="Image URL of Car" required />
-        <button type="submit">Add Car</button>
+        <input type="text" id="carName" placeholder="🚗 Car Make & Model" required />
+        <input type="number" id="year" placeholder="📅 Year of Registration" required />
+        <input type="number" id="price" placeholder="💰 Rental Price per Day (₹)" required />
+        <input type="text" id="location" placeholder="📍 Pickup Location" required />
+        <input type="url" id="imageUrl" placeholder="🖼️ Image URL of Car" required />
+        <button type="submit">✨ Add Car to Fleet</button>
       </form>
 
-      <hr>
-
-      <h2>Available Cars for Rent</h2>
+      <h2>🚙 Available Cars for Rent</h2>
       <div id="carList" class="car-list"></div>
 
-      <hr>
-      <h2>BUY OR Sell </h2>
-      <p>Looking to buy or sell a car? Check out our dedicated pages:</p>
-      <p>Get great Deals lik never before only on Vehigo </p>
+      <h2>💼 BUY OR SELL</h2>
+      <p style="text-align: center; font-size: 1.1rem; color: #7f8c8d; margin-bottom: 1rem;">
+        Looking to buy or sell a car? Check out our dedicated pages:
+      </p>
+      <p style="text-align: center; font-size: 1rem; color: #27ae60; font-weight: 600; margin-bottom: 2rem;">
+        ✨ Get great deals like never before only on Vehigo
+      </p>
 
       <div class="buy-sell">
-        <button class="btns" onclick="window.location.href='buy.html'">Buy a Car</button>
-        <button class="btns" onclick="window.location.href='sell.html'">Sell Your Car</button>
+        <button class="btns" onclick="window.location.href='buy.html'">
+          🛒 Buy a Car
+        </button>
+        <button class="btns" onclick="window.location.href='sell.html'">
+          💸 Sell Your Car
+        </button>
       </div>
     </div>
-     <a href="./rentcar.html" style="
-  position: fixed;
-  bottom: 30px;
-  right: 30px;
-  background-color: #007BFF;
-  color: white;
-  border-radius: 50%;
-  width: 50px;
-  height: 50px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-decoration: none;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-  z-index: 999;
-  transition: background-color 0.3s;
-" onmouseover="this.style.backgroundColor='#0056b3'" onmouseout="this.style.backgroundColor='#007BFF'">
-  <ion-icon name="chevron-up-outline" style="font-size: 24px;">Up</ion-icon>
-</a>
+    
+    <a href="#" class="floating-btn" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;">
+      <ion-icon name="chevron-up-outline" style="font-size: 24px;"></ion-icon>
+    </a>
   </main>
 
   <style>
     .rentcar-main-content {
-      padding-top: 120px; /* Add top padding to account for fixed navbar */
+      padding-top: 80px; /* Add top padding to account for fixed navbar */
       position: relative;
       z-index: 1; /* Reduced z-index to allow navbar to be clickable */
     }
@@ -191,6 +180,173 @@
   <script src="./assets/js/script.js"></script>
   <script src="./scripts/logout.js"></script>
   <script src="./scripts/rentcar.js"></script>
+  
+  <!-- Modern Interactions Script -->
+  <script>
+    // Enhanced form submission with animations
+    document.getElementById('carForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      const submitBtn = this.querySelector('button[type="submit"]');
+      const originalText = submitBtn.textContent;
+      
+      // Add loading animation
+      submitBtn.innerHTML = '<span class="loading"></span> Adding Car...';
+      submitBtn.disabled = true;
+      
+      // Simulate API call delay
+      setTimeout(() => {
+        // Reset button
+        submitBtn.textContent = originalText;
+        submitBtn.disabled = false;
+        
+        // Show success message
+        const successMsg = document.createElement('div');
+        successMsg.className = 'success-message';
+        successMsg.textContent = '✅ Car added successfully!';
+        document.body.appendChild(successMsg);
+        
+        // Remove success message after 3 seconds
+        setTimeout(() => {
+          successMsg.remove();
+        }, 3000);
+        
+        // Reset form with animation
+        this.style.animation = 'formReset 0.5s ease-out';
+        setTimeout(() => {
+          this.reset();
+          this.style.animation = '';
+        }, 500);
+      }, 2000);
+    });
+
+    // Scroll reveal animation
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('revealed');
+          entry.target.style.animation = 'fadeInUp 0.6s ease-out forwards';
+        }
+      });
+    }, observerOptions);
+
+    // Enhanced page load animations
+    document.addEventListener('DOMContentLoaded', () => {
+      // Add scroll reveal class to elements
+      const sections = document.querySelectorAll('h2, #carForm, #message, .car-card');
+      sections.forEach((section, index) => {
+        section.classList.add('scroll-reveal');
+        section.style.animationDelay = `${index * 0.1}s`;
+        observer.observe(section);
+      });
+
+      // Animate form inputs on focus
+      const inputs = document.querySelectorAll('#carForm input');
+      inputs.forEach(input => {
+        input.addEventListener('focus', () => {
+          input.style.animation = 'inputFocus 0.3s ease-out';
+        });
+        
+        input.addEventListener('blur', () => {
+          input.style.animation = '';
+        });
+      });
+
+      // Add pulse animation to important buttons
+      const importantBtns = document.querySelectorAll('.btns, #carForm button[type="submit"]');
+      importantBtns.forEach(btn => {
+        btn.addEventListener('mouseenter', () => {
+          btn.classList.add('pulse');
+        });
+        
+        btn.addEventListener('mouseleave', () => {
+          btn.classList.remove('pulse');
+        });
+      });
+    });
+
+    // Enhanced theme toggle with animation
+    const themeToggle = document.getElementById('theme-toggle');
+    if (themeToggle) {
+      themeToggle.addEventListener('change', () => {
+        document.body.style.transition = 'all 0.5s ease';
+        document.body.classList.toggle('dark-theme');
+        localStorage.setItem('theme', document.body.classList.contains('dark-theme') ? 'dark' : 'light');
+      });
+
+      // Load saved theme
+      if (localStorage.getItem('theme') === 'dark') {
+        document.body.classList.add('dark-theme');
+        themeToggle.checked = true;
+      }
+    }
+
+    // Smooth scroll for anchor links with easing
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+          
+          // Add highlight animation to target
+          target.style.animation = 'highlightTarget 1s ease-out';
+          setTimeout(() => {
+            target.style.animation = '';
+          }, 1000);
+        }
+      });
+    });
+
+    // Enhanced hover effects for car cards
+    document.addEventListener('DOMContentLoaded', () => {
+      const cards = document.querySelectorAll('.car-card');
+      cards.forEach(card => {
+        card.addEventListener('mouseenter', () => {
+          card.style.transform = 'translateY(-10px) scale(1.02)';
+          card.style.transition = 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)';
+        });
+        
+        card.addEventListener('mouseleave', () => {
+          card.style.transform = 'translateY(0) scale(1)';
+        });
+      });
+    });
+
+    // Parallax effect for header
+    window.addEventListener('scroll', () => {
+      const scrolled = window.pageYOffset;
+      const header = document.querySelector('.rentcar-main-content h1');
+      if (header) {
+        header.style.transform = `translateY(${scrolled * 0.5}px)`;
+      }
+    });
+
+    // Add CSS animations for form reset and highlight
+    const style = document.createElement('style');
+    style.textContent = `
+      @keyframes formReset {
+        0% { transform: scale(1); }
+        50% { transform: scale(0.98); }
+        100% { transform: scale(1); }
+      }
+      
+      @keyframes highlightTarget {
+        0% { background-color: rgba(102, 126, 234, 0.1); }
+        50% { background-color: rgba(102, 126, 234, 0.2); }
+        100% { background-color: transparent; }
+      }
+    `;
+    document.head.appendChild(style);
+  </script>
   <script
     type="module"
     src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"

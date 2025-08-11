@@ -356,6 +356,7 @@ body.dark-mode .footer-bottom p,
 body.dark-mode .footer-bottom a,
 body.dark-mode .footer-bottom ion-icon {
 color: #121212;
+color: white;
 }
 
 .btn {

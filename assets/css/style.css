@@ -208,6 +208,7 @@ height: 30px;
 margin-left: 15px;
 z-index: 1000;
 cursor: pointer;
+overflow: hidden;
 }
 
 .theme-switch input {
@@ -217,7 +218,9 @@ height: 0;
 }
 
 .slider {
-position: absolute;
+position: relative;
+height: 30px;
+width: 60px;
 cursor: pointer;
 top: 0;
 left: 0;
@@ -230,6 +233,7 @@ display: flex;
 align-items: center;
 justify-content: space-between;
 padding: 0 5px;
+overflow: hidden;
 }
 
 .slider:before {

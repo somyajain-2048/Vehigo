@@ -270,6 +270,7 @@ button, a { transition: var(--transition); }
   display: flex;
   align-items: center;
   gap: 20px;
+  width: 320px;
 }
 
 .header-actions .btn span { display: none; }
@@ -389,9 +390,41 @@ button, a { transition: var(--transition); }
   font-family: var(--ff-nunito);
 }
 
-.input-wrapper { padding: 15px 20px; }
+.input-wrapper { 
+  padding: 15px 20px;
+  display: grid;
+  grid-template-columns: 35% 45%;
+  align-items: center;
+  width: 100%;
+ }
+
+
 
 .input-wrapper:not(:last-of-type) { border-bottom: 1px solid hsla(0, 0%, 0%, 0.08); }
+
+
+
+.filter-sort-section{
+  height: auto;
+  width: 95%;
+  margin: auto;
+  padding: 20px;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  border: 2px solid #000000;
+  border-radius: 30px;
+
+}
+
+.grid-container{
+     display: grid;
+     grid-template-columns: repeat(2,1fr);
+     justify-items: baseline;
+}
+
+
+
+
 
 .input-label {
   color: var(--manatee);
@@ -1042,8 +1075,6 @@ button, a { transition: var(--transition); }
 
 
 
-
-
 /*-----------------------------------*\
   #FOOTER
 \*-----------------------------------*/
@@ -1275,7 +1306,6 @@ button, a { transition: var(--transition); }
 
   .input-wrapper:not(:last-of-type) {
     border-bottom: none;
-    border-right: 1px solid hsla(0, 0%, 0%, 0.08);
   }
 
   .input-label {
@@ -1533,7 +1563,7 @@ button, a { transition: var(--transition); }
 .user-btn ion-icon {
   display: inline-block !important;
   font-size: 1.8rem;
-  color: white; /* change to #fff if your header is dark */
+  color: rgb(0, 0, 0); /* change to #fff if your header is dark */
   opacity: 1 !important;
   visibility: visible !important;
 }

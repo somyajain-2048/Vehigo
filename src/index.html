@@ -20,7 +20,7 @@
 
       background-color: #fff;
       border: 2px solid #dcdcdc;
-      border-radius: 8px;
+      border-radius: 30px;
       padding: 0.8rem 1rem;
       font-size: 1rem;
       font-family: 'Open Sans', sans-serif;
@@ -42,6 +42,7 @@
       background-repeat: no-repeat;
       background-position: right 1rem center;
       background-size: 1rem;
+      width: 120%;
     }
   </style>
   <!-- 
@@ -1098,6 +1099,8 @@
 
     <form id="filter-sort-form">
       <!-- Filter by Car Type -->
+
+    <div class="grid-container">
       <div class="input-wrapper">
         <label for="filter-car-type" class="input-label">Car Type</label>
         <select name="filter-car-type" id="filter-car-type">
@@ -1105,17 +1108,6 @@
           <option value="SUV">SUV</option>
           <option value="Sedan">Sedan</option>
           <option value="Hatchback">Hatchback</option>
-        </select>
-      </div>
-
-      <!-- Filter by Location -->
-      <div class="input-wrapper">
-        <label for="filter-location" class="input-label">Location</label>
-        <select name="filter-location" id="filter-location">
-          <option value="">All</option>
-          <option value="Bhopal">Bhopal</option>
-          <option value="Indore">Indore</option>
-          <option value="Ujjain">Ujjain</option>
         </select>
       </div>
 
@@ -1148,8 +1140,25 @@
           <option value="low-to-high">Low to High</option>
         </select>
       </div>
+    </div>
 
-      <button type="submit" class="btn">Apply</button>
+      <!-- Filter by Location -->
+    <div class="input-wrapper location-wrapper" 
+     style="width:100%;   
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 20px;">
+        <label for="filter-location" class="input-label">Location</label>
+        <select name="filter-location" id="filter-location"  style="width:90%;">
+          <option value="">All</option>
+          <option value="Bhopal">Bhopal</option>
+          <option value="Indore">Indore</option>
+          <option value="Ujjain">Ujjain</option>
+        </select>
+      </div>
+
+      <center><button type="submit" class="btn" style="width: 90px;">Apply</button></center>
     </form>
   </div>
 </section>

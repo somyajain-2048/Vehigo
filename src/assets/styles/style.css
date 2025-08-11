@@ -270,6 +270,7 @@ button, a { transition: var(--transition); }
   display: flex;
   align-items: center;
   gap: 20px;
+  width: 320px;
 }
 
 .header-actions .btn span { display: none; }
@@ -1533,7 +1534,7 @@ button, a { transition: var(--transition); }
 .user-btn ion-icon {
   display: inline-block !important;
   font-size: 1.8rem;
-  color: white; /* change to #fff if your header is dark */
+  color: rgb(0, 0, 0); /* change to #fff if your header is dark */
   opacity: 1 !important;
   visibility: visible !important;
 }

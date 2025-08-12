@@ -162,3 +162,7 @@ button[type="submit"]:hover {
 .hidden {
   display: none;
 }
+
+.navbar-list:hover{
+  color:black;
+}

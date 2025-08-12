@@ -590,8 +590,8 @@ display: block;
 border-radius: 5px;
 }
 
-.navbar-link:is(:hover, :focus) {
-color: white;
+.navbar-link:is( :hover,:focus) {
+color: black;
 /* This contrast should be good on carolina-blue */
 background-color: var(--carolina-blue);
 padding-left: 8px;

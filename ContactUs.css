@@ -6,9 +6,7 @@ body {
 }
 
 .navbar {
-  background: white;
   padding: 1rem 2rem;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
 }
 
 .hero {
@@ -28,7 +26,6 @@ body {
 
 .main {
   padding: 4rem 1rem;
-  margin-top: 1.95rem;
   position: relative;
   z-index: 1;
 }
@@ -163,6 +160,9 @@ button[type="submit"]:hover {
   display: none;
 }
 
-.navbar-list:hover{
-  color:black;
+
+
+.btn{
+  border-radius: 50%;
 }
+

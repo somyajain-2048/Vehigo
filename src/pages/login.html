@@ -24,27 +24,28 @@
 
             <div class="overlay" data-overlay></div>
 
-            <a href="../index.html" class="logo">
-                <img src="../assets/images/vehigologo.png" alt="VehiGo logo">
-            </a>
+            <a href="index.html" class="logo">
+          <img src="../assets/images/vehigologo.png" alt="VehiGo logo" />
+
+        </a>
 
             <nav class="navbar" data-navbar>
                 <ul class="navbar-list">
 
                     <li>
-                        <a href="../index.html" class="navbar-link" data-nav-link>Home</a>
+                        <a href="/index.html" class="navbar-link" data-nav-link>Home</a>
                     </li>
 
                     <li>
-                        <a href="../index.html#featured-car" class="navbar-link" data-nav-link>Explore cars</a>
+                        <a href="/index.html#featured-car" class="navbar-link" data-nav-link>Explore cars</a>
                     </li>
 
                     <li>
-                        <a href="./about.html" class="navbar-link" data-nav-link>About us</a>
+                        <a href="/pages/about.html" class="navbar-link" data-nav-link>About us</a>
                     </li>
 
                     <li>
-                        <a href="../index.html#blog" class="navbar-link" data-nav-link>Blog</a>
+                        <a href="/index.html#blog" class="navbar-link" data-nav-link>Blog</a>
                     </li>
 
                 </ul>
@@ -83,7 +84,7 @@
         <div class="form login" id="loginForm">
             <div class="form-content">
                 <header>Login</header>
-                <form action="" method="GET">
+                <form action="" method="GET" id="loginForm">
                     <div class="field input-field">
                         <input id="email" name="login_email"  type="email" placeholder="Email" class="input" required >
                     </div>
@@ -92,8 +93,6 @@
                         <input id="password" type="password" placeholder="Password" class="password" required>
                         <i class='bx bx-hide eye-icon'></i>
                     </div>
-
-                    <div id="errorMessage"></div>
                     <!-- <div class="form-link">
                         <a href="#" class="forgot-pass">Forgot password?</a>
                     </div> -->
@@ -107,6 +106,8 @@
                     <span>Don't have an account? <a href="#" class="link signup-link">Signup</a></span>
                 </div>
             </div>
+
+            <div id="loginMessage"></div>
 
             <!-- <div class="line"></div>
 
@@ -154,12 +155,14 @@
                         <button type="submit">Signup</button>
                     <div id="errorMessage"></div>
 
-                    <div id="successMessage"></div>
+                    <!-- <div id="successMessage"></div> -->
 
                     <div class="form-link">
                         <span>Already have an account? <a href="#" class="link login-link">Login</a></span>
                     </div>
                 </form>
+
+                <div id="signinMessage"></div>
 
 
             </div>
@@ -199,6 +202,8 @@
     <!-- JavaScript -->
     <script src="../assets/js/login.js"></script>
     <script>
+
+        
         const form = document.getElementById('signupForm');
         form.addEventListener('submit', function (e) {
             if (!form.checkValidity()) {

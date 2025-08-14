@@ -308,6 +308,8 @@
 
               <button type="submit" class="btn">Search</button>
             </form>
+
+            <div id="carList" class="car-results"></div>
           </div>
         </section>
 
@@ -1269,6 +1271,126 @@
     </footer>
 
     <script src="./assets/js/script.js"></script>
+    <style>
+      .car-results { margin-top: 1.25rem; display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 16px; }
+      .car-card { border: 1px solid #e2e8f0; border-radius: 10px; overflow: hidden; background: #fff; }
+      body.dark-theme .car-card { background: #1f2937; border-color: #374151; }
+      .car-card img { width: 100%; height: 160px; object-fit: cover; display: block; }
+      .car-card .content { padding: 12px; }
+      .car-card h4 { margin: 0 0 6px; font-size: 1.05rem; }
+      .car-card .meta { font-size: 0.9rem; color: #4b5563; }
+      body.dark-theme .car-card .meta { color: #9ca3af; }
+      .car-card .price { margin-top: 8px; font-weight: 700; }
+      .car-card .actions { margin-top: 10px; }
+      .car-card .btn-rent { display: inline-block; padding: 8px 12px; background: #2563eb; color: #fff; border: none; border-radius: 6px; cursor: pointer; text-decoration: none; }
+      .car-card .btn-rent:hover { background: #1d4ed8; }
+      .no-results { padding: 10px; color: #6b7280; }
+    </style>
+    <script>
+      // Car search functionality
+      const cars = [
+        { id: 1, name: 'Hyundai Creta', location: 'Bhopal', type: 'suv', transmission: 'manual', fuel: 'petrol', price: 283, image: './assets/images/creta.jpeg' },
+        { id: 2, name: 'Tata Nexon', location: 'Indore', type: 'suv', transmission: 'manual', fuel: 'petrol', price: 210, image: './assets/images/nexon.jpg' },
+        { id: 3, name: 'Swift Dzire', location: 'Ujjain', type: 'sedan', transmission: 'automatic', fuel: 'petrol', price: 180, image: './assets/images/swift desire.jpg' },
+        { id: 4, name: 'Toyota Fortuner', location: 'Bhopal', type: 'suv', transmission: 'automatic', fuel: 'diesel', price: 490, image: './assets/images/fortuner.jpg' },
+        { id: 5, name: 'Toyota Innova Crysta', location: 'Indore', type: 'mpv', transmission: 'automatic', fuel: 'diesel', price: 355, image: './assets/images/innova.jpeg' },
+        { id: 6, name: 'Maruti Alto', location: 'Bhopal', type: 'hatchback', transmission: 'manual', fuel: 'cng', price: 120, image: './assets/images/maruti alto.jpg' }
+      ];
+
+      function renderCars(list) {
+        const container = document.getElementById('carList');
+        if (!container) {
+          console.error('carList container not found');
+          return;
+        }
+        
+        console.log('Rendering cars:', list.length);
+        
+        if (!list.length) {
+          container.innerHTML = '<div class="no-results">No cars match your search criteria.</div>';
+          return;
+        }
+        
+        container.innerHTML = list.map(car => `
+          <div class="car-card">
+            <img src="${car.image}" alt="${car.name}" onerror="this.src='./assets/images/car-rent.png'">
+            <div class="content">
+              <h4>${car.name}</h4>
+              <div class="meta">${car.location} • ${car.type.toUpperCase()} • ${car.transmission.toUpperCase()} • ${car.fuel.toUpperCase()}</div>
+              <div class="price">₹${car.price} / hour</div>
+              <div class="actions">
+                <a class="btn-rent" href="rentcar.html?car=${encodeURIComponent(car.name)}">Rent Now</a>
+              </div>
+            </div>
+          </div>
+        `).join('');
+      }
+
+      function getValue(id) {
+        const el = document.getElementById(id);
+        return el ? el.value.trim() : '';
+      }
+
+      function searchCars() {
+        console.log('Search function called');
+        
+        const locationInput = getValue('input-1').toLowerCase();
+        const rentInputRaw = getValue('input-2').replace(/[^\d.]/g, '');
+        const rentMax = rentInputRaw ? parseFloat(rentInputRaw) : NaN;
+        const type = getValue('car-type').toLowerCase();
+        const transmission = getValue('transmission').toLowerCase();
+        const fuel = getValue('fuel-type').toLowerCase();
+
+        console.log('Search criteria:', { locationInput, rentMax, type, transmission, fuel });
+
+        const filtered = cars.filter(car => {
+          if (locationInput && !car.location.toLowerCase().includes(locationInput)) return false;
+          if (!Number.isNaN(rentMax) && !(car.price <= rentMax)) return false;
+          if (type && car.type.toLowerCase() !== type) return false;
+          if (transmission && car.transmission.toLowerCase() !== transmission) return false;
+          if (fuel && car.fuel.toLowerCase() !== fuel) return false;
+          return true;
+        });
+
+        console.log('Filtered results:', filtered);
+        renderCars(filtered);
+      }
+
+      // Initialize when DOM is ready
+      document.addEventListener('DOMContentLoaded', function() {
+        console.log('DOM loaded, initializing search');
+        
+        const form = document.getElementById('searchForm');
+        if (!form) {
+          console.error('searchForm not found');
+          return;
+        }
+
+        // Show all cars initially
+        renderCars(cars);
+
+        // Add submit event listener
+        form.addEventListener('submit', function(e) {
+          console.log('Form submitted');
+          e.preventDefault();
+          e.stopPropagation();
+          searchCars();
+          return false;
+        });
+
+        // Also add click listener to search button as backup
+        const searchBtn = form.querySelector('button[type="submit"]');
+        if (searchBtn) {
+          searchBtn.addEventListener('click', function(e) {
+            console.log('Search button clicked');
+            e.preventDefault();
+            e.stopPropagation();
+            searchCars();
+            return false;
+          });
+        }
+      });
+    </script>
     <script>
       // Dynamically set the copyright year
       document.addEventListener("DOMContentLoaded", function () {

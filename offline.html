@@ -93,7 +93,7 @@
 
   <!-- Leaflet JS and other scripts -->
   <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-  <script>
+    <script>
     document.addEventListener('DOMContentLoaded', () => {
       // Offline center data
       const offlineCenters = [
@@ -163,6 +163,76 @@
       });
     });
   </script>
+  <!-- <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Offline center data
+      const offlineCenters = [
+        { city: "Delhi", name: "Delhi Center", lat: 28.6139, lng: 77.2090, contact: "+91 99999 11111" },
+        { city: "Mumbai", name: "Mumbai Center", lat: 19.0760, lng: 72.8777, contact: "+91 88888 22222" },
+        { city: "Kolkata", name: "Kolkata Center", lat: 22.5726, lng: 88.3639, contact: "+91 77777 33333" },
+        { city: "Chennai", name: "Chennai Center", lat: 13.0827, lng: 80.2707, contact: "+91 66666 44444" },
+        { city: "Bangalore", name: "Bangalore Center", lat: 12.9716, lng: 77.5946, contact: "+91 55555 55555" },
+        { city: "Hyderabad", name: "Hyderabad Center", lat: 17.3850, lng: 78.4867, contact: "+91 44444 66666" },
+        { city: "Pune", name: "Pune Center", lat: 18.5204, lng: 73.8567, contact: "+91 33333 77777" }
+      ];
+
+      // Initialize Leaflet map
+      const map = L.map('map').setView([22.9734, 78.6569], 5); // India center
+
+      // Add OpenStreetMap tiles
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; OpenStreetMap contributors'
+      }).addTo(map);
+
+      // Cards container
+      const cardsContainer = document.getElementById('cardsContainer');
+
+      // Add markers and cards
+      offlineCenters.forEach((center, index) => {
+        const marker = L.marker([center.lat, center.lng])
+          .addTo(map)
+          .bindPopup(`
+            <div style="text-align: center; padding: 10px;">
+              <strong style="color: #007bff; font-size: 16px;">${center.name}</strong><br>
+              <p style="margin: 8px 0; color: #666;">📍 ${center.city}</p>
+              <p style="margin: 0; color: #28a745; font-weight: 600;">📞 ${center.contact}</p>
+            </div>
+          `);
+
+        const card = document.createElement('div');
+        card.className = 'card animate-card';
+        card.style.animationDelay = `${0.2 + index * 0.1}s`;
+        card.innerHTML = `
+          <h3>📍 ${center.city}</h3>
+          <p><strong>${center.name}</strong></p>
+          <p>🌍 Located in ${center.city}</p>
+          <p>📞 ${center.contact}</p>
+        `;
+        
+        card.addEventListener('click', () => {
+          map.setView([center.lat, center.lng], 12);
+          marker.openPopup();
+          
+          document.querySelectorAll('.card').forEach(c => c.classList.remove('active'));
+          card.classList.add('active');
+        });
+        
+        cardsContainer.appendChild(card);
+      });
+
+      // Smooth map loading animation
+      map.whenReady(() => {
+        const mapElement = document.getElementById('map');
+        mapElement.style.opacity = '0';
+        mapElement.style.transform = 'scale(0.95)';
+        setTimeout(() => {
+          mapElement.style.transition = 'all 0.8s ease-out';
+          mapElement.style.opacity = '1';
+          mapElement.style.transform = 'scale(1)';
+        }, 100);
+      });
+    });
+  </script> -->
   
   <script src="./assets/js/script.js"></script>
   <script src="./scripts/logout.js"></script>

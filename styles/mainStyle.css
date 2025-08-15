@@ -1047,7 +1047,7 @@ body {
 
     .footer-bottom {
         display: flex;
-        flex-direction: row-reverse;
+        flex-direction: row;
         justify-content: space-between;
         align-items: center;
         padding-block: 30px;
@@ -1191,4 +1191,5 @@ body {
         width: 33.33%;
     }
 
-}
+
+    

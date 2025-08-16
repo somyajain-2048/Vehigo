@@ -1,5 +1,7 @@
 const authService = require("../services/authService");
 const {z} =require("zod")
+const User=require("../models/User")
+
 
 exports.signup = async (req, res) => {
   const UserSchema=z.object({
@@ -60,3 +62,39 @@ exports.logout = async (req, res) => {
   // With JWT, logout is handled client-side (by deleting token)
   res.status(200).json({ message: "Logged out successfully" });
 };
+
+exports.updateProfile = async (req, res) => {
+  const UpdateUserSchema = z.object({
+    name: z.string().min(1).max(50).optional(),
+    phone_number: z.string().regex(/^\d{10}$/, { message: "Invalid phone number" }).optional(),
+    address: z.string().min(1).max(50).optional(),
+    password: z.string().min(6).max(12).optional()
+  });
+
+  try {
+    // Validate input
+    const validation = UpdateUserSchema.safeParse(req.body);
+    if (!validation.success) {
+      return res.status(400).json({ message: "Validation failed", errors: validation.error.errors });
+    }
+
+    // Find the user
+    const user = await User.findById(req.user.id);
+    if (!user) return res.status(404).json({ message: "User not found" });
+
+    // If password update is requested for google auth
+    if (validation.data.password && user.auth_provider !== "email") {
+      return res.status(400).json({ message: "Password can only be updated for email auth users" });
+    }
+
+    // Update fields
+    Object.assign(user, validation.data);
+
+    await user.save();
+
+    res.status(200).json({ message: "Profile updated successfully", user });
+  } catch (err) {
+    res.status(500).json({ message: err.message });
+  }
+};
+

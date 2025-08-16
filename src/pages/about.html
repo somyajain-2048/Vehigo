@@ -1150,6 +1150,62 @@
             <button class="carousel-btn next-btn" id="nextBtn"><ion-icon
                 name="chevron-forward-outline"></ion-icon></button>
           </div>
+ navigation-enhancement
+        </section>
+      </article>
+        <a href="./about.html" style="
+  position: fixed;
+  bottom: 30px;
+  left: 30px;
+  background-color: #007BFF;
+  color: white;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  z-index: 999;
+  transition: background-color 0.3s;
+" onmouseover="this.style.backgroundColor='#0056b3'" onmouseout="this.style.backgroundColor='#007BFF'">
+  <ion-icon name="chevron-up-outline" style="font-size: 24px;"></ion-icon>
+</a>
+
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-top">
+          <div class="footer-brand">
+            <a href="#" class="logo">
+              <img src="../assets/images/vehigologo.png" alt="VehiGo logo" />
+            </a>
+            <p class="footer-text">
+              Search for cheap rental cars in Madhya Pradesh. We offer our
+              customers an attractive and fun selection of vehicles as well as
+              an opportunity to rent their cars when not in use.
+            </p>
+          </div>
+          <ul class="footer-list">
+            <li><p class="footer-list-title">Company</p></li>
+            <li><a href="#" class="footer-link">About us</a></li>
+            <li><a href="#" class="footer-link">Pricing plans</a></li>
+            <li><a href="../index.html#blog" class="footer-link">Our blog</a></li>
+            <li><a href="#" class="footer-link">Contacts</a></li>
+          </ul>
+          <ul class="footer-list">
+            <li><p class="footer-list-title">Support</p></li>
+            <li><a href="#" class="footer-link">Help center</a></li>
+            <li><a href="#" class="footer-link">Ask a question</a></li>
+            <li><a href="#" class="footer-link">Privacy policy</a></li>
+            <li><a href="#" class="footer-link">Terms & conditions</a></li>
+          </ul>
+          <ul class="footer-list">
+            <li><p class="footer-list-title"></p></li>
+          </ul>
+ main
         </div>
       </section>
 
@@ -1392,4 +1448,41 @@
   <script src="../assets/js/script.js"></script>
 </body>
 
+ navigation-enhancement
+    <script src="../assets/js/script.js"></script>
+
+      <!-- Scroll Buttons -->
+<button id="scrollTopBtn" style="
+    position: fixed; bottom: 80px; right: 20px; background: #007bff; color: white;
+    border: none; outline: none; width: 50px; height: 50px; border-radius: 50%;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2); cursor: pointer; font-size: 20px;
+    display: none; z-index: 999;">&#9650;</button>
+
+<button id="scrollBottomBtn" style="
+    position: fixed; bottom: 20px; right: 20px; background: #007bff; color: white;
+    border: none; outline: none; width: 50px; height: 50px; border-radius: 50%;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2); cursor: pointer; font-size: 20px;
+    display: none; z-index: 999;">&#9660;</button>
+
+<script>
+  const topBtn = document.getElementById("scrollTopBtn");
+  const bottomBtn = document.getElementById("scrollBottomBtn");
+
+  window.addEventListener("scroll", () => {
+    topBtn.style.display = window.scrollY > 200 ? "block" : "none";
+    bottomBtn.style.display = (window.innerHeight + window.scrollY < document.body.scrollHeight - 200) ? "block" : "none";
+  });
+
+  topBtn.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+
+  bottomBtn.addEventListener("click", () => {
+    window.scrollTo({ top: document.body.scrollHeight, behavior: "smooth" });
+  });
+</script>
+
+  </body>
+
+ main
 </html>

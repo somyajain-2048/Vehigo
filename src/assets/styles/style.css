@@ -367,11 +367,12 @@ button, a { transition: var(--transition); }
   #HERO
 \*-----------------------------------*/
 
-.hero { padding-top: 120px; }
+.hero { padding-top: 10px; margin-left: 25px; }
 
 .hero-title {
   max-width: 20ch;
   margin-bottom: 15px;
+
 }
 
 .hero-text {
@@ -380,7 +381,7 @@ button, a { transition: var(--transition); }
   margin-bottom: 30px;
 }
 
-.hero-banner { display: none; }
+.hero-banner { display: none; width: 150px; height: 550px; }
 
 .hero-form {
   background: var(--gradient);
@@ -422,10 +423,6 @@ button, a { transition: var(--transition); }
      justify-items: baseline;
 }
 
-
-
-
-
 .input-label {
   color: var(--manatee);
   font-size: var(--fs-6);
@@ -462,11 +459,17 @@ button, a { transition: var(--transition); }
 .featured-car .title-wrapper {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   gap: 10px 15px;
   margin-bottom: 30px;
 }
+
+.featured-car .title-wrapper h2 {
+  font-weight: 800;
+  font-size:40px;
+  }
+
 
 .featured-car-link {
   display: flex;
@@ -487,11 +490,33 @@ button, a { transition: var(--transition); }
 
 .featured-car-link:is(:hover, :focus) ion-icon { color: var(--carolina-blue); }
 
-.featured-car-list {
+/* .featured-car-list {
   display: grid;
   grid-template-columns: minmax(0, 1fr);
   gap: 30px;
+} */
+
+.featured-car-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Smaller card width */
+  gap: 40px; /* Bigger gap between cards */
+  padding: 0 60px; /* More left & right margin */
 }
+
+.featured-car-card:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Image hover zoom effect */
+.featured-car-card .card-banner > img {
+  transition: transform 0.4s ease;
+}
+
+.featured-car-card:hover .card-banner > img {
+  transform: scale(1.05);
+}
+
 
 .featured-car-card {
   background: var(--gradient);
@@ -499,6 +524,10 @@ button, a { transition: var(--transition); }
   border-radius: var(--radius-18);
   padding: 10px;
   box-shadow: var(--shadow-1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  max-width: 380px; /* Small card size */
+  margin: 0 auto; /* Center cards in column */
 }
 
 .featured-car-card .card-banner {
@@ -617,19 +646,24 @@ button, a { transition: var(--transition); }
   #GET START
 \*-----------------------------------*/
 
-.get-start .section-title { margin-bottom: 25px; }
+.get-start .section-title { margin-bottom: 25px; margin-left: 20px; }
 
 .get-start-list {
   display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
   gap: 20px;
+  padding: 0 80px;
 }
 
 .get-start-card {
   background: var(--white);
-  padding: 20px;
+  padding: 30px;
   border-radius: var(--radius-18);
   border: 1px solid var(--white);
   transition: var(--transition);
+  
+ 
+
 }
 
 .get-start-card:hover {
@@ -718,7 +752,7 @@ button, a { transition: var(--transition); }
 
 .logos {
   overflow: hidden;
-  padding: 10px 10px;
+  padding: 20px 20px;
   position: relative;
   border-radius: 8px;
 }
@@ -771,6 +805,7 @@ button, a { transition: var(--transition); }
   box-shadow: 5px 5px 20px #6d6b6b6b; 
   color: white;
   margin: 0rem 1rem;
+  
 }
 .div1
 {
@@ -854,7 +889,8 @@ button, a { transition: var(--transition); }
 	color: #F3DEFF;
     font-weight: 600;
     line-height: 1.5;
-    margin-bottom: 0.8rem;
+    margin-bottom: 1rem;
+    margin-left: 0.8rem;
 }
 .review.dark h4{
 	color:#4B5258;

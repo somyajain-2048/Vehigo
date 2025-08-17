@@ -300,6 +300,11 @@ body.dark-mode .user-btn ion-icon {
   color: #200f0f;
 }
 
+.title-wrapper.dark-mode{
+  
+ color: #fff;
+}
+
 body.dark-mode .footer-bottom,
 body.dark-mode .footer-bottom p,
 body.dark-mode .footer-bottom a,

@@ -309,9 +309,7 @@ color: #121212;
 color: white;
 }
 
-/-----------------------------------
-#REUSABLE
-*-----------------------------------*/
+
 .btn {
   position: relative;
   background: var(--background, var(--carolina-blue));
@@ -395,9 +393,7 @@ a {
   transition: var(--transition);
 }
 
-/-----------------------------------
-#HEADER
-*-----------------------------------*/
+
 .header-contact {
   display: none;
 }
@@ -563,9 +559,6 @@ font-weight: bolder;
   color: #4c4f6a;
 }
 
-/-----------------------------------
-#HERO
-*-----------------------------------*/
 .hero {
   padding-top: 120px;
 }
@@ -697,9 +690,6 @@ font-weight: bolder;
   text-transform: uppercase;
 }
 
-/-----------------------------------
-#FEATURED CAR
-*-----------------------------------*/
 .featured-car .title-wrapper {
   display: flex;
   flex-wrap: wrap;
@@ -872,9 +862,7 @@ font-weight: bolder;
   --color: var(--red-salsa);
 }
 
-/-----------------------------------
-#GET START
-*-----------------------------------*/
+
 .get-start .section-title {
   margin-bottom: 25px;
 }
@@ -960,9 +948,7 @@ font-weight: bolder;
   width: 100%;
 }
 
-/-----------------------------------
-#REVIEW
-*-----------------------------------*/
+
 @import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600&display=swap');
 .reviews {
   margin: 0;
@@ -1142,9 +1128,7 @@ font-weight: bolder;
   }
 }
 
-/-----------------------------------
-#BLOG
-*-----------------------------------*/
+
 .blog .section-title {
   margin-bottom: 30px;
 }
@@ -1304,9 +1288,7 @@ font-weight: bolder;
   width: calc(25% - 40px);
 }
 
-/-----------------------------------
-#FOOTER
-*-----------------------------------*/
+
 .footer {
   color: var(--independence);
   background-color: #ceeafd;
@@ -1409,12 +1391,8 @@ font-weight: bolder;
   color: var(--carolina-blue);
 }
 
-/-----------------------------------
-#MEDIA QUERIES
-*-----------------------------------*/
-/**
-* responsive for large than 350px screen
-*/
+
+
 @media (min-width: 350px) {
   .featured-car-card .card-list {
     grid-template-columns: 1fr 1fr;
@@ -1737,38 +1715,3 @@ select.error-border {
     margin-left: 5px;
   }
 }
-Explanation of Changes
-
-Here's a breakdown of the key issues found and how they were resolved:
-
-Resolved Git Merge Conflict:
-
-Problem: The .slider class contained merge conflict markers (<<<<<<< main, =======, >>>>>>> main), which made the CSS invalid.
-
-Solution: I've removed these markers and consolidated the styles for the .slider class. I chose the more complete and correct set of properties, ensuring the slider for the theme switch functions as intended.
-
-Combined Duplicate Media Queries:
-
-Problem: There were two separate @media (min-width: 768px) blocks in the file. This can make the code harder to read and maintain.
-
-Solution: I've merged the content of these two blocks into a single @media (min-width: 768px) query. This improves organization without changing the functionality.
-
-Corrected an Orphaned CSS Rule:
-
-Problem: The rule contact-time { color: #4c4f6a; } was not attached to any selector, making it invalid.
-
-Solution: Based on other styles in the file, this was likely intended for the contact time in the header. I have corrected this by placing it within the .header-contact .contact-time selector.
-
-Improved Code Readability and Consistency:
-
-Problem: While not a breaking error, some parts of the code had inconsistent formatting.
-
-Solution: I have applied consistent indentation and spacing throughout the file to make it more readable and professional.
-
-Added Missing Standard background-clip property:
-
-Problem: The .hero-title was using -webkit-background-clip: text; but was missing the standard background-clip: text; property for better browser compatibility.
-
-Solution: I added the standard background-clip: text; property to ensure the gradient text effect works on more browsers.
-
-By addressing these issues, your stylesheet is now valid, better organized, and should behave as expected across different devices and browsers.
